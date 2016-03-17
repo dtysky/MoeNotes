@@ -1,0 +1,22 @@
+{
+  "name": "MoeNotes",
+  "version": "0.1.0",
+  "description": "I'm the god of magic, here is my spellbook.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtysky/MoeNotes.git"
+  },
+  "author": "dtysky@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtysky/MoeNotes/issues"
+  },
+  "homepage": "https://github.com/dtysky/MoeNotes",
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.2"
+  }
+}
