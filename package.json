@@ -2,7 +2,7 @@
   "name": "MoeNotes",
   "version": "0.1.0",
   "description": "I'm the god of magic, here is my spellbook.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/dtysky/MoeNotes",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.2"
+    "electron-prebuilt": "^0.37.2",
+    "grunt": "^0.4.5",
+    "load-grunt-tasks": "^3.4.1"
+  },
+  "dependencies": {
+    "jade": "^1.11.0"
   }
 }
