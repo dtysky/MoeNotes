@@ -1,0 +1,36 @@
+{
+  "node": true,
+  "jquery":true,
+  "browser": true,
+  "esnext": true,
+  "bitwise": true,
+  "camelcase": false,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 4,
+  "latedef": true,
+  "noarg": true,
+  "quotmark": "false",
+  "regexp": true,
+  "undef": true,
+  "unused": false,
+  "strict": false,
+  "trailing": true,
+  "smarttabs": true,
+  "white": true,
+  "newcap": false,
+  "loopfunc": true,
+  "globals": {
+    "React": true,
+	"d3"   : true,
+    "nv"   : true,
+    "BMap":false,
+    "BMap_Symbol_SHAPE_CIRCLE":false,
+    "BMAP_ANIMATION_BOUNCE":false,
+	"BMAP_ANCHOR_TOP_RIGHT":false,
+	"BMAP_ANCHOR_BOTTOM_RIGHT":false,
+    "BMAP_ANCHOR_BOTTOM_LEFT": false
+  }
+}
+

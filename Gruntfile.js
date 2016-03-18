@@ -4,9 +4,10 @@
  * Description:
  */
 
-'use strict';
 
-import grunt from "grunt";
+var grunt = require('grunt');
+var webpackDevConfig = require('./webpack.config.js');
+var paths = require('./helpers/config').paths;
 
 module.exports = function (grunt) {
     // Let *load-grunt-tasks* require everything
@@ -18,6 +19,21 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: pkgConfig,
 
+        'webpack-dev-server': {
+            options: {
+                hot: true,
+                port: 8000,
+                webpack: webpackDevConfig,
+                publicPath: '/assets/',
+                contentBase: paths.srcPath,
+                historyApiFallback: true
+            },
+
+            start: {
+                keepAlive: true
+            }
+        },
+
         'build-atom-shell': {
             tag: 'v0.19.5',
             nodeVersion: '0.18.0',
@@ -28,7 +44,7 @@ module.exports = function (grunt) {
 
     });
 
-    //grunt.registerTask('debug', ['webpack-dev-server']);
+    grunt.registerTask('debug', ['webpack-dev-server']);
 
     grunt.registerTask('build', ['build-atom-shell']);
 
