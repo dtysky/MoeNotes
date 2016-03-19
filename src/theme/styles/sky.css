@@ -5,3 +5,37 @@
     padding: 0;
 }
 
+.page{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.page-text{
+    width: 98%;
+    height: 98%;
+    margin-left: 1%;
+    margin-top: 2%;
+    border: none;
+    overflow: auto;
+}
+
+.page-text::-webkit-scrollbar{
+    background: none;
+}
+
+.page-text::-webkit-scrollbar-thumb{
+    background: #fff;
+}
+
+.ace_scrollbar::-webkit-scrollbar{
+    background: none;
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb{
+    background: #fff;
+}
+
+.page-text:focus{
+    outline: none;
+}

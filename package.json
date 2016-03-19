@@ -35,9 +35,11 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "brace": "^0.7.0",
     "highlight.js": "^9.2.0",
     "jade": "^1.11.0",
     "katex": "^0.5.1",
+    "lodash": "^4.6.1",
     "marked": "^0.3.5",
     "parse-katex": "^0.3.0",
     "react": "^0.14.7",

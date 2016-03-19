@@ -52,17 +52,17 @@ module.exports = {
     module: {
         preLoaders: [{
             test: /\.js$/,
-            exclude: [/node_modules/],
+            exclude: [/node_modules|src\/theme/],
             loader: 'jsxhint'
         }],
         loaders: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel',
-                query: {
-                    presets: ['react', 'es2015']
-                },
+                loaders: [
+                    'react-hot',
+                    'babel?presets[]=react,presets[]=es2015'
+                ],
                 include : srcPath
             },
             {
