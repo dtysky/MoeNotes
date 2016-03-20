@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 .full{
     width: 100%;
     height: 100%;
@@ -5,8 +9,15 @@
     padding: 0;
 }
 
-.page{
+.float-left{
     float: left;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.page{
     width: 50%;
     height: 100%;
 }
@@ -38,4 +49,8 @@
 
 .page-text:focus{
     outline: none;
+}
+
+.page-list{
+    height: 100%;
 }

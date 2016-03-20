@@ -9,17 +9,47 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Content from './content';
-require('./theme/styles/sky.css');
+
+import './theme/styles/sky.css';
 
 class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+    }
+
+    resize() {
+        this.setState({
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.resize.bind(this));
+    }
+
     render(){
+        const height = this.state.height;
+        this.styles = {
+            content: {
+                height: height * 0.8
+            }
+        };
         return (
-            <Content/>
+            <Content
+                width={this.state.width}
+                style={this.styles.content}
+                chapter="test1"
+            />
         );
     }
 }
 
 ReactDom.render(
     <App/>,
-    document.getElementById('content')
+    document.getElementById('react-content')
 );

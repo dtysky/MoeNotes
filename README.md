@@ -26,4 +26,10 @@ I'm the god of magic, here is my spellbook.
 3. 基础操作，比如新建分类、新建文章啥的。
 4. （可能）同步到Github，
 
-就这些，慢慢填坑。
+就这些，慢慢填坑。  
+
+
+## License
+
+Copyright © 2015, 戴天宇, Tianyu Dai (dtysky\<dtysky@outlook.com\>). All Rights Reserved.
+This project is free software and released under the MIT License (MIT).

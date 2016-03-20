@@ -17,7 +17,8 @@ export default class ReactAce extends Component {
             'onFocus',
             'onBlur',
             'onCopy',
-            'onPaste'
+            'onPaste',
+            'onChangeScrollTop'
         ].forEach(method => {
             this[method] = this[method].bind(this);
         });
@@ -72,7 +73,7 @@ export default class ReactAce extends Component {
         this.editor.on('copy', this.onCopy);
         this.editor.on('paste', this.onPaste);
         this.editor.on('change', this.onChange);
-        this.editor.getSession().on('changeScrollTop', this.onChangeScrollTop.bind(this));
+        this.editor.getSession().on('changeScrollTop', this.onChangeScrollTop);
 
         if (keyboardHandler) {
             this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);
@@ -215,8 +216,6 @@ ReactAce.defaultProps = {
     name: 'brace-editor',
     mode: '',
     theme: '',
-    height: '500px',
-    width: '500px',
     value: '',
     fontSize: 12,
     showGutter: true,

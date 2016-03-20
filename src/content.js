@@ -6,99 +6,45 @@
 
 'use strict';
 
-import { parse } from './parser';
 import React from 'react';
-import ReactDom from 'react-dom';
-import { debounce } from 'lodash';
-import AceEditor from './editor';
-
-import 'brace/ext/searchbox';
-import 'brace/mode/markdown';
-import './theme/styles/magic-book';
+import Page from './page';
+import PageList from './pages-list';
 
 import './theme/styles/sky.css';
-import './theme/styles/highlight.css';
-import './theme/styles/katex.css';
 
 class Content extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            markdown: "",
-            html : ""
-        };
+        this.state = {};
     }
 
-    parsePage(value){
-        this.setState({
-            markdown: value,
-            html: parse(value)
-        });
-    }
+    handleSort(data){
 
-    onChange(value){
-        debounce(this.parsePage.bind(this), 10)(value);
-    }
-
-    onScroll(percent){
-        var domNode = React.findDOMNode(this.refs.preview);
-        domNode.scrollTop = percent * domNode.scrollHeight;
     }
 
     render(){
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        const width = this.props.width;
         this.styles = {
-            content: {
+            page_list: {
+                background: "green",
+                width: 200
+            },
+            page: {
                 background: "red",
-                left: 20,
-                width: width - 200,
-                height: height * 0.8
-            },
-            src: {
-                background: "rgba(200,200,200, 0.6)"
-            },
-            dist: {
-                background: "rgba(255,255,255, 0.6)"
-            },
-            text: {
-                background: "none"
+                width: width - 200
             }
         };
         return (
-            <div style={this.styles.content}>
-                <div
-                    className="page"
-                    style={this.styles.src}
-                >
-                    <AceEditor
-                        className="page-text"
-                        style={this.styles.text}
-                        name="src"
-                        value={this.state.markdown}
-                        fontSize={14}
-                        onChange={this.onChange.bind(this)}
-                        onChangeScrollTop={this.onScroll.bind(this)}
-                        mode="markdown"
-                        theme="magic-book"
-                        showGutter={false}
-                        showPrintMargin={false}
-                        wrapEnabled={true}
-                        editorProps={{$blockScrolling: true}}
-                    />
-                </div>
-                <div
-                    className="page"
-                    style={this.styles.dist}
-                >
-                    <div
-                        ref="preview"
-                        className="page-text"
-                        style={this.styles.text}
-                        dangerouslySetInnerHTML={{__html: this.state.html}}
-                    >
-                    </div>
-                </div>
+            <div style={this.props.style}>
+                <PageList
+                    classList="page-list full-height float-left"
+                    classItem="page-list-item"
+                    style={this.styles.page_list}
+                    chapter={this.props.chapter}
+                />
+                <Page
+                    style={this.styles.page}
+                />
             </div>
         );
     }
