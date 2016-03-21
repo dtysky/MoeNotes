@@ -51,7 +51,7 @@ const SortableListItem = ContextMenuLayer(
                     onSubmit={this.onSubmit}
                 >
                     <input
-                        disabled="true"
+                        disabled={this.props.canInput}
                         type="text"
                         value={this.state.text}
                         onChange={this.onChange}
@@ -80,7 +80,7 @@ class SortableList extends React.Component {
                     />
                     <ContextMenuMain
                         name="page-list-menu"
-                        handleClick={this.onContextMenu}
+                        handleClick={this.onContextMenu.bind(this)}
                     />
                     <button>
                         <img src="" alt=""/>
@@ -98,8 +98,9 @@ class SortableList extends React.Component {
                                         name={index}
                                         sortData={index}
                                         className={this.props.classItem}
-                                        handleTextChange={this.rename.bind(this)}
-                                        handleErrorCannotChange={this.errorCannotChange.bind(this)}
+                                        canInput={this.state.canInput !== no}
+                                        handleTextChange={this.handleTextChange.bind(this)}
+                                        handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
                                     />
                                 );
                             }, this)
@@ -111,11 +112,40 @@ class SortableList extends React.Component {
         };
     }
 
-    onContextMenu(data) {
-        console.log(data);
+    initState(indexes) {
+        this.state = {
+            indexes: indexes,
+            canInput: -1
+        };
     }
 
-    errorCannotChange(){
+    onContextMenu(data) {
+        const { option, name} = data;
+        if(option === "remove"){
+            this.remove(name);
+        }
+        else if(option === "rename"){
+            console.log(this.state);
+            this.setState({
+                canInput: this.state.indexes.indexOf(name)
+            });
+        }
+        else if(option === "create"){
+
+        }
+        else if(option === "copy"){
+
+        }
+    }
+
+    handleTextChange(index, name) {
+        this.setState({
+            canInput: -1
+        });
+        this.rename(index, name);
+    }
+
+    handleErrorCannotChange(){
         this.refs.modal.show();
     }
 

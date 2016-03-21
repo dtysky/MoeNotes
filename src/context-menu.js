@@ -21,10 +21,10 @@ class ContextMenuMain extends React.Component {
                 identifier={this.props.name}
             >
                 <MenuItem
-                    data={{option: "delete"}}
+                    data={{option: "remove"}}
                     onClick={this.handleClick.bind(this)}
                 >
-                    Delete
+                    Remove
                 </MenuItem>
                 <MenuItem
                     data={{option: "rename"}}

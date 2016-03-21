@@ -9,6 +9,7 @@
 import React from 'react';
 import SortableList from './sortable-list';
 import storage from './storage';
+import Notify from './notify';
 
 import './theme/styles/sky.css';
 
@@ -16,25 +17,26 @@ import './theme/styles/sky.css';
 class PageList extends SortableList {
     constructor(props){
         super(props);
-        this.state = {
-            indexes: storage.getChapter(this.props.chapter)
-        };
+        this.initState(
+            storage.getIndexes(this.props.chapter)
+        );
     }
 
     refresh(){
         this._sortkey ++;
         this.setState({
-            indexes: storage.getChapter(this.props.chapter)
+            indexes: storage.getIndexes(this.props.chapter)
         });
     }
 
     onSort(indexes) {
-        storage.setChapterIndexes(this.props.chapter, indexes);
+        storage.setIndexes(indexes, this.props.chapter);
         this.refresh();
     }
 
     remove(index) {
-        storage.removePage(this.props.chapter, index);
+        //Warning first!
+        storage.remove(index, this.props.chapter);
         this.refresh();
     }
 
@@ -43,7 +45,7 @@ class PageList extends SortableList {
     }
 
     rename(index, name){
-        storage.renamePage(this.props.chapter, index, name);
+        storage.rename(index, name, this.props.chapter);
         this.refresh();
     }
 

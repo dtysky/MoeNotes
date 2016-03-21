@@ -67,8 +67,11 @@ Storage.prototype.loadBook = function(fp) {
 
 };
 
-Storage.prototype.getChapter = function(name) {
-    return this.nowBook.chapters[name].indexes;
+Storage.prototype.getIndexes = function(chapter) {
+    if(chapter === undefined){
+        return this.nowBook.chapters.indexes;
+    }
+    return this.nowBook.chapters[chapter].indexes;
 };
 
 Storage.prototype.create = function(type, fp) {
@@ -91,33 +94,56 @@ Storage.prototype.setBookIndexes = function(indexes) {
     this.nowBook.indexes = indexes;
 };
 
-Storage.prototype.setChapterIndexes = function(chapter, indexes) {
+Storage.prototype.setIndexes = function(indexes, chapter) {
+    if(chapter === undefined){
+        this.nowBook.chapters.indexes = indexes;
+        return;
+    }
     this.nowBook.chapters[chapter].indexes = indexes;
 };
 
-Storage.prototype.remove = function(name) {
+Storage.prototype.removeFromDevice = function(name) {
     var nowPath = path.join(this.nowBook.root, name);
     //remove
 };
 
-Storage.prototype.removePage = function(chapter, name) {
-    var i = this.nowBook.chapters[chapter].indexes.indexOf(name);
+Storage.prototype.remove = function(name, chapter) {
+    var i;
+    if(chapter === undefined){
+        i = this.nowBook.indexes.indexOf(name);
+        this.nowBook.indexes.splice(i, 1);
+        this.removeFromDevice(
+            name
+        );
+        return;
+    }
+    i = this.nowBook.chapters[chapter].indexes.indexOf(name);
     this.nowBook.chapters[chapter].indexes.splice(i, 1);
-    this.remove(
+    this.removeFromDevice(
         path.join(chapter, name)
     );
 };
 
-Storage.prototype.rename = function(oldname, name) {
+Storage.prototype.renameFromDevice = function(oldname, name) {
     var oldPath = path.join(this.nowBook.root, oldname);
     var newPath = path.join(this.nowBook.root, name);
     //rename
 };
 
-Storage.prototype.renamePage = function(chapter, oldName, name) {
-    var i = this.nowBook.chapters[chapter].indexes.indexOf(oldName);
+Storage.prototype.rename = function(oldName, name, chapter) {
+    var i;
+    if(chapter === undefined){
+        i = this.nowBook.indexes.indexOf(oldName);
+        this.nowBook.indexes[i] = name;
+        this.renameFromDevice(
+            oldName,
+            name
+        );
+        return;
+    }
+    i = this.nowBook.chapters[chapter].indexes.indexOf(oldName);
     this.nowBook.chapters[chapter].indexes[i] = name;
-    this.rename(
+    this.renameFromDevice(
         path.join(chapter, oldName),
         path.join(chapter, name)
     );
