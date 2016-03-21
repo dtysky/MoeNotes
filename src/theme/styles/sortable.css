@@ -1,0 +1,64 @@
+.ui-sortable {
+    display: block;
+    position: relative;
+    overflow: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.ui-sortable:before,
+.ui-sortable:after{
+    content: " ";
+    display: table;
+}
+
+.ui-sortable:after{
+    clear: both;
+}
+
+.ui-sortable .ui-sortable-item {
+    float: left;
+    cursor: move;
+}
+
+.ui-sortable .ui-sortable-item.ui-sortable-dragging {
+    position: absolute;
+    z-index: 1688;
+}
+
+.ui-sortable .ui-sortable-placeholder {
+    display: none;
+}
+
+.ui-sortable .ui-sortable-placeholder.visible {
+    display: block;
+    z-index: -1;
+}
+
+/* custom style */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    position: relative;
+    margin: 0;
+}
+
+.ui-sortable .ui-sortable-placeholder.visible {
+    opacity: .4;
+    -ms-filter: opacity(alpha=40);
+    border: 1px #ccc dashed;
+}
+
+.ui-sortable.style-for-test {
+    display: inline-block;
+}
+
+.ui-sortable.full-width .ui-sortable-item{
+    width: 100%;
+}

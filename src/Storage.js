@@ -5,11 +5,14 @@
  */
 
 
+const path = require('path');
+
+
 function Storage() {
     //name: path
     this.books = {};
     //{indexes, {name, path}}
-    this.book_now = {
+    this.nowBook = {
         root: ".",
         indexes: [
             "test1",
@@ -64,6 +67,10 @@ Storage.prototype.loadBook = function(fp) {
 
 };
 
+Storage.prototype.getChapter = function(name) {
+    return this.nowBook.chapters[name].indexes;
+};
+
 Storage.prototype.create = function(type, fp) {
 
 };
@@ -81,19 +88,39 @@ Storage.prototype.createPage = function(book, chapter, name) {
 };
 
 Storage.prototype.setBookIndexes = function(indexes) {
-    this.book_now.indexes = indexes;
+    this.nowBook.indexes = indexes;
 };
 
 Storage.prototype.setChapterIndexes = function(chapter, indexes) {
-    this.book_now.chapters[chapter].indexes = indexes;
+    this.nowBook.chapters[chapter].indexes = indexes;
 };
 
-Storage.prototype.remove = function(type, fp) {
-
+Storage.prototype.remove = function(name) {
+    var nowPath = path.join(this.nowBook.root, name);
+    //remove
 };
 
-Storage.prototype.rename = function(type, name, fp) {
+Storage.prototype.removePage = function(chapter, name) {
+    var i = this.nowBook.chapters[chapter].indexes.indexOf(name);
+    this.nowBook.chapters[chapter].indexes.splice(i, 1);
+    this.remove(
+        path.join(chapter, name)
+    );
+};
 
+Storage.prototype.rename = function(oldname, name) {
+    var oldPath = path.join(this.nowBook.root, oldname);
+    var newPath = path.join(this.nowBook.root, name);
+    //rename
+};
+
+Storage.prototype.renamePage = function(chapter, oldName, name) {
+    var i = this.nowBook.chapters[chapter].indexes.indexOf(oldName);
+    this.nowBook.chapters[chapter].indexes[i] = name;
+    this.rename(
+        path.join(chapter, oldName),
+        path.join(chapter, name)
+    );
 };
 
 module.exports = new Storage();

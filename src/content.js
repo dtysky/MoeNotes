@@ -38,7 +38,7 @@ class Content extends React.Component{
             <div style={this.props.style}>
                 <PageList
                     classList="page-list full-height float-left"
-                    classItem="page-list-item"
+                    classItem="page-list-item float-left"
                     style={this.styles.page_list}
                     chapter={this.props.chapter}
                 />

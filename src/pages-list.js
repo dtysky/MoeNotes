@@ -17,30 +17,34 @@ class PageList extends SortableList {
     constructor(props){
         super(props);
         this.state = {
-            data: storage.book_now.chapters[this.props.chapter]
+            indexes: storage.getChapter(this.props.chapter)
         };
     }
 
-    onSort(indexes, dragging) {
-        var data = this.state.data;
-        data.indexes = indexes;
-        data.dragging = dragging;
-        storage.setChapterIndexes(this.props.chapter, indexes);
+    refresh(){
+        this._sortkey ++;
         this.setState({
-            data: data
+            indexes: storage.getChapter(this.props.chapter)
         });
     }
 
-    remove(index) {
+    onSort(indexes) {
+        storage.setChapterIndexes(this.props.chapter, indexes);
+        this.refresh();
+    }
 
+    remove(index) {
+        storage.removePage(this.props.chapter, index);
+        this.refresh();
     }
 
     create(index) {
-
+        console.log(index);
     }
 
     rename(index, name){
-
+        storage.renamePage(this.props.chapter, index, name);
+        this.refresh();
     }
 
     render(){

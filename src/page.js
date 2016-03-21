@@ -8,6 +8,7 @@
 
 import { parse } from './parser';
 import React from 'react';
+import ReactDom from 'react-dom';
 import { debounce } from 'lodash';
 import AceEditor from './editor';
 
@@ -31,17 +32,19 @@ class Page extends React.Component{
 
     parsePage(value){
         this.setState({
-            markdown: value,
             html: parse(value)
         });
     }
 
     onChange(value){
+        this.setState({
+            markdown: value
+        });
         debounce(this.parsePage.bind(this), 10)(value);
     }
 
     onScroll(percent){
-        var domNode = React.findDOMNode(this.refs.preview);
+        var domNode = ReactDom.findDOMNode(this.refs.preview);
         domNode.scrollTop = percent * domNode.scrollHeight;
     }
 

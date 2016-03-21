@@ -1,0 +1,19 @@
+.modal-error{
+    width: 200px;
+    text-align: center;
+}
+
+.modal-error .message{
+    padding: 10px;
+    font-size: 16px;
+}
+
+.modal-error .button{
+    width: 70px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
