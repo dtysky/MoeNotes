@@ -77,7 +77,7 @@ class Notify extends React.Component {
                     background: "rgba(0,0,0,0)"
                 }}
                     contentStyle={{
-                    background: "rgba(0,255,0,0.6)",
+                    background: "rgba(255,255,0,0.6)",
                     padding: 20
                 }}
                     onHide={this.state.onHide.fun(this.state.onHide.param)}

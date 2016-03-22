@@ -18,14 +18,10 @@ class Content extends React.Component{
         this.state = {};
     }
 
-    handleSort(data){
-
-    }
-
     render(){
         const width = this.props.width;
         this.styles = {
-            page_list: {
+            pageList: {
                 width: 200
             },
             page: {
@@ -36,9 +32,11 @@ class Content extends React.Component{
             <div style={this.props.style}>
                 <PageList
                     classList="page-list full-height float-left"
-                    classItem="page-list-item"
+                    classSortableList="inner page-sortable-list full-width"
+                    classSortableItem="page-sortable-list-item"
                     classButton="page-list-button"
-                    style={this.styles.page_list}
+                    style={this.styles.pageList}
+                    layoutMode="vertical"
                     chapter={this.props.chapter}
                     addButtonLocation="front"
                 />

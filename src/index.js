@@ -8,6 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import Head from './head';
 import Content from './content';
 
 import './theme/styles/sky.css';
@@ -43,11 +44,17 @@ class App extends React.Component{
             }
         };
         return (
-            <Content
-                width={this.state.width}
-                style={this.styles.content}
-                chapter="test1"
-            />
+            <div>
+                <Head
+                    width={this.state.width}
+                    style={this.styles.head}
+                />
+                <Content
+                    width={this.state.width}
+                    style={this.styles.content}
+                    chapter="test1"
+                />
+            </div>
         );
     }
 }

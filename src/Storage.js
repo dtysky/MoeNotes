@@ -10,7 +10,20 @@ const path = require('path');
 
 function Storage() {
     //name: path
-    this.books = {};
+    this.books = {
+        indexes: [
+            "test1",
+            "test2",
+            "test3",
+            "test4"
+        ],
+        names: {
+            test1: "book1",
+            test2: "book2",
+            test3: "book3",
+            test4: "book4"
+        }
+    };
     //{indexes, {name, path}}
     this.nowBook = {
         root: ".",
@@ -67,9 +80,19 @@ Storage.prototype.loadBook = function(fp) {
 
 };
 
+Storage.prototype.getBookIndexes = function() {
+    return this.books.indexes;
+};
+
+Storage.prototype.removeBook = function(index) {
+};
+
+Storage.prototype.renameBook = function(index, name) {
+};
+
 Storage.prototype.getIndexes = function(chapter) {
     if(chapter === undefined){
-        return this.nowBook.chapters.indexes;
+        return this.nowBook.indexes;
     }
     return this.nowBook.chapters[chapter].indexes;
 };

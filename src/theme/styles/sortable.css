@@ -1,5 +1,4 @@
 .ui-sortable {
-    display: block;
     position: relative;
     overflow: visible;
     -webkit-user-select: none;
@@ -37,17 +36,6 @@
 }
 
 /* custom style */
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-body{
-    position: relative;
-    margin: 0;
-}
 
 .ui-sortable .ui-sortable-placeholder.visible {
     opacity: .4;
@@ -61,4 +49,8 @@ body{
 
 .ui-sortable.full-width .ui-sortable-item{
     width: 100%;
+}
+
+.ui-sortable-item form input{
+    font-size: 16px;
 }

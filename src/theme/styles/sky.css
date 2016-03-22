@@ -13,12 +13,20 @@ body::-webkit-scrollbar{
     float: left;
 }
 
+.full-width{
+    width: 100%;
+}
+
 .full-height{
     height: 100%;
 }
 
 .text-center{
     text-align: center;
+}
+
+.inner{
+    display: inline-block;
 }
 
 .page{
@@ -57,4 +65,39 @@ body::-webkit-scrollbar{
 
 .page-list{
     height: 100%;
+}
+
+.page-sortable-list{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.page-sortable-list-item form input{
+    width: 160px;
+    padding-left: 20px;
+}
+
+.chapter-list{
+    width: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.chapter-sortable-list{
+    display: -webkit-inline-box;
+}
+
+.chapter-sortable-list-item{
+}
+
+.chapter-sortable-list-item form input{
+    width: 80px;
+    text-align: center;
+}
+
+.chapter-list-button{
+}
+
+input{
+    min-width: 60px;
 }

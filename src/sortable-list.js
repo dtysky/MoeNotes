@@ -25,7 +25,8 @@ const SortableListItem = ContextMenuLayer(
     mixins: [SortableItemMixin],
     getInitialState: function(){
         return {
-            text: this.props.sortData
+            text: this.props.sortData,
+            style: {}
         };
     },
 
@@ -64,6 +65,13 @@ const SortableListItem = ContextMenuLayer(
             return;
         }
 
+        this.resizeInput(
+            this.handleTextChange
+        );
+    },
+
+    //Fuck the callback !!!!
+    handleTextChange: function(){
         this.props.handleTextChange(
             this.props.sortData, this.state.text
         );
@@ -73,9 +81,26 @@ const SortableListItem = ContextMenuLayer(
         ReactDom.findDOMNode(this.refs.text).focus();
     },
 
+    resizeInput: function(callback){
+        var fun = callback === undefined ? () => {} : callback;
+        if (this.props.layoutMode !== "horizontal"){
+            fun();
+            return;
+        }
+        const width = this.state.text.length * 12;
+        if(width !== this.state.style.width){
+            this.setState({
+                style: {width: width}
+            }, fun);
+        }
+    },
+
     componentDidMount: function(){
         if (this.props.canInput){
             this.enableInput();
+        }
+        else{
+            this.resizeInput();
         }
     },
 
@@ -87,12 +112,15 @@ const SortableListItem = ContextMenuLayer(
 
     renderGen: function(){
         return (
-            <div>
+            <div
+                className={this.props.className}
+            >
                 <form
                     onSubmit={this.onSubmit}
                     onBlur={this.onSubmit}
                 >
                     <input
+                        style={this.state.style}
                         ref="text"
                         disabled={!this.props.canInput}
                         type="text"
@@ -135,60 +163,104 @@ class SortableList extends React.Component {
                     {
                         this.props.addButtonLocation === "front" ?
                             <button
+                                className={this.props.classButton}
                                 onClick={this.createEnd.bind(this)}
                             >
-                                <img src="" alt=""/>
-                                <p>Add new page</p>
+                                Add new
                             </button>
                             :
                             null
                     }
-                    <Sortable
-                        key={this._sortkey}
-                        onSort={this.onSort.bind(this)}
+                    <div
+                        style={this.state.styleSortableList}
                     >
+                        <Sortable
+                            className={this.props.classSortableList}
+                            key={this._sortkey}
+                            onSort={this.onSort.bind(this)}
+                        >
+                            {
+                                this.state.indexes.map((index, no) => {
+                                    return (
+                                        <SortableListItem
+                                            key={no}
+                                            ref={index}
+                                            name={index}
+                                            layoutMode={this.props.layoutMode}
+                                            menuName={this.state.menuName}
+                                            chapter={this.props.chapter}
+                                            sortData={index}
+                                            className={this.props.classSortableItem}
+                                            canInput={this.state.canInput === no}
+                                            handleTextChange={this.handleTextChange.bind(this)}
+                                            handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
+                                        />
+                                    );
+                                }, this)
+                            }
+                        </Sortable>
                         {
-                            this.state.indexes.map((index, no) => {
-                                return (
-                                    <SortableListItem
-                                        key={no}
-                                        ref={index}
-                                        name={index}
-                                        menuName={this.state.menuName}
-                                        chapter={this.props.chapter}
-                                        sortData={index}
-                                        className={this.props.classItem}
-                                        canInput={this.state.canInput === no}
-                                        handleTextChange={this.handleTextChange.bind(this)}
-                                        handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
-                                    />
-                                );
-                            }, this)
+                            this.props.addButtonLocation === "end" ?
+                                <button
+                                    className={this.props.classButton}
+                                    onClick={this.createEnd.bind(this)}
+                                >
+                                    Add new
+                                </button>
+                                :
+                                null
                         }
-                    </Sortable>
-                    {
-                        this.props.addButtonLocation === "end" ?
-                            <button
-                                onClick={this.createEnd.bind(this)}
-                            >
-                                <img src="" alt=""/>
-                                <p>Add new page</p>
-                            </button>
-                            :
-                            null
-                    }
+                    </div>
                 </div>
             );
         };
+    }
+
+    componentDidMount(){
+        this.resizeSortableList();
+        this.setState({});
     }
 
     initState(name, indexes) {
         this.state = {
             indexes: indexes,
             canInput: -1,
-            menuName: name + "-menu"
+            menuName: name + "-menu",
+            styleSortableList: {}
         };
         this.clipBoard = undefined;
+    }
+
+    resizeSortableList(){
+        var length = 0;
+        const elements = document.getElementsByClassName(
+            this.props.classSortableItem
+        );
+        if(this.props.layoutMode === "horizontal"){
+            for (var i = 0; i< elements.length; i++){
+                length += elements.item(i).offsetWidth;
+            }
+            length += 20 + document.getElementsByClassName(
+                this.props.classButton
+            )[0].offsetWidth;
+            if(this.state.styleSortableList.width !== length) {
+                this.setState({
+                    styleSortableList: {
+                        width: length
+                    }
+                });
+            }
+        }
+        //else if(this.props.layoutMode === "vertical"){
+        //    length += elements.item(i).offsetHeight;
+        //}
+        //else if(this.props.layoutMode === "vertical"){
+        //    this.setState({
+        //        styleSortableList: {
+        //            height: length
+        //        }
+        //    });
+        //}
     }
 
     onContextMenu(data) {

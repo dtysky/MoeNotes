@@ -14,29 +14,29 @@ import Notify from './notify';
 import './theme/styles/sky.css';
 
 
-class PageList extends SortableList {
+class ChapterList extends SortableList {
     constructor(props){
         super(props);
         this.initState(
-            "page-list",
-            Storage.getIndexes(this.props.chapter)
+            "chapter-list",
+            Storage.getIndexes()
         );
     }
 
     refresh(){
         this._sortkey ++;
         this.setState({
-            indexes: Storage.getIndexes(this.props.chapter)
+            indexes: Storage.getIndexes()
         });
     }
 
     onSort(indexes) {
-        Storage.setIndexes(indexes, this.props.chapter);
+        Storage.setIndexes(indexes);
         this.refresh();
     }
 
     remove(index) {
-        Storage.remove(index, this.props.chapter);
+        Storage.remove(index);
         this.refresh();
     }
 
@@ -47,18 +47,22 @@ class PageList extends SortableList {
     }
 
     rename(index, name){
-        if(Storage.getIndexes(this.props.chapter).indexOf(index) === -1){
-            Storage.create(name, this.props.chapter);
-            Storage.setIndexes(this.state.indexes, this.props.chapter);
+        if(Storage.getIndexes().indexOf(index) === -1){
+            Storage.create(name);
+            Storage.setIndexes(this.state.indexes);
         }
         else{
-            Storage.rename(index, name, this.props.chapter);
+            Storage.rename(index, name);
         }
         this.refresh();
     }
 
     copy(index){
-        this.clipBoard = Storage.getPath(index, this.props.chapter);
+        this.clipBoard = Storage.getPath(index);
+    }
+
+    componentDidUpdate(){
+        this.resizeSortableList();
     }
 
     render(){
@@ -66,4 +70,4 @@ class PageList extends SortableList {
     }
 }
 
-export default PageList;
+export default ChapterList;
