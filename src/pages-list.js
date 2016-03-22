@@ -8,7 +8,7 @@
 
 import React from 'react';
 import SortableList from './sortable-list';
-import storage from './storage';
+import Storage from './storage';
 import Notify from './notify';
 
 import './theme/styles/sky.css';
@@ -18,38 +18,52 @@ class PageList extends SortableList {
     constructor(props){
         super(props);
         this.initState(
-            storage.getIndexes(this.props.chapter)
+            "page-list",
+            Storage.getIndexes(this.props.chapter)
         );
     }
 
     refresh(){
         this._sortkey ++;
         this.setState({
-            indexes: storage.getIndexes(this.props.chapter)
+            indexes: Storage.getIndexes(this.props.chapter)
         });
     }
 
     onSort(indexes) {
-        storage.setIndexes(indexes, this.props.chapter);
+        Storage.setIndexes(indexes, this.props.chapter);
         this.refresh();
     }
 
     remove(index) {
         //Warning first!
-        storage.remove(index, this.props.chapter);
+        Storage.remove(index, this.props.chapter);
         this.refresh();
     }
 
-    create(index) {
-        console.log(index);
+    create(no) {
+        this.state.indexes.splice(no, 0, "");
+        this._sortkey ++;
+        this.doMenuOptions("rename", "");
     }
 
     rename(index, name){
-        storage.rename(index, name, this.props.chapter);
+        if(Storage.getIndexes(this.props.chapter).indexOf(index) === -1){
+            Storage.create(name, this.props.chapter);
+            Storage.setIndexes(this.state.indexes, this.props.chapter);
+        }
+        else{
+            Storage.rename(index, name, this.props.chapter);
+        }
         this.refresh();
     }
 
+    copy(index){
+        this.clipBoard = Storage.getPath(index, this.props.chapter);
+    }
+
     render(){
+        //console.log(Storage.getIndexes(this.props.chapter));
         return this.renderGen();
     }
 }

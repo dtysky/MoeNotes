@@ -74,25 +74,43 @@ Storage.prototype.getIndexes = function(chapter) {
     return this.nowBook.chapters[chapter].indexes;
 };
 
-Storage.prototype.create = function(type, fp) {
+Storage.prototype.getPath = function(name, chapter) {
+    if(chapter === undefined){
+        return path.join(
+            this.nowBook.root,
+            name
+        );
+    }
+    return path.join(
+        this.nowBook.root,
+        chapter,
+        name
+    );
+};
+
+Storage.prototype.createToDevice = function(type, fp) {
 
 };
 
-Storage.prototype.createBook = function(name, fp) {
-
+Storage.prototype.createBook = function(name) {
+    var nowPath = path.join(this.nowBook.root, name);
+    //create
 };
 
-Storage.prototype.createChapter = function(book, name) {
-
+Storage.prototype.create = function(name, chapter) {
+    if(chapter === undefined){
+        this.nowBook.indexes.push(name);
+        this.createToDevice(
+            name
+        );
+        return;
+    }
+    this.nowBook.chapters[chapter].indexes.push(name);
+    this.createToDevice(
+        path.join(chapter, name)
+    );
 };
 
-Storage.prototype.createPage = function(book, chapter, name) {
-
-};
-
-Storage.prototype.setBookIndexes = function(indexes) {
-    this.nowBook.indexes = indexes;
-};
 
 Storage.prototype.setIndexes = function(indexes, chapter) {
     if(chapter === undefined){

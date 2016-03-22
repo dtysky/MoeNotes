@@ -1,0 +1,19 @@
+.page-editor{
+    background: rgba(200,200,200,0.6)
+}
+
+.page-preview{
+    background: rgba(255,255,255,0.6)
+}
+
+.page-text{
+    background: none
+}
+
+.page-list{
+    background: green;
+}
+
+.page-content{
+    background: red;
+}

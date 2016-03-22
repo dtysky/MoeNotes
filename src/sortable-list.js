@@ -7,15 +7,17 @@
 'use strict';
 
 import React from 'react';
+import ReactDom from 'react-dom';
 import Sortable, { SortableItemMixin } from 'react-anything-sortable';
 import Notify from './notify';
+import Storage from './storage';
 import { ContextMenuMain, ContextMenuLayer } from './context-menu';
 
 import './theme/styles/sky.css';
 import './theme/styles/sortable.css';
 
 const SortableListItem = ContextMenuLayer(
-    (props) => ("page-list-menu"),
+    (props) => (props.menuName),
     (props) => ({
         name: props.name
     })
@@ -35,23 +37,64 @@ const SortableListItem = ContextMenuLayer(
 
     onSubmit: function(event){
         event.preventDefault();
-        if (this.state.text.length === 0){
-            this.props.handleErrorCannotChange();
+        var text = this.state.text;
+        if (text.length === 0){
+            this.props.handleErrorCannotChange(
+                "Can't rename, page must have a non-empty name!"
+            );
+            this.enableInput();
             return;
         }
+
+        var indexes;
+        if(this.props.chapter === undefined) {
+            indexes = Storage.getIndexes();
+        }
+        else{
+            indexes = Storage.getIndexes(this.props.chapter);
+        }
+        if(text !== this.props.sortData && indexes.indexOf(text) > -1){
+            this.props.handleErrorCannotChange(
+                this.props.chapter === undefined ?
+                    "Page '" + text + "' is already in this chapter !"
+                        :
+                    "Chapter '" + text + "' is already in this book !"
+            );
+            this.enableInput();
+            return;
+        }
+
         this.props.handleTextChange(
             this.props.sortData, this.state.text
         );
     },
 
-    render: function() {
-        return this.renderWithSortable(
+    enableInput: function(){
+        ReactDom.findDOMNode(this.refs.text).focus();
+    },
+
+    componentDidMount: function(){
+        if (this.props.canInput){
+            this.enableInput();
+        }
+    },
+
+    componentDidUpdate: function(){
+        if (this.props.canInput){
+            this.enableInput();
+        }
+    },
+
+    renderGen: function(){
+        return (
             <div>
                 <form
                     onSubmit={this.onSubmit}
+                    onBlur={this.onSubmit}
                 >
                     <input
-                        disabled={this.props.canInput}
+                        ref="text"
+                        disabled={!this.props.canInput}
                         type="text"
                         value={this.state.text}
                         onChange={this.onChange}
@@ -59,6 +102,15 @@ const SortableListItem = ContextMenuLayer(
                 </form>
             </div>
         );
+    },
+
+    render: function() {
+        return this.props.canInput ?
+            this.renderGen()
+            :
+            this.renderWithSortable(
+                this.renderGen()
+            );
     }
 }));
 
@@ -74,18 +126,23 @@ class SortableList extends React.Component {
                     className={this.props.classList}
                 >
                     <Notify
-                        ref="modal"
-                        type="error"
-                        message="Can't rename, page's name mustn't be empty !"
+                        ref="notify"
                     />
                     <ContextMenuMain
-                        name="page-list-menu"
+                        name={this.state.menuName}
                         handleClick={this.onContextMenu.bind(this)}
                     />
-                    <button>
-                        <img src="" alt=""/>
-                        <p>Add new page</p>
-                    </button>
+                    {
+                        this.props.addButtonLocation === "front" ?
+                            <button
+                                onClick={this.createEnd.bind(this)}
+                            >
+                                <img src="" alt=""/>
+                                <p>Add new page</p>
+                            </button>
+                            :
+                            null
+                    }
                     <Sortable
                         key={this._sortkey}
                         onSort={this.onSort.bind(this)}
@@ -95,47 +152,80 @@ class SortableList extends React.Component {
                                 return (
                                     <SortableListItem
                                         key={no}
+                                        ref={index}
                                         name={index}
+                                        menuName={this.state.menuName}
+                                        chapter={this.props.chapter}
                                         sortData={index}
                                         className={this.props.classItem}
-                                        canInput={this.state.canInput !== no}
+                                        canInput={this.state.canInput === no}
                                         handleTextChange={this.handleTextChange.bind(this)}
                                         handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
                                     />
                                 );
                             }, this)
                         }
-
                     </Sortable>
+                    {
+                        this.props.addButtonLocation === "end" ?
+                            <button
+                                onClick={this.createEnd.bind(this)}
+                            >
+                                <img src="" alt=""/>
+                                <p>Add new page</p>
+                            </button>
+                            :
+                            null
+                    }
                 </div>
             );
         };
     }
 
-    initState(indexes) {
+    initState(name, indexes) {
         this.state = {
             indexes: indexes,
-            canInput: -1
+            canInput: -1,
+            menuName: name + "-menu"
         };
+        this.clipBoard = undefined;
     }
 
     onContextMenu(data) {
-        const { option, name} = data;
+        this.doMenuOptions(data.option, data.name);
+    }
+
+    doMenuOptions(option, index){
         if(option === "remove"){
-            this.remove(name);
+            this.showNotify(
+                "warn",
+                this.props.chapter === undefined ?
+                    "This chapter  will be deleted irrevocably, are you sure ?"
+                    :
+                    "This page will be deleted irrevocably, are you sure ?",
+                {
+                    onOk: {
+                        fun: this.remove.bind(this),
+                        param: index
+                    }
+                }
+            );
         }
         else if(option === "rename"){
-            console.log(this.state);
             this.setState({
-                canInput: this.state.indexes.indexOf(name)
+                canInput: this.state.indexes.indexOf(index)
             });
         }
         else if(option === "create"){
-
+            this.create(this.state.indexes.indexOf(index) + 1);
         }
         else if(option === "copy"){
-
+            this.copy(index);
         }
+    }
+
+    createEnd(){
+        this.create(this.state.indexes.length + 1);
     }
 
     handleTextChange(index, name) {
@@ -145,8 +235,12 @@ class SortableList extends React.Component {
         this.rename(index, name);
     }
 
-    handleErrorCannotChange(){
-        this.refs.modal.show();
+    showNotify(type, message, callbacks){
+        this.refs.notify.show(type, message, callbacks);
+    }
+
+    handleErrorCannotChange(message){
+        this.showNotify("error", message);
     }
 
     render(){

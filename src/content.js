@@ -26,11 +26,9 @@ class Content extends React.Component{
         const width = this.props.width;
         this.styles = {
             page_list: {
-                background: "green",
                 width: 200
             },
             page: {
-                background: "red",
                 width: width - 200
             }
         };
@@ -38,9 +36,11 @@ class Content extends React.Component{
             <div style={this.props.style}>
                 <PageList
                     classList="page-list full-height float-left"
-                    classItem="page-list-item float-left"
+                    classItem="page-list-item"
+                    classButton="page-list-button"
                     style={this.styles.page_list}
                     chapter={this.props.chapter}
+                    addButtonLocation="front"
                 />
                 <Page
                     style={this.styles.page}

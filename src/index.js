@@ -35,8 +35,11 @@ class App extends React.Component{
     render(){
         const height = this.state.height;
         this.styles = {
+            head: {
+                height: 100
+            },
             content: {
-                height: height * 0.8
+                height: height - 100
             }
         };
         return (

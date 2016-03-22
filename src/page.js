@@ -49,29 +49,16 @@ class Page extends React.Component{
     }
 
     render(){
-        this.styles = {
-            src: {
-                background: "rgba(200,200,200, 0.6)"
-            },
-            dist: {
-                background: "rgba(255,255,255, 0.6)"
-            },
-            text: {
-                background: "none"
-            }
-        };
         return (
             <div
-                className="full-height float-left"
+                className="page-content full-height float-left"
                 style={this.props.style}
             >
                 <div
-                    className="page float-left"
-                    style={this.styles.src}
+                    className="page page-editor float-left"
                 >
                     <AceEditor
                         className="page-text"
-                        style={this.styles.text}
                         name="src"
                         value={this.state.markdown}
                         fontSize={14}
@@ -86,13 +73,11 @@ class Page extends React.Component{
                     />
                 </div>
                 <div
-                    className="page float-left"
-                    style={this.styles.dist}
+                    className="page page-preview float-left"
                 >
                     <div
                         ref="preview"
                         className="page-text"
-                        style={this.styles.text}
                         dangerouslySetInnerHTML={{__html: this.state.html}}
                     >
                     </div>
