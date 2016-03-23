@@ -26,6 +26,7 @@ function Storage() {
     };
     //{indexes, {name, path}}
     this.nowBook = {
+        index: "test1",
         root: ".",
         indexes: [
             "test1",
@@ -80,14 +81,35 @@ Storage.prototype.loadBook = function(fp) {
 
 };
 
+Storage.prototype.getNowBook = function(){
+    return this.nowBook.index;
+};
+
 Storage.prototype.getBookIndexes = function() {
     return this.books.indexes;
 };
 
+Storage.prototype.getBookName = function(index) {
+    return this.books.names[index];
+};
+
+Storage.prototype.changeBook = function(index) {
+    //Change all !
+    this.nowBook.index = index;
+};
+
+
 Storage.prototype.removeBook = function(index) {
+    const i = this.books.indexes.indexOf(index);
+    this.books.indexes.splice(i, 1);
+    delete this.books.names[index];
+    this.changeBook(
+        this.books.indexes[0]
+    );
 };
 
 Storage.prototype.renameBook = function(index, name) {
+    this.books.names[index] = name;
 };
 
 Storage.prototype.getIndexes = function(chapter) {

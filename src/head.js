@@ -21,20 +21,17 @@ class Head extends React.Component{
     render(){
         const width = this.props.width;
         this.styles = {
+            buttonHeight: 48,
+            buttonTop: 40,
+            buttonPosition: "absolute",
             bookListMenu: {
-                bmBurgerButton: {
-                    position: "absolute",
-                    width: 48,
-                    height: 48,
-                    left: 10,
-                    top: 0
-                }
+                height: 48
             },
             chapterList: {
-                position: "absolute",
                 width: width - 100,
                 left: 100,
-                top: 0
+                height: 40,
+                top: 40
             }
         };
         return (
@@ -43,10 +40,13 @@ class Head extends React.Component{
                 style={this.props.style}
             >
                 <BookList
-                    styles={this.styles.bookListMenu}
+                    menuStyle={this.styles.bookListMenu}
+                    buttonHeight={this.styles.buttonHeight}
+                    buttonTop={this.styles.buttonTop}
+                    buttonPosition={this.styles.buttonPosition}
                 />
                 <ChapterList
-                    classList="chapter-list"
+                    classList="chapter-list absolute"
                     classSortableList="chapter-sortable-list"
                     classSortableItem="chapter-sortable-list-item"
                     classButton="chapter-list-button inner"

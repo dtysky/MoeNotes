@@ -19,13 +19,13 @@ import './theme/styles/sortable.css';
 const SortableListItem = ContextMenuLayer(
     (props) => (props.menuName),
     (props) => ({
-        name: props.name
+        name: props.index
     })
 )(React.createClass({
     mixins: [SortableItemMixin],
     getInitialState: function(){
         return {
-            text: this.props.sortData,
+            text: this.props.index,
             style: {}
         };
     },
@@ -41,7 +41,10 @@ const SortableListItem = ContextMenuLayer(
         var text = this.state.text;
         if (text.length === 0){
             this.props.handleErrorCannotChange(
-                "Can't rename, page must have a non-empty name!"
+                this.props.chapter === undefined ?
+                    "Can't rename, page must have a non-empty name!"
+                    :
+                    "Can't rename, chapter must have a non-empty name!"
             );
             this.enableInput();
             return;
@@ -54,11 +57,11 @@ const SortableListItem = ContextMenuLayer(
         else{
             indexes = Storage.getIndexes(this.props.chapter);
         }
-        if(text !== this.props.sortData && indexes.indexOf(text) > -1){
+        if(text !== this.props.index && indexes.indexOf(text) > -1){
             this.props.handleErrorCannotChange(
                 this.props.chapter === undefined ?
                     "Page '" + text + "' is already in this chapter !"
-                        :
+                    :
                     "Chapter '" + text + "' is already in this book !"
             );
             this.enableInput();
@@ -73,7 +76,7 @@ const SortableListItem = ContextMenuLayer(
     //Fuck the callback !!!!
     handleTextChange: function(){
         this.props.handleTextChange(
-            this.props.sortData, this.state.text
+            this.props.index, this.state.text
         );
     },
 
@@ -88,11 +91,13 @@ const SortableListItem = ContextMenuLayer(
             return;
         }
         const width = this.state.text.length * 12;
-        if(width !== this.state.style.width){
-            this.setState({
-                style: {width: width}
-            }, fun);
+        if(width === this.state.style.width){
+            fun();
+            return;
         }
+        this.setState({
+            style: {width: width}
+        }, fun);
     },
 
     componentDidMount: function(){
@@ -185,7 +190,7 @@ class SortableList extends React.Component {
                                         <SortableListItem
                                             key={no}
                                             ref={index}
-                                            name={index}
+                                            index={index}
                                             layoutMode={this.props.layoutMode}
                                             menuName={this.state.menuName}
                                             chapter={this.props.chapter}
