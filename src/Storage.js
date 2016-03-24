@@ -198,15 +198,19 @@ Storage.prototype.createToDevice = function(type, fp) {
 
 };
 
-Storage.prototype.create = function(name, chapter) {
+Storage.prototype.create = function(no, name, chapter) {
     if(chapter === undefined){
-        this.nowBook.indexes.push(name);
+        this.nowBook.indexes.splice(no, 0, name);
+        this.nowBook.chapters[name] = {
+            indexes: []
+        };
         this.createToDevice(
             name
         );
         return;
     }
-    this.nowBook.chapters[chapter].indexes.push(name);
+    this.nowBook.chapters[chapter].indexes.splice(no, 0, name);
+    this.nowBook.chapters[chapter].nowPage = name;
     this.createToDevice(
         path.join(chapter, name)
     );
@@ -278,6 +282,8 @@ Storage.prototype.has = function(name, chapter) {
     if(chapter === undefined){
         return this.nowBook.indexes.indexOf(name) > -1;
     }
+    //console.log(name, chapter);
+    //console.log(this.nowBook.chapters[chapter].indexes);
     return this.nowBook.chapters[chapter].indexes.indexOf(name) > -1;
 };
 
@@ -286,6 +292,13 @@ Storage.prototype.isEmpty = function(chapter) {
         return this.nowBook.indexes.length === 0;
     }
     return this.nowBook.chapters[chapter].indexes.length === 0;
+};
+
+Storage.prototype.canNotRemove = function(chapter) {
+    if(chapter === undefined){
+        return this.nowBook.indexes.length === 1;
+    }
+    return this.nowBook.chapters[chapter].indexes.length === 1;
 };
 
 Storage.prototype.change = function(name, chapter) {

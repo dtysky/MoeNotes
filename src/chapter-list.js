@@ -23,11 +23,14 @@ class ChapterList extends SortableList {
         );
     }
 
-    refresh(){
+    refresh(callback){
         this._sortkey ++;
-        this.setState({
-            indexes: Storage.getIndexes()
-        }, this.setScrollbar.bind(this));
+        this.state.indexes = Storage.getIndexes();
+        this.setState({}, callback === undefined ?
+            () => {this.setScrollbar.bind(this);}
+            :
+            callback()
+        );
     }
 
     onSort(indexes) {
@@ -36,6 +39,13 @@ class ChapterList extends SortableList {
     }
 
     remove(index) {
+        if(Storage.canNotRemove()){
+            this.showNotify(
+                "error",
+                "Book must have more than one chapter !"
+            );
+            return;
+        }
         Storage.remove(index);
         this.props.handlerChangeChapter();
         this.refresh();
@@ -49,8 +59,10 @@ class ChapterList extends SortableList {
 
     rename(index, name){
         if(!Storage.has(index)){
-            Storage.create(name);
-            Storage.setIndexes(this.state.indexes);
+            Storage.create(
+                this.state.indexes.indexOf(index),
+                name
+            );
         }
         else{
             Storage.rename(index, name);
@@ -70,7 +82,7 @@ class ChapterList extends SortableList {
 
     reload(){
         if(Storage.isEmpty()){
-            this.createEnd();
+            this.refresh(this.createEnd.bind(this));
         }
         else{
             this.select(Storage.getNow());

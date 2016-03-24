@@ -23,11 +23,14 @@ class PageList extends SortableList {
         );
     }
 
-    refresh(){
+    refresh(callback){
         this._sortkey ++;
-        this.setState({
-            indexes: Storage.getIndexes(Storage.getNow())
-        });
+        this.state.indexes = Storage.getIndexes(Storage.getNow());
+        this.setState({}, callback === undefined ?
+            () => {this.setScrollbar.bind(this);}
+            :
+            callback()
+        );
     }
 
     onSort(indexes) {
@@ -36,7 +39,15 @@ class PageList extends SortableList {
     }
 
     remove(index) {
-        Storage.remove(index, Storage.getNow());
+        const chapter = Storage.getNow();
+        if(Storage.canNotRemove(chapter)){
+            this.showNotify(
+                "error",
+                "Chapter must have more than one page !"
+            );
+            return;
+        }
+        Storage.remove(index, chapter);
         this.props.handlerChangePage();
         this.refresh();
     }
@@ -49,8 +60,11 @@ class PageList extends SortableList {
 
     rename(index, name){
         if(!Storage.has(index, Storage.getNow())){
-            Storage.create(name, Storage.getNow());
-            Storage.setIndexes(this.state.indexes, Storage.getNow());
+            Storage.create(
+                this.state.indexes.indexOf(index),
+                name,
+                Storage.getNow()
+            );
         }
         else{
             Storage.rename(index, name, Storage.getNow());
@@ -70,7 +84,7 @@ class PageList extends SortableList {
 
     reload(){
         if(Storage.isEmpty(Storage.getNow())){
-            this.createEnd();
+            this.refresh(this.createEnd.bind(this));
         }
         else{
             const chapter = Storage.getNow();

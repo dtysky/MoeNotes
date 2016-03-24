@@ -50,14 +50,14 @@ const SortableListItem = ContextMenuLayer(
             return;
         }
 
-        var indexes;
+        var exists;
         if(this.props.chapter === undefined) {
-            indexes = Storage.getIndexes();
+            exists = Storage.has(text);
         }
         else{
-            indexes = Storage.getIndexes(this.props.chapter);
+            exists = Storage.has(text, this.props.chapter);
         }
-        if(text !== this.props.index && indexes.indexOf(text) > -1){
+        if(text !== this.props.index && exists){
             this.props.handleErrorCannotChange(
                 this.props.chapter === undefined ?
                     "Page '" + text + "' is already in this chapter !"
@@ -201,7 +201,7 @@ class SortableList extends React.Component {
                                             index={index}
                                             layoutMode={this.props.layoutMode}
                                             menuName={this.state.menuName}
-                                            chapter={this.props.chapter}
+                                            chapter={this.name === "page-list" ? Storage.getNow() : undefined}
                                             sortData={index}
                                             className={this.props.classSortableItem}
                                             canInput={this.state.canInput === index}
@@ -242,6 +242,7 @@ class SortableList extends React.Component {
             menuName: name + "-menu",
             styleSortableList: {}
         };
+        this.name = name;
         this.clipBoard = undefined;
     }
 
