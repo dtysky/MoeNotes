@@ -5,7 +5,8 @@
  */
 
 
-const path = require('path');
+import path from 'path';
+import deepcopy from 'deepcopy';
 
 
 function Storage() {
@@ -166,9 +167,9 @@ Storage.prototype.getNow = function(chapter) {
 
 Storage.prototype.getIndexes = function(chapter) {
     if(chapter === undefined){
-        return this.nowBook.indexes;
+        return deepcopy(this.nowBook.indexes);
     }
-    return this.nowBook.chapters[chapter].indexes;
+    return deepcopy(this.nowBook.chapters[chapter].indexes);
 };
 
 Storage.prototype.getPath = function(name, chapter) {
