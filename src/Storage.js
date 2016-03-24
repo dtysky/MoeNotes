@@ -228,6 +228,9 @@ Storage.prototype.remove = function(name, chapter) {
     if(chapter === undefined){
         i = this.nowBook.indexes.indexOf(name);
         this.nowBook.indexes.splice(i, 1);
+        if(name === this.nowBook.nowChapter){
+            this.nowBook.nowChapter = this.nowBook.indexes[0];
+        }
         this.removeFromDevice(
             name
         );
@@ -235,6 +238,9 @@ Storage.prototype.remove = function(name, chapter) {
     }
     i = this.nowBook.chapters[chapter].indexes.indexOf(name);
     this.nowBook.chapters[chapter].indexes.splice(i, 1);
+    if(name === this.nowBook.chapters[chapter].nowPage){
+        this.nowBook.chapters[chapter].nowPage = this.nowBook.chapters[chapter].indexes[0];
+    }
     this.removeFromDevice(
         path.join(chapter, name)
     );
@@ -265,11 +271,11 @@ Storage.prototype.rename = function(oldName, name, chapter) {
     );
 };
 
-Storage.prototype.has = function(index, chapter) {
+Storage.prototype.has = function(name, chapter) {
     if(chapter === undefined){
-        return this.nowBook.indexes.indexOf(index) > -1;
+        return this.nowBook.indexes.indexOf(name) > -1;
     }
-    return this.nowBook.chapters[chapter].indexes.indexOf(index) > -1;
+    return this.nowBook.chapters[chapter].indexes.indexOf(name) > -1;
 };
 
 Storage.prototype.isEmpty = function(chapter) {
@@ -279,12 +285,12 @@ Storage.prototype.isEmpty = function(chapter) {
     return this.nowBook.chapters[chapter].indexes.length === 0;
 };
 
-Storage.prototype.change = function(index, chapter) {
+Storage.prototype.change = function(name, chapter) {
     if(chapter === undefined){
-        this.nowBook.nowChapter = index;
+        this.nowBook.nowChapter = name;
         return;
     }
-    this.nowBook.chapters[chapter].nowPage = index;
+    this.nowBook.chapters[chapter].nowPage = name;
 };
 
 module.exports = new Storage();

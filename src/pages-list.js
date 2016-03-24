@@ -37,7 +37,8 @@ class PageList extends SortableList {
 
     remove(index) {
         Storage.remove(index, Storage.getNow());
-        this.select(index);
+        this.props.handlerChangePage();
+        this.refresh();
     }
 
     create(no) {

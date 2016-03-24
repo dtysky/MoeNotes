@@ -37,7 +37,8 @@ class ChapterList extends SortableList {
 
     remove(index) {
         Storage.remove(index);
-        this.select(index);
+        this.props.handlerChangeChapter();
+        this.refresh();
     }
 
     create(no) {
