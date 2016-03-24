@@ -27,7 +27,7 @@ class ChapterList extends SortableList {
         this._sortkey ++;
         this.setState({
             indexes: Storage.getIndexes()
-        });
+        }, this.setScrollbar.bind(this));
     }
 
     onSort(indexes) {
@@ -37,7 +37,7 @@ class ChapterList extends SortableList {
 
     remove(index) {
         Storage.remove(index);
-        this.refresh();
+        this.select(index);
     }
 
     create(no) {
@@ -47,18 +47,33 @@ class ChapterList extends SortableList {
     }
 
     rename(index, name){
-        if(Storage.getIndexes().indexOf(index) === -1){
+        if(!Storage.has(index)){
             Storage.create(name);
             Storage.setIndexes(this.state.indexes);
         }
         else{
             Storage.rename(index, name);
         }
+        this.select(name);
+    }
+
+    select(index){
+        Storage.change(index);
+        this.props.handlerChangeChapter();
         this.refresh();
     }
 
     copy(index){
         this.clipBoard = Storage.getPath(index);
+    }
+
+    reload(){
+        if(Storage.isEmpty()){
+            this.createEnd();
+        }
+        else{
+            this.select(Storage.getNow());
+        }
     }
 
     componentDidUpdate(){

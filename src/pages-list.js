@@ -19,25 +19,25 @@ class PageList extends SortableList {
         super(props);
         this.initState(
             "page-list",
-            Storage.getIndexes(this.props.chapter)
+            Storage.getIndexes(Storage.getNow())
         );
     }
 
     refresh(){
         this._sortkey ++;
         this.setState({
-            indexes: Storage.getIndexes(this.props.chapter)
+            indexes: Storage.getIndexes(Storage.getNow())
         });
     }
 
     onSort(indexes) {
-        Storage.setIndexes(indexes, this.props.chapter);
+        Storage.setIndexes(indexes, Storage.getNow());
         this.refresh();
     }
 
     remove(index) {
-        Storage.remove(index, this.props.chapter);
-        this.refresh();
+        Storage.remove(index, Storage.getNow());
+        this.select(index);
     }
 
     create(no) {
@@ -47,18 +47,34 @@ class PageList extends SortableList {
     }
 
     rename(index, name){
-        if(Storage.getIndexes(this.props.chapter).indexOf(index) === -1){
-            Storage.create(name, this.props.chapter);
-            Storage.setIndexes(this.state.indexes, this.props.chapter);
+        if(!Storage.has(index, Storage.getNow())){
+            Storage.create(name, Storage.getNow());
+            Storage.setIndexes(this.state.indexes, Storage.getNow());
         }
         else{
-            Storage.rename(index, name, this.props.chapter);
+            Storage.rename(index, name, Storage.getNow());
         }
+        this.select(name);
+    }
+
+    select(index){
+        Storage.change(index, Storage.getNow());
+        this.props.handlerChangePage();
         this.refresh();
     }
 
     copy(index){
-        this.clipBoard = Storage.getPath(index, this.props.chapter);
+        this.clipBoard = Storage.getPath(index, Storage.getNow());
+    }
+
+    reload(){
+        if(Storage.isEmpty(Storage.getNow())){
+            this.createEnd();
+        }
+        else{
+            const chapter = Storage.getNow();
+            this.select(Storage.getNow(chapter));
+        }
     }
 
     render(){

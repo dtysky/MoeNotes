@@ -125,35 +125,39 @@ class BookList extends React.Component {
         super(props);
         this.state = {
             indexes: Storage.getBookIndexes(),
-            nowBook: Storage.getNowBook(),
+            now: Storage.getNowBook(),
             width: 0
         };
+    }
+
+    resizeButton(){
+        const width = ReactDom.findDOMNode(this.refs.buttonsOpen).offsetWidth;
+        this.props.reoffsetChapter(width);
+        this.setState({
+            width: width
+        });
     }
 
     refresh(){
         this.setState({
             indexes: Storage.getBookIndexes(),
-            nowBook: Storage.getNowBook()
-        });
+            now: Storage.getNowBook()
+        }, this.resizeButton.bind(this));
     }
 
     remove(index) {
         Storage.removeBook(index);
-        this.refresh();
-    }
-
-    create(index) {
-        //Not finised !
-        this.refresh();
+        this.select(index);
     }
 
     rename(index, name){
         Storage.renameBook(index, name);
-        this.refresh();
+        this.select(name);
     }
 
     select(index){
         Storage.changeBook(index);
+        this.props.handleChangeBook();
         this.refresh();
     }
 
@@ -161,8 +165,14 @@ class BookList extends React.Component {
         this.create(this.state.indexes.length + 1);
     }
 
-    onLoad(){
+    create(index) {
+        //Not finised !
+        this.refresh();
+    }
 
+    onLoad(){
+        //Not finised !
+        this.refresh();
     }
 
     doMenuOptions(option, index){
@@ -203,8 +213,11 @@ class BookList extends React.Component {
         this.showNotify("error", message);
     }
 
+    componentDidMount(){
+        this.resizeButton();
+    }
+
     render(){
-        console.log(this.state.nowBook);
         return (
             <div>
                 <Menu
@@ -212,7 +225,8 @@ class BookList extends React.Component {
                         bmBurgerButton:{
                             position: this.props.buttonPosition,
                             height: this.props.buttonHeight,
-                            top: this.props.buttonTop
+                            top: this.props.buttonTop,
+                            width: this.state.width
                         }
                     }}
                 >
@@ -244,6 +258,8 @@ class BookList extends React.Component {
                     </button>
                 </Menu>
                 <div
+                    ref="buttonsOpen"
+                    className="books-button-open"
                     style={{
                         position: this.props.buttonPosition,
                         height: this.props.buttonHeight,
@@ -252,7 +268,7 @@ class BookList extends React.Component {
                 >
                     {
                         Storage.getBookName(
-                            this.state.nowBook
+                            this.state.now
                         )
                     }
                 </div>

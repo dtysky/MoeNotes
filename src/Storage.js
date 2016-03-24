@@ -19,15 +19,22 @@ function Storage() {
         ],
         names: {
             test1: "book1",
-            test2: "book2",
-            test3: "book3",
-            test4: "book4"
+            test2: "book22",
+            test3: "book333",
+            test4: "book4444"
+        },
+        paths: {
+            test1: "./book1",
+            test2: "./book2",
+            test3: "./book3",
+            test4: "./book4"
         }
     };
     //{indexes, {name, path}}
     this.nowBook = {
         index: "test1",
         root: ".",
+        nowChapter: "test1",
         indexes: [
             "test1",
             "test2",
@@ -36,6 +43,7 @@ function Storage() {
         ],
         chapters: {
             test1: {
+                nowPage: "test1",
                 indexes: [
                     "test1",
                     "test2",
@@ -44,6 +52,7 @@ function Storage() {
                 ]
             },
             test2: {
+                nowPage: "test2",
                 indexes: [
                     "test1",
                     "test2",
@@ -52,6 +61,7 @@ function Storage() {
                 ]
             },
             test3: {
+                nowPage: "test3",
                 indexes: [
                     "test1",
                     "test2",
@@ -60,6 +70,7 @@ function Storage() {
                 ]
             },
             test4: {
+                nowPage: "test4",
                 indexes: [
                     "test1",
                     "test2",
@@ -67,7 +78,6 @@ function Storage() {
                     "test4"
                 ]
             }
-
         }
 
     };
@@ -93,8 +103,36 @@ Storage.prototype.getBookName = function(index) {
     return this.books.names[index];
 };
 
+Storage.prototype.parseBook = function(dp){
+    var tmp = {
+        root: dp,
+        nowChapter: dp + "/" + "test1",
+        indexes: [],
+        chapters: {}
+    };
+    ["test1", "test2", "test3", "test4"].forEach((name) => {
+        tmp.indexes.push(dp +"/" + name);
+        tmp.chapters[dp +"/" + name] = {
+            indexes: [
+                name + "test1",
+                name + "test2",
+                name + "test3",
+                name + "test4"
+            ],
+            nowPage: name
+        };
+    });
+    return tmp;
+};
+
 Storage.prototype.changeBook = function(index) {
     //Change all !
+    if(index === this.nowBook.index){
+        return;
+    }
+    this.nowBook = this.parseBook(
+        this.books.paths[index]
+    );
     this.nowBook.index = index;
 };
 
@@ -110,6 +148,18 @@ Storage.prototype.removeBook = function(index) {
 
 Storage.prototype.renameBook = function(index, name) {
     this.books.names[index] = name;
+};
+
+Storage.prototype.createBook = function(name) {
+    var nowPath = path.join(this.nowBook.root, name);
+    //create
+};
+
+Storage.prototype.getNow = function(chapter) {
+    if(chapter === undefined){
+        return this.nowBook.nowChapter;
+    }
+    return this.nowBook.chapters[chapter].nowPage;
 };
 
 Storage.prototype.getIndexes = function(chapter) {
@@ -133,13 +183,16 @@ Storage.prototype.getPath = function(name, chapter) {
     );
 };
 
-Storage.prototype.createToDevice = function(type, fp) {
-
+Storage.prototype.readNowPage = function(){
+    const chapter = this.getNow();
+    return this.getPath(
+        this.getNow(chapter),
+        chapter
+    );
 };
 
-Storage.prototype.createBook = function(name) {
-    var nowPath = path.join(this.nowBook.root, name);
-    //create
+Storage.prototype.createToDevice = function(type, fp) {
+
 };
 
 Storage.prototype.create = function(name, chapter) {
@@ -159,7 +212,7 @@ Storage.prototype.create = function(name, chapter) {
 
 Storage.prototype.setIndexes = function(indexes, chapter) {
     if(chapter === undefined){
-        this.nowBook.chapters.indexes = indexes;
+        this.nowBook.indexes = indexes;
         return;
     }
     this.nowBook.chapters[chapter].indexes = indexes;
@@ -210,6 +263,28 @@ Storage.prototype.rename = function(oldName, name, chapter) {
         path.join(chapter, oldName),
         path.join(chapter, name)
     );
+};
+
+Storage.prototype.has = function(index, chapter) {
+    if(chapter === undefined){
+        return this.nowBook.indexes.indexOf(index) > -1;
+    }
+    return this.nowBook.chapters[chapter].indexes.indexOf(index) > -1;
+};
+
+Storage.prototype.isEmpty = function(chapter) {
+    if(chapter === undefined){
+        return this.nowBook.indexes.length === 0;
+    }
+    return this.nowBook.chapters[chapter].indexes.length === 0;
+};
+
+Storage.prototype.change = function(index, chapter) {
+    if(chapter === undefined){
+        this.nowBook.nowChapter = index;
+        return;
+    }
+    this.nowBook.chapters[chapter].nowPage = index;
 };
 
 module.exports = new Storage();

@@ -100,6 +100,12 @@ const SortableListItem = ContextMenuLayer(
         }, fun);
     },
 
+    select: function(event){
+        if(!this.props.canInput){
+            this.props.doMenuOptions("select", this.state.text);
+        }
+    },
+
     componentDidMount: function(){
         if (this.props.canInput){
             this.enableInput();
@@ -119,6 +125,7 @@ const SortableListItem = ContextMenuLayer(
         return (
             <div
                 className={this.props.className}
+                onClick={this.select}
             >
                 <form
                     onSubmit={this.onSubmit}
@@ -155,6 +162,7 @@ class SortableList extends React.Component {
         this.renderGen = function() {
             return (
                 <div
+                    ref="main"
                     style={this.props.style}
                     className={this.props.classList}
                 >
@@ -185,10 +193,10 @@ class SortableList extends React.Component {
                             onSort={this.onSort.bind(this)}
                         >
                             {
-                                this.state.indexes.map((index, no) => {
+                                this.state.indexes.map((index) => {
                                     return (
                                         <SortableListItem
-                                            key={no}
+                                            key={index}
                                             ref={index}
                                             index={index}
                                             layoutMode={this.props.layoutMode}
@@ -196,7 +204,8 @@ class SortableList extends React.Component {
                                             chapter={this.props.chapter}
                                             sortData={index}
                                             className={this.props.classSortableItem}
-                                            canInput={this.state.canInput === no}
+                                            canInput={this.state.canInput === index}
+                                            doMenuOptions={this.doMenuOptions.bind(this)}
                                             handleTextChange={this.handleTextChange.bind(this)}
                                             handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
                                         />
@@ -229,7 +238,7 @@ class SortableList extends React.Component {
     initState(name, indexes) {
         this.state = {
             indexes: indexes,
-            canInput: -1,
+            canInput: "",
             menuName: name + "-menu",
             styleSortableList: {}
         };
@@ -256,16 +265,19 @@ class SortableList extends React.Component {
                 });
             }
         }
-        //else if(this.props.layoutMode === "vertical"){
-        //    length += elements.item(i).offsetHeight;
-        //}
-        //else if(this.props.layoutMode === "vertical"){
-        //    this.setState({
-        //        styleSortableList: {
-        //            height: length
-        //        }
-        //    });
-        //}
+    }
+
+    setScrollbar(){
+        const element = ReactDom.findDOMNode(
+            this.refs.main
+        );
+        if(this.props.layoutMode === "horizontal"){
+            element.scrollLeft = element.scrollWidth;
+        }
+        else{
+            element.scrollTop = element.scrollHeight;
+        }
+        this.setState({});
     }
 
     onContextMenu(data) {
@@ -290,7 +302,7 @@ class SortableList extends React.Component {
         }
         else if(option === "rename"){
             this.setState({
-                canInput: this.state.indexes.indexOf(index)
+                canInput: index
             });
         }
         else if(option === "create"){
@@ -298,6 +310,9 @@ class SortableList extends React.Component {
         }
         else if(option === "copy"){
             this.copy(index);
+        }
+        else if(option === "select"){
+            this.select(index);
         }
     }
 
@@ -307,7 +322,7 @@ class SortableList extends React.Component {
 
     handleTextChange(index, name) {
         this.setState({
-            canInput: -1
+            canInput: ""
         });
         this.rename(index, name);
     }

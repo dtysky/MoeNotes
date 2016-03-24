@@ -33,6 +33,10 @@ class App extends React.Component{
         window.addEventListener('resize', this.resize.bind(this));
     }
 
+    handlerChangeChapter(){
+        this.refs.content.changeChapter();
+    }
+
     render(){
         const height = this.state.height;
         this.styles = {
@@ -46,10 +50,13 @@ class App extends React.Component{
         return (
             <div>
                 <Head
+                    ref="head"
                     width={this.state.width}
                     style={this.styles.head}
+                    handlerChangeChapter={this.handlerChangeChapter.bind(this)}
                 />
                 <Content
+                    ref="content"
                     width={this.state.width}
                     style={this.styles.content}
                     chapter="test1"

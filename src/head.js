@@ -15,7 +15,23 @@ import './theme/styles/sky.css';
 class Head extends React.Component{
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+            chapterListLeft: 100
+        };
+    }
+
+    handleChangeBook(){
+        this.refs.chapterList.reload();
+    }
+
+    reoffsetChapter(width){
+        this.setState({
+            chapterListLeft: width + 10
+        });
+    }
+
+    handlerChangeChapter(){
+        this.props.handlerChangeChapter();
     }
 
     render(){
@@ -28,8 +44,8 @@ class Head extends React.Component{
                 height: 48
             },
             chapterList: {
-                width: width - 100,
-                left: 100,
+                width: width - this.state.chapterListLeft,
+                left: this.state.chapterListLeft,
                 height: 40,
                 top: 40
             }
@@ -44,8 +60,11 @@ class Head extends React.Component{
                     buttonHeight={this.styles.buttonHeight}
                     buttonTop={this.styles.buttonTop}
                     buttonPosition={this.styles.buttonPosition}
+                    handleChangeBook={this.handleChangeBook.bind(this)}
+                    reoffsetChapter={this.reoffsetChapter.bind(this)}
                 />
                 <ChapterList
+                    ref="chapterList"
                     classList="chapter-list absolute"
                     classSortableList="chapter-sortable-list"
                     classSortableItem="chapter-sortable-list-item"
@@ -53,6 +72,7 @@ class Head extends React.Component{
                     style={this.styles.chapterList}
                     layoutMode="horizontal"
                     addButtonLocation="end"
+                    handlerChangeChapter={this.handlerChangeChapter.bind(this)}
                 />
             </div>
         );

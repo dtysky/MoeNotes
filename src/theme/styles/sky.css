@@ -105,3 +105,7 @@ body::-webkit-scrollbar{
 input{
     min-width: 60px;
 }
+
+button{
+    cursor: pointer;
+}

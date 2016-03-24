@@ -9,6 +9,7 @@
 import { parse } from './parser';
 import React from 'react';
 import ReactDom from 'react-dom';
+import Storage from './storage';
 import { debounce } from 'lodash';
 import AceEditor from './editor';
 
@@ -24,9 +25,10 @@ import './theme/styles/article.css';
 class Page extends React.Component{
     constructor(props){
         super(props);
+        const text = Storage.readNowPage();
         this.state = {
-            markdown: "",
-            html : ""
+            markdown: text,
+            html : parse(text)
         };
     }
 
@@ -36,16 +38,26 @@ class Page extends React.Component{
         });
     }
 
-    onChange(value){
+    refresh(value){
         this.setState({
             markdown: value
         });
         debounce(this.parsePage.bind(this), 10)(value);
     }
 
+    onChange(value){
+        this.refresh(value);
+    }
+
     onScroll(percent){
         var domNode = ReactDom.findDOMNode(this.refs.preview);
         domNode.scrollTop = percent * domNode.scrollHeight;
+    }
+
+    reload(){
+        this.refresh(
+            Storage.readNowPage()
+        );
     }
 
     render(){
@@ -58,6 +70,7 @@ class Page extends React.Component{
                     className="page page-editor float-left"
                 >
                     <AceEditor
+                        ref="editor"
                         className="page-text"
                         name="src"
                         value={this.state.markdown}

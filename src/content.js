@@ -18,6 +18,14 @@ class Content extends React.Component{
         this.state = {};
     }
 
+    changeChapter(){
+        this.refs.pageList.reload();
+    }
+
+    handlerChangePage(){
+        this.refs.page.reload();
+    }
+
     render(){
         const width = this.props.width;
         this.styles = {
@@ -31,16 +39,18 @@ class Content extends React.Component{
         return (
             <div style={this.props.style}>
                 <PageList
+                    ref="pageList"
                     classList="page-list full-height float-left"
                     classSortableList="inner page-sortable-list full-width"
                     classSortableItem="page-sortable-list-item"
                     classButton="page-list-button"
                     style={this.styles.pageList}
                     layoutMode="vertical"
-                    chapter={this.props.chapter}
                     addButtonLocation="front"
+                    handlerChangePage={this.handlerChangePage.bind(this)}
                 />
                 <Page
+                    ref="page"
                     style={this.styles.page}
                 />
             </div>

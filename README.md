@@ -32,4 +32,4 @@ I'm the god of magic, here is my spellbook.
 ## License
 
 Copyright © 2015, 戴天宇, Tianyu Dai (dtysky\<dtysky@outlook.com\>). All Rights Reserved.
-This project is free software and released under the **[GNU Lesser General Public License (LGPL)](https://www.gnu.org/licenses/lgpl-2.1.html)**.
+This project is free software and released under the **[GNU General Public License (GPL V3)](http://www.gnu.org/licenses/gpl.html)**.
