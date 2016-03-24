@@ -147,7 +147,8 @@ class BookList extends React.Component {
 
     remove(index) {
         Storage.removeBook(index);
-        this.select(index);
+        this.props.handleChangeBook();
+        this.refresh();
     }
 
     rename(index, name){

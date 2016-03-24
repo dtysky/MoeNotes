@@ -126,7 +126,6 @@ Storage.prototype.parseBook = function(dp){
 };
 
 Storage.prototype.changeBook = function(index) {
-    //Change all !
     if(index === this.nowBook.index){
         return;
     }
@@ -141,9 +140,12 @@ Storage.prototype.removeBook = function(index) {
     const i = this.books.indexes.indexOf(index);
     this.books.indexes.splice(i, 1);
     delete this.books.names[index];
-    this.changeBook(
-        this.books.indexes[0]
-    );
+    if(index === this.nowBook.index){
+        this.nowBook = this.parseBook(
+            this.books.paths[this.books.indexes[0]]
+        );
+        this.nowBook.index = this.books.indexes[0];
+    }
 };
 
 Storage.prototype.renameBook = function(index, name) {
