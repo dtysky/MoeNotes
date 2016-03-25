@@ -5,9 +5,9 @@
  */
 
 
-var grunt = require('grunt');
-var webpackDevConfig = require('./webpack.config.js');
-var paths = require('./helpers/config').paths;
+const grunt = require('grunt');
+const webpackDevConfig = require('./webpack.config.js');
+const paths = require('./helpers/config').paths;
 
 module.exports = function (grunt) {
     // Let *load-grunt-tasks* require everything

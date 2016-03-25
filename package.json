@@ -30,6 +30,7 @@
     "jsxhint-loader": "^0.2.0",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
+    "karma-coverage": "^0.5.5",
     "karma-jasmine": "^0.3.8",
     "karma-webpack": "^1.7.0",
     "load-grunt-tasks": "^3.4.0",

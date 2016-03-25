@@ -10,6 +10,7 @@ import React from 'react';
 import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
+import { bindFunctions } from './utils';
 
 import './theme/styles/sky.css';
 
@@ -20,6 +21,19 @@ class PageList extends SortableList {
         this.initState(
             "page-list",
             Storage.getIndexes(Storage.getNow())
+        );
+        bindFunctions(
+            this,
+            [
+                "onSort",
+                "refresh",
+                "create",
+                "rename",
+                "remove",
+                "select",
+                "copy",
+                "reload"
+            ]
         );
     }
 
@@ -43,11 +57,14 @@ class PageList extends SortableList {
         if(Storage.canNotRemove(chapter)){
             this.showNotify(
                 "error",
-                "Chapter must have more than one page !"
+                "Chapter should have more than one page !"
             );
             return;
         }
         Storage.remove(index, chapter);
+        if(index === Storage.getNow(chapter)){
+            Storage.change(0, chapter);
+        }
         this.props.handlerChangePage();
         this.refresh();
     }

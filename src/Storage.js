@@ -104,6 +104,10 @@ Storage.prototype.getBookName = function(index) {
     return this.books.names[index];
 };
 
+Storage.prototype.isBookEmpty = function() {
+    return this.books.indexes.length === 0;
+};
+
 Storage.prototype.parseBook = function(dp){
     var tmp = {
         root: dp,
@@ -141,12 +145,7 @@ Storage.prototype.removeBook = function(index) {
     const i = this.books.indexes.indexOf(index);
     this.books.indexes.splice(i, 1);
     delete this.books.names[index];
-    if(index === this.nowBook.index){
-        this.nowBook = this.parseBook(
-            this.books.paths[this.books.indexes[0]]
-        );
-        this.nowBook.index = this.books.indexes[0];
-    }
+    delete this.books.paths[index];
 };
 
 Storage.prototype.renameBook = function(index, name) {
@@ -235,9 +234,6 @@ Storage.prototype.remove = function(name, chapter) {
     if(chapter === undefined){
         i = this.nowBook.indexes.indexOf(name);
         this.nowBook.indexes.splice(i, 1);
-        if(name === this.nowBook.nowChapter){
-            this.nowBook.nowChapter = this.nowBook.indexes[0];
-        }
         this.removeFromDevice(
             name
         );
@@ -245,9 +241,6 @@ Storage.prototype.remove = function(name, chapter) {
     }
     i = this.nowBook.chapters[chapter].indexes.indexOf(name);
     this.nowBook.chapters[chapter].indexes.splice(i, 1);
-    if(name === this.nowBook.chapters[chapter].nowPage){
-        this.nowBook.chapters[chapter].nowPage = this.nowBook.chapters[chapter].indexes[0];
-    }
     this.removeFromDevice(
         path.join(chapter, name)
     );
@@ -282,8 +275,6 @@ Storage.prototype.has = function(name, chapter) {
     if(chapter === undefined){
         return this.nowBook.indexes.indexOf(name) > -1;
     }
-    //console.log(name, chapter);
-    //console.log(this.nowBook.chapters[chapter].indexes);
     return this.nowBook.chapters[chapter].indexes.indexOf(name) > -1;
 };
 
@@ -291,6 +282,7 @@ Storage.prototype.isEmpty = function(chapter) {
     if(chapter === undefined){
         return this.nowBook.indexes.length === 0;
     }
+    console.log(chapter);
     return this.nowBook.chapters[chapter].indexes.length === 0;
 };
 

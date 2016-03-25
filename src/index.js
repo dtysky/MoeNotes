@@ -8,8 +8,10 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import Head from './head';
-import Content from './content';
+import ChapterList from './chapter-list';
+import BookList from './book-list';
+import Page from './page';
+import PageList from './pages-list';
 
 import './theme/styles/sky.css';
 
@@ -18,8 +20,27 @@ class App extends React.Component{
         super(props);
         this.state = {
             width: window.innerWidth,
-            height: window.innerHeight
+            height: window.innerHeight,
+            chapterListLeft: 100
         };
+    }
+
+    handleChangeBook(){
+        this.refs.chapterList.reload();
+    }
+
+    reoffsetChapter(width){
+        this.setState({
+            chapterListLeft: width + 10
+        });
+    }
+
+    handlerChangeChapter(){
+        this.refs.pageList.reload();
+    }
+
+    handlerChangePage(){
+        this.refs.page.reload();
     }
 
     resize() {
@@ -31,13 +52,11 @@ class App extends React.Component{
 
     componentDidMount() {
         window.addEventListener('resize', this.resize.bind(this));
-    }
-
-    handlerChangeChapter(){
-        this.refs.content.changeChapter();
+        this.resize();
     }
 
     render(){
+        const width = this.state.width;
         const height = this.state.height;
         this.styles = {
             head: {
@@ -45,22 +64,71 @@ class App extends React.Component{
             },
             content: {
                 height: height - 100
+            },
+            buttonHeight: 48,
+            buttonTop: 40,
+            buttonPosition: "absolute",
+            bookListMenu: {
+                height: 48
+            },
+            chapterList: {
+                width: width - this.state.chapterListLeft,
+                left: this.state.chapterListLeft,
+                height: 40,
+                top: 40
+            },
+            pageList: {
+                width: 200
+            },
+            page: {
+                width: width - 200
             }
         };
         return (
             <div>
-                <Head
+                <div
                     ref="head"
-                    width={this.state.width}
+                    className="head"
                     style={this.styles.head}
-                    handlerChangeChapter={this.handlerChangeChapter.bind(this)}
-                />
-                <Content
-                    ref="content"
-                    width={this.state.width}
-                    style={this.styles.content}
-                    chapter="test1"
-                />
+                >
+                    <BookList
+                        menuStyle={this.styles.bookListMenu}
+                        buttonHeight={this.styles.buttonHeight}
+                        buttonTop={this.styles.buttonTop}
+                        buttonPosition={this.styles.buttonPosition}
+                        handleChangeBook={this.handleChangeBook.bind(this)}
+                        reoffsetChapter={this.reoffsetChapter.bind(this)}
+                    />
+                    <ChapterList
+                        ref="chapterList"
+                        classList="chapter-list absolute"
+                        classSortableList="chapter-sortable-list"
+                        classSortableItem="chapter-sortable-list-item"
+                        classButton="chapter-list-button inner"
+                        style={this.styles.chapterList}
+                        layoutMode="horizontal"
+                        addButtonLocation="end"
+                        handlerChangeChapter={this.handlerChangeChapter.bind(this)}
+                    />
+                </div>
+                <div style={this.styles.content}>
+                    <PageList
+                        ref="pageList"
+                        classList="page-list full-height float-left"
+                        classSortableList="inner page-sortable-list full-width"
+                        classSortableItem="page-sortable-list-item"
+                        classButton="page-list-button"
+                        style={this.styles.pageList}
+                        layoutMode="vertical"
+                        addButtonLocation="front"
+                        handlerChangePage={this.handlerChangePage.bind(this)}
+                    />
+                    <Page
+                        ref="page"
+                        style={this.styles.page}
+                    />
+                </div>
+
             </div>
         );
     }

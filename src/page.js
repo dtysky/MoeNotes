@@ -12,6 +12,7 @@ import ReactDom from 'react-dom';
 import Storage from './storage';
 import { debounce } from 'lodash';
 import AceEditor from './editor';
+import { bindFunctions } from './utils';
 
 import 'brace/ext/searchbox';
 import 'brace/mode/markdown';
@@ -30,6 +31,16 @@ class Page extends React.Component{
             markdown: text,
             html : parse(text)
         };
+        bindFunctions(
+            this,
+            [
+                "parsePage",
+                "refresh",
+                "reload",
+                "onChange",
+                "onScroll"
+            ]
+        );
     }
 
     parsePage(value){
@@ -42,7 +53,13 @@ class Page extends React.Component{
         this.setState({
             markdown: value
         });
-        debounce(this.parsePage.bind(this), 10)(value);
+        debounce(this.parsePage, 10)(value);
+    }
+
+    reload(){
+        this.refresh(
+            Storage.readNowPage()
+        );
     }
 
     onChange(value){
@@ -52,12 +69,6 @@ class Page extends React.Component{
     onScroll(percent){
         var domNode = ReactDom.findDOMNode(this.refs.preview);
         domNode.scrollTop = percent * domNode.scrollHeight;
-    }
-
-    reload(){
-        this.refresh(
-            Storage.readNowPage()
-        );
     }
 
     render(){
@@ -75,8 +86,8 @@ class Page extends React.Component{
                         name="src"
                         value={this.state.markdown}
                         fontSize={14}
-                        onChange={this.onChange.bind(this)}
-                        onChangeScrollTop={this.onScroll.bind(this)}
+                        onChange={this.onChange}
+                        onChangeScrollTop={this.onScroll}
                         mode="markdown"
                         theme="magic-book"
                         showGutter={false}

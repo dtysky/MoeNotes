@@ -12,6 +12,7 @@ import Sortable, { SortableItemMixin } from 'react-anything-sortable';
 import Notify from './notify';
 import Storage from './storage';
 import { ContextMenuMain, ContextMenuLayer } from './context-menu';
+import { bindFunctions } from './utils';
 
 import './theme/styles/sky.css';
 import './theme/styles/sortable.css';
@@ -171,13 +172,13 @@ class SortableList extends React.Component {
                     />
                     <ContextMenuMain
                         name={this.state.menuName}
-                        handleClick={this.onContextMenu.bind(this)}
+                        handleClick={this.onContextMenu}
                     />
                     {
                         this.props.addButtonLocation === "front" ?
                             <button
                                 className={this.props.classButton}
-                                onClick={this.createEnd.bind(this)}
+                                onClick={this.createEnd}
                             >
                                 Add new
                             </button>
@@ -190,7 +191,7 @@ class SortableList extends React.Component {
                         <Sortable
                             className={this.props.classSortableList}
                             key={this._sortkey}
-                            onSort={this.onSort.bind(this)}
+                            onSort={this.onSort}
                         >
                             {
                                 this.state.indexes.map((index) => {
@@ -205,9 +206,9 @@ class SortableList extends React.Component {
                                             sortData={index}
                                             className={this.props.classSortableItem}
                                             canInput={this.state.canInput === index}
-                                            doMenuOptions={this.doMenuOptions.bind(this)}
-                                            handleTextChange={this.handleTextChange.bind(this)}
-                                            handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
+                                            doMenuOptions={this.doMenuOptions}
+                                            handleTextChange={this.handleTextChange}
+                                            handleErrorCannotChange={this.handleErrorCannotChange}
                                         />
                                     );
                                 }, this)
@@ -217,7 +218,7 @@ class SortableList extends React.Component {
                             this.props.addButtonLocation === "end" ?
                                 <button
                                     className={this.props.classButton}
-                                    onClick={this.createEnd.bind(this)}
+                                    onClick={this.createEnd}
                                 >
                                     Add new
                                 </button>
@@ -228,6 +229,20 @@ class SortableList extends React.Component {
                 </div>
             );
         };
+        bindFunctions(
+            this,
+            [
+                "initState",
+                "onContextMenu",
+                "createEnd",
+                "resizeSortableList",
+                "setScrollbar",
+                "doMenuOptions",
+                "handleTextChange",
+                "handleErrorCannotChange",
+                "showNotify"
+            ]
+        );
     }
 
     componentDidMount(){
@@ -244,6 +259,61 @@ class SortableList extends React.Component {
         };
         this.name = name;
         this.clipBoard = undefined;
+    }
+
+    onContextMenu(data) {
+        this.doMenuOptions(data.option, data.name);
+    }
+
+    createEnd(){
+        this.create(this.state.indexes.length + 1);
+    }
+
+    handleTextChange(index, name) {
+        this.setState({
+            canInput: ""
+        });
+        this.rename(index, name);
+    }
+
+    handleErrorCannotChange(message){
+        this.showNotify("error", message);
+    }
+
+    showNotify(type, message, callbacks){
+        this.refs.notify.show(type, message, callbacks);
+    }
+
+    doMenuOptions(option, index){
+        if(option === "remove"){
+            this.showNotify(
+                "warn",
+                this.props.chapter === undefined ?
+                    "This chapter  will be deleted irrevocably, are you sure ?"
+                    :
+                    "This page will be deleted irrevocably, are you sure ?",
+                {
+                    onOk: {
+                        fun: this.remove,
+                        param: index
+                    }
+                }
+            );
+        }
+        else if(option === "rename"){
+            this.setState({
+                canInput: index
+            });
+        }
+        else if(option === "create"){
+            this.create(this.state.indexes.indexOf(index) + 1);
+        }
+        else if(option === "copy"){
+            this.copy(index);
+        }
+        else if(option === "select"){
+            this.select(index);
+        }
     }
 
     resizeSortableList(){
@@ -279,61 +349,6 @@ class SortableList extends React.Component {
             element.scrollTop = element.scrollHeight;
         }
         this.setState({});
-    }
-
-    onContextMenu(data) {
-        this.doMenuOptions(data.option, data.name);
-    }
-
-    doMenuOptions(option, index){
-        if(option === "remove"){
-            this.showNotify(
-                "warn",
-                this.props.chapter === undefined ?
-                    "This chapter  will be deleted irrevocably, are you sure ?"
-                    :
-                    "This page will be deleted irrevocably, are you sure ?",
-                {
-                    onOk: {
-                        fun: this.remove.bind(this),
-                        param: index
-                    }
-                }
-            );
-        }
-        else if(option === "rename"){
-            this.setState({
-                canInput: index
-            });
-        }
-        else if(option === "create"){
-            this.create(this.state.indexes.indexOf(index) + 1);
-        }
-        else if(option === "copy"){
-            this.copy(index);
-        }
-        else if(option === "select"){
-            this.select(index);
-        }
-    }
-
-    createEnd(){
-        this.create(this.state.indexes.length + 1);
-    }
-
-    handleTextChange(index, name) {
-        this.setState({
-            canInput: ""
-        });
-        this.rename(index, name);
-    }
-
-    showNotify(type, message, callbacks){
-        this.refs.notify.show(type, message, callbacks);
-    }
-
-    handleErrorCannotChange(message){
-        this.showNotify("error", message);
     }
 
     render(){

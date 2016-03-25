@@ -4,11 +4,11 @@
  * Description: Parse markdown files.
  */
 
+"use strict";
 
-
-const markdown = require('marked');
-const defaultHighlight = require('../helpers/config').defaultHighlight;
-const katex = require('parse-katex');
+import markdown from 'marked';
+import defaultHighlight from '../helpers/config';
+import katex from 'parse-katex';
 
 function highlight(code, callback){
     var re = /:::(\S+)\n([\s\S]+)/.exec(code);

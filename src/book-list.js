@@ -11,6 +11,7 @@ import ReactDom from 'react-dom';
 const Menu = require('react-burger-menu').slide;
 import Storage from './storage';
 import Notify from './notify';
+import { bindFunctions } from './utils';
 
 import './theme/styles/sky.css';
 import './theme/styles/books-list.css';
@@ -21,6 +22,18 @@ class Book extends React.Component {
         this.state = {
             text: this.props.index
         };
+        bindFunctions(
+            this,
+            [
+                "onChange",
+                "onSubmit",
+                "onRename",
+                "onRemove",
+                "onSelect",
+                "handleTextChange",
+                "enableInput"
+            ]
+        );
     }
 
     onChange(event){
@@ -41,16 +54,6 @@ class Book extends React.Component {
         }
 
         this.handleTextChange();
-    }
-
-    handleTextChange(){
-        this.props.handleTextChange(
-            this.props.index, this.state.text
-        );
-    }
-
-    enableInput(){
-        ReactDom.findDOMNode(this.refs.text).focus();
     }
 
     onRename(){
@@ -74,6 +77,16 @@ class Book extends React.Component {
         );
     }
 
+    handleTextChange(){
+        this.props.handleTextChange(
+            this.props.index, this.state.text
+        );
+    }
+
+    enableInput(){
+        ReactDom.findDOMNode(this.refs.text).focus();
+    }
+
     componentDidMount(){
         if (this.props.canInput){
             this.enableInput();
@@ -93,25 +106,25 @@ class Book extends React.Component {
             >
                 <form
                     className=""
-                    onSubmit={this.onSubmit.bind(this)}
-                    onBlur={this.onSubmit.bind(this)}
-                    onClick={this.onSelect.bind(this)}
+                    onSubmit={this.onSubmit}
+                    onBlur={this.onSubmit}
+                    onClick={this.onSelect}
                 >
                     <input
                         ref="text"
                         disabled={!this.props.canInput}
                         type="text"
                         value={this.state.text}
-                        onChange={this.onChange.bind(this)}
+                        onChange={this.onChange}
                     />
                 </form>
                 <button
                     className=""
-                    onClick={this.onRename.bind(this)}
+                    onClick={this.onRename}
                 />
                 <button
                     className=""
-                    onClick={this.onRemove.bind(this)}
+                    onClick={this.onRemove}
                 />
             </div>
         );
@@ -128,21 +141,44 @@ class BookList extends React.Component {
             now: Storage.getNowBook(),
             width: 0
         };
+        bindFunctions(
+            this,
+            [
+                "onCreate",
+                "onLoad",
+                "refresh",
+                "create",
+                "rename",
+                "remove",
+                "select",
+                "resizeButton",
+                "doMenuOptions",
+                "handleTextChange",
+                "handleErrorCannotChange",
+                "showNotify"
+            ]
+        );
     }
 
-    resizeButton(){
-        const width = ReactDom.findDOMNode(this.refs.buttonsOpen).offsetWidth;
-        this.props.reoffsetChapter(width);
-        this.setState({
-            width: width
-        });
+    onCreate(){
+        this.create(this.state.indexes.length + 1);
+    }
+
+    onLoad(){
+        //Not finised !
+        this.refresh();
     }
 
     refresh(){
         this.setState({
             indexes: Storage.getBookIndexes(),
             now: Storage.getNowBook()
-        }, this.resizeButton.bind(this));
+        }, this.resizeButton);
+    }
+
+    create() {
+        //Not finised !
+        this.select();
     }
 
     remove(index) {
@@ -153,6 +189,13 @@ class BookList extends React.Component {
 
     rename(index, name){
         Storage.renameBook(index, name);
+        if(Storage.isBookEmpty()){
+            this.create();
+            return;
+        }
+        if(index === Storage.getNowBook()){
+            Storage.changeBook(0);
+        }
         this.select(name);
     }
 
@@ -162,18 +205,12 @@ class BookList extends React.Component {
         this.refresh();
     }
 
-    onCreate(){
-        this.create(this.state.indexes.length + 1);
-    }
-
-    create(index) {
-        //Not finised !
-        this.refresh();
-    }
-
-    onLoad(){
-        //Not finised !
-        this.refresh();
+    resizeButton(){
+        const width = ReactDom.findDOMNode(this.refs.buttonsOpen).offsetWidth;
+        this.props.reoffsetChapter(width);
+        this.setState({
+            width: width
+        });
     }
 
     doMenuOptions(option, index){
@@ -183,7 +220,7 @@ class BookList extends React.Component {
                 "This book will be deleted irrevocably(but not removed from device), are you sure ?",
                 {
                     onOk: {
-                        fun: this.remove.bind(this),
+                        fun: this.remove,
                         param: index
                     }
                 }
@@ -206,12 +243,12 @@ class BookList extends React.Component {
         this.rename(index, name);
     }
 
-    showNotify(type, message, callbacks){
-        this.refs.notify.show(type, message, callbacks);
-    }
-
     handleErrorCannotChange(message){
         this.showNotify("error", message);
+    }
+
+    showNotify(type, message, callbacks){
+        this.refs.notify.show(type, message, callbacks);
     }
 
     componentDidMount(){
@@ -240,20 +277,20 @@ class BookList extends React.Component {
                                     index={index}
                                     className={this.props.classSortableItem}
                                     canInput={this.state.canInput === no}
-                                    handleTextChange={this.handleTextChange.bind(this)}
-                                    handleErrorCannotChange={this.handleErrorCannotChange.bind(this)}
-                                    doMenuOptions={this.doMenuOptions.bind(this)}
+                                    handleTextChange={this.handleTextChange}
+                                    handleErrorCannotChange={this.handleErrorCannotChange}
+                                    doMenuOptions={this.doMenuOptions}
                                 />
                             );
                         }, this)
                     }
                     <button
-                        onClick={this.onCreate.bind(this)}
+                        onClick={this.onCreate}
                     >
                         Create
                     </button>
                     <button
-                        onClick={this.onLoad.bind(this)}
+                        onClick={this.onLoad}
                     >
                         Load
                     </button>

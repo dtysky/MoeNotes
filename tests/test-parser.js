@@ -4,17 +4,24 @@
  * Description: Testing for parser.
  */
 
-const fs = require('fs');
-const path = require('path');
-const paths = require('../helpers/config').paths;
+import fs from 'fs';
+import path from 'path';
+import paths from '../helpers/config';
+
 const srcPath = paths.srcPath;
 const parser = require(
     path.join(srcPath, 'parser')
 );
-const testPage = fs.readFileSync('test-parser.md').toString();
 
-function test(page){
-    fs.writeFileSync('test-parser.html', parser.parse(page));
-}
-
-test(testPage);
+describe("parser", () => {
+    it("Should return html base on markdown string", () => {
+        //const testPage = fs.readFileSync('test-parser.md').toString();
+        //
+        //function test(page){
+        //    fs.writeFileSync('test-parser.html', parser.parse(page));
+        //}
+        //
+        //test(testPage);
+        expect(1 === 2).toBe(true);
+    })
+});

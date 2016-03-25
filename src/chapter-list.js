@@ -10,6 +10,7 @@ import React from 'react';
 import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
+import { bindFunctions } from './utils';
 
 import './theme/styles/sky.css';
 
@@ -21,13 +22,26 @@ class ChapterList extends SortableList {
             "chapter-list",
             Storage.getIndexes()
         );
+        bindFunctions(
+            this,
+            [
+                "onSort",
+                "refresh",
+                "create",
+                "rename",
+                "remove",
+                "select",
+                "copy",
+                "reload"
+            ]
+        );
     }
 
     refresh(callback){
         this._sortkey ++;
         this.state.indexes = Storage.getIndexes();
         this.setState({}, callback === undefined ?
-            () => {this.setScrollbar.bind(this);}
+            () => {this.setScrollbar();}
             :
             callback()
         );
@@ -42,11 +56,14 @@ class ChapterList extends SortableList {
         if(Storage.canNotRemove()){
             this.showNotify(
                 "error",
-                "Book must have more than one chapter !"
+                "Book should have more than one chapter !"
             );
             return;
         }
         Storage.remove(index);
+        if(index === Storage.getNow()){
+            Storage.change(0);
+        }
         this.props.handlerChangeChapter();
         this.refresh();
     }
@@ -82,7 +99,7 @@ class ChapterList extends SortableList {
 
     reload(){
         if(Storage.isEmpty()){
-            this.refresh(this.createEnd.bind(this));
+            this.refresh(this.createEnd);
         }
         else{
             this.select(Storage.getNow());

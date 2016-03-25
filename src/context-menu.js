@@ -12,9 +12,22 @@ import { ContextMenu, MenuItem, ContextMenuLayer } from 'react-contextmenu';
 
 import './theme/styles/context-menu.css';
 import './theme/styles/sky.css';
+import { bindFunctions } from './utils';
 
 
 class ContextMenuMain extends React.Component {
+    constructor(props){
+        super(props);
+        bindFunctions(
+            this,
+            "handleClick"
+        );
+    }
+
+    handleClick(event, data) {
+        this.props.handleClick(data);
+    }
+
     render(){
         return (
             <ContextMenu
@@ -46,10 +59,6 @@ class ContextMenuMain extends React.Component {
                 </MenuItem>
             </ContextMenu>
         );
-    }
-
-    handleClick(event, data) {
-        this.props.handleClick(data);
     }
 }
 
