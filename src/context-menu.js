@@ -20,7 +20,7 @@ class ContextMenuMain extends React.Component {
         super(props);
         bindFunctions(
             this,
-            "handleClick"
+            ["handleClick"]
         );
     }
 

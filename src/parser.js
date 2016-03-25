@@ -7,7 +7,7 @@
 "use strict";
 
 import markdown from 'marked';
-import defaultHighlight from '../helpers/config';
+import defaultHighlight from '../config';
 import katex from 'parse-katex';
 
 function highlight(code, callback){

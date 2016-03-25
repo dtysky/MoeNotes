@@ -4,9 +4,9 @@
  * Description: Testing for parser.
  */
 
-import fs from 'fs';
+//import fs from 'fs';
 import path from 'path';
-import paths from '../helpers/config';
+import paths from '../config';
 
 const srcPath = paths.srcPath;
 const parser = require(

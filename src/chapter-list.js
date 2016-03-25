@@ -62,7 +62,9 @@ class ChapterList extends SortableList {
         }
         Storage.remove(index);
         if(index === Storage.getNow()){
-            Storage.change(0);
+            Storage.change(
+                Storage.getIndexes()[0]
+            );
         }
         this.props.handlerChangeChapter();
         this.refresh();

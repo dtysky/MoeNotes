@@ -7,27 +7,30 @@
 const webpack = require("webpack");
 const path = require("path");
 const webpackConfig = require('./webpack.karma.config.js');
-const paths = require('./helpers/config').paths;
+const paths = require('./config').paths;
 
 const srcFiles = paths.srcPath + "/*.js";
-const testFiles = paths.testPath + "/**/test-*.js";
+const testFiles = paths.testPath + "/test-*.js";
 
 var preprocessors = {};
-preprocessors[testFiles] = ["webpack"];
-preprocessors[srcFiles] = ["webpack", "coverage"];
+preprocessors[testFiles] = ["webpack", "sourcemap"];
+preprocessors[srcFiles] = ["webpack", "sourcemap", "coverage"];
 
 module.exports = function(config) {
     config.set({
         basePath: "",
         frameworks: ["jasmine"],
         files: [
-            srcFiles,
+            //srcFiles,
             testFiles
         ],
         preprocessors: preprocessors,
         webpack: webpackConfig,
         webpackMiddleware: {
-            noInfo: false
+            noInfo: false,
+            stats: {
+                colors: true
+            }
         },
         plugins: [
             require("karma-webpack"),

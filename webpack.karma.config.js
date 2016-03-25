@@ -7,13 +7,15 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const paths = require('./helpers/config').paths;
+const paths = require('./config').paths;
 const srcPath = paths.srcPath;
 const testPath = paths.testPath;
 
 module.exports = {
 
     debug: true,
+
+    devtool: 'inline-source-map',
 
     resolve: {
         //root: [srcPath, testPath],

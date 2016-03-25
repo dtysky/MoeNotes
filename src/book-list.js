@@ -148,6 +148,7 @@ class BookList extends React.Component {
                 "onLoad",
                 "refresh",
                 "create",
+                "load",
                 "rename",
                 "remove",
                 "select",
@@ -181,8 +182,13 @@ class BookList extends React.Component {
         this.select();
     }
 
+    load() {
+
+    }
+
     remove(index) {
         Storage.removeBook(index);
+        //if empty, load book!
         this.props.handleChangeBook();
         this.refresh();
     }

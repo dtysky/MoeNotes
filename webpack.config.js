@@ -7,7 +7,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const paths = require('./helpers/config').paths;
+const paths = require('./config').paths;
 const srcPath = paths.srcPath;
 
 module.exports = {

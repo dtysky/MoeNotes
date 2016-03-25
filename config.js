@@ -6,7 +6,7 @@
 
 const path = require('path');
 
-const rootPath = path.resolve(__dirname, '../');
+const rootPath = path.resolve(__dirname, './');
 const paths = {
     rootPath: rootPath,
     srcPath: path.join(rootPath, 'src'),

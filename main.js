@@ -8,7 +8,7 @@
 const app = require('app');
 const jade = require('jade');
 const BrowserWindow = require("browser-window");
-const paths = require('./helpers/config').paths;
+const paths = require('./config').paths;
 
 var mainWindow = null;
 

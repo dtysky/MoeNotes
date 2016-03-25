@@ -63,7 +63,10 @@ class PageList extends SortableList {
         }
         Storage.remove(index, chapter);
         if(index === Storage.getNow(chapter)){
-            Storage.change(0, chapter);
+            Storage.change(
+                Storage.getIndexes(chapter)[0],
+                chapter
+            );
         }
         this.props.handlerChangePage();
         this.refresh();
