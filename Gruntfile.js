@@ -34,6 +34,12 @@ module.exports = function (grunt) {
             }
         },
 
+        karma: {
+            unit: {
+                configFile: './karma.config.js'
+            }
+        },
+
         'build-atom-shell': {
             tag: 'v0.19.5',
             nodeVersion: '0.18.0',
@@ -45,6 +51,8 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('debug', ['webpack-dev-server']);
+
+    grunt.registerTask('unittest', ['karma']);
 
     grunt.registerTask('build', ['build-atom-shell']);
 

@@ -46,7 +46,7 @@ module.exports = function(config) {
                 },
                 {
                     type: 'html',
-                    dir: 'build/reports/coverage'
+                    dir: 'reports/coverage'
                 }
             ]
         },

@@ -27,15 +27,30 @@ module.exports = {
         fs: "empty"
     },
 
+    isparta: {
+        embedSource: true,
+        noAutoWrap: true,
+        babel: {
+            presets: ["es2015", "react"]
+        }
+    },
+
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: [
+                    /node_modules/,
+                    srcPath
+                ],
                 loaders: [
                     'babel?presets[]=react,presets[]=es2015'
                 ]
-                //include : srcPath
+            },
+            {
+                test: /\.js$/,
+                include: srcPath,
+                loader: 'isparta'
             },
             {
                 test: /\.css$/,
