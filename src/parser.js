@@ -7,8 +7,10 @@
 "use strict";
 
 import markdown from 'marked';
-import defaultHighlight from '../config';
+import config from './config';
 import katex from 'parse-katex';
+
+const defaultHighlight = config.defaultHighlight;
 
 function highlight(code, callback){
     var re = /:::(\S+)\n([\s\S]+)/.exec(code);
@@ -37,15 +39,10 @@ const options = {
 };
 
 
-function parse(page){
+export default function parse(page){
     var html = markdown.parse(
         page,
         options
     );
     return katex.renderLaTeX(html);
 }
-
-
-module.exports = {
-    parse: parse
-};

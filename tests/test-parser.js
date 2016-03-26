@@ -4,24 +4,17 @@
  * Description: Testing for parser.
  */
 
-//import fs from 'fs';
-import path from 'path';
-import paths from '../config';
 
-const srcPath = paths.srcPath;
-const parser = require(
-    path.join(srcPath, 'parser')
-);
+import parse from '../src/parser';
+import { markdown, html } from './testcase-parser';
 
 describe("parser", () => {
     it("Should return html base on markdown string", () => {
-        //const testPage = fs.readFileSync('test-parser.md').toString();
-        //
-        //function test(page){
-        //    fs.writeFileSync('test-parser.html', parser.parse(page));
-        //}
-        //
-        //test(testPage);
-        expect(1 === 2).toBe(true);
+        var domParser = new DOMParser();
+        expect(
+            domParser.parseFromString(parse(markdown), "text/xml").isEqualNode(
+                domParser.parseFromString(html, "text/xml")
+            )
+        ).toBe(true);
     })
 });

@@ -7,10 +7,9 @@
 const webpack = require("webpack");
 const path = require("path");
 const webpackConfig = require('./webpack.karma.config.js');
-const paths = require('./config').paths;
 
-const srcFiles = paths.srcPath + "/*.js";
-const testFiles = paths.testPath + "/test-*.js";
+const srcFiles = "./src/*.js";
+const testFiles = "./tests/test-*.js";
 
 var preprocessors = {};
 preprocessors[testFiles] = ["webpack", "sourcemap"];
@@ -27,7 +26,7 @@ module.exports = function(config) {
         preprocessors: preprocessors,
         webpack: webpackConfig,
         webpackMiddleware: {
-            noInfo: false,
+            noInfo: true,
             stats: {
                 colors: true
             }
@@ -36,7 +35,8 @@ module.exports = function(config) {
             require("karma-webpack"),
             require("karma-jasmine"),
             require("karma-chrome-launcher"),
-            require("karma-coverage")
+            require("karma-coverage"),
+            require("karma-sourcemap-loader")
         ],
         reporters: ["dots", 'coverage'],
         coverageReporter: {
@@ -55,6 +55,6 @@ module.exports = function(config) {
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ["Chrome"],
-        singleRun: true
+        singleRun: false
     });
 };

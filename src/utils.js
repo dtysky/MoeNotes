@@ -1,7 +1,7 @@
 /**
  * Copyright(c) dtysky<dtysky@outlook.com>
  * Created: 16/3/18
- * Description: Configure.
+ * Description: Some useful tools.
  */
 
 export function bindFunctions(self, methods){

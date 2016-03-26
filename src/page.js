@@ -6,11 +6,11 @@
 
 'use strict';
 
-import { parse } from './parser';
 import React from 'react';
 import ReactDom from 'react-dom';
 import Storage from './storage';
 import { debounce } from 'lodash';
+import parse from './parser';
 import AceEditor from './editor';
 import { bindFunctions } from './utils';
 

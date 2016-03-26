@@ -1,7 +1,7 @@
 /**
  * Copyright(c) dtysky<dtysky@outlook.com>
  * Created: 16/3/18
- * Description: Some useful tools.
+ * Description: Configure.
  */
 
 const path = require('path');
@@ -15,6 +15,5 @@ const paths = {
 };
 
 module.exports = {
-    paths: paths,
-    defaultHighlight: 'VHDL'
+    paths: paths
 };

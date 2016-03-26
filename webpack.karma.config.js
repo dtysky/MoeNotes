@@ -18,9 +18,13 @@ module.exports = {
     devtool: 'inline-source-map',
 
     resolve: {
-        //root: [srcPath, testPath],
+        root: [srcPath],
         extensions: ["", ".webpack.js", ".web.js", ".js"],
         alias: {}
+    },
+
+    node: {
+        fs: "empty"
     },
 
     module: {
