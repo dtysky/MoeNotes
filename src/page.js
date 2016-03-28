@@ -14,10 +14,6 @@ import parse from './parser';
 import AceEditor from './editor';
 import { bindFunctions } from './utils';
 
-import 'brace/ext/searchbox';
-import 'brace/mode/markdown';
-import './theme/styles/magic-book';
-
 import './theme/styles/sky.css';
 import './theme/styles/highlight.css';
 import './theme/styles/katex.css';
@@ -86,14 +82,9 @@ class Page extends React.Component{
                         name="src"
                         value={this.state.markdown}
                         fontSize={14}
+                        tabSize={4}
                         onChange={this.onChange}
                         onChangeScrollTop={this.onScroll}
-                        mode="markdown"
-                        theme="magic-book"
-                        showGutter={false}
-                        showPrintMargin={false}
-                        wrapEnabled={true}
-                        editorProps={{$blockScrolling: true}}
                     />
                 </div>
                 <div
