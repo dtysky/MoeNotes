@@ -42,7 +42,8 @@ export const treeWithoutTree = {
     now: "cp1",
     indexes: [
         "cp1",
-        "cp2"
+        "cp2",
+        "cp3"
     ],
     chapters: {
         cp1: {
@@ -53,7 +54,7 @@ export const treeWithoutTree = {
             ]
         },
         cp2: {
-            now: "page2",
+            now: "page1",
             indexes: [
                 "page1",
                 "page2"

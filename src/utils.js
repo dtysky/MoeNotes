@@ -25,7 +25,12 @@ export function getFiles(dp) {
         if(!fs.statSync(path.join(dp, file)).isFile()){
             return null;
         }
-        return file.replace(/^.*[\\\/].*\./, '') === "md";
+        if (file.replace(/^.*\./, '') !== "md"){
+            return null;
+        }
+        return file;
+    }).map(file => {
+        return file.replace(".md", '');
     });
 }
 

@@ -5,7 +5,7 @@
  */
 
 import TestUtils from 'react-addons-test-utils';
-import _ from 'underscore';
+import lodash from 'lodash';
 import path from 'path';
 import fs from 'fs';
 
@@ -32,7 +32,7 @@ export function arrayIsEqual(a1, a2){
 }
 
 export function objectIsEqual(obj1, obj2){
-    return _.isEqual(obj1, obj2);
+    return lodash.isEqual(obj1, obj2);
 }
 
 function getDirectories(dp) {
@@ -41,12 +41,15 @@ function getDirectories(dp) {
     });
 }
 
-function getFiles(dp) {
+export function getFiles(dp) {
     return fs.readdirSync(dp).filter(file => {
         if(!fs.statSync(path.join(dp, file)).isFile()){
             return null;
         }
-        return file.replace(/^.*[\\\/].*\./, '') === "md";
+        if (file.replace(/^.*\./, '') !== "md"){
+            return null;
+        }
+        return file;
     });
 }
 
@@ -57,7 +60,8 @@ export function loadBook(dp) {
         book[dp][cp] = {};
         getFiles(path.join(dp, cp)).forEach(f => {
             book[dp][cp][f] = fs.readFileSync(
-                path.join(dp, cp, f)
+                path.join(dp, cp, f),
+                "utf8"
             );
         });
     });

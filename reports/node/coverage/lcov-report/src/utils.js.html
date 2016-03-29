@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">56% </span>
+        <span class="strong">82.14% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/25</span>
+        <span class='fraction'>23/28</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">70% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>7/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">42.11% </span>
+        <span class="strong">77.27% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/19</span>
+        <span class='fraction'>17/22</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -84,7 +84,12 @@
 39
 40
 41
-42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+42
+43
+44
+45
+46
+47</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,26 +106,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">7×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -141,27 +151,32 @@ export <span class="fstat-no" title="function not covered" >function bindFunctio
     });
 }
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function getDirectories(dp) {</span>
-    return <span class="cstat-no" title="statement not covered" >fs.readdirSync(dp).filter(<span class="fstat-no" title="function not covered" >file =&gt; {</span></span>
-        return <span class="cstat-no" title="statement not covered" >fs.statSync(path.join(dp, file)).isDirectory();</span>
+export function getDirectories(dp) {
+    return fs.readdirSync(dp).filter(file =&gt; {
+        return fs.statSync(path.join(dp, file)).isDirectory();
     });
 }
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function getFiles(dp) {</span>
-    return <span class="cstat-no" title="statement not covered" >fs.readdirSync(dp).filter(<span class="fstat-no" title="function not covered" >file =&gt; {</span></span>
-        i</span>f(<span class="cstat-no" title="statement not covered" >!fs.statSync(path.join(dp, file)).isFile()){
+export function getFiles(dp) {
+    return fs.readdirSync(dp).filter(file =&gt; {
+        if(<span class="missing-if-branch" title="if path not taken" >I</span>!fs.statSync(path.join(dp, file)).isFile()){
             return <span class="cstat-no" title="statement not covered" >null;</span>
         }
-        return <span class="cstat-no" title="statement not covered" >file.replace(/^.*[\\\/].*\./, '') === "md";</span>
+        if (<span class="missing-if-branch" title="if path not taken" >I</span>file.replace(/^.*\./, '') !== "md"){
+            return <span class="cstat-no" title="statement not covered" >null;</span>
+        }
+        return file;
+    }).map(file =&gt; {
+        return file.replace(".md", '');
     });
 }
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function getNameFromPath(p) {</span>
-    return <span class="cstat-no" title="statement not covered" >p.replace(/^.*[\\\/]/, '');</span>
+export function getNameFromPath(p) {
+    return p.replace(/^.*[\\\/]/, '');
 }
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function arrayIsEqual(a1, a2){</span>
-    return <span class="cstat-no" title="statement not covered" >a1.toString() === a2.toString();</span>
+export function arrayIsEqual(a1, a2){
+    return a1.toString() === a2.toString();
 }
 &nbsp;
 export <span class="fstat-no" title="function not covered" >function arrayHas(a, e){</span>
@@ -172,7 +187,7 @@ export <span class="fstat-no" title="function not covered" >function arrayHas(a,
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Mar 29 2016 15:31:11 GMT+0800 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Mar 29 2016 19:56:48 GMT+0800 (CST)
 </div>
 </div>
 <script src="../prettify.js"></script>

@@ -10,6 +10,7 @@ import deepcopy from 'deepcopy';
 import fs from 'fs';
 import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas } from './utils';
 
+
 export default class StorageBook{
     constructor(dp){
         this.book = {};
@@ -18,8 +19,7 @@ export default class StorageBook{
 
     load(dp) {
         const treePath = path.join(dp, ".tree");
-        if (!path.exists(treePath)){
-            this.createTree(dp);
+        if (!fs.existsSync(treePath)){
             fs.writeFileSync(
                 treePath,
                 JSON.stringify(this.createTree(dp))
@@ -34,18 +34,20 @@ export default class StorageBook{
         book.index = getNameFromPath(dp);
         book.indexes = [];
         book.chapters = {};
-        getDirectories(dp).forEach(index => {
-            const files = getFiles(path.join(dp, index));
-            book.indexes.push(index);
+        getDirectories(dp).forEach(cp => {
+            const files = getFiles(path.join(dp, cp));
+            book.indexes.push(cp);
+            book.chapters[cp] = {};
             if (files.length === 0){
-                book.chapters.indexes = [];
-                book.chapters.now = "";
+                book.chapters[cp].indexes = [];
+                book.chapters[cp].now = "";
                 return;
             }
-            book.chapters.indexes = files;
-            book.chapters.now = files[0];
+            book.chapters[cp].indexes = files;
+            book.chapters[cp].now = files[0];
         });
         book.now = book.indexes[0];
+        return book;
     }
 
     recreateIndexesWithNow(oldObj, newObj){
@@ -61,7 +63,7 @@ export default class StorageBook{
 
     parse(dp){
         const treePath = path.join(dp, ".tree");
-        let treeRecord = JSON.load(treePath);
+        let treeRecord = JSON.parse(fs.readFileSync(treePath, "utf8"));
         let treeNow = this.createTree(dp);
         treeRecord = this.recreateIndexesWithNow(treeRecord, treeNow);
         for(let key in treeRecord.chapters){
@@ -90,7 +92,7 @@ export default class StorageBook{
         return path.join(
             this.book.root,
             chapter,
-            name
+            name + ".md"
         );
     }
 
@@ -112,7 +114,8 @@ export default class StorageBook{
     readNowPage(){
         const chapter = this.getNow();
         return fs.readFileSync(
-            this.getPath(this.getNow(chapter), chapter)
+            this.getPath(this.getNow(chapter), chapter),
+            "utf8"
         );
     }
 

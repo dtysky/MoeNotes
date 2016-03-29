@@ -17,15 +17,12 @@ describe("StorageBook ", () => {
     describe("Without tree", () => {
         beforeEach(() => {
             initWithoutTree();
-            tree = deepcopy(tree);
+            tree = deepcopy(treeWithoutTree);
             files = deepcopy(filesWithoutTree);
-            storage = StorageBook("book1");
+            storage = new StorageBook("book1");
         });
 
         it("Initialize", () => {
-            expect(
-                objectIsEqual(loadBook("book1"), tree)
-            ).toBe(true);
             expect(
                 objectIsEqual(storage.book, tree)
             ).toBe(true);
