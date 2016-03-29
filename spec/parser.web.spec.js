@@ -7,14 +7,12 @@
 
 import parse from '../src/parser';
 import { markdown, html } from './testcase-parser';
+import { DomIsEqual } from './utils';
 
 describe("parser", () => {
     it("Should return html base on markdown string", () => {
-        var domParser = new DOMParser();
         expect(
-            domParser.parseFromString(parse(markdown), "text/xml").isEqualNode(
-                domParser.parseFromString(html, "text/xml")
-            )
+            DomIsEqual(parse(markdown), html)
         ).toBe(true);
     })
 });

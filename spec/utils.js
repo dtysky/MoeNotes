@@ -20,6 +20,13 @@ function createDom(htmlStr) {
 }
 export { createDom };
 
+export function DomIsEqual(domString1, domString2){
+    let domParser = new DOMParser();
+    return domParser.parseFromString(domString1, "text/xml").isEqualNode(
+        domParser.parseFromString(domString2, "text/xml")
+    );
+}
+
 export function arrayIsEqual(a1, a2){
     return a.toString() === b.toString();
 }

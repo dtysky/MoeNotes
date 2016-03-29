@@ -18,14 +18,9 @@ module.exports = {
     devtool: 'inline-source-map',
 
     resolve: {
-        //root: [srcPath],
         extensions: ["", ".webpack.js", ".web.js", ".js"],
         alias: {}
     },
-
-    //node: {
-    //    fs: require("mock-fs")
-    //},
 
     isparta: {
         embedSource: true,

@@ -9,7 +9,7 @@ const path = require("path");
 const webpackConfig = require('./webpack.karma.config.js');
 
 const srcFiles = "./src/*.js";
-const testFiles = "./tests/test-*.js";
+const testFiles = "./spec/*.web.spec.js";
 
 var preprocessors = {};
 preprocessors[testFiles] = ["webpack", "sourcemap"];
@@ -18,9 +18,8 @@ preprocessors[srcFiles] = ["webpack", "sourcemap", "coverage"];
 module.exports = function(config) {
     config.set({
         basePath: "",
-        frameworks: ["jasmine"],
+        frameworks: ["jasmine", "requirejs"],
         files: [
-            //srcFiles,
             testFiles
         ],
         preprocessors: preprocessors,
@@ -34,9 +33,10 @@ module.exports = function(config) {
         plugins: [
             require("karma-webpack"),
             require("karma-jasmine"),
-            require("karma-chrome-launcher"),
+            require("karma-PhantomJS-launcher"),
             require("karma-coverage"),
-            require("karma-sourcemap-loader")
+            require("karma-sourcemap-loader"),
+            require("karma-requirejs")
         ],
         reporters: ["dots", 'coverage'],
         coverageReporter: {
@@ -46,7 +46,7 @@ module.exports = function(config) {
                 },
                 {
                     type: 'html',
-                    dir: 'reports/coverage'
+                    dir: 'reports/components/coverage'
                 }
             ]
         },
@@ -54,7 +54,7 @@ module.exports = function(config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ["Chrome"],
+        browsers: ["PhantomJS"],
         singleRun: false
     });
 };

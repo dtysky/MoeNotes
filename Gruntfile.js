@@ -11,7 +11,9 @@ const paths = require('./config').paths;
 
 module.exports = function (grunt) {
     // Let *load-grunt-tasks* require everything
-    require('load-grunt-tasks')(grunt);
+    require('load-grunt-tasks')(grunt, {
+        pattern: ['grunt-*', '!grunt-template-jasmine-istanbul']
+    });
 
     // Read configuration from package.json
     var pkgConfig = grunt.file.readJSON('package.json');
@@ -46,13 +48,21 @@ module.exports = function (grunt) {
             buildDir: (process.env.TMPDIR || process.env.TEMP || '/tmp') + '/atom-shell',
             projectName: 'mycoolapp',
             productName: 'MyCoolApp'
+        },
+
+        shell: {
+            test: {
+                command: 'node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/jasmine --colors'
+            }
         }
 
     });
 
     grunt.registerTask('debug', ['webpack-dev-server']);
 
-    grunt.registerTask('unittest', ['karma']);
+    grunt.registerTask('test-web', ['karma']);
+
+    grunt.registerTask('test-node', ['shell:test']);
 
     grunt.registerTask('build', ['build-atom-shell']);
 

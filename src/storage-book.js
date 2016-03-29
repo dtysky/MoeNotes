@@ -36,10 +36,12 @@ export default class StorageBook{
         book.chapters = {};
         getDirectories(dp).forEach(index => {
             const files = getFiles(path.join(dp, index));
+            book.indexes.push(index);
             if (files.length === 0){
+                book.chapters.indexes = [];
+                book.chapters.now = "";
                 return;
             }
-            book.indexes.push(index);
             book.chapters.indexes = files;
             book.chapters.now = files[0];
         });

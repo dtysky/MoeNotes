@@ -1,0 +1,23 @@
+verbose: false
+instrumentation:
+    root: ./src
+    default-excludes: true
+    excludes: []
+    embed-source: false
+    variable: __coverage__
+    compact: true
+    preserve-comments: false
+    complete-copy: false
+    save-baseline: false
+    baseline-file: ./reports/node/coverage/coverage-baseline.json
+reporting:
+    print: summary
+    reports:
+        - lcov
+        - cobertura
+    dir: ./reports/node/coverage
+    watermarks:
+        statements: [50, 80]
+        lines: [50, 80]
+        functions: [50, 80]
+        branches: [50, 80]

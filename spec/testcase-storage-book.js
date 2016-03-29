@@ -16,7 +16,8 @@ export function initWithoutTree(){
             cp2: {
                 "page1.md": "Here is page1 in cp2",
                 "page2.md": "Here is page2 in cp2"
-            }
+            },
+            cp3: null
         }
     })
 }
@@ -30,7 +31,8 @@ export const filesWithoutTree = {
         cp2: {
             "page1.md": "Here is page1 in cp2",
             "page2.md": "Here is page2 in cp2"
-        }
+        },
+        cp3: {}
     }
 };
 
@@ -56,6 +58,10 @@ export const treeWithoutTree = {
                 "page1",
                 "page2"
             ]
+        },
+        cp3: {
+            now: "",
+            indexes: []
         }
     }
 };

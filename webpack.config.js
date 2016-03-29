@@ -36,18 +36,14 @@ module.exports = {
     devtool: false,
 
     resolve: {
-        root: [srcPath],
+        //root: [srcPath],
         extensions: ["", ".webpack.js", ".web.js", ".js"],
         alias: {
             config: "config.js"
         }
     },
 
-    target: "web",
-
-    node:{
-        fs: "empty"
-    },
+    target: "electron",
 
     module: {
         preLoaders: [{
