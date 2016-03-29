@@ -8,7 +8,7 @@
 import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
-import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas } from './utils';
+import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
 
 
 export default class StorageBook{
@@ -51,7 +51,7 @@ export default class StorageBook{
     }
 
     recreateIndexesWithNow(oldObj, newObj){
-        if(arrayIsEqual(oldObj.indexes, newObj.indexes)){
+        if(arrayIsLike(oldObj.indexes, newObj.indexes)){
             return oldObj;
         }
         oldObj.indexes = newObj.indexes;
@@ -63,14 +63,29 @@ export default class StorageBook{
 
     parse(dp){
         const treePath = path.join(dp, ".tree");
-        let treeRecord = JSON.parse(fs.readFileSync(treePath, "utf8"));
+        let treeRecord = JSON.parse(
+            fs.readFileSync(treePath, "utf8")
+        );
         let treeNow = this.createTree(dp);
         treeRecord = this.recreateIndexesWithNow(treeRecord, treeNow);
         for(let key in treeRecord.chapters){
+            if(!arrayHas(treeNow.indexes, key)){
+                treeRecord.indexes.splice(
+                    treeRecord.indexes.indexOf(key) ,1
+                );
+                delete treeRecord.chapters[key];
+                continue;
+            }
             treeRecord.chapters[key] = this.recreateIndexesWithNow(
                 treeRecord.chapters[key],
                 treeNow.chapters[key]
             );
+        }
+        for(let key in treeNow.chapters){
+            if(!arrayHas(treeRecord.indexes, key)){
+                treeRecord.indexes.push(key);
+                treeRecord.chapters[key] = treeNow.chapters[key];
+            }
         }
         return treeRecord;
     };
@@ -125,7 +140,7 @@ export default class StorageBook{
             this.getPath(this.getNow(chapter), chapter),
             text
         );
-        const treePath = path.join(dp, ".tree");
+        const treePath = path.join(this.book.root, ".tree");
         fs.writeFileSync(
             treePath,
             JSON.stringify(this.book)
@@ -143,7 +158,6 @@ export default class StorageBook{
         if(chapter === undefined){
             return this.book.indexes.length === 0;
         }
-        console.log(chapter);
         return this.book.chapters[chapter].indexes.length === 0;
     }
 

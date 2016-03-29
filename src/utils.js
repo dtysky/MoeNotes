@@ -6,7 +6,8 @@
 
 import fs from 'fs';
 import path from 'path';
-
+import lodash from 'lodash';
+import deepcopy from 'deepcopy';
 
 export function bindFunctions(self, methods){
     methods.forEach(method => {
@@ -39,7 +40,13 @@ export function getNameFromPath(p) {
 }
 
 export function arrayIsEqual(a1, a2){
-    return a1.toString() === a2.toString();
+    return lodash.isEqual(a1, a2);
+}
+
+export function arrayIsLike(a1, a2){
+    let a1_tmp = deepcopy(a1).sort();
+    let a2_tmp = deepcopy(a2).sort();
+    return lodash.isEqual(a1_tmp, a2_tmp)
 }
 
 export function arrayHas(a, e){

@@ -28,7 +28,7 @@ export function DomIsEqual(domString1, domString2){
 }
 
 export function arrayIsEqual(a1, a2){
-    return a.toString() === b.toString();
+    return lodash.isEqual(a1, a2);
 }
 
 export function objectIsEqual(obj1, obj2){
