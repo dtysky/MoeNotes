@@ -135,3 +135,22 @@ export function initWithTree(){
 }
 
 export { filesWithTree, treeWithTree };
+
+
+const filesEmpty = {
+    book1: {}
+};
+
+export function initEmpty(){
+    mock(filesEmpty);
+}
+
+export { filesEmpty };
+
+export const treeEmpty = {
+    index: "book1",
+    root: "book1",
+    now: "",
+    indexes: [],
+    chapters: {}
+};

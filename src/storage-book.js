@@ -47,7 +47,12 @@ export default class StorageBook{
             book.chapters[cp].indexes = files;
             book.chapters[cp].now = files[0];
         });
-        book.now = book.indexes[0];
+        if(book.indexes.length === 0){
+            book.now = "";
+        }
+        else{
+            book.now = book.indexes[0];
+        }
         return book;
     }
 

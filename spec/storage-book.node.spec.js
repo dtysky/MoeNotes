@@ -9,6 +9,7 @@ import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { initWithoutTree, filesWithoutTree, treeWithoutTree } from './testcase-storage-book';
 import { initWithTree, filesWithTree, treeWithTree } from './testcase-storage-book';
+import { initEmpty, filesEmpty, treeEmpty } from './testcase-storage-book';
 import { arrayIsEqual, objectIsEqual, loadBook } from './utils';
 
 import fs from 'fs';
@@ -204,6 +205,23 @@ describe("StorageBook ", () => {
             initWithTree();
             tree = deepcopy(treeWithTree);
             files = deepcopy(filesWithTree);
+            storage = new StorageBook("book1");
+        });
+
+        it("Initialize", () => {
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+        });
+
+        afterEach(mock.restore);
+    });
+
+    describe("Empty dir", () => {
+        beforeEach(() => {
+            initEmpty();
+            tree = deepcopy(treeEmpty);
+            files = deepcopy(filesEmpty);
             storage = new StorageBook("book1");
         });
 
