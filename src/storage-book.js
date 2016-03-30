@@ -9,7 +9,7 @@ import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
 import rmdir from 'rimraf';
-import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
+import { getDirectories, getFiles, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
 
 
 export default class StorageBook{
@@ -32,7 +32,6 @@ export default class StorageBook{
     createTree(dp){
         let book = {};
         book.root = dp;
-        book.index = getNameFromPath(dp);
         book.indexes = [];
         book.chapters = {};
         getDirectories(dp).forEach(cp => {

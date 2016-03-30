@@ -7,67 +7,67 @@
 
 import path from 'path';
 import deepcopy from 'deepcopy';
+import fs from 'fs';
+import StorageBook from './storage-book';
+import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
 
 
-export class StorageTop {
-    constructor(){
-        this.books = {
-            indexes: [
-                "test1",
-                "test2",
-                "test3",
-                "test4"
-            ],
-            names: {
-                test1: "book1",
-                test2: "book22",
-                test3: "book333",
-                test4: "book4444"
-            },
-            paths: {
-                test1: "./book1",
-                test2: "./book2",
-                test3: "./book3",
-                test4: "./book4"
-            }
-        };
+export default class StorageTop {
+    constructor(treePath){
+        this.treePath = treePath;
+        this.books = {};
+        this.cache = {};
+        this.nowBook = null;
+        this.load();
     }
 
     load() {
-        //如果已经存在.tree
+        if(!fs.existsSync(this.treePath)){
+            this.books = this.createTree();
+            this.save();
+        }
+        this.parse();
+    }
 
-        //否则,创建
-
+    //indexes: books' paths
+    createTree(){
+        let books = {
+            now: "",
+            indexes: {},
+            names: {}
+        };
+        return books;
     }
 
     parse(){
-        var tmp = {
-            root: dp,
-            nowChapter: dp + "/" + "test1",
-            indexes: [],
-            chapters: {}
-        };
-        ["test1", "test2", "test3", "test4"].forEach((name) => {
-            tmp.indexes.push(dp +"/" + name);
-            tmp.chapters[dp +"/" + name] = {
-                indexes: [
-                    name + "test1",
-                    name + "test2",
-                    name + "test3",
-                    name + "test4"
-                ],
-                nowPage: name
-            };
-        });
-        return tmp;
-    }
-
-    getNow(){
-        return this.nowBook.index;
+        let treeRecord = JSON.parse(
+            fs.readFileSync(this.treePath, "utf8")
+        );
+        for(let index in treeRecord.indexes){
+            if(!fs.existsSync(index)){
+                treeRecord.indexes.splice(
+                    treeRecord.indexes.indexOf(key)
+                );
+                delete treeRecord.names[index];
+                continue;
+            }
+            this.cache[index] = new StorageBook(index);
+        }
+        if(this.books.indexes.length === 0){
+            this.books.now = "";
+        }
+        else if(arrayHas(treeRecord, this.books.now)){
+            this.books.now = this.books.indexes[0];
+        }
+        this.books = treeRecord;
     }
 
     getIndexes() {
         return this.books.indexes;
+    }
+
+    has(index){
+        return this.books.indexes.indexOf(index) > -1;
     }
 
     getName(index) {
@@ -82,22 +82,27 @@ export class StorageTop {
         if(index === this.nowBook.index){
             return;
         }
-        this.nowBook = this.parse(
-            this.books.paths[index]
-        );
-        this.nowBook.index = index;
+        this.nowBook = this.cache[index];
     }
 
-    create(name) {
-        var nowPath = path.join(this.nowBook.root, name);
-        //create
+    save(){
+        fs.writeSync(
+            this.treePath,
+            JSON.stringify(this.books)
+        );
+    }
+
+    create(dp, name) {
+        this.books.indexes.push(dp);
+        this.books.names[dp] = name;
+        this.cache[dp] = new StorageBook(dp);
     }
 
     remove(index) {
         const i = this.books.indexes.indexOf(index);
         this.books.indexes.splice(i, 1);
         delete this.books.names[index];
-        delete this.books.paths[index];
+        delete this.cache[index];
     }
 
     rename(index, name) {

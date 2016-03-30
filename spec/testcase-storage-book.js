@@ -28,7 +28,6 @@ export function initWithoutTree(){
 export { filesWithoutTree };
 
 export const treeWithoutTree = {
-    index: "book1",
     root: "book1",
     now: "cp1",
     indexes: [
@@ -60,7 +59,6 @@ export const treeWithoutTree = {
 
 
 const treeWithTree = {
-    index: "book1",
     root: "book1",
     now: "cp1",
     indexes: [
@@ -86,7 +84,6 @@ const treeWithTree = {
 };
 
 const treeFilesWithTree= {
-    index: "book1",
     root: "book1",
     now: "cp3",
     indexes: [
@@ -148,7 +145,6 @@ export function initEmpty(){
 export { filesEmpty };
 
 export const treeEmpty = {
-    index: "book1",
     root: "book1",
     now: "",
     indexes: [],
