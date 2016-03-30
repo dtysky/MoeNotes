@@ -67,6 +67,7 @@
     "react-burger-menu": "^1.5.7",
     "react-contextmenu": "^1.2.0",
     "react-dom": "^0.14.7",
+    "rimraf": "^2.5.2",
     "underscore": "^1.8.3"
   }
 }

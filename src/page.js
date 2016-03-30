@@ -8,7 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import Storage from './storage';
+import Storage from './storage-top';
 import { debounce } from 'lodash';
 import parse from './parser';
 import AceEditor from './editor';

@@ -15,7 +15,7 @@ const filesWithoutTree = {
         cp2: {
             "page1.md": "Here is page1 in cp2",
             "page2.md": "Here is page2 in cp2",
-            "page3": "This page will not be parsed"
+            "page3.x": "This page will not be parsed"
         },
         cp3: {}
     }

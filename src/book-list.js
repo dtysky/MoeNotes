@@ -9,7 +9,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 const Menu = require('react-burger-menu').slide;
-import Storage from './storage';
+import Storage from './storage-top';
 import Notify from './notify';
 import { bindFunctions } from './utils';
 

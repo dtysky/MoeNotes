@@ -10,7 +10,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Sortable, { SortableItemMixin } from 'react-anything-sortable';
 import Notify from './notify';
-import Storage from './storage';
+import Storage from './storage-top';
 import { ContextMenuMain, ContextMenuLayer } from './context-menu';
 import { bindFunctions } from './utils';
 

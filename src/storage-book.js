@@ -8,6 +8,7 @@
 import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
+import rmdir from 'rimraf';
 import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
 
 
@@ -120,8 +121,18 @@ export default class StorageBook{
 
     setIndexes(indexes, chapter) {
         if(chapter === undefined){
+            if(!arrayIsLike(indexes, this.book.indexes)){
+                throw new Error(
+                    `New book's indexes must be similar to old one !\n${indexes}\n${this.book.indexes}`
+                );
+            }
             this.book.indexes = indexes;
             return;
+        }
+        if(!arrayIsLike(indexes, this.getIndexes(chapter))) {
+            throw new Error(
+                `New chapter's indexes must be similar to old one !\n${indexes}\n${this.book.chapters[chapter].indexes}`
+            );
         }
         this.book.chapters[chapter].indexes = indexes;
     }
@@ -182,7 +193,7 @@ export default class StorageBook{
             fs.mkdir(newPath);
         }
         else{
-            fs.writeFileSync(newPath, "");
+            fs.writeFileSync(newPath + ".md", "");
         }
     }
 
@@ -190,22 +201,27 @@ export default class StorageBook{
         if(chapter === undefined){
             this.book.indexes.splice(no, 0, name);
             this.book.chapters[name] = {
-                indexes: []
+                indexes: [],
+                now: ""
             };
             this.createToDevice("folder", name);
             return;
         }
         this.book.chapters[chapter].indexes.splice(no, 0, name);
-        this.book.chapters[chapter].now = name;
         this.createToDevice(
             "file",
             path.join(chapter, name)
         );
     }
 
-    removeFromDevice(name) {
+    removeFromDevice(type, name) {
         let nowPath = path.join(this.book.root, name);
-        fs.unlinkSync(nowPath);
+        if(type === "file"){
+            fs.unlinkSync(nowPath + ".md");
+        }
+        else{
+            rmdir.sync(nowPath);
+        }
     }
 
     remove(name, chapter) {
@@ -213,7 +229,9 @@ export default class StorageBook{
         if(chapter === undefined){
             i = this.book.indexes.indexOf(name);
             this.book.indexes.splice(i, 1);
+            delete this.book.chapters[name];
             this.removeFromDevice(
+                "folder",
                 name
             );
             return;
@@ -221,6 +239,7 @@ export default class StorageBook{
         i = this.book.chapters[chapter].indexes.indexOf(name);
         this.book.chapters[chapter].indexes.splice(i, 1);
         this.removeFromDevice(
+            "file",
             path.join(chapter, name)
         );
     }
@@ -236,6 +255,8 @@ export default class StorageBook{
         if(chapter === undefined){
             i = this.book.indexes.indexOf(oldName);
             this.book.indexes[i] = name;
+            this.book.chapters[name] = this.book.chapters[oldName];
+            delete this.book.chapters[oldName];
             this.renameFromDevice(
                 oldName,
                 name
@@ -245,8 +266,8 @@ export default class StorageBook{
         i = this.book.chapters[chapter].indexes.indexOf(oldName);
         this.book.chapters[chapter].indexes[i] = name;
         this.renameFromDevice(
-            path.join(chapter, oldName),
-            path.join(chapter, name)
+            path.join(chapter, oldName) + ".md",
+            path.join(chapter, name) + ".md"
         );
     }
 }

@@ -46,9 +46,6 @@ export function getFiles(dp) {
         if(!fs.statSync(path.join(dp, file)).isFile()){
             return null;
         }
-        if (file.replace(/^.*\./, '') !== "md"){
-            return null;
-        }
         return file;
     });
 }

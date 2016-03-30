@@ -8,7 +8,7 @@
 
 import React from 'react';
 import SortableList from './sortable-list';
-import Storage from './storage';
+import Storage from './storage-top';
 import Notify from './notify';
 import { bindFunctions } from './utils';
 

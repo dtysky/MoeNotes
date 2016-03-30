@@ -60,10 +60,22 @@ describe("StorageBook ", () => {
         });
 
         it("Set indexes", () => {
+            try{
+                storage.setIndexes(["cp2", "cp1"]);
+            }
+            catch(e){
+                expect(e.message.split("\n")[0]).toBe("New book's indexes must be similar to old one !");
+            }
             storage.setIndexes(["cp3", "cp2", "cp1"]);
             expect(
                 arrayIsEqual(storage.getIndexes(), ["cp3", "cp2", "cp1"])
             ).toBe(true);
+            try{
+                storage.setIndexes(["page3", "page1"], "cp1");
+            }
+            catch(e){
+                expect(e.message.split("\n")[0]).toBe("New chapter's indexes must be similar to old one !");
+            }
             storage.setIndexes(["page2", "page1"], "cp1");
             expect(
                 arrayIsEqual(storage.getIndexes("cp1"), ["page2", "page1"])
@@ -112,6 +124,77 @@ describe("StorageBook ", () => {
             expect(storage.readNowPage()).toBe("Page1 in cp1 has been changed !");
         });
 
+        it("Create", () => {
+            storage.create(0, "cp0");
+            tree.indexes = ["cp0", "cp1", "cp2", "cp3"];
+            tree.chapters["cp0"] = {
+                indexes: [],
+                now: ""
+            };
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+            files.book1.cp0 = {};
+            expect(
+                objectIsEqual(loadBook("book1"), files)
+            ).toBe(true);
+            storage.create(0, "page0", "cp0");
+            tree.chapters.cp0.indexes = ["page0"];
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+            files.book1.cp0["page0.md"] = "";
+            expect(
+                objectIsEqual(loadBook("book1"), files)
+            ).toBe(true);
+        });
+
+        it("Remove", () => {
+            storage.remove("cp1");
+            tree.indexes = ["cp2", "cp3"];
+            delete tree.chapters.cp1;
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+            delete files.book1.cp1;
+            expect(
+                objectIsEqual(loadBook("book1"), files)
+            ).toBe(true);
+            storage.remove("page1", "cp2");
+            tree.chapters.cp2.indexes = ["page2"];
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+            delete files.book1.cp2["page1.md"];
+            expect(
+                objectIsEqual(loadBook("book1"), files)
+            ).toBe(true);
+        });
+
+        it("Rename", () => {
+            storage.rename("cp1", "cp0");
+            tree.indexes = ["cp0", "cp2", "cp3"];
+            tree.chapters.cp0 = tree.chapters.cp1;
+            delete tree.chapters.cp1;
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+            files.book1.cp0 = files.book1.cp1;
+            delete files.book1.cp1;
+            expect(
+                objectIsEqual(loadBook("book1"), files)
+            ).toBe(true);
+            storage.rename("page1", "page0", "cp2");
+            tree.chapters.cp2.indexes = ["page0", "page2"];
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBe(true);
+            files.book1.cp2["page0.md"] = files.book1.cp2["page1.md"];
+            delete files.book1.cp2["page1.md"];
+            expect(
+                objectIsEqual(loadBook("book1"), files)
+            ).toBe(true);
+        });
 
         afterEach(mock.restore);
     });
