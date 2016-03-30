@@ -8,7 +8,8 @@ import mock from 'mock-fs';
 
 const filesWithoutTree = {
     book1: {},
-    book2: {}
+    book2: {},
+    config: {}
 };
 
 export function initWithoutTree(){
@@ -20,7 +21,7 @@ export { filesWithoutTree };
 export const treeWithoutTree = {
     now: "",
     indexes: [],
-    names: []
+    names: {}
 };
 
 
@@ -30,10 +31,10 @@ const treeWithTree = {
         "book1",
         "book2"
     ],
-    names: [
-        "bookA",
-        "bookB"
-    ]
+    names: {
+        book1: "bookA",
+        book2: "bookB"
+    }
 };
 
 const treeFilesWithTree= {
@@ -43,11 +44,11 @@ const treeFilesWithTree= {
         "book2",
         "book4"
     ],
-    names: [
-        "bookA",
-        "bookB",
-        "bookD"
-    ]
+    names: {
+        book1: "bookA",
+        book2: "bookB",
+        book4: "bookD"
+    }
 };
 
 const filesWithTree = {

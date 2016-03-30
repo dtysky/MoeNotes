@@ -21,19 +21,21 @@ export default class StorageTop {
         this.load();
     }
 
-    load() {
+    load(){
         if(!fs.existsSync(this.treePath)){
             this.books = this.createTree();
             this.save();
         }
-        this.parse();
+        else{
+            this.parse();
+        }
     }
 
     //indexes: books' paths
     createTree(){
         let books = {
             now: "",
-            indexes: {},
+            indexes: [],
             names: {}
         };
         return books;
@@ -43,23 +45,25 @@ export default class StorageTop {
         let treeRecord = JSON.parse(
             fs.readFileSync(this.treePath, "utf8")
         );
-        for(let index in treeRecord.indexes){
+        treeRecord.indexes.forEach(index => {
             if(!fs.existsSync(index)){
                 treeRecord.indexes.splice(
-                    treeRecord.indexes.indexOf(key)
+                    treeRecord.indexes.indexOf(index)
                 );
                 delete treeRecord.names[index];
-                continue;
             }
-            this.cache[index] = new StorageBook(index);
-        }
+            else{
+                this.cache[index] = new StorageBook(index);
+            }
+        });
+        this.books = treeRecord;
         if(this.books.indexes.length === 0){
             this.books.now = "";
         }
-        else if(arrayHas(treeRecord, this.books.now)){
+        else if(!arrayHas(this.books.indexes, this.books.now)){
             this.books.now = this.books.indexes[0];
         }
-        this.books = treeRecord;
+        this.nowBook = this.cache[this.books.now];
     }
 
     getIndexes() {
@@ -79,14 +83,12 @@ export default class StorageTop {
     }
 
     change(index) {
-        if(index === this.nowBook.index){
-            return;
-        }
+        this.books.now = index;
         this.nowBook = this.cache[index];
     }
 
     save(){
-        fs.writeSync(
+        fs.writeFileSync(
             this.treePath,
             JSON.stringify(this.books)
         );

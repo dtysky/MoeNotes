@@ -9,12 +9,12 @@ import StorageBook from '../src/storage-book';
 import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { arrayIsEqual, objectIsEqual, loadBook } from './utils';
-import { initWithoutTree, filesWithoutTree, treeWithoutTree } from './testcase-storage-book';
-import { initWithTree, filesWithTree, treeWithTree } from './testcase-storage-book';
+import { initWithoutTree, filesWithoutTree, treeWithoutTree } from './testcase-storage-top';
+import { initWithTree, filesWithTree, treeWithTree } from './testcase-storage-top';
 
 import fs from 'fs';
 
-describe("StorageBook ", () => {
+describe("StorageTop ", () => {
     let tree = null;
     let files = null;
     let storage = null;
@@ -28,10 +28,7 @@ describe("StorageBook ", () => {
 
         it("Initialize", () => {
             expect(
-                objectIsEqual(storage.book, tree)
-            ).toBe(true);
-            expect(
-                objectIsEqual(JSON.parse(fs.readFileSync("./.tree")), tree)
+                objectIsEqual(storage.books, tree)
             ).toBe(true);
             expect(
                 objectIsEqual(storage.nowBook, new StorageBook("book1"))
@@ -57,7 +54,7 @@ describe("StorageBook ", () => {
 
         it("Has", () => {
             expect(storage.has("book1")).toBe(true);
-            expect(storage.has("book2")).toBe(false);
+            expect(storage.has("book3")).toBe(false);
         });
 
         it("Is empty", () => {
@@ -66,7 +63,7 @@ describe("StorageBook ", () => {
 
         it("Change", () => {
             storage.change("book2");
-            expect(storage.now).toBe("book2");
+            expect(storage.books.now).toBe("book2");
             expect(
                 objectIsEqual(storage.nowBook, new StorageBook("book2"))
             ).toBe(true);
@@ -87,16 +84,16 @@ describe("StorageBook ", () => {
         });
 
         it("Create", () => {
-            storage.create("book4", "bookD");
-            tree.indexes = ["book1", "book2", "book4"];
-            tree.names.book4 = "bookD";
+            storage.create("book3", "bookC");
+            tree.indexes = ["book1", "book2", "book3"];
+            tree.names.book3 = "bookC";
             expect(
-                objectIsEqual(storage.book, tree)
+                objectIsEqual(storage.books, tree)
             ).toBe(true);
             const cache = {
                 book1: new StorageBook("book1"),
                 book2: new StorageBook("book2"),
-                book3: new StorageBook("book4")
+                book3: new StorageBook("book3")
             };
             expect(
                 objectIsEqual(storage.cache, cache)
@@ -108,7 +105,7 @@ describe("StorageBook ", () => {
             tree.indexes = ["book2"];
             delete tree.names.book1;
             expect(
-                objectIsEqual(storage.book, tree)
+                objectIsEqual(storage.books, tree)
             ).toBe(true);
             const cache = {
                 book2: new StorageBook("book2")
@@ -123,7 +120,7 @@ describe("StorageBook ", () => {
             tree.indexes = ["book1", "book2"];
             tree.names.book1 = "bookX";
             expect(
-                objectIsEqual(storage.book, tree)
+                objectIsEqual(storage.books, tree)
             ).toBe(true);
         });
 
@@ -140,7 +137,11 @@ describe("StorageBook ", () => {
 
         it("Initialize", () => {
             expect(
-                objectIsEqual(storage.book, tree)
+                objectIsEqual(storage.books, tree)
+            ).toBe(true);
+            expect(storage.nowBook).toBe(null);
+            expect(
+                objectIsEqual(storage.cache, {})
             ).toBe(true);
         });
 
