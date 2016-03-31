@@ -30,7 +30,6 @@ export default class ReactAce extends Component {
     componentDidMount() {
         const {
             name,
-            onBeforeLoad,
             mode,
             theme,
             fontSize,
@@ -39,7 +38,6 @@ export default class ReactAce extends Component {
             highlightActiveLine,
             tabSize,
             keyboardHandler,
-            onLoad,
             } = this.props;
 
         this.editor = ace.edit(name);

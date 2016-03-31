@@ -8,7 +8,7 @@
 
 import React from 'react';
 import SortableList from './sortable-list';
-import Storage from './storage-top';
+import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions } from './utils';
 
@@ -20,7 +20,7 @@ class ChapterList extends SortableList {
         super(props);
         this.initState(
             "chapter-list",
-            Storage.getIndexes()
+            Storage.nowBook.getIndexes()
         );
         bindFunctions(
             this,
@@ -39,7 +39,7 @@ class ChapterList extends SortableList {
 
     refresh(callback){
         this._sortkey ++;
-        this.state.indexes = Storage.getIndexes();
+        this.state.indexes = Storage.nowBook.getIndexes();
         this.setState({}, callback === undefined ?
             () => {this.setScrollbar();}
             :
@@ -48,22 +48,22 @@ class ChapterList extends SortableList {
     }
 
     onSort(indexes) {
-        Storage.setIndexes(indexes);
+        Storage.nowBook.setIndexes(indexes);
         this.refresh();
     }
 
     remove(index) {
-        if(Storage.canNotRemove()){
+        if(Storage.nowBook.canNotRemove()){
             this.showNotify(
                 "error",
                 "Book should have more than one chapter !"
             );
             return;
         }
-        Storage.remove(index);
-        if(index === Storage.getNow()){
-            Storage.change(
-                Storage.getIndexes()[0]
+        Storage.nowBook.remove(index);
+        if(index === Storage.nowBook.getNow()){
+            Storage.nowBook.change(
+                Storage.nowBook.getIndexes()[0]
             );
         }
         this.props.handlerChangeChapter();
@@ -77,34 +77,34 @@ class ChapterList extends SortableList {
     }
 
     rename(index, name){
-        if(!Storage.has(index)){
-            Storage.create(
+        if(!Storage.nowBook.has(index)){
+            Storage.nowBook.create(
                 this.state.indexes.indexOf(index),
                 name
             );
         }
         else{
-            Storage.rename(index, name);
+            Storage.nowBook.rename(index, name);
         }
         this.select(name);
     }
 
     select(index){
-        Storage.change(index);
+        Storage.nowBook.change(index);
         this.props.handlerChangeChapter();
         this.refresh();
     }
 
     copy(index){
-        this.clipBoard = Storage.getPath(index);
+        this.clipBoard = Storage.nowBook.getPath(index);
     }
 
     reload(){
-        if(Storage.isEmpty()){
+        if(Storage.nowBook.isEmpty()){
             this.refresh(this.createEnd);
         }
         else{
-            this.select(Storage.getNow());
+            this.select(Storage.nowBook.getNow());
         }
     }
 

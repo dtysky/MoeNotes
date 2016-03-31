@@ -8,6 +8,7 @@
 const grunt = require('grunt');
 const webpackDevConfig = require('./webpack.config.js');
 const paths = require('./config').paths;
+const mock = require('mock-fs');
 
 module.exports = function (grunt) {
     // Let *load-grunt-tasks* require everything
@@ -58,7 +59,33 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('debug', ['webpack-dev-server']);
+    grunt.registerTask("mock", "Mock file system", function(){
+        mock({
+            ".tree": JSON.stringify({
+                now: "book1",
+                indexes: [
+                    "book1"
+                ],
+                names: {
+                    book1: "bookA"
+                }
+            }),
+            book1: {
+                book1: {
+                    cp1: {
+                        "page1.md": "Here is page1 in cp1",
+                        "page3.md": "Here is page3 in cp1"
+                    },
+                    cp2: {
+                        "page1.md": "Here is page1 in cp2",
+                        "page3.md": "Here is page3 in cp2"
+                    }
+                }
+            }
+        });
+    });
+
+    grunt.registerTask('debug', ["mock", 'webpack-dev-server']);
 
     grunt.registerTask('test-web', ['karma']);
 

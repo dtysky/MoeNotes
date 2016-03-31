@@ -8,7 +8,7 @@
 
 import React from 'react';
 import SortableList from './sortable-list';
-import Storage from './storage-top';
+import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions } from './utils';
 
@@ -20,7 +20,7 @@ class PageList extends SortableList {
         super(props);
         this.initState(
             "page-list",
-            Storage.getIndexes(Storage.getNow())
+            Storage.nowBook.getIndexes(Storage.nowBook.getNow())
         );
         bindFunctions(
             this,
@@ -39,7 +39,7 @@ class PageList extends SortableList {
 
     refresh(callback){
         this._sortkey ++;
-        this.state.indexes = Storage.getIndexes(Storage.getNow());
+        this.state.indexes = Storage.nowBook.getIndexes(Storage.nowBook.getNow());
         this.setState({}, callback === undefined ?
             () => {this.setScrollbar.bind(this);}
             :
@@ -48,23 +48,23 @@ class PageList extends SortableList {
     }
 
     onSort(indexes) {
-        Storage.setIndexes(indexes, Storage.getNow());
+        Storage.nowBook.setIndexes(indexes, Storage.nowBook.getNow());
         this.refresh();
     }
 
     remove(index) {
-        const chapter = Storage.getNow();
-        if(Storage.canNotRemove(chapter)){
+        const chapter = Storage.nowBook.getNow();
+        if(Storage.nowBook.canNotRemove(chapter)){
             this.showNotify(
                 "error",
                 "Chapter should have more than one page !"
             );
             return;
         }
-        Storage.remove(index, chapter);
-        if(index === Storage.getNow(chapter)){
-            Storage.change(
-                Storage.getIndexes(chapter)[0],
+        Storage.nowBook.remove(index, chapter);
+        if(index === Storage.nowBook.getNow(chapter)){
+            Storage.nowBook.change(
+                Storage.nowBook.getIndexes(chapter)[0],
                 chapter
             );
         }
@@ -79,36 +79,36 @@ class PageList extends SortableList {
     }
 
     rename(index, name){
-        if(!Storage.has(index, Storage.getNow())){
-            Storage.create(
+        if(!Storage.nowBook.has(index, Storage.nowBook.getNow())){
+            Storage.nowBook.create(
                 this.state.indexes.indexOf(index),
                 name,
-                Storage.getNow()
+                Storage.nowBook.getNow()
             );
         }
         else{
-            Storage.rename(index, name, Storage.getNow());
+            Storage.nowBook.rename(index, name, Storage.nowBook.getNow());
         }
         this.select(name);
     }
 
     select(index){
-        Storage.change(index, Storage.getNow());
+        Storage.nowBook.change(index, Storage.nowBook.getNow());
         this.props.handlerChangePage();
         this.refresh();
     }
 
     copy(index){
-        this.clipBoard = Storage.getPath(index, Storage.getNow());
+        this.clipBoard = Storage.nowBook.getPath(index, Storage.nowBook.getNow());
     }
 
     reload(){
-        if(Storage.isEmpty(Storage.getNow())){
+        if(Storage.nowBook.isEmpty(Storage.nowBook.getNow())){
             this.refresh(this.createEnd.bind(this));
         }
         else{
-            const chapter = Storage.getNow();
-            this.select(Storage.getNow(chapter));
+            const chapter = Storage.nowBook.getNow();
+            this.select(Storage.nowBook.getNow(chapter));
         }
     }
 

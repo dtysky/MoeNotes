@@ -14,13 +14,16 @@ class ConfigManager{
     constructor(){
         this.config = defaultConfig;
     }
-    load(config_path){
+    loadConfig(configPath){
 
     }
-    save(){
+    saveConfig(){
 
     }
-    getNow(){
+    getConfig(){
+        return this.config;
+    }
+    generateCss(stylesheetPath){
 
     }
 }

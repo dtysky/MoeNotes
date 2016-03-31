@@ -8,7 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import Storage from './storage-top';
+import Storage from './storage';
 import { debounce } from 'lodash';
 import parse from './parser';
 import AceEditor from './editor';
@@ -19,10 +19,10 @@ import './theme/styles/highlight.css';
 import './theme/styles/katex.css';
 import './theme/styles/article.css';
 
-class Page extends React.Component{
+export default class Page extends React.Component{
     constructor(props){
         super(props);
-        const text = Storage.readNowPage();
+        const text = Storage.nowBook.readNowPage();
         this.state = {
             markdown: text,
             html : parse(text)
@@ -54,7 +54,7 @@ class Page extends React.Component{
 
     reload(){
         this.refresh(
-            Storage.readNowPage()
+            Storage.nowBook.readNowPage()
         );
     }
 
@@ -101,5 +101,3 @@ class Page extends React.Component{
         );
     }
 }
-
-export default Page;
