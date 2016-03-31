@@ -9,13 +9,38 @@ import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
 import rmdir from 'rimraf';
-import { getDirectories, getFiles, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
+import { getDirectories, getFiles, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
 
 
 export default class StorageBook{
     constructor(dp){
         this.book = {};
         this.load(dp);
+        bindFunctions(
+            this,
+            [
+                "load",
+                "createTree",
+                "parser",
+                "getIndexes",
+                "getName",
+                "getNow",
+                "getPath",
+                "readNowPage",
+                "setIndexes",
+                "has",
+                "isEmpty",
+                "canNotRemove",
+                "change",
+                "save",
+                "createToDevice",
+                "create",
+                "removeFromDevice",
+                "remove",
+                "renameFromDevice",
+                "rename"
+            ]
+        );
     }
 
     load(dp) {

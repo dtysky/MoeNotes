@@ -286,8 +286,8 @@ DA:60,2
 DA:62,1
 DA:67,1
 DA:68,1
-DA:69,2
-DA:70,2
+DA:69,3
+DA:70,3
 DA:71,2
 DA:74,1
 DA:77,1
@@ -303,9 +303,9 @@ BRDA:27,3,1,151
 BRDA:30,4,0,30
 BRDA:30,4,1,121
 BRDA:70,5,0,2
-BRDA:70,5,1,0
+BRDA:70,5,1,1
 BRF:6
-BRH:5
+BRH:6
 end_of_record
 TN:
 SF:/Users/dtysky/Complex_Mind/MoeNotes/src/storage-top.js

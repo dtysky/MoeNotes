@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="209"  lines-covered="209"  line-rate="1"  branches-valid="58"  branches-covered="56"  branch-rate="0.9655"  timestamp="1459408607899" complexity="0" version="0.1">
+<coverage lines-valid="209"  lines-covered="209"  line-rate="1"  branches-valid="58"  branches-covered="57"  branch-rate="0.9828"  timestamp="1459410316955" complexity="0" version="0.1">
 <sources>
 	<source>/Users/dtysky/Complex_Mind/MoeNotes</source>
 </sources>
 <packages>
-	<package name="src"  line-rate="1"  branch-rate="0.9655" >
+	<package name="src"  line-rate="1"  branch-rate="0.9828" >
 	<classes>
 		<class name="storage-book.js"  filename="src/storage-book.js"  line-rate="1"  branch-rate="1" >
 		<methods>
@@ -290,7 +290,7 @@
 			<line number="111"  hits="1"  branch="false" />
 		</lines>
 		</class>
-		<class name="utils.js"  filename="src/utils.js"  line-rate="1"  branch-rate="0.8332999999999999" >
+		<class name="utils.js"  filename="src/utils.js"  line-rate="1"  branch-rate="1" >
 		<methods>
 			<method name="bindFunctions"  hits="2"  signature="()V" >
 				<lines><line number="13"  hits="2" /></lines>
@@ -378,8 +378,8 @@
 			<line number="62"  hits="1"  branch="false" />
 			<line number="67"  hits="1"  branch="false" />
 			<line number="68"  hits="1"  branch="false" />
-			<line number="69"  hits="2"  branch="false" />
-			<line number="70"  hits="2"  branch="true"  condition-coverage="50% (1/2)" />
+			<line number="69"  hits="3"  branch="false" />
+			<line number="70"  hits="3"  branch="true"  condition-coverage="100% (2/2)" />
 			<line number="71"  hits="2"  branch="false" />
 			<line number="74"  hits="1"  branch="false" />
 			<line number="77"  hits="1"  branch="false" />

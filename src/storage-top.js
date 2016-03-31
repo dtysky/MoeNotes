@@ -9,7 +9,7 @@ import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
 import StorageBook from './storage-book';
-import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike } from './utils';
+import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
 
 
 export default class StorageTop {
@@ -19,6 +19,23 @@ export default class StorageTop {
         this.cache = {};
         this.nowBook = null;
         this.load();
+        bindFunctions(
+            this,
+            [
+                "load",
+                "createTree",
+                "parser",
+                "getIndexes",
+                "getName",
+                "has",
+                "isEmpty",
+                "change",
+                "save",
+                "create",
+                "remove",
+                "rename"
+            ]
+        );
     }
 
     load(){

@@ -119,6 +119,7 @@ describe("Utils", () => {
     it("Create object with error handler", () => {
         class Test{
             constructor(){
+                this.var = "";
                 bindFunctions(
                     this,
                     ["test_normal", "test_error"]
