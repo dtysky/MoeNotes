@@ -38,7 +38,7 @@ describe("StorageTop ", () => {
                 book2: new StorageBook("book2")
             };
             expect(
-                objectIsEqual(storage.cache, cache)
+                objectIsEqual(Object.getOwnPropertyNames(storage.cache), Object.getOwnPropertyNames(cache))
             ).toBeTruthy();
         });
 
@@ -96,7 +96,7 @@ describe("StorageTop ", () => {
                 book3: new StorageBook("book3")
             };
             expect(
-                objectIsEqual(storage.cache, cache)
+                objectIsEqual(Object.getOwnPropertyNames(storage.cache), Object.getOwnPropertyNames(cache))
             ).toBeTruthy();
         });
 
@@ -111,7 +111,7 @@ describe("StorageTop ", () => {
                 book2: new StorageBook("book2")
             };
             expect(
-                objectIsEqual(storage.cache, cache)
+                objectIsEqual(Object.getOwnPropertyNames(storage.cache), Object.getOwnPropertyNames(cache))
             ).toBeTruthy();
         });
 

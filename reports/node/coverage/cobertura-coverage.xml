@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="211"  lines-covered="211"  line-rate="1"  branches-valid="58"  branches-covered="57"  branch-rate="0.9828"  timestamp="1459417151457" complexity="0" version="0.1">
+<coverage lines-valid="211"  lines-covered="211"  line-rate="1"  branches-valid="58"  branches-covered="57"  branch-rate="0.9828"  timestamp="1459417594870" complexity="0" version="0.1">
 <sources>
 	<source>/Users/dtysky/Complex_Mind/MoeNotes</source>
 </sources>
