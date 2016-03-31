@@ -29,10 +29,10 @@ describe("StorageBook ", () => {
         it("Initialize", () => {
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             expect(
                 objectIsEqual(JSON.parse(fs.readFileSync("book1/.tree")), tree)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Get now", () => {
@@ -50,10 +50,10 @@ describe("StorageBook ", () => {
         it("Get indexes", () => {
             expect(
                 arrayIsEqual(storage.getIndexes(), tree.indexes)
-            ).toBe(true);
+            ).toBeTruthy();
             expect(
                 arrayIsEqual(storage.getIndexes("cp1"), tree.chapters.cp1.indexes)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Read nowPage", () => {
@@ -70,7 +70,7 @@ describe("StorageBook ", () => {
             storage.setIndexes(["cp3", "cp2", "cp1"]);
             expect(
                 arrayIsEqual(storage.getIndexes(), ["cp3", "cp2", "cp1"])
-            ).toBe(true);
+            ).toBeTruthy();
             try{
                 storage.setIndexes(["page3", "page1"], "cp1");
             }
@@ -80,32 +80,32 @@ describe("StorageBook ", () => {
             storage.setIndexes(["page2", "page1"], "cp1");
             expect(
                 arrayIsEqual(storage.getIndexes("cp1"), ["page2", "page1"])
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Has", () => {
-            expect(storage.has("cp1")).toBe(true);
-            expect(storage.has("cp4")).toBe(false);
-            expect(storage.has("page1", "cp1")).toBe(true);
-            expect(storage.has("page3", "cp1")).toBe(false);
+            expect(storage.has("cp1")).toBeTruthy();
+            expect(storage.has("cp4")).toBeFalsy();
+            expect(storage.has("page1", "cp1")).toBeTruthy();
+            expect(storage.has("page3", "cp1")).toBeFalsy();
         });
 
         it("Is empty", () => {
             storage.book.chapters.cp1.indexes = [];
-            expect(storage.isEmpty("cp1")).toBe(true);
-            expect(storage.isEmpty("cp2")).toBe(false);
-            expect(storage.isEmpty()).toBe(false);
+            expect(storage.isEmpty("cp1")).toBeTruthy();
+            expect(storage.isEmpty("cp2")).toBeFalsy();
+            expect(storage.isEmpty()).toBeFalsy();
             storage.book.indexes = [];
-            expect(storage.isEmpty()).toBe(true);
+            expect(storage.isEmpty()).toBeTruthy();
         });
 
         it("Can not remove", () => {
             storage.book.chapters.cp1.indexes = ["page1"];
-            expect(storage.canNotRemove("cp1")).toBe(true);
-            expect(storage.canNotRemove("cp2")).toBe(false);
-            expect(storage.canNotRemove()).toBe(false);
+            expect(storage.canNotRemove("cp1")).toBeTruthy();
+            expect(storage.canNotRemove("cp2")).toBeFalsy();
+            expect(storage.canNotRemove()).toBeFalsy();
             storage.book.indexes = ["cp1"];
-            expect(storage.canNotRemove()).toBe(true);
+            expect(storage.canNotRemove()).toBeTruthy();
         });
 
         it("Change", () => {
@@ -121,7 +121,7 @@ describe("StorageBook ", () => {
             storage.load("book1");
             expect(
                 arrayIsEqual(storage.getIndexes(), ["cp3", "cp2", "cp1"])
-            ).toBe(true);
+            ).toBeTruthy();
             expect(storage.readNowPage()).toBe("Page1 in cp1 has been changed !");
         });
 
@@ -134,20 +134,20 @@ describe("StorageBook ", () => {
             };
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             files.book1.cp0 = {};
             expect(
                 objectIsEqual(loadBook("book1"), files)
-            ).toBe(true);
+            ).toBeTruthy();
             storage.create(0, "page0", "cp0");
             tree.chapters.cp0.indexes = ["page0"];
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             files.book1.cp0["page0.md"] = "";
             expect(
                 objectIsEqual(loadBook("book1"), files)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Remove", () => {
@@ -156,20 +156,20 @@ describe("StorageBook ", () => {
             delete tree.chapters.cp1;
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             delete files.book1.cp1;
             expect(
                 objectIsEqual(loadBook("book1"), files)
-            ).toBe(true);
+            ).toBeTruthy();
             storage.remove("page1", "cp2");
             tree.chapters.cp2.indexes = ["page2"];
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             delete files.book1.cp2["page1.md"];
             expect(
                 objectIsEqual(loadBook("book1"), files)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Rename", () => {
@@ -179,22 +179,22 @@ describe("StorageBook ", () => {
             delete tree.chapters.cp1;
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             files.book1.cp0 = files.book1.cp1;
             delete files.book1.cp1;
             expect(
                 objectIsEqual(loadBook("book1"), files)
-            ).toBe(true);
+            ).toBeTruthy();
             storage.rename("page1", "page0", "cp2");
             tree.chapters.cp2.indexes = ["page0", "page2"];
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             files.book1.cp2["page0.md"] = files.book1.cp2["page1.md"];
             delete files.book1.cp2["page1.md"];
             expect(
                 objectIsEqual(loadBook("book1"), files)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         afterEach(mock.restore);
@@ -211,7 +211,7 @@ describe("StorageBook ", () => {
         it("Initialize", () => {
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         afterEach(mock.restore);
@@ -228,7 +228,7 @@ describe("StorageBook ", () => {
         it("Initialize", () => {
             expect(
                 objectIsEqual(storage.book, tree)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         afterEach(mock.restore);

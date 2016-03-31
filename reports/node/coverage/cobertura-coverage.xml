@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="191"  lines-covered="186"  line-rate="0.9738"  branches-valid="56"  branches-covered="54"  branch-rate="0.9643"  timestamp="1459346896828" complexity="0" version="0.1">
+<coverage lines-valid="209"  lines-covered="209"  line-rate="1"  branches-valid="58"  branches-covered="56"  branch-rate="0.9655"  timestamp="1459408607899" complexity="0" version="0.1">
 <sources>
 	<source>/Users/dtysky/Complex_Mind/MoeNotes</source>
 </sources>
 <packages>
-	<package name="src"  line-rate="0.9738"  branch-rate="0.9643" >
+	<package name="src"  line-rate="1"  branch-rate="0.9655" >
 	<classes>
 		<class name="storage-book.js"  filename="src/storage-book.js"  line-rate="1"  branch-rate="1" >
 		<methods>
@@ -290,40 +290,55 @@
 			<line number="111"  hits="1"  branch="false" />
 		</lines>
 		</class>
-		<class name="utils.js"  filename="src/utils.js"  line-rate="0.8214"  branch-rate="0.75" >
+		<class name="utils.js"  filename="src/utils.js"  line-rate="1"  branch-rate="0.8332999999999999" >
 		<methods>
-			<method name="bindFunctions"  hits="0"  signature="()V" >
-				<lines><line number="12"  hits="0" /></lines>
+			<method name="bindFunctions"  hits="2"  signature="()V" >
+				<lines><line number="13"  hits="2" /></lines>
 			</method>
-			<method name="(anonymous_3)"  hits="0"  signature="()V" >
-				<lines><line number="13"  hits="0" /></lines>
+			<method name="(anonymous_3)"  hits="3"  signature="()V" >
+				<lines><line number="14"  hits="3" /></lines>
 			</method>
-			<method name="getDirectories"  hits="82"  signature="()V" >
-				<lines><line number="18"  hits="82" /></lines>
+			<method name="getDirectories"  hits="84"  signature="()V" >
+				<lines><line number="19"  hits="84" /></lines>
 			</method>
-			<method name="(anonymous_5)"  hits="135"  signature="()V" >
-				<lines><line number="19"  hits="135" /></lines>
+			<method name="(anonymous_5)"  hits="137"  signature="()V" >
+				<lines><line number="20"  hits="137" /></lines>
 			</method>
-			<method name="getFiles"  hits="89"  signature="()V" >
-				<lines><line number="24"  hits="89" /></lines>
+			<method name="getFiles"  hits="91"  signature="()V" >
+				<lines><line number="25"  hits="91" /></lines>
 			</method>
-			<method name="(anonymous_7)"  hits="149"  signature="()V" >
-				<lines><line number="25"  hits="149" /></lines>
+			<method name="(anonymous_7)"  hits="152"  signature="()V" >
+				<lines><line number="26"  hits="152" /></lines>
 			</method>
-			<method name="(anonymous_8)"  hits="120"  signature="()V" >
-				<lines><line number="33"  hits="120" /></lines>
+			<method name="(anonymous_8)"  hits="121"  signature="()V" >
+				<lines><line number="34"  hits="121" /></lines>
 			</method>
-			<method name="getNameFromPath"  hits="0"  signature="()V" >
-				<lines><line number="38"  hits="0" /></lines>
+			<method name="getNameFromPath"  hits="2"  signature="()V" >
+				<lines><line number="39"  hits="2" /></lines>
 			</method>
-			<method name="arrayIsEqual"  hits="0"  signature="()V" >
-				<lines><line number="42"  hits="0" /></lines>
+			<method name="arrayIsEqual"  hits="6"  signature="()V" >
+				<lines><line number="43"  hits="6" /></lines>
 			</method>
-			<method name="arrayIsLike"  hits="98"  signature="()V" >
-				<lines><line number="46"  hits="98" /></lines>
+			<method name="arrayIsLike"  hits="100"  signature="()V" >
+				<lines><line number="47"  hits="100" /></lines>
 			</method>
-			<method name="arrayHas"  hits="108"  signature="()V" >
-				<lines><line number="52"  hits="108" /></lines>
+			<method name="arrayHas"  hits="110"  signature="()V" >
+				<lines><line number="53"  hits="110" /></lines>
+			</method>
+			<method name="tryCatchWrapper"  hits="2"  signature="()V" >
+				<lines><line number="57"  hits="2" /></lines>
+			</method>
+			<method name="(anonymous_14)"  hits="2"  signature="()V" >
+				<lines><line number="58"  hits="2" /></lines>
+			</method>
+			<method name="createObjectWithErrorHandler"  hits="1"  signature="()V" >
+				<lines><line number="67"  hits="1" /></lines>
+			</method>
+			<method name="logError"  hits="1"  signature="()V" >
+				<lines><line number="77"  hits="1" /></lines>
+			</method>
+			<method name="(anonymous_17)"  hits="1"  signature="()V" >
+				<lines><line number="78"  hits="1" /></lines>
 			</method>
 		</methods>
 		<lines>
@@ -331,30 +346,48 @@
 			<line number="8"  hits="1"  branch="false" />
 			<line number="9"  hits="1"  branch="false" />
 			<line number="10"  hits="1"  branch="false" />
-			<line number="12"  hits="1"  branch="false" />
-			<line number="13"  hits="0"  branch="false" />
-			<line number="14"  hits="0"  branch="false" />
-			<line number="18"  hits="1"  branch="false" />
-			<line number="19"  hits="82"  branch="false" />
-			<line number="20"  hits="135"  branch="false" />
-			<line number="24"  hits="1"  branch="false" />
-			<line number="25"  hits="89"  branch="false" />
-			<line number="26"  hits="149"  branch="true"  condition-coverage="50% (1/2)" />
-			<line number="27"  hits="0"  branch="false" />
-			<line number="29"  hits="149"  branch="true"  condition-coverage="100% (2/2)" />
-			<line number="30"  hits="29"  branch="false" />
-			<line number="32"  hits="120"  branch="false" />
-			<line number="34"  hits="120"  branch="false" />
-			<line number="38"  hits="1"  branch="false" />
-			<line number="39"  hits="0"  branch="false" />
-			<line number="42"  hits="1"  branch="false" />
-			<line number="43"  hits="0"  branch="false" />
-			<line number="46"  hits="1"  branch="false" />
-			<line number="47"  hits="98"  branch="false" />
-			<line number="48"  hits="98"  branch="false" />
-			<line number="49"  hits="98"  branch="false" />
-			<line number="52"  hits="1"  branch="false" />
-			<line number="53"  hits="108"  branch="false" />
+			<line number="11"  hits="1"  branch="false" />
+			<line number="13"  hits="1"  branch="false" />
+			<line number="14"  hits="2"  branch="false" />
+			<line number="15"  hits="3"  branch="false" />
+			<line number="19"  hits="1"  branch="false" />
+			<line number="20"  hits="84"  branch="false" />
+			<line number="21"  hits="137"  branch="false" />
+			<line number="25"  hits="1"  branch="false" />
+			<line number="26"  hits="91"  branch="false" />
+			<line number="27"  hits="152"  branch="true"  condition-coverage="100% (2/2)" />
+			<line number="28"  hits="1"  branch="false" />
+			<line number="30"  hits="151"  branch="true"  condition-coverage="100% (2/2)" />
+			<line number="31"  hits="30"  branch="false" />
+			<line number="33"  hits="121"  branch="false" />
+			<line number="35"  hits="121"  branch="false" />
+			<line number="39"  hits="1"  branch="false" />
+			<line number="40"  hits="2"  branch="false" />
+			<line number="43"  hits="1"  branch="false" />
+			<line number="44"  hits="6"  branch="false" />
+			<line number="47"  hits="1"  branch="false" />
+			<line number="48"  hits="100"  branch="false" />
+			<line number="49"  hits="100"  branch="false" />
+			<line number="50"  hits="100"  branch="false" />
+			<line number="53"  hits="1"  branch="false" />
+			<line number="54"  hits="110"  branch="false" />
+			<line number="57"  hits="1"  branch="false" />
+			<line number="58"  hits="2"  branch="false" />
+			<line number="59"  hits="2"  branch="false" />
+			<line number="60"  hits="2"  branch="false" />
+			<line number="62"  hits="1"  branch="false" />
+			<line number="67"  hits="1"  branch="false" />
+			<line number="68"  hits="1"  branch="false" />
+			<line number="69"  hits="2"  branch="false" />
+			<line number="70"  hits="2"  branch="true"  condition-coverage="50% (1/2)" />
+			<line number="71"  hits="2"  branch="false" />
+			<line number="74"  hits="1"  branch="false" />
+			<line number="77"  hits="1"  branch="false" />
+			<line number="78"  hits="1"  branch="false" />
+			<line number="79"  hits="1"  branch="false" />
+			<line number="80"  hits="1"  branch="false" />
+			<line number="81"  hits="1"  branch="false" />
+			<line number="82"  hits="1"  branch="false" />
 		</lines>
 		</class>
 	</classes>

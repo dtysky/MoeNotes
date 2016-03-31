@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import lodash from 'lodash';
 import deepcopy from 'deepcopy';
+import moment from 'moment';
 
 export function bindFunctions(self, methods){
     methods.forEach(method => {
@@ -51,4 +52,33 @@ export function arrayIsLike(a1, a2){
 
 export function arrayHas(a, e){
     return a.indexOf(e) > -1;
+}
+
+function tryCatchWrapper(f, handler) {
+    return function() {
+        try {
+            return f.apply(this, arguments);
+        } catch(e) {
+            return handler(e)
+        }
+    }
+}
+
+export function createObjectWithErrorHandler(obj, handler){
+    for(let name in obj){
+        const m = obj[name];
+        if(typeof m === "function"){
+            obj[name] = tryCatchWrapper(m, handler);
+        }
+    }
+    return obj;
+}
+
+export function logError(file){
+    return function (error){
+        const message = error.stack + "\n";
+        let data = message + "\n\n";
+        data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
+        fs.appendFileSync(file, data);
+    }
 }

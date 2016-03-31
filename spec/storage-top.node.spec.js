@@ -29,23 +29,23 @@ describe("StorageTop ", () => {
         it("Initialize", () => {
             expect(
                 objectIsEqual(storage.books, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             expect(
                 objectIsEqual(storage.nowBook, new StorageBook("book1"))
-            ).toBe(true);
+            ).toBeTruthy();
             const cache = {
                 book1: new StorageBook("book1"),
                 book2: new StorageBook("book2")
             };
             expect(
                 objectIsEqual(storage.cache, cache)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Get indexes", () => {
             expect(
                 arrayIsEqual(storage.getIndexes(), tree.indexes)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Get name", () => {
@@ -53,12 +53,12 @@ describe("StorageTop ", () => {
         });
 
         it("Has", () => {
-            expect(storage.has("book1")).toBe(true);
-            expect(storage.has("book3")).toBe(false);
+            expect(storage.has("book1")).toBeTruthy();
+            expect(storage.has("book3")).toBeFalsy();
         });
 
         it("Is empty", () => {
-            expect(storage.isEmpty()).toBe(false);
+            expect(storage.isEmpty()).toBeFalsy();
         });
 
         it("Change", () => {
@@ -66,7 +66,7 @@ describe("StorageTop ", () => {
             expect(storage.books.now).toBe("book2");
             expect(
                 objectIsEqual(storage.nowBook, new StorageBook("book2"))
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Save", () => {
@@ -80,7 +80,7 @@ describe("StorageTop ", () => {
             storage.load();
             expect(
                 objectIsEqual(storage.books, books)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Create", () => {
@@ -89,7 +89,7 @@ describe("StorageTop ", () => {
             tree.names.book3 = "bookC";
             expect(
                 objectIsEqual(storage.books, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             const cache = {
                 book1: new StorageBook("book1"),
                 book2: new StorageBook("book2"),
@@ -97,7 +97,7 @@ describe("StorageTop ", () => {
             };
             expect(
                 objectIsEqual(storage.cache, cache)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Remove", () => {
@@ -106,13 +106,13 @@ describe("StorageTop ", () => {
             delete tree.names.book1;
             expect(
                 objectIsEqual(storage.books, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             const cache = {
                 book2: new StorageBook("book2")
             };
             expect(
                 objectIsEqual(storage.cache, cache)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Rename", () => {
@@ -121,7 +121,7 @@ describe("StorageTop ", () => {
             tree.names.book1 = "bookX";
             expect(
                 objectIsEqual(storage.books, tree)
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         afterEach(mock.restore);
@@ -138,15 +138,15 @@ describe("StorageTop ", () => {
         it("Initialize", () => {
             expect(
                 objectIsEqual(storage.books, tree)
-            ).toBe(true);
+            ).toBeTruthy();
             expect(storage.nowBook).toBe(null);
             expect(
                 objectIsEqual(storage.cache, {})
-            ).toBe(true);
+            ).toBeTruthy();
         });
 
         it("Is empty", () => {
-            expect(storage.isEmpty()).toBe(true);
+            expect(storage.isEmpty()).toBeTruthy();
         });
 
         afterEach(mock.restore);

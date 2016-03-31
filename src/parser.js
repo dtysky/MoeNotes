@@ -7,7 +7,7 @@
 "use strict";
 
 import markdown from 'marked';
-import config from './config';
+import config from 'config';
 import katex from 'parse-katex';
 
 const defaultHighlight = config.defaultHighlight;

@@ -5,6 +5,24 @@
  */
 
 
-export default {
+defaultConfig = {
     "defaultHighlight": "VHDL"
 };
+
+
+class ConfigManager{
+    constructor(){
+        this.config = defaultConfig;
+    }
+    load(config_path){
+
+    }
+    save(){
+
+    }
+    getNow(){
+
+    }
+}
+
+export default new ConfigManager();
