@@ -108,7 +108,7 @@ export default class SortableList extends React.Component {
                 </div>
             </div>
         );
-    };
+    }
 
     componentDidMount(){
         this.resizeSortableList();

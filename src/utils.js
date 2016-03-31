@@ -47,7 +47,7 @@ export function arrayIsEqual(a1, a2){
 export function arrayIsLike(a1, a2){
     let a1_tmp = deepcopy(a1).sort();
     let a2_tmp = deepcopy(a2).sort();
-    return lodash.isEqual(a1_tmp, a2_tmp)
+    return lodash.isEqual(a1_tmp, a2_tmp);
 }
 
 export function arrayHas(a, e){
@@ -59,9 +59,9 @@ function tryCatchWrapper(f, handler) {
         try {
             return f.apply(this, arguments);
         } catch(e) {
-            return handler(e)
+            return handler(e);
         }
-    }
+    };
 }
 
 export function createObjectWithErrorHandler(obj, handler){
@@ -80,5 +80,5 @@ export function logError(file){
         let data = message + "\n\n";
         data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
         fs.appendFileSync(file, data);
-    }
+    };
 }

@@ -7,10 +7,10 @@
 "use strict";
 
 import markdown from 'marked';
-import configManager from 'config';
+import configManager from './config';
 import katex from 'parse-katex';
 
-const defaultHighlight = config.getConfig().defaultHighlight;
+const defaultHighlight = configManager.getConfig().defaultHighlight;
 
 function highlight(code, callback){
     var re = /:::(\S+)\n([\s\S]+)/.exec(code);

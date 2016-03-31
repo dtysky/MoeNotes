@@ -7,4 +7,4 @@
 
 import StorageTop from './storage-top';
 
-export default StorageTop(".tree");
+export default new StorageTop(".tree");

@@ -134,6 +134,31 @@ class App extends React.Component{
     }
 }
 
+//import mock from 'mock-fs';
+//mock({
+//    ".tree": JSON.stringify({
+//        now: "book1",
+//        indexes: [
+//            "book1"
+//        ],
+//        names: {
+//            book1: "bookA"
+//        }
+//    }),
+//    book1: {
+//        book1: {
+//            cp1: {
+//                "page1.md": "Here is page1 in cp1",
+//                "page3.md": "Here is page3 in cp1"
+//            },
+//            cp2: {
+//                "page1.md": "Here is page1 in cp2",
+//                "page3.md": "Here is page3 in cp2"
+//            }
+//        }
+//    }
+//});
+
 ReactDom.render(
     <App/>,
     document.getElementById('react-content')

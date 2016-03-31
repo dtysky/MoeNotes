@@ -24,7 +24,7 @@ export default class StorageTop {
             [
                 "load",
                 "createTree",
-                "parser",
+                "parse",
                 "getIndexes",
                 "getName",
                 "has",

@@ -31,7 +31,7 @@ describe("StorageTop ", () => {
                 objectIsEqual(storage.books, tree)
             ).toBeTruthy();
             expect(
-                objectIsEqual(storage.nowBook, new StorageBook("book1"))
+                objectIsEqual(storage.nowBook.book, (new StorageBook("book1")).book)
             ).toBeTruthy();
             const cache = {
                 book1: new StorageBook("book1"),
@@ -65,7 +65,7 @@ describe("StorageTop ", () => {
             storage.change("book2");
             expect(storage.books.now).toBe("book2");
             expect(
-                objectIsEqual(storage.nowBook, new StorageBook("book2"))
+                objectIsEqual(storage.nowBook.book, (new StorageBook("book2")).book)
             ).toBeTruthy();
         });
 

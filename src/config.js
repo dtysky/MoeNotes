@@ -5,7 +5,7 @@
  */
 
 
-defaultConfig = {
+const defaultConfig = {
     "defaultHighlight": "VHDL"
 };
 

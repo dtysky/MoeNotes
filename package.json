@@ -33,6 +33,7 @@
     "isparta-loader": "^2.0.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.1",
     "jsxhint-loader": "^0.2.0",
     "karma": "^0.13.22",
     "karma-coverage": "^0.5.5",

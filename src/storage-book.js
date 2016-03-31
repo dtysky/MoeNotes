@@ -21,9 +21,8 @@ export default class StorageBook{
             [
                 "load",
                 "createTree",
-                "parser",
+                "parse",
                 "getIndexes",
-                "getName",
                 "getNow",
                 "getPath",
                 "readNowPage",
@@ -52,7 +51,7 @@ export default class StorageBook{
             );
         }
         this.book = this.parse(dp);
-    };
+    }
 
     createTree(dp){
         let book = {};
@@ -118,7 +117,7 @@ export default class StorageBook{
             }
         }
         return treeRecord;
-    };
+    }
 
     getNow(chapter) {
         if(chapter === undefined){
