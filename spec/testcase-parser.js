@@ -10,7 +10,7 @@ An h1 header
 
 Paragraphs are separated by a blank line.
 
-2nd paragraph. *Italic*, **bold**, and `+`monospace`+`. Itemized lists
+2nd paragraph. *Italic*, **bold**, and \`monospace\`. Itemized lists
 look like:
 
   * this one
@@ -154,24 +154,24 @@ and images can be specified like so:
 
 ![example image](example-image.jpg "An exemplary image")
 
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
+Inline math equations go in like so: $\\omega = d\\phi / dt$. Display
 math should get its own line and be put in in double-dollarsigns:
 
-$$I = \int \rho R^{2} dV$$
+$$I = \\int \\rho R^{2} dV$$
 
 
 And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+which you wish to be displayed literally, ex.: \\*bar\\*, etc.
 `;
 
-export const html = `<h1 id="an-h1-header">An h1 header</h1>
+export const html = `<html><head></head><body><h1 id="an-h1-header">An h1 header</h1>
 <p>Paragraphs are separated by a blank line.</p>
 <p>2nd paragraph. <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists
 look like:</p>
 <ul>
 <li>this one</li>
 <li>that one</li>
-<li>the other one</li>
+<li>the other one;</li>
 </ul>
 <p>Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.</p>
@@ -181,18 +181,18 @@ written like so.</p>
 <p>They can span multiple paragraphs,
 if you like.</p>
 </blockquote>
-<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., &quot;it&#39;s all
-in chapters 12--14&quot;). Three dots ... will be converted to an ellipsis.
+<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
+in chapters 12--14"). Three dots ... will be converted to an ellipsis.
 Unicode is supported. ☺</p>
 <h2 id="an-h2-header">An h2 header</h2>
-<p>Here&#39;s a numbered list:</p>
+<p>Here's a numbered list:</p>
 <ol>
 <li>first item</li>
 <li>second item</li>
 <li>third item</li>
 </ol>
 <p>Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here&#39;s a code sample:</p>
+from the left side). Here's a code sample:</p>
 <pre><code># Let me re-iterate ...
 <span class="hljs-keyword">signal</span> count:<span class="hljs-built_in">std_logic_vector</span>(<span class="hljs-number">3</span> <span class="hljs-keyword">downto</span> <span class="hljs-number">0</span>) := <span class="hljs-number">0</span>;
 <span class="hljs-keyword">begin</span>
@@ -246,9 +246,9 @@ goto first step (<span class="hljs-keyword">or</span> shut off burner <span clas
 </ol>
 <p>Notice again how text always lines up on 4-space indents (including
 that last line which continues item 3 above).</p>
-<p>Here&#39;s a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
+<p>Here's a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
 doc</a>, and to a <a href="#an-h2-header">section heading in the current
-doc</a>. Here&#39;s a footnote [^1].</p>
+doc</a>. Here's a footnote [^1].</p>
 <p>[^1]: Footnote text goes here.</p>
 <p>Tables can look like this:</p>
 <table>
@@ -277,27 +277,27 @@ doc</a>. Here&#39;s a footnote [^1].</p>
 </tr>
 </tbody>
 </table>
-<p>Table: Shoes, their sizes, and what they&#39;re made of</p>
+<p>Table: Shoes, their sizes, and what they're made of</p>
 <p>A horizontal rule follows.</p>
 <hr>
-<p>Here&#39;s a definition list:</p>
+<p>Here's a definition list:</p>
 <p>apples
   : Good for making applesauce.
 oranges
   : Citrus!
 tomatoes
-  : There&#39;s no &quot;e&quot; in tomatoe.</p>
+  : There's no "e" in tomatoe.</p>
 <p>Again, text is indented 4 spaces. (Put a blank line between each
 term/definition pair to spread things out more.)</p>
-<p>Here&#39;s a &quot;line block&quot;:</p>
+<p>Here's a "line block":</p>
 <p>| Line one
 |   Line too
 | Line tree</p>
 <p>and images can be specified like so:</p>
 <p><img src="example-image.jpg" alt="example image" title="An exemplary image"></p>
-<p>Inline math equations go in like so: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mi>d</mi><mi>ϕ</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\omega = d\phi / dt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="mrel">=</span><span class="mord mathit">d</span><span class="mord mathit">ϕ</span><span class="mord mathrm">/</span><span class="mord mathit">d</span><span class="mord mathit">t</span></span></span></span>. Display
+<p>Inline math equations go in like so: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mi>d</mi><mi>ϕ</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\\omega = d\\phi / dt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="mrel">=</span><span class="mord mathit">d</span><span class="mord mathit">ϕ</span><span class="mord mathrm">/</span><span class="mord mathit">d</span><span class="mord mathit">t</span></span></span></span>. Display
 math should get its own line and be put in in double-dollarsigns:</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>=</mo><mo>∫</mo><mi>ρ</mi><msup><mi>R</mi><mrow><mn>2</mn></mrow></msup><mi>d</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">I = \int \rho R^{2} dV</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.36em;"></span><span class="strut bottom" style="height:2.22225em;vertical-align:-0.86225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mrel">=</span><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="mord mathit">ρ</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>=</mo><mo>∫</mo><mi>ρ</mi><msup><mi>R</mi><mrow><mn>2</mn></mrow></msup><mi>d</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">I = \\int \\rho R^{2} dV</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.36em;"></span><span class="strut bottom" style="height:2.22225em;vertical-align:-0.86225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mrel">=</span><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="mord mathit">ρ</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span></span></p>
 <p>And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: `+`foo`+`, *bar*, etc.</p>
-`;
+which you wish to be displayed literally, ex.: *bar*, etc.</p>
+</body></html>`;

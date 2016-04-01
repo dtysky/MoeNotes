@@ -11,9 +11,7 @@ const paths = require('./config').paths;
 
 module.exports = function (grunt) {
     // Let *load-grunt-tasks* require everything
-    require('load-grunt-tasks')(grunt, {
-        pattern: ['grunt-*', '!grunt-template-jasmine-istanbul']
-    });
+    require('load-grunt-tasks')(grunt);
 
     // Read configuration from package.json
     var pkgConfig = grunt.file.readJSON('package.json');
@@ -36,12 +34,6 @@ module.exports = function (grunt) {
             }
         },
 
-        karma: {
-            unit: {
-                configFile: './karma.config.js'
-            }
-        },
-
         'build-atom-shell': {
             tag: 'v0.19.5',
             nodeVersion: '0.18.0',
@@ -60,9 +52,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('debug', ['webpack-dev-server']);
 
-    grunt.registerTask('test-web', ['karma']);
-
-    grunt.registerTask('test-node', ['shell:test']);
+    grunt.registerTask('test', ['shell:test']);
 
     grunt.registerTask('build', ['build-atom-shell']);
 

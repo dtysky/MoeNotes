@@ -1,0 +1,9 @@
+{
+    "now": "booksForTest/book1",
+    "indexes": [
+        "booksForTest/book1"
+    ],
+    "names": {
+        "booksForTest/book1": "bookA"
+    }
+}

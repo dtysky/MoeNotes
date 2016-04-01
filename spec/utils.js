@@ -8,6 +8,7 @@ import TestUtils from 'react-addons-test-utils';
 import lodash from 'lodash';
 import path from 'path';
 import fs from 'fs';
+import jsdom from 'jsdom';
 
 function createDom(htmlStr) {
     var frag = document.createDocumentFragment(),
@@ -21,10 +22,9 @@ function createDom(htmlStr) {
 export { createDom };
 
 export function DomIsEqual(domString1, domString2){
-    let domParser = new DOMParser();
-    return domParser.parseFromString(domString1, "text/xml").isEqualNode(
-        domParser.parseFromString(domString2, "text/xml")
-    );
+    let dom1 = jsdom.jsdom(domString1).documentElement;
+    let dom2 = jsdom.jsdom(domString2).documentElement;
+    return dom1.isEqualNode(dom2);
 }
 
 export function arrayIsEqual(a1, a2){
@@ -63,4 +63,13 @@ export function loadBook(dp) {
         });
     });
     return book;
+}
+
+export function initJsdom(){
+    let window = jsdom.jsdom('<html><head></head><body><divid="rondavu_container"></div></body></html>').defaultView;
+    if(Object.keys(window).length === 0){
+        throw"jsdom failed to createa usable environment, try uninstall ingand reinstall ingit";
+    }
+    global.window = window;
+    global.document = window.document;
 }

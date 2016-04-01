@@ -1,12 +1,132 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="211"  lines-covered="211"  line-rate="1"  branches-valid="58"  branches-covered="57"  branch-rate="0.9828"  timestamp="1459417594870" complexity="0" version="0.1">
+<coverage lines-valid="259"  lines-covered="242"  line-rate="0.9344"  branches-valid="68"  branches-covered="61"  branch-rate="0.8970999999999999"  timestamp="1459495773692" complexity="0" version="0.1">
 <sources>
 	<source>/Users/dtysky/Complex_Mind/MoeNotes</source>
 </sources>
 <packages>
-	<package name="src"  line-rate="1"  branch-rate="0.9828" >
+	<package name="src"  line-rate="0.9344"  branch-rate="0.8970999999999999" >
 	<classes>
+		<class name="book-item.js"  filename="src/book-item.js"  line-rate="0.34619999999999995"  branch-rate="0.25" >
+		<methods>
+			<method name="Book"  hits="1"  signature="()V" >
+				<lines><line number="18"  hits="1" /></lines>
+			</method>
+			<method name="onChange"  hits="0"  signature="()V" >
+				<lines><line number="38"  hits="0" /></lines>
+			</method>
+			<method name="onSubmit"  hits="0"  signature="()V" >
+				<lines><line number="44"  hits="0" /></lines>
+			</method>
+			<method name="onRename"  hits="0"  signature="()V" >
+				<lines><line number="58"  hits="0" /></lines>
+			</method>
+			<method name="onRemove"  hits="0"  signature="()V" >
+				<lines><line number="65"  hits="0" /></lines>
+			</method>
+			<method name="onSelect"  hits="0"  signature="()V" >
+				<lines><line number="72"  hits="0" /></lines>
+			</method>
+			<method name="handleTextChange"  hits="0"  signature="()V" >
+				<lines><line number="79"  hits="0" /></lines>
+			</method>
+			<method name="enableInput"  hits="0"  signature="()V" >
+				<lines><line number="85"  hits="0" /></lines>
+			</method>
+			<method name="componentDidMount"  hits="1"  signature="()V" >
+				<lines><line number="89"  hits="1" /></lines>
+			</method>
+			<method name="componentDidUpdate"  hits="0"  signature="()V" >
+				<lines><line number="95"  hits="0" /></lines>
+			</method>
+			<method name="render"  hits="1"  signature="()V" >
+				<lines><line number="101"  hits="1" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="9"  hits="1"  branch="false" />
+			<line number="10"  hits="1"  branch="false" />
+			<line number="11"  hits="1"  branch="false" />
+			<line number="13"  hits="1"  branch="true"  condition-coverage="50% (1/2)" />
+			<line number="14"  hits="0"  branch="false" />
+			<line number="15"  hits="0"  branch="false" />
+			<line number="18"  hits="1"  branch="false" />
+			<line number="21"  hits="1"  branch="false" />
+			<line number="26"  hits="1"  branch="false" />
+			<line number="39"  hits="0"  branch="false" />
+			<line number="45"  hits="0"  branch="false" />
+			<line number="46"  hits="0"  branch="false" />
+			<line number="47"  hits="0"  branch="true"  condition-coverage="0% (0/2)" />
+			<line number="48"  hits="0"  branch="false" />
+			<line number="51"  hits="0"  branch="false" />
+			<line number="55"  hits="0"  branch="false" />
+			<line number="59"  hits="0"  branch="false" />
+			<line number="66"  hits="0"  branch="false" />
+			<line number="73"  hits="0"  branch="false" />
+			<line number="80"  hits="0"  branch="false" />
+			<line number="86"  hits="0"  branch="false" />
+			<line number="90"  hits="1"  branch="true"  condition-coverage="50% (1/2)" />
+			<line number="91"  hits="0"  branch="false" />
+			<line number="96"  hits="0"  branch="true"  condition-coverage="0% (0/2)" />
+			<line number="97"  hits="0"  branch="false" />
+			<line number="103"  hits="1"  branch="false" />
+		</lines>
+		</class>
+		<class name="config.js"  filename="src/config.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+			<method name="ConfigManager"  hits="1"  signature="()V" >
+				<lines><line number="13"  hits="1" /></lines>
+			</method>
+			<method name="loadConfig"  hits="0"  signature="()V" >
+				<lines><line number="17"  hits="0" /></lines>
+			</method>
+			<method name="saveConfig"  hits="0"  signature="()V" >
+				<lines><line number="20"  hits="0" /></lines>
+			</method>
+			<method name="getConfig"  hits="1"  signature="()V" >
+				<lines><line number="23"  hits="1" /></lines>
+			</method>
+			<method name="generateCss"  hits="0"  signature="()V" >
+				<lines><line number="26"  hits="0" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="8"  hits="1"  branch="false" />
+			<line number="13"  hits="1"  branch="false" />
+			<line number="15"  hits="1"  branch="false" />
+			<line number="24"  hits="1"  branch="false" />
+			<line number="31"  hits="1"  branch="false" />
+		</lines>
+		</class>
+		<class name="parser.js"  filename="src/parser.js"  line-rate="1"  branch-rate="1" >
+		<methods>
+			<method name="highlight"  hits="4"  signature="()V" >
+				<lines><line number="15"  hits="4" /></lines>
+			</method>
+			<method name="parse"  hits="1"  signature="()V" >
+				<lines><line number="42"  hits="1" /></lines>
+			</method>
+		</methods>
+		<lines>
+			<line number="9"  hits="1"  branch="false" />
+			<line number="10"  hits="1"  branch="false" />
+			<line number="11"  hits="1"  branch="false" />
+			<line number="13"  hits="1"  branch="false" />
+			<line number="15"  hits="1"  branch="false" />
+			<line number="16"  hits="4"  branch="false" />
+			<line number="17"  hits="4"  branch="false" />
+			<line number="18"  hits="4"  branch="true"  condition-coverage="100% (2/2)" />
+			<line number="19"  hits="2"  branch="false" />
+			<line number="20"  hits="2"  branch="false" />
+			<line number="23"  hits="2"  branch="false" />
+			<line number="24"  hits="2"  branch="false" />
+			<line number="26"  hits="4"  branch="false" />
+			<line number="29"  hits="1"  branch="false" />
+			<line number="42"  hits="1"  branch="false" />
+			<line number="43"  hits="1"  branch="false" />
+			<line number="47"  hits="1"  branch="false" />
+		</lines>
+		</class>
 		<class name="storage-book.js"  filename="src/storage-book.js"  line-rate="1"  branch-rate="1" >
 		<methods>
 			<method name="StorageBook"  hits="45"  signature="()V" >
@@ -294,11 +414,11 @@
 		</class>
 		<class name="utils.js"  filename="src/utils.js"  line-rate="1"  branch-rate="1" >
 		<methods>
-			<method name="bindFunctions"  hits="59"  signature="()V" >
-				<lines><line number="13"  hits="59" /></lines>
+			<method name="bindFunctions"  hits="60"  signature="()V" >
+				<lines><line number="13"  hits="60" /></lines>
 			</method>
-			<method name="(anonymous_3)"  hits="1002"  signature="()V" >
-				<lines><line number="14"  hits="1002" /></lines>
+			<method name="(anonymous_3)"  hits="1009"  signature="()V" >
+				<lines><line number="14"  hits="1009" /></lines>
 			</method>
 			<method name="getDirectories"  hits="84"  signature="()V" >
 				<lines><line number="19"  hits="84" /></lines>
@@ -350,8 +470,8 @@
 			<line number="10"  hits="1"  branch="false" />
 			<line number="11"  hits="1"  branch="false" />
 			<line number="13"  hits="1"  branch="false" />
-			<line number="14"  hits="59"  branch="false" />
-			<line number="15"  hits="1002"  branch="false" />
+			<line number="14"  hits="60"  branch="false" />
+			<line number="15"  hits="1009"  branch="false" />
 			<line number="19"  hits="1"  branch="false" />
 			<line number="20"  hits="84"  branch="false" />
 			<line number="21"  hits="137"  branch="false" />

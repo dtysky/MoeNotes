@@ -10,12 +10,14 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Book from './book-item';
 const Menu = require('react-burger-menu').slide;
-import Storage from './storage-top';
+import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions } from './utils';
 
-import './theme/styles/sky.css';
-import './theme/styles/books.css';
+if (process.env.BROWSER) {
+    require('./theme/styles/sky.css');
+    require('./theme/styles/books.css');
+}
 
 
 export default class BookList extends React.Component {
@@ -23,7 +25,7 @@ export default class BookList extends React.Component {
         super(props);
         this.state = {
             indexes: Storage.getIndexes(),
-            now: Storage.getNow(),
+            now: Storage.nowBook,
             width: 0
         };
         bindFunctions(

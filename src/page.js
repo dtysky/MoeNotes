@@ -34,6 +34,7 @@ export default class Page extends React.Component{
                 "refresh",
                 "reload",
                 "onChange",
+                "onBlur",
                 "onScroll"
             ]
         );
@@ -62,6 +63,10 @@ export default class Page extends React.Component{
         this.refresh(value);
     }
 
+    onBlur(){
+        Storage.nowBook.save(this.state.markdown);
+    }
+
     onScroll(percent){
         var domNode = ReactDom.findDOMNode(this.refs.preview);
         domNode.scrollTop = percent * domNode.scrollHeight;
@@ -84,6 +89,7 @@ export default class Page extends React.Component{
                         fontSize={14}
                         tabSize={4}
                         onChange={this.onChange}
+                        onBlur={this.onBlur}
                         onChangeScrollTop={this.onScroll}
                     />
                 </div>

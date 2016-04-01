@@ -10,8 +10,10 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { bindFunctions } from './utils';
 
-import './theme/styles/sky.css';
-import './theme/styles/books.css';
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+    require ('./theme/styles/books.css');
+}
 
 export default class Book extends React.Component {
     constructor(props){
