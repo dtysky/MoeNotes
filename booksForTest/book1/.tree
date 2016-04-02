@@ -1,1 +1,1 @@
-{"root":"booksForTest/book1","indexes":["cp1","cp2","cp3"],"chapters":{"cp1":{"indexes":["page1","page3","page21","page42","93123-1293123"],"now":"93123-1293123"},"cp2":{"indexes":["page1","page2"],"now":"page1"}},"now":"cp1"}
+{"root":"booksForTest/book1","indexes":["cp1","cp2","0000","0"],"chapters":{"0":{"indexes":["-=\\","0","0009","1"],"now":"1"},"cp1":{"indexes":["page1","page3","page21","page42","page5"],"now":"page21"},"cp2":{"indexes":["page1","page2"],"now":"page1"},"0000":{"indexes":["-0809i","000","789"],"now":"789"}},"now":"0000"}

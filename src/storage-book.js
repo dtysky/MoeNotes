@@ -283,7 +283,7 @@ export default class StorageBook{
         if(chapter === undefined){
             i = this.book.indexes.indexOf(oldName);
             this.book.indexes[i] = name;
-            this.book.chapters[name] = this.book.chapters[oldName];
+            this.book.chapters[name] = deepcopy(this.book.chapters[oldName]);
             delete this.book.chapters[oldName];
             this.renameFromDevice(
                 oldName,

@@ -90,7 +90,7 @@ export default class ReactAce extends Component {
     focus(){
         this.editor.focus();
         const n = this.editor.getSession().getValue().split("\n").length;
-        this.editor.gotoLine(n);
+        this.editor.gotoLine(n + 1);
     }
 
     onChange() {

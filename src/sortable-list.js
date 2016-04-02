@@ -43,7 +43,7 @@ export default class SortableList extends React.Component {
     initState(name, indexes) {
         this.state = {
             indexes: indexes,
-            canInput: "",
+            canInput: null,
             menuName: name + "-menu",
             styleSortableList: {}
         };
@@ -61,7 +61,7 @@ export default class SortableList extends React.Component {
 
     handleTextChange(index, name) {
         this.setState({
-            canInput: ""
+            canInput: null
         });
         this.rename(index, name);
     }

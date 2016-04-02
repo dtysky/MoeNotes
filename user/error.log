@@ -54,3 +54,2243 @@ Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp1/page21.md
     at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
 
 
+2016-04-02 08:20:56
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31643:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.rename (http://localhost:8000/assets/main.bundle.js:29630:19)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.handleTextChange (http://localhost:8000/assets/main.bundle.js:29774:19)
+
+
+2016-04-02 08:20:56
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31582:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.rename (http://localhost:8000/assets/main.bundle.js:29630:19)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.handleTextChange (http://localhost:8000/assets/main.bundle.js:29774:19)
+
+
+2016-04-02 08:20:56
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31660:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.rename (http://localhost:8000/assets/main.bundle.js:29630:19)
+
+
+2016-04-02 08:20:56
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31582:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31619:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73126:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 08:20:56
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp31/undefined.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31619:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73126:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-02 08:20:56
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31598:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136168:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 08:20:59
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31582:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31625:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73136:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113511:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116945:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125330:15)
+
+
+2016-04-02 08:27:55
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136159:65)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 08:29:19
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136159:65)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 08:29:22
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136159:65)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 08:31:47
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136159:48)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 08:31:47
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136160:65)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 08:31:57
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136160:65)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 08:42:12
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/cp3.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31693:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31711:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136189:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66833:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 08:42:28
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/cp3.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31693:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31711:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136189:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66833:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 08:43:53
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/cp3.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31693:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31711:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136189:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66833:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:02:37
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/cp3.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31693:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31711:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136189:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66833:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:04:15
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp3/9.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-02 09:07:18
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:18
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:18
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:07:18
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:07:18
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp5/undefined.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-02 09:07:18
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:07:19
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:07:19
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:19
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:19
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:07:19
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:07:19
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:07:24
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:07:54
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:07:54
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp5/undefined.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.writeFileSync (fs.js:1234:33)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:27)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+
+
+2016-04-02 09:07:57
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:57
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:57
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:07:57
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:07:57
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp3/undefined.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-02 09:07:57
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:07:59
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:07:59
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:59
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:07:59
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:07:59
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:07:59
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:03
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:03
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:03
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:03
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:04
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:04
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:04
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:04
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:05
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:07
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:07
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+    at executeDispatch (http://localhost:8000/assets/main.bundle.js:12301:22)
+    at Object.executeDispatchesInOrder (http://localhost:8000/assets/main.bundle.js:12324:6)
+
+
+2016-04-02 09:08:07
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:07
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:08:10
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:12
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:12
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:12
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:12
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:12
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:14
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:14
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:14
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:14
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:14
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:14
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:15
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:16
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:17
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:17
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:17
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:17
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:17
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:17
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:18
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:08:18
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:31644:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136227:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:18
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at select (http://localhost:8000/assets/main.bundle.js:30881:25)
+
+
+2016-04-02 09:08:18
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:31661:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136215:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:29805:23)
+
+
+2016-04-02 09:08:18
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31620:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73127:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136216:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+
+
+2016-04-02 09:08:18
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31599:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:136170:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:136217:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:136231:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangeChapter (http://localhost:8000/assets/main.bundle.js:9574:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:29636:25)
+
+
+2016-04-02 09:08:23
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:09:36
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:31583:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31626:59)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35067:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73137:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113512:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:116946:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:125331:15)
+
+
+2016-04-02 09:10:47
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:31600:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at new PageList (http://localhost:8000/assets/main.bundle.js:136160:65)
+    at ReactCompositeComponentMixin.mountComponent (http://localhost:8000/assets/main.bundle.js:15577:19)
+    at wrapper [as mountComponent] (http://localhost:8000/assets/main.bundle.js:12823:22)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+    at ReactDOMComponent.ReactMultiChild.Mixin.mountChildren (http://localhost:8000/assets/main.bundle.js:24041:45)
+    at ReactDOMComponent.Mixin._createContentMarkup (http://localhost:8000/assets/main.bundle.js:21224:33)
+    at ReactDOMComponent.Mixin.mountComponent (http://localhost:8000/assets/main.bundle.js:21112:30)
+    at Object.ReactReconciler.mountComponent (http://localhost:8000/assets/main.bundle.js:13967:36)
+
+
+2016-04-02 09:16:06
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp3/.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31621:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73128:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-02 09:16:30
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp3/.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.writeFileSync (fs.js:1234:33)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:31627:27)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:73138:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:113513:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+
+
+2016-04-02 09:21:49
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/0000/0809i.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31692:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31710:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136187:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66832:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:24:08
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/0/.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31619:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73126:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-02 09:31:39
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/0/09.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31692:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31710:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136187:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66832:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+
+2016-04-02 09:32:04
+Error: ENOENT: no such file or directory, unlink 'booksForTest/book1/0.md'
+    at Error (native)
+    at Object.fs.unlinkSync (fs.js:990:18)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:31692:31)
+    at StorageBook.removeFromDevice (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:31710:19)
+    at StorageBook.remove (http://localhost:8000/assets/main.bundle.js:35066:23)
+    at PageList.remove (http://localhost:8000/assets/main.bundle.js:136187:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at onClick (http://localhost:8000/assets/main.bundle.js:66832:40)
+    at Object.ReactErrorUtils.invokeGuardedCallback (http://localhost:8000/assets/main.bundle.js:12500:17)
+
+

@@ -41,7 +41,7 @@ export default ContextMenuLayer(
         let text = this.state.text;
         if (text.length === 0){
             this.props.handleErrorCannotChange(
-                this.props.chapter === undefined ?
+                this.props.chapter !== undefined ?
                     "Can't rename, page must have a non-empty name!"
                     :
                     "Can't rename, chapter must have a non-empty name!"
@@ -57,9 +57,10 @@ export default ContextMenuLayer(
         else{
             exists = Storage.nowBook.has(text, this.props.chapter);
         }
+        //console.log(this.props.index, this.state.text, exists);
         if(text !== this.props.index && exists){
             this.props.handleErrorCannotChange(
-                this.props.chapter === undefined ?
+                this.props.chapter !== undefined ?
                     "Page '" + text + "' is already in this chapter !"
                     :
                     "Chapter '" + text + "' is already in this book !"
@@ -129,7 +130,7 @@ export default ContextMenuLayer(
             >
                 <form
                     onSubmit={this.onSubmit}
-                    onBlur={this.onSubmit}
+                    //onBlur={this.onSubmit}
                 >
                     <input
                         style={this.state.style}
