@@ -10,6 +10,8 @@ import deepcopy from 'deepcopy';
 import fs from 'fs';
 import StorageBook from './storage-book';
 import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
+import { createObjectWithErrorHandler, logError } from './utils';
+import configManager from './config';
 
 
 export default class StorageTop {
@@ -25,6 +27,7 @@ export default class StorageTop {
                 "load",
                 "createTree",
                 "parse",
+                "getNow",
                 "getIndexes",
                 "getName",
                 "has",
@@ -70,7 +73,9 @@ export default class StorageTop {
                 delete treeRecord.names[index];
             }
             else{
-                this.cache[index] = new StorageBook(index);
+                this.cache[index] = createObjectWithErrorHandler(
+                    new StorageBook(index), logError(configManager.getSysConfig().logPath)
+                );
             }
         });
         this.books = treeRecord;
@@ -89,6 +94,10 @@ export default class StorageTop {
 
     has(index){
         return this.books.indexes.indexOf(index) > -1;
+    }
+
+    getNow() {
+        return this.books.now;
     }
 
     getName(index) {
@@ -111,10 +120,12 @@ export default class StorageTop {
         );
     }
 
-    create(dp, name) {
+    create(dp) {
         this.books.indexes.push(dp);
-        this.books.names[dp] = name;
-        this.cache[dp] = new StorageBook(dp);
+        this.books.names[dp] = getNameFromPath(dp);
+        this.cache[dp] = createObjectWithErrorHandler(
+            new StorageBook(dp), logError(configManager.getSysConfig().logPath)
+        );
     }
 
     remove(index) {

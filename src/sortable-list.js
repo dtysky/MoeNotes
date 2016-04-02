@@ -40,6 +40,112 @@ export default class SortableList extends React.Component {
         );
     }
 
+    initState(name, indexes) {
+        this.state = {
+            indexes: indexes,
+            canInput: "",
+            menuName: name + "-menu",
+            styleSortableList: {}
+        };
+        this.name = name;
+        this.clipBoard = undefined;
+    }
+
+    onContextMenu(data) {
+        this.doMenuOptions(data.option, data.name);
+    }
+
+    createEnd(){
+        this.create(this.state.indexes.length + 1);
+    }
+
+    handleTextChange(index, name) {
+        this.setState({
+            canInput: ""
+        });
+        this.rename(index, name);
+    }
+
+    handleErrorCannotChange(message){
+        this.showNotify("error", message);
+    }
+
+    showNotify(type, message, callbacks){
+        this.refs.notify.show(type, message, callbacks);
+    }
+
+    doMenuOptions(option, index){
+        if(option === "remove"){
+            this.showNotify(
+                "warn",
+                this.props.chapter === undefined ?
+                    "This chapter  will be deleted irrevocably, are you sure ?"
+                    :
+                    "This page will be deleted irrevocably, are you sure ?",
+                {
+                    onOk: {
+                        fun: this.remove,
+                        param: index
+                    }
+                }
+            );
+        }
+        else if(option === "rename"){
+            this.setState({
+                canInput: index
+            });
+        }
+        else if(option === "create"){
+            this.create(this.state.indexes.indexOf(index) + 1);
+        }
+        else if(option === "copy"){
+            this.copy(index);
+        }
+        else if(option === "select"){
+            this.select(index);
+        }
+    }
+
+    resizeSortableList(){
+        let length = 0;
+        const elements = document.getElementsByClassName(
+            this.props.classSortableItem
+        );
+        if(this.props.layoutMode === "horizontal"){
+            for (let i = 0; i< elements.length; i++){
+                length += elements.item(i).offsetWidth;
+            }
+            length += 20 + document.getElementsByClassName(
+                this.props.classButton
+            )[0].offsetWidth;
+            if(this.state.styleSortableList.width !== length) {
+                this.setState({
+                    styleSortableList: {
+                        width: length
+                    }
+                });
+            }
+        }
+    }
+
+    setScrollbar(){
+        const element = ReactDom.findDOMNode(
+            this.refs.main
+        );
+        if(this.props.layoutMode === "horizontal"){
+            element.scrollLeft = element.scrollWidth;
+        }
+        else{
+            element.scrollTop = element.scrollHeight;
+        }
+        this.setState({});
+    }
+
+    componentDidMount(){
+        this.resizeSortableList();
+        this.setState({});
+    }
+
     renderGen () {
         return (
             <div
@@ -108,112 +214,6 @@ export default class SortableList extends React.Component {
                 </div>
             </div>
         );
-    }
-
-    componentDidMount(){
-        this.resizeSortableList();
-        this.setState({});
-    }
-
-    initState(name, indexes) {
-        this.state = {
-            indexes: indexes,
-            canInput: "",
-            menuName: name + "-menu",
-            styleSortableList: {}
-        };
-        this.name = name;
-        this.clipBoard = undefined;
-    }
-
-    onContextMenu(data) {
-        this.doMenuOptions(data.option, data.name);
-    }
-
-    createEnd(){
-        this.create(this.state.indexes.length + 1);
-    }
-
-    handleTextChange(index, name) {
-        this.setState({
-            canInput: ""
-        });
-        this.rename(index, name);
-    }
-
-    handleErrorCannotChange(message){
-        this.showNotify("error", message);
-    }
-
-    showNotify(type, message, callbacks){
-        this.refs.notify.show(type, message, callbacks);
-    }
-
-    doMenuOptions(option, index){
-        if(option === "remove"){
-            this.showNotify(
-                "warn",
-                this.props.chapter === undefined ?
-                    "This chapter  will be deleted irrevocably, are you sure ?"
-                    :
-                    "This page will be deleted irrevocably, are you sure ?",
-                {
-                    onOk: {
-                        fun: this.remove,
-                        param: index
-                    }
-                }
-            );
-        }
-        else if(option === "rename"){
-            this.setState({
-                canInput: index
-            });
-        }
-        else if(option === "create"){
-            this.create(this.state.indexes.indexOf(index) + 1);
-        }
-        else if(option === "copy"){
-            this.copy(index);
-        }
-        else if(option === "select"){
-            this.select(index);
-        }
-    }
-
-    resizeSortableList(){
-        var length = 0;
-        const elements = document.getElementsByClassName(
-            this.props.classSortableItem
-        );
-        if(this.props.layoutMode === "horizontal"){
-            for (var i = 0; i< elements.length; i++){
-                length += elements.item(i).offsetWidth;
-            }
-            length += 20 + document.getElementsByClassName(
-                this.props.classButton
-            )[0].offsetWidth;
-            if(this.state.styleSortableList.width !== length) {
-                this.setState({
-                    styleSortableList: {
-                        width: length
-                    }
-                });
-            }
-        }
-    }
-
-    setScrollbar(){
-        const element = ReactDom.findDOMNode(
-            this.refs.main
-        );
-        if(this.props.layoutMode === "horizontal"){
-            element.scrollLeft = element.scrollWidth;
-        }
-        else{
-            element.scrollTop = element.scrollHeight;
-        }
-        this.setState({});
     }
 
     render(){

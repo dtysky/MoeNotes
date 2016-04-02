@@ -13,12 +13,32 @@ import { initJsdom } from './utils';
 describe("Component - BookItem", () => {
     process.env.BROWSER = false;
     initJsdom();
+    let component = null;
     beforeEach(() => {
-        TestUtils.renderIntoDocument(<BookItem/>)
+        component = TestUtils.renderIntoDocument(<BookItem/>)
     });
 
     it("Initialize", () => {
 
+    });
+
+    it("On change", () => {
+
+    });
+
+    it("On submit", () => {
+
+    });
+
+    it("On rename", () => {
+
+    });
+
+    it("On remove", () => {
+
+    });
+
+    it("On select", () => {
 
     });
 

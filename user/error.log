@@ -1,0 +1,56 @@
+2016-04-02 02:37:27
+TypeError: Path must be a string. Received undefined
+    at assertPath (path.js:8:11)
+    at Object.posix.join (path.js:479:5)
+    at StorageBook.load (http://localhost:8000/assets/main.bundle.js:31508:44)
+    at new StorageBook (http://localhost:8000/assets/main.bundle.js:31501:15)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:31096:72)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:35065:23)
+    at BookList.create (http://localhost:8000/assets/main.bundle.js:68297:44)
+    at BookList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at BookList.onCreate (http://localhost:8000/assets/main.bundle.js:68278:19)
+    at BookList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+
+
+2016-04-02 02:39:01
+TypeError: Path must be a string. Received undefined
+    at assertPath (path.js:8:11)
+    at Object.posix.join (path.js:479:5)
+    at StorageBook.load (http://localhost:8000/assets/main.bundle.js:31508:44)
+    at new StorageBook (http://localhost:8000/assets/main.bundle.js:31501:15)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:31096:72)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:35065:23)
+    at BookList.create (http://localhost:8000/assets/main.bundle.js:68297:44)
+    at BookList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at BookList.onCreate (http://localhost:8000/assets/main.bundle.js:68278:19)
+    at BookList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+
+
+2016-04-02 02:40:36
+TypeError: Path must be a string. Received undefined
+    at assertPath (path.js:8:11)
+    at Object.posix.join (path.js:479:5)
+    at StorageBook.load (http://localhost:8000/assets/main.bundle.js:31508:44)
+    at new StorageBook (http://localhost:8000/assets/main.bundle.js:31501:15)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:31096:72)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:35065:23)
+    at BookList.create (http://localhost:8000/assets/main.bundle.js:68297:44)
+    at BookList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at BookList.onCreate (http://localhost:8000/assets/main.bundle.js:68278:19)
+    at BookList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+
+
+2016-04-02 06:28:14
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/cp1/page21.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31621:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35068:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73122:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+

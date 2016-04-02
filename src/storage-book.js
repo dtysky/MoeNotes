@@ -221,7 +221,7 @@ export default class StorageBook{
             fs.mkdir(newPath);
         }
         else{
-            fs.writeFileSync(newPath + ".md", "");
+            fs.writeFileSync(newPath + ".md", "# ");
         }
     }
 

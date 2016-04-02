@@ -84,9 +84,9 @@ describe("StorageTop ", () => {
         });
 
         it("Create", () => {
-            storage.create("book3", "bookC");
+            storage.create("book3");
             tree.indexes = ["book1", "book2", "book3"];
-            tree.names.book3 = "bookC";
+            tree.names.book3 = "book3";
             expect(
                 objectIsEqual(storage.books, tree)
             ).toBeTruthy();

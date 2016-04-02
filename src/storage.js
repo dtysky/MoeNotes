@@ -6,5 +6,10 @@
 
 
 import StorageTop from './storage-top';
+import { createObjectWithErrorHandler, logError } from './utils';
+import configManager from './config';
 
-export default new StorageTop("user/.tree");
+
+export default createObjectWithErrorHandler(
+    new StorageTop("user/.tree"), logError(configManager.getSysConfig().logPath)
+);

@@ -38,7 +38,7 @@ export default ContextMenuLayer(
 
     onSubmit: function(event){
         event.preventDefault();
-        var text = this.state.text;
+        let text = this.state.text;
         if (text.length === 0){
             this.props.handleErrorCannotChange(
                 this.props.chapter === undefined ?
@@ -50,7 +50,7 @@ export default ContextMenuLayer(
             return;
         }
 
-        var exists;
+        let exists;
         if(this.props.chapter === undefined) {
             exists = Storage.nowBook.has(text);
         }
@@ -85,7 +85,7 @@ export default ContextMenuLayer(
     },
 
     resizeInput: function(callback){
-        var fun = callback === undefined ? () => {} : callback;
+        let fun = callback === undefined ? () => {} : callback;
         if (this.props.layoutMode !== "horizontal"){
             fun();
             return;

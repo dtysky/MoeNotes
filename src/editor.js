@@ -20,6 +20,7 @@ export default class ReactAce extends Component {
         bindFunctions(
             this,
         [
+            'focus',
             'onChange',
             'onFocus',
             'onBlur',
@@ -84,6 +85,12 @@ export default class ReactAce extends Component {
 
     componentWillUnmount() {
         this.editor = null;
+    }
+
+    focus(){
+        this.editor.focus();
+        const n = this.editor.getSession().getValue().split("\n").length;
+        this.editor.gotoLine(n);
     }
 
     onChange() {

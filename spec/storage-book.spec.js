@@ -144,7 +144,7 @@ describe("StorageBook ", () => {
             expect(
                 objectIsEqual(storage.book, tree)
             ).toBeTruthy();
-            files.book1.cp0["page0.md"] = "";
+            files.book1.cp0["page0.md"] = "# ";
             expect(
                 objectIsEqual(loadBook("book1"), files)
             ).toBeTruthy();

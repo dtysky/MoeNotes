@@ -12,6 +12,7 @@ const paths = require('./config').paths;
 
 var mainWindow = null;
 
+
 app.on('window-all-closed', function() {
     if (process.platform != 'darwin') {
         app.quit();

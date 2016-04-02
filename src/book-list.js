@@ -12,6 +12,7 @@ import Book from './book-item';
 const Menu = require('react-burger-menu').slide;
 import Storage from './storage';
 import Notify from './notify';
+import BookPicker from './book-picker';
 import { bindFunctions } from './utils';
 
 if (process.env.BROWSER) {
@@ -25,8 +26,9 @@ export default class BookList extends React.Component {
         super(props);
         this.state = {
             indexes: Storage.getIndexes(),
-            now: Storage.nowBook,
-            width: 0
+            now: Storage.getNow(),
+            width: 0,
+            isOpen: false
         };
         bindFunctions(
             this,
@@ -39,6 +41,7 @@ export default class BookList extends React.Component {
                 "rename",
                 "remove",
                 "select",
+                "open",
                 "resizeButton",
                 "doMenuOptions",
                 "handleTextChange",
@@ -49,12 +52,11 @@ export default class BookList extends React.Component {
     }
 
     onCreate(){
-        this.create(this.state.indexes.length + 1);
+        this.create();
     }
 
     onLoad(){
-        //Not finised !
-        this.refresh();
+        this.load();
     }
 
     refresh(){
@@ -65,17 +67,34 @@ export default class BookList extends React.Component {
     }
 
     create() {
-        //Not finised !
-        this.select();
+        BookPicker.create(
+            dp => {
+                if(!Storage.has(dp)){
+                    Storage.create(dp);
+                }
+                this.state.isOpen = false;
+                this.select(dp);
+            }
+        );
     }
 
     load() {
-
+        BookPicker.open(
+            dp => {
+                if(!Storage.has(dp)){
+                    Storage.create(dp);
+                }
+                this.state.isOpen = false;
+                this.select(dp);
+            }
+        );
     }
 
     remove(index) {
         Storage.remove(index);
-        //if empty, load book!
+        if(Storage.isEmpty()){
+            this.create();
+        }
         this.props.handleChangeBook();
         this.refresh();
     }
@@ -89,21 +108,25 @@ export default class BookList extends React.Component {
         if(index === Storage.getNow()){
             Storage.change(0);
         }
-        this.select(name);
+        this.select(index);
     }
 
     select(index){
         Storage.change(index);
+        Storage.save();
         this.props.handleChangeBook();
         this.refresh();
+    }
+
+    open(){
+        this.setState({
+            isOpen: true
+        });
     }
 
     resizeButton(){
         const width = ReactDom.findDOMNode(this.refs.buttonsOpen).offsetWidth;
         this.props.reoffsetChapter(width);
-        this.setState({
-            width: width
-        });
     }
 
     doMenuOptions(option, index){
@@ -152,12 +175,12 @@ export default class BookList extends React.Component {
         return (
             <div>
                 <Menu
+                    isOpen={this.state.isOpen}
                     styles={{
                         bmBurgerButton:{
-                            position: this.props.buttonPosition,
-                            height: this.props.buttonHeight,
-                            top: this.props.buttonTop,
-                            width: this.state.width
+                            position: "absolute",
+                            height: 0,
+                            width: 0
                         }
                     }}
                 >
@@ -168,6 +191,7 @@ export default class BookList extends React.Component {
                                     key={no}
                                     ref={index}
                                     index={index}
+                                    name={Storage.getName(index)}
                                     className={this.props.classSortableItem}
                                     canInput={this.state.canInput === no}
                                     handleTextChange={this.handleTextChange}
@@ -196,6 +220,7 @@ export default class BookList extends React.Component {
                         height: this.props.buttonHeight,
                         top: this.props.buttonTop
                     }}
+                    onClick={this.open}
                 >
                     {
                         Storage.getName(

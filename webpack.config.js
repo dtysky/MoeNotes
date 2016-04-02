@@ -79,7 +79,7 @@ module.exports = {
             }
         ],
         noParse:[
-            'jquery'
+            "jquery"
         ]
     },
 

@@ -46,16 +46,19 @@ export default class Page extends React.Component{
         });
     }
 
-    refresh(value){
+    refresh(value, callback){
+        Storage.save(value);
+        const cb = callback === undefined ? () => {} : callback;
         this.setState({
             markdown: value
-        });
+        }, cb);
         debounce(this.parsePage, 10)(value);
     }
 
     reload(){
         this.refresh(
-            Storage.nowBook.readNowPage()
+            Storage.nowBook.readNowPage(),
+            this.refs.editor.focus()
         );
     }
 

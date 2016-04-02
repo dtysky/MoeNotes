@@ -80,5 +80,6 @@ export function logError(file){
         let data = message + "\n\n";
         data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
         fs.appendFileSync(file, data);
+
     };
 }

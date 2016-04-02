@@ -19,7 +19,7 @@ export default class Book extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            text: this.props.index
+            text: this.props.name
         };
         bindFunctions(
             this,

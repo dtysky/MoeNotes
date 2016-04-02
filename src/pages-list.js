@@ -32,7 +32,8 @@ class PageList extends SortableList {
                 "remove",
                 "select",
                 "copy",
-                "reload"
+                "reload",
+                "setScrollbar"
             ]
         );
     }
@@ -41,7 +42,7 @@ class PageList extends SortableList {
         this._sortkey ++;
         this.state.indexes = Storage.nowBook.getIndexes(Storage.nowBook.getNow());
         this.setState({}, callback === undefined ?
-            () => {this.setScrollbar.bind(this);}
+            () => {this.setScrollbar();}
             :
             callback()
         );
