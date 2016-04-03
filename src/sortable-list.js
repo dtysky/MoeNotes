@@ -162,12 +162,12 @@ export default class SortableList extends React.Component {
                 />
                 {
                     this.props.addButtonLocation === "front" ?
-                        <button
+                        <div
                             className={this.props.classButton}
                             onClick={this.createEnd}
                         >
                             Add new
-                        </button>
+                        </div>
                         :
                         null
                 }
@@ -202,12 +202,12 @@ export default class SortableList extends React.Component {
                     </Sortable>
                     {
                         this.props.addButtonLocation === "end" ?
-                            <button
+                            <div
                                 className={this.props.classButton}
                                 onClick={this.createEnd}
                             >
                                 Add new
-                            </button>
+                            </div>
                             :
                             null
                     }

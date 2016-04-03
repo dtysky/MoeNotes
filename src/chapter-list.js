@@ -41,7 +41,7 @@ class ChapterList extends SortableList {
         this._sortkey ++;
         this.state.indexes = Storage.nowBook.getIndexes();
         this.setState({}, callback === undefined ?
-            () => {this.setScrollbar();}
+            () => {}
             :
             callback()
         );
@@ -86,13 +86,13 @@ class ChapterList extends SortableList {
         else{
             Storage.nowBook.rename(index, name);
         }
-        this.select(name);
+        this.select(name, this.setScrollbar);
     }
 
-    select(index){
+    select(index, callback){
         Storage.nowBook.change(index);
         this.props.handlerChangeChapter();
-        this.refresh();
+        this.refresh(callback);
     }
 
     copy(index){

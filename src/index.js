@@ -31,7 +31,7 @@ class App extends React.Component{
 
     reoffsetChapter(width){
         this.setState({
-            chapterListLeft: width + 10
+            chapterListLeft: width + 30
         });
     }
 
@@ -65,17 +65,17 @@ class App extends React.Component{
             content: {
                 height: height - 100
             },
-            buttonHeight: 48,
-            buttonTop: 40,
-            buttonPosition: "absolute",
+            bookButtonHeight: 60,
+            bookButtonTop: 35,
+            bookButtonPosition: "absolute",
             bookListMenu: {
                 height: 48
             },
             chapterList: {
                 width: width - this.state.chapterListLeft,
                 left: this.state.chapterListLeft,
-                height: 40,
-                top: 40
+                height: 35,
+                top: 60
             },
             pageList: {
                 width: 200
@@ -93,16 +93,16 @@ class App extends React.Component{
                 >
                     <BookList
                         menuStyle={this.styles.bookListMenu}
-                        buttonHeight={this.styles.buttonHeight}
-                        buttonTop={this.styles.buttonTop}
-                        buttonPosition={this.styles.buttonPosition}
+                        buttonHeight={this.styles.bookButtonHeight}
+                        buttonTop={this.styles.bookButtonTop}
+                        buttonPosition={this.styles.bookButtonPosition}
                         handleChangeBook={this.handleChangeBook.bind(this)}
                         reoffsetChapter={this.reoffsetChapter.bind(this)}
                     />
                     <ChapterList
                         ref="chapterList"
                         classList="chapter-list absolute"
-                        classSortableList="chapter-sortable-list"
+                        classSortableList="chapter-sortable-list inner"
                         classSortableItem="chapter-sortable-list-item"
                         classButton="chapter-list-button inner"
                         style={this.styles.chapterList}
@@ -115,7 +115,7 @@ class App extends React.Component{
                     <PageList
                         ref="pageList"
                         classList="page-list full-height float-left"
-                        classSortableList="inner page-sortable-list full-width"
+                        classSortableList="page-sortable-list full-width"
                         classSortableItem="page-sortable-list-item"
                         classButton="page-list-button"
                         style={this.styles.pageList}

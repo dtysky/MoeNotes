@@ -218,6 +218,7 @@ export default class BookList extends React.Component {
                     style={{
                         position: this.props.buttonPosition,
                         height: this.props.buttonHeight,
+                        lineHeight: this.props.buttonHeight + "px",
                         top: this.props.buttonTop
                     }}
                     onClick={this.open}

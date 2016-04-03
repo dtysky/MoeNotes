@@ -50,7 +50,3 @@
 .ui-sortable.full-width .ui-sortable-item{
     width: 100%;
 }
-
-.ui-sortable-item form input{
-    font-size: 16px;
-}

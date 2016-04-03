@@ -30,7 +30,7 @@ body::-webkit-scrollbar{
 }
 
 .inner{
-    display: inline-block;
+    display: -webkit-inline-box;
 }
 
 .page{
@@ -81,6 +81,14 @@ body::-webkit-scrollbar{
     padding-left: 20px;
 }
 
+.page-sortable-list-item form input{
+    font-size: 16px;
+}
+
+.page-list::-webkit-scrollbar{
+    background: none;
+}
+
 .chapter-list{
     width: auto;
     overflow-x: auto;
@@ -88,24 +96,61 @@ body::-webkit-scrollbar{
 }
 
 .chapter-sortable-list{
-    display: -webkit-inline-box;
+    vertical-align: top;
 }
 
 .chapter-sortable-list-item{
+    height: 27px;
 }
 
 .chapter-sortable-list-item form input{
-    width: 80px;
     text-align: center;
+    font-size: 16px;
 }
 
 .chapter-list-button{
+    vertical-align: top;
+    line-height: 27px;
+}
+
+.chapter-list::-webkit-scrollbar{
+    background: none;
+    height: 5px;
+}
+
+.books-button-open{
+    cursor: pointer;
+    font-size: 20px;
+    background-size: cover;
+}
+
+.books-button-open:before{
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+    background-size: auto 60px;
+}
+
+form{
+    height: 100%;
 }
 
 input{
     min-width: 60px;
+    height: 100%;
+    border: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 button{
+    margin: 0;
+    padding: 0;
+    border: 0;
     cursor: pointer;
 }

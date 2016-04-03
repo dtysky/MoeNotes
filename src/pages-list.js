@@ -42,7 +42,7 @@ class PageList extends SortableList {
         this._sortkey ++;
         this.state.indexes = Storage.nowBook.getIndexes(Storage.nowBook.getNow());
         this.setState({}, callback === undefined ?
-            () => {this.setScrollbar();}
+            () => {}
             :
             callback()
         );
@@ -90,13 +90,13 @@ class PageList extends SortableList {
         else{
             Storage.nowBook.rename(index, name, Storage.nowBook.getNow());
         }
-        this.select(name);
+        this.select(name, this.setScrollbar);
     }
 
-    select(index){
+    select(index, callback){
         Storage.nowBook.change(index, Storage.nowBook.getNow());
         this.props.handlerChangePage();
-        this.refresh();
+        this.refresh(callback);
     }
 
     copy(index){

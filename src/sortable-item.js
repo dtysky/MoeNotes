@@ -23,6 +23,7 @@ export default ContextMenuLayer(
     })
 )(React.createClass({
     mixins: [SortableItemMixin],
+
     getInitialState: function(){
         return {
             text: this.props.index,
@@ -130,7 +131,8 @@ export default ContextMenuLayer(
             >
                 <form
                     onSubmit={this.onSubmit}
-                    //onBlur={this.onSubmit}
+                    //onBlur will be called...
+                    onBlur={this.onSubmit}
                 >
                     <input
                         style={this.state.style}
