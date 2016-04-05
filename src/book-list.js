@@ -192,7 +192,6 @@ export default class BookList extends React.Component {
                                     ref={index}
                                     index={index}
                                     name={Storage.getName(index)}
-                                    className={this.props.classSortableItem}
                                     canInput={this.state.canInput === no}
                                     handleTextChange={this.handleTextChange}
                                     handleErrorCannotChange={this.handleErrorCannotChange}
@@ -201,20 +200,22 @@ export default class BookList extends React.Component {
                             );
                         }, this)
                     }
-                    <button
+                    <div
+                        className="button"
                         onClick={this.onCreate}
                     >
                         Create
-                    </button>
-                    <button
+                    </div>
+                    <div
+                        className="button"
                         onClick={this.onLoad}
                     >
                         Load
-                    </button>
+                    </div>
                 </Menu>
                 <div
                     ref="buttonsOpen"
-                    className="books-button-open"
+                    className="books-button-open button"
                     style={{
                         position: this.props.buttonPosition,
                         height: this.props.buttonHeight,

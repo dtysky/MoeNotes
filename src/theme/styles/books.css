@@ -14,7 +14,8 @@
 /* General sidebar styles */
 .bm-menu {
     background: rgba(0,0,0,0.8);
-    padding: 2.5em 1.5em 0;
+    padding: 30px;
+    padding-top: 100px;
     font-size: 1.15em;
 }
 
@@ -26,10 +27,27 @@
 /* Wrapper for item list */
 .bm-item-list {
     color: #b8b7ad;
-    padding: 0.8em;
 }
 
 /* Styling of overlay */
 .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+}
+
+.book{
+    height: 32px;
+}
+
+.book-text{
+    width: 176px;
+}
+
+.book input{
+    margin-left: 10%;
+    width: 80%;
+}
+
+.book-button{
+    width: 32px;
+    height: 32px;
 }

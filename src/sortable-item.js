@@ -11,7 +11,7 @@ import ReactDom from 'react-dom';
 import { SortableItemMixin } from 'react-anything-sortable';
 import Storage from './storage';
 import { ContextMenuLayer } from './context-menu';
-import { bindFunctions } from './utils';
+import { bindFunctions, stringToColor } from './utils';
 
 import './theme/styles/sky.css';
 import './theme/styles/sortable.css';
@@ -92,7 +92,7 @@ export default ContextMenuLayer(
             fun();
             return;
         }
-        const width = this.state.text.length * 12;
+        const width = this.state.text.length * 18;
         if(width === this.state.style.width){
             fun();
             return;
@@ -124,12 +124,27 @@ export default ContextMenuLayer(
     },
 
     renderGen: function(){
+        const style = this.props.chapter === undefined ? {
+            backgroundColor: Storage.nowBook.getNow() === this.props.index ?
+                stringToColor(this.props.index, 50, 60, 1) :
+                stringToColor(this.props.index, 50, 50, 1)
+        } : {};
+        let className;
+        if(this.props.chapter === undefined){
+            className = Storage.nowBook.getNow() === this.props.index ? this.props.className + "-active" : this.props.className + "-normal" ;
+            this.state.style.color = Storage.nowBook.getNow() !== this.props.index ?
+                stringToColor(this.props.index, 100, 20, 1) : "#ffffff";
+        }
+        else{
+            className = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?  this.props.className + "-active" : this.props.className + "-normal";
+        }
         return (
             <div
-                className={this.props.className}
                 onClick={this.select}
             >
                 <form
+                    style={style}
+                    className={this.props.className + " " + className}
                     onSubmit={this.onSubmit}
                     //onBlur will be called...
                     onBlur={this.onSubmit}

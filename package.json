@@ -49,6 +49,7 @@
   "dependencies": {
     "boron": "^0.2.3",
     "brace": "^0.7.0",
+    "color-space": "^1.14.3",
     "deepcopy": "^0.6.1",
     "highlight.js": "^9.2.0",
     "jade": "^1.11.0",
@@ -62,6 +63,7 @@
     "react-burger-menu": "^1.5.7",
     "react-contextmenu": "^1.2.0",
     "react-dom": "^0.14.7",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "string-hash": "^1.1.0"
   }
 }

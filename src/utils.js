@@ -9,6 +9,8 @@ import path from 'path';
 import lodash from 'lodash';
 import deepcopy from 'deepcopy';
 import moment from 'moment';
+import colorSpace from 'color-space';
+import stringHash from 'string-hash';
 
 export function bindFunctions(self, methods){
     methods.forEach(method => {
@@ -52,6 +54,13 @@ export function arrayIsLike(a1, a2){
 
 export function arrayHas(a, e){
     return a.indexOf(e) > -1;
+}
+
+export function stringToColor(string, l, s, alpha){
+    const hue = Math.round(stringHash(string) % 360);
+    let color = colorSpace.hsl.rgb([hue, l, s]).map(num => parseInt(num));
+    color.push(alpha === undefined ? 0.4 : alpha);
+    return "rgba(" + color.join(",") + ")";
 }
 
 function tryCatchWrapper(f, handler) {

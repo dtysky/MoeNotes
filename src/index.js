@@ -12,6 +12,8 @@ import ChapterList from './chapter-list';
 import BookList from './book-list';
 import Page from './page';
 import PageList from './pages-list';
+import Storage from './storage';
+import { bindFunctions, stringToColor } from './utils';
 
 import './theme/styles/sky.css';
 
@@ -21,8 +23,21 @@ class App extends React.Component{
         this.state = {
             width: window.innerWidth,
             height: window.innerHeight,
-            chapterListLeft: 100
+            chapterListLeft: 100,
+            headLineColor: "rgba(0,0,0,0)",
+            pageListBackColor: "rgba(0,0,0,0)"
         };
+        bindFunctions(
+            this,
+            [
+                "handleChangeBook",
+                "reoffsetChapter",
+                "handlerChangeChapter",
+                "handlerChangePage",
+                "changeColor",
+                "resize"
+            ]
+        );
     }
 
     handleChangeBook(){
@@ -37,10 +52,18 @@ class App extends React.Component{
 
     handlerChangeChapter(){
         this.refs.pageList.reload();
+        this.changeColor();
     }
 
     handlerChangePage(){
         this.refs.page.reload();
+    }
+
+    changeColor(){
+        this.setState({
+            headLineColor: stringToColor(Storage.nowBook.getNow(), 50, 60, 1),
+            pageListBackColor: stringToColor(Storage.nowBook.getNow(), 30, 40, 0.6)
+        });
     }
 
     resize() {
@@ -52,6 +75,7 @@ class App extends React.Component{
 
     componentDidMount() {
         window.addEventListener('resize', this.resize.bind(this));
+        this.changeColor();
         this.resize();
     }
 
@@ -65,8 +89,8 @@ class App extends React.Component{
             content: {
                 height: height - 100
             },
-            bookButtonHeight: 60,
-            bookButtonTop: 35,
+            bookButtonHeight: 65,
+            bookButtonTop: 25,
             bookButtonPosition: "absolute",
             bookListMenu: {
                 height: 48
@@ -74,10 +98,19 @@ class App extends React.Component{
             chapterList: {
                 width: width - this.state.chapterListLeft,
                 left: this.state.chapterListLeft,
-                height: 35,
-                top: 60
+                height: 40,
+                top: 55
+            },
+            headLine: {
+                top: 95,
+                height: 5,
+                backgroundColor: this.state.headLineColor
             },
             pageList: {
+                width: 200,
+                backgroundColor: this.state.pageListBackColor
+            },
+            pageListBackground: {
                 width: 200
             },
             page: {
@@ -101,7 +134,8 @@ class App extends React.Component{
                     />
                     <ChapterList
                         ref="chapterList"
-                        classList="chapter-list absolute"
+                        classBackground="chapter-list absolute"
+                        classList=""
                         classSortableList="chapter-sortable-list inner"
                         classSortableItem="chapter-sortable-list-item"
                         classButton="chapter-list-button inner"
@@ -110,15 +144,22 @@ class App extends React.Component{
                         addButtonLocation="end"
                         handlerChangeChapter={this.handlerChangeChapter.bind(this)}
                     />
+                    <div
+                        className="head-line absolute"
+                        style={this.styles.headLine}
+                    >
+                    </div>
                 </div>
                 <div style={this.styles.content}>
                     <PageList
                         ref="pageList"
-                        classList="page-list full-height float-left"
+                        classBackground="page-list-background  float-left"
+                        classList="page-list full-height"
                         classSortableList="page-sortable-list full-width"
                         classSortableItem="page-sortable-list-item"
                         classButton="page-list-button"
-                        style={this.styles.pageList}
+                        style={this.styles.pageListBackground}
+                        styleList={this.styles.pageList}
                         layoutMode="vertical"
                         addButtonLocation="front"
                         handlerChangePage={this.handlerChangePage.bind(this)}

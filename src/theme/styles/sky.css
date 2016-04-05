@@ -1,5 +1,36 @@
+body{
+    background-size: auto 100%;
+}
+
 body::-webkit-scrollbar{
     display: none;
+}
+
+form{
+    height: 100%;
+}
+
+input{
+    min-width: 60px;
+    height: 100%;
+    border: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: none;
+    color: black;
+}
+
+button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.button{
+    cursor: pointer;
 }
 
 .full{
@@ -67,6 +98,12 @@ body::-webkit-scrollbar{
     outline: none;
 }
 
+.page-list-background{
+    background-size: auto 100%;
+    background-position: center;
+    height: 100%;
+}
+
 .page-list{
     height: 100%;
 }
@@ -89,28 +126,51 @@ body::-webkit-scrollbar{
     background: none;
 }
 
+.page-list::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}
+
+.page-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.head{
+    background-size: 100% auto;
+}
+
 .chapter-list{
     width: auto;
     overflow-x: auto;
     overflow-y: hidden;
+    transform:rotateX(180deg);
 }
 
 .chapter-sortable-list{
     vertical-align: top;
+    transform:rotateX(180deg);
 }
 
 .chapter-sortable-list-item{
-    height: 27px;
+}
+
+.chapter-sortable-list-item-normal{
+    margin-top: 5px;
+    height: 25px;
+}
+
+.chapter-sortable-list-item-active{
+    height: 30px;
 }
 
 .chapter-sortable-list-item form input{
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .chapter-list-button{
     vertical-align: top;
-    line-height: 27px;
+    line-height: 30px;
+    transform:rotateX(180deg);
 }
 
 .chapter-list::-webkit-scrollbar{
@@ -118,10 +178,20 @@ body::-webkit-scrollbar{
     height: 5px;
 }
 
+.chapter-list::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}
+
+.chapter-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
 .books-button-open{
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     background-size: cover;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .books-button-open:before{
@@ -134,23 +204,6 @@ body::-webkit-scrollbar{
     background-size: auto 60px;
 }
 
-form{
-    height: 100%;
-}
-
-input{
-    min-width: 60px;
-    height: 100%;
-    border: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-button{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
+.head-line{
+    width: 100%;
 }

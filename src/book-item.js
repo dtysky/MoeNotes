@@ -101,10 +101,10 @@ export default class Book extends React.Component {
     render() {
         return (
             <div
-                className={this.props.className}
+                className="book"
             >
                 <form
-                    className=""
+                    className="book-text button float-left"
                     onSubmit={this.onSubmit}
                     onBlur={this.onSubmit}
                     onClick={this.onSelect}
@@ -117,14 +117,16 @@ export default class Book extends React.Component {
                         onChange={this.onChange}
                     />
                 </form>
-                <button
-                    className=""
+                <div
+                    className="book-button button book-button-edit float-left"
                     onClick={this.onRename}
-                />
-                <button
-                    className=""
+                >
+                </div>
+                <div
+                    className="book-button button book-button-remove float-left"
                     onClick={this.onRemove}
-                />
+                >
+                </div>
             </div>
         );
     }

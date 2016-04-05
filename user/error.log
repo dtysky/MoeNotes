@@ -2672,3 +2672,73 @@ TypeError: Cannot read property 'now' of undefined
     at onBlur (http://localhost:8000/assets/main.bundle.js:125327:15)
 
 
+2016-04-05 10:56:31
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/000000000000000000000000000/1.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31617:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35064:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73194:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-05 10:56:38
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/11111111111111111111111111111/1.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31617:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35064:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:73194:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9787:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9579:29)
+
+
+2016-04-05 07:06:37
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/哈哈哈/2.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31656:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35121:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:76470:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9815:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9589:29)
+
+
+2016-04-05 07:07:01
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/你是大笨蛋/4.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31656:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35121:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:76470:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9815:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9589:29)
+
+
+2016-04-05 07:08:22
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/你是大笨蛋蛋蛋蛋蛋蛋蛋/4.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:31656:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:35121:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:76470:53)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9815:38)
+    at App.handlerChangePage (http://localhost:8000/assets/main.bundle.js:9589:29)
+
+

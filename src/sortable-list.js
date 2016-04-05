@@ -151,57 +151,21 @@ export default class SortableList extends React.Component {
             <div
                 ref="main"
                 style={this.props.style}
-                className={this.props.classList}
+                className={this.props.classBackground}
             >
-                <Notify
-                    ref="notify"
-                />
-                <ContextMenuMain
-                    name={this.state.menuName}
-                    handleClick={this.onContextMenu}
-                />
-                {
-                    this.props.addButtonLocation === "front" ?
-                        <div
-                            className={this.props.classButton}
-                            onClick={this.createEnd}
-                        >
-                            Add new
-                        </div>
-                        :
-                        null
-                }
                 <div
-                    style={this.state.styleSortableList}
+                    style={this.props.styleList}
+                    className={this.props.classList}
                 >
-                    <Sortable
-                        className={this.props.classSortableList}
-                        key={this._sortkey}
-                        onSort={this.onSort}
-                    >
-                        {
-                            this.state.indexes.map((index) => {
-                                return (
-                                    <SortableListItem
-                                        key={index}
-                                        ref={index}
-                                        index={index}
-                                        layoutMode={this.props.layoutMode}
-                                        menuName={this.state.menuName}
-                                        chapter={this.name === "page-list" ? Storage.nowBook.getNow() : undefined}
-                                        sortData={index}
-                                        className={this.props.classSortableItem}
-                                        canInput={this.state.canInput === index}
-                                        doMenuOptions={this.doMenuOptions}
-                                        handleTextChange={this.handleTextChange}
-                                        handleErrorCannotChange={this.handleErrorCannotChange}
-                                    />
-                                );
-                            }, this)
-                        }
-                    </Sortable>
+                    <Notify
+                        ref="notify"
+                    />
+                    <ContextMenuMain
+                        name={this.state.menuName}
+                        handleClick={this.onContextMenu}
+                    />
                     {
-                        this.props.addButtonLocation === "end" ?
+                        this.props.addButtonLocation === "front" ?
                             <div
                                 className={this.props.classButton}
                                 onClick={this.createEnd}
@@ -211,6 +175,47 @@ export default class SortableList extends React.Component {
                             :
                             null
                     }
+                    <div
+                        style={this.state.styleSortableList}
+                    >
+                        <Sortable
+                            className={this.props.classSortableList}
+                            key={this._sortkey}
+                            onSort={this.onSort}
+                        >
+                            {
+                                this.state.indexes.map((index) => {
+                                    return (
+                                        <SortableListItem
+                                            key={index}
+                                            ref={index}
+                                            index={index}
+                                            layoutMode={this.props.layoutMode}
+                                            menuName={this.state.menuName}
+                                            chapter={this.name === "page-list" ? Storage.nowBook.getNow() : undefined}
+                                            sortData={index}
+                                            className={this.props.classSortableItem}
+                                            canInput={this.state.canInput === index}
+                                            doMenuOptions={this.doMenuOptions}
+                                            handleTextChange={this.handleTextChange}
+                                            handleErrorCannotChange={this.handleErrorCannotChange}
+                                        />
+                                    );
+                                }, this)
+                            }
+                        </Sortable>
+                        {
+                            this.props.addButtonLocation === "end" ?
+                                <div
+                                    className={this.props.classButton}
+                                    onClick={this.createEnd}
+                                >
+                                    Add new
+                                </div>
+                                :
+                                null
+                        }
+                    </div>
                 </div>
             </div>
         );
