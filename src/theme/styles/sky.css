@@ -1,7 +1,3 @@
-body{
-    background-size: auto 100%;
-}
-
 body::-webkit-scrollbar{
     display: none;
 }
@@ -64,6 +60,11 @@ button{
     display: -webkit-inline-box;
 }
 
+.page-content{
+    background-size: auto 100%;
+    background-position: bottom;
+}
+
 .page{
     width: 50%;
     height: 100%;
@@ -113,13 +114,44 @@ button{
     overflow-x: hidden;
 }
 
-.page-sortable-list-item form input{
-    width: 160px;
-    padding-left: 20px;
+.page-list-button{
+    width: auto;
+    height: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4px;
+    font-size: 18px;
+}
+
+.page-list-button:before{
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 24px;
+    height: 24px;
+    background-size: auto 100%;
+}
+
+.page-sortable-list-item{
+    width: 90%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-bottom: 2px;
+    border-bottom: solid 1px rgba(200,200,200,0.2);
+}
+
+.page-sortable-list-item-active{
+    width: 100%;
+    background-color: #fff0ff;
 }
 
 .page-sortable-list-item form input{
-    font-size: 16px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.page-sortable-list-item form input{
+    font-size: 13px;
 }
 
 .page-list::-webkit-scrollbar{
@@ -189,7 +221,6 @@ button{
 .books-button-open{
     cursor: pointer;
     font-size: 22px;
-    background-size: cover;
     margin-left: 10px;
     margin-right: 10px;
 }

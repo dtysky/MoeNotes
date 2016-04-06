@@ -168,6 +168,7 @@ export default class SortableList extends React.Component {
                         this.props.addButtonLocation === "front" ?
                             <div
                                 className={this.props.classButton}
+                                style={this.props.styleButton}
                                 onClick={this.createEnd}
                             >
                                 Add new

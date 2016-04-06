@@ -25,7 +25,9 @@ class App extends React.Component{
             height: window.innerHeight,
             chapterListLeft: 100,
             headLineColor: "rgba(0,0,0,0)",
-            pageListBackColor: "rgba(0,0,0,0)"
+            pageListBackColor: "rgba(0,0,0,0)",
+            pageListButtonBackColor: "rgba(0,0,0,0)",
+            pageListButtonFontColor: "rgba(0,0,0,0)"
         };
         bindFunctions(
             this,
@@ -62,7 +64,9 @@ class App extends React.Component{
     changeColor(){
         this.setState({
             headLineColor: stringToColor(Storage.nowBook.getNow(), 50, 60, 1),
-            pageListBackColor: stringToColor(Storage.nowBook.getNow(), 30, 40, 0.6)
+            pageListBackColor: stringToColor(Storage.nowBook.getNow(), 20, 40, 0.8),
+            pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), 40, 50, 0.6),
+            pageListButtonFontColor: stringToColor(Storage.nowBook.getNow(), 100, 20, 1)
         });
     }
 
@@ -113,6 +117,10 @@ class App extends React.Component{
             pageListBackground: {
                 width: 200
             },
+            pageListButton: {
+                backgroundColor: this.state.pageListButtonBackColor,
+                color: this.state.pageListButtonFontColor
+            },
             page: {
                 width: width - 200
             }
@@ -160,6 +168,7 @@ class App extends React.Component{
                         classButton="page-list-button"
                         style={this.styles.pageListBackground}
                         styleList={this.styles.pageList}
+                        styleButton={this.styles.pageListButton}
                         layoutMode="vertical"
                         addButtonLocation="front"
                         handlerChangePage={this.handlerChangePage.bind(this)}

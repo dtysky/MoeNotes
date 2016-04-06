@@ -8,6 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import stringWidth from 'string-width';
 import { SortableItemMixin } from 'react-anything-sortable';
 import Storage from './storage';
 import { ContextMenuLayer } from './context-menu';
@@ -92,7 +93,7 @@ export default ContextMenuLayer(
             fun();
             return;
         }
-        const width = this.state.text.length * 18;
+        const width = stringWidth(this.state.text) * 12;
         if(width === this.state.style.width){
             fun();
             return;
@@ -133,18 +134,19 @@ export default ContextMenuLayer(
         if(this.props.chapter === undefined){
             className = Storage.nowBook.getNow() === this.props.index ? this.props.className + "-active" : this.props.className + "-normal" ;
             this.state.style.color = Storage.nowBook.getNow() !== this.props.index ?
-                stringToColor(this.props.index, 100, 20, 1) : "#ffffff";
+                stringToColor(this.props.index, 100, 30, 1) : "#ffffff";
         }
         else{
             className = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?  this.props.className + "-active" : this.props.className + "-normal";
+            this.state.style.color = stringToColor(this.props.chapter, 100, 30, 1) ;
         }
         return (
             <div
                 onClick={this.select}
+                className={this.props.className + " " + className}
             >
                 <form
                     style={style}
-                    className={this.props.className + " " + className}
                     onSubmit={this.onSubmit}
                     //onBlur will be called...
                     onBlur={this.onSubmit}

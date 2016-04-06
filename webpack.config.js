@@ -79,7 +79,8 @@ module.exports = {
             }
         ],
         noParse:[
-            "jquery"
+            "jquery",
+            "autoit.js"
         ]
     },
 
