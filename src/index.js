@@ -165,7 +165,7 @@ class App extends React.Component{
                         classList="page-list full-height"
                         classSortableList="page-sortable-list full-width"
                         classSortableItem="page-sortable-list-item"
-                        classButton="page-list-button"
+                        classButton="page-list-button button"
                         style={this.styles.pageListBackground}
                         styleList={this.styles.pageList}
                         styleButton={this.styles.pageListButton}

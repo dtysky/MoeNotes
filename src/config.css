@@ -66,10 +66,26 @@
     background-image: url(theme/images/book-open.png);
 }
 
+.book-text:before{
+    background-image: url(theme/images/book-text.png);
+}
+
 .book-button-edit{
-    background-image: url(theme/images/book-edit.png);
+    background-image: url(theme/images/book-button-edit.png);
 }
 
 .book-button-remove{
-    background-image: url(theme/images/book-remove.png);
+    background-image: url(theme/images/book-button-remove.png);
+}
+
+.book-list-create{
+    background-color: rgba(150,100,100,0.8);
+}
+
+.book-list-load{
+    background-color: rgba(100,150,100,0.8);
+}
+
+.bm-menu-wrap {
+    background-image: url(theme/images/book-list.png);
 }

@@ -8,7 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import { bindFunctions } from './utils';
+import { bindFunctions, stringToColor } from './utils';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -103,29 +103,44 @@ export default class Book extends React.Component {
             <div
                 className="book"
             >
-                <form
-                    className="book-text button float-left"
-                    onSubmit={this.onSubmit}
-                    onBlur={this.onSubmit}
-                    onClick={this.onSelect}
-                >
-                    <input
-                        ref="text"
-                        disabled={!this.props.canInput}
-                        type="text"
-                        value={this.state.text}
-                        onChange={this.onChange}
-                    />
-                </form>
                 <div
-                    className="book-button button book-button-edit float-left"
-                    onClick={this.onRename}
+                    style={{
+                        height: "100%",
+                        backgroundColor: stringToColor(this.props.name, 20, 30, 0.8)
+                    }}
                 >
-                </div>
-                <div
-                    className="book-button button book-button-remove float-left"
-                    onClick={this.onRemove}
-                >
+                    <form
+                        className="book-text button float-left"
+                        onSubmit={this.onSubmit}
+                        onBlur={this.onSubmit}
+                        onClick={this.onSelect}
+                    >
+                        <input
+                            ref="text"
+                            disabled={!this.props.canInput}
+                            type="text"
+                            value={this.state.text}
+                            className="button"
+                            style={{
+                                color: stringToColor(this.props.name, 80, 30, 1)
+                            }}
+                            onChange={this.onChange}
+                        />
+                    </form>
+                    <div
+                        className="book-buttons float-left"
+                    >
+                        <div
+                            className="book-button-edit book-button button"
+                            onClick={this.onRename}
+                        >
+                        </div>
+                        <div
+                            className="book-button-remove book-button button"
+                            onClick={this.onRemove}
+                        >
+                        </div>
+                    </div>
                 </div>
             </div>
         );

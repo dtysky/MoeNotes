@@ -28,7 +28,7 @@ export default class BookList extends React.Component {
             indexes: Storage.getIndexes(),
             now: Storage.getNow(),
             width: 0,
-            isOpen: false
+            isOpen: true
         };
         bindFunctions(
             this,
@@ -175,6 +175,7 @@ export default class BookList extends React.Component {
         return (
             <div>
                 <Menu
+                    className="book-list"
                     isOpen={this.state.isOpen}
                     styles={{
                         bmBurgerButton:{
@@ -201,13 +202,13 @@ export default class BookList extends React.Component {
                         }, this)
                     }
                     <div
-                        className="button"
+                        className="book-list-create book-list-button button text-center float-left"
                         onClick={this.onCreate}
                     >
                         Create
                     </div>
                     <div
-                        className="button"
+                        className="book-list-load book-list-button button text-center float-left"
                         onClick={this.onLoad}
                     >
                         Load

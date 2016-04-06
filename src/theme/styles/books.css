@@ -11,12 +11,14 @@
     background: #bdc3c7;
 }
 
+.bm-menu-wrap{
+    background-size: auto 100%;
+    background-position: top;
+}
+
 /* General sidebar styles */
 .bm-menu {
-    background: rgba(0,0,0,0.8);
-    padding: 30px;
-    padding-top: 100px;
-    font-size: 1.15em;
+    padding-top: 120px;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -26,7 +28,7 @@
 
 /* Wrapper for item list */
 .bm-item-list {
-    color: #b8b7ad;
+
 }
 
 /* Styling of overlay */
@@ -35,19 +37,47 @@
 }
 
 .book{
-    height: 32px;
+    width: 100%;
+    height: 64px;
+}
+
+.book-text:before{
+    content: "";
+    display: inline-block;
+    width: 64px;
+    height: 100%;
+    background-size: auto 100%;
+    background-position: center;
 }
 
 .book-text{
-    width: 176px;
+    width: 250px;
 }
 
-.book input{
-    margin-left: 10%;
-    width: 80%;
+.book-text input{
+    vertical-align: top;
+    padding: 0;
+    margin-left: 4px;
+    width: 180px;
+    font-size: 24px;
+}
+
+.book-buttons{
+    margin-top: 5px;
+    width: 48px;
+    height: 24px;
 }
 
 .book-button{
-    width: 32px;
-    height: 32px;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+}
+
+.book-list-button{
+    width: 50%;
+    line-height: 64px;
+    font-size: 24px;
+    color: white;
 }

@@ -56,6 +56,10 @@ button{
     text-align: center;
 }
 
+.text-right{
+    text-align: right;
+}
+
 .inner{
     display: -webkit-inline-box;
 }
