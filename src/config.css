@@ -1,17 +1,26 @@
-.head{
+#react-content{
+    background-image: url(theme/images/body.png);
+    background-size: cover;
+}
+
+.head-color{
+    background: rgba(200, 157, 154, 0.6);
+}
+
+.head-image{
     background-image: url(theme/images/head.png);
 }
 
 .page-content{
-    background-image: url(theme/images/page.png);
+    /*background-image: url(theme/images/page.png);*/
 }
 
 .page-editor{
-    background: rgba(200,200,200,0.6);
+    background: rgba(200,200,200,0.7);
 }
 
 .page-preview{
-    background: rgba(255,255,255,0.6);
+    background: rgba(230,230,230,0.7);
 }
 
 .page-text{
@@ -22,7 +31,11 @@
 }
 
 .page-list-background{
-    background-image: url(theme/images/page-list.png);
+    /*background-image: url(theme/images/page-list.png);*/
+}
+
+.page-sortable-list-item-normal:hover{
+    background-color: rgba(255,255,255,0.4);
 }
 
 .page-list-button:before{
@@ -42,20 +55,15 @@
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: #fff;
+    background: #d896ca;
 }
 
 .chapter-list::-webkit-scrollbar-track {
-    background: black;
-}
-
-.chapter-sortable-list-item form{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    background: #ca84a5;
 }
 
 .chapter-list-button{
-    background-image: url(theme/images/chapter-button.png);
+    background-image: url(theme/images/chapter-list-button.png);
 }
 
 .books-button-open{

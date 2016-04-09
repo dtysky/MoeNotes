@@ -11,6 +11,8 @@ import deepcopy from 'deepcopy';
 import moment from 'moment';
 import colorSpace from 'color-space';
 import stringHash from 'string-hash';
+import configManager from './config';
+
 
 export function bindFunctions(self, methods){
     methods.forEach(method => {
@@ -56,10 +58,16 @@ export function arrayHas(a, e){
     return a.indexOf(e) > -1;
 }
 
-export function stringToColor(string, l, s, alpha){
-    const hue = Math.round(stringHash(string) % 360);
-    let color = colorSpace.hsl.rgb([hue, l, s]).map(num => parseInt(num));
-    color.push(alpha === undefined ? 0.4 : alpha);
+export function stringToColor(string, sla){
+    const s = sla[0];
+    const l = sla[1];
+    const a = sla[2];
+    const config = configManager.getConfig();
+    const hueRange = config.hueRange[1] - config.hueRange[0];
+    const hueStart = config.hueRange[0];
+    const hue = Math.round(stringHash(string) % hueRange) + hueStart;
+    let color = colorSpace.hsl.rgb([hue, s, l]).map(num => parseInt(num));
+    color.push(a);
     return "rgba(" + color.join(",") + ")";
 }
 

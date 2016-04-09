@@ -9,6 +9,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { bindFunctions, stringToColor } from './utils';
+import configManager from './config';
+
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -99,6 +101,7 @@ export default class Book extends React.Component {
     }
 
     render() {
+        const config = configManager.getConfig();
         return (
             <div
                 className="book"
@@ -106,7 +109,7 @@ export default class Book extends React.Component {
                 <div
                     style={{
                         height: "100%",
-                        backgroundColor: stringToColor(this.props.name, 20, 30, 0.8)
+                        backgroundColor: stringToColor(this.props.name, config.bookBackSLO)
                     }}
                 >
                     <form
@@ -122,7 +125,7 @@ export default class Book extends React.Component {
                             value={this.state.text}
                             className="button"
                             style={{
-                                color: stringToColor(this.props.name, 80, 30, 1)
+                                color: stringToColor(this.props.name, config.bookFontSLO)
                             }}
                             onChange={this.onChange}
                         />
@@ -145,5 +148,4 @@ export default class Book extends React.Component {
             </div>
         );
     }
-
 }

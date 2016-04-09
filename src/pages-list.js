@@ -69,7 +69,7 @@ class PageList extends SortableList {
                 chapter
             );
         }
-        this.props.handlerChangePage();
+        this.props.handleChangePage();
         this.refresh();
     }
 
@@ -86,16 +86,16 @@ class PageList extends SortableList {
                 name,
                 Storage.nowBook.getNow()
             );
+            this.select(name, this.setScrollbar);
         }
         else{
             Storage.nowBook.rename(index, name, Storage.nowBook.getNow());
         }
-        this.select(name, this.setScrollbar);
     }
 
     select(index, callback){
         Storage.nowBook.change(index, Storage.nowBook.getNow());
-        this.props.handlerChangePage();
+        this.props.handleChangePage();
         this.refresh(callback);
     }
 

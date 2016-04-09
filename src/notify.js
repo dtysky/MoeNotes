@@ -49,12 +49,12 @@ class Notify extends React.Component {
                     ref="error"
                     className="modal-error"
                     modalStyle={{
-                    background: "rgba(0,0,0,0)"
-                }}
+                        background: "rgba(0,0,0,0)"
+                    }}
                     contentStyle={{
-                    background: "rgba(255,0,0,0.6)",
-                    padding: 20
-                }}
+                        background: "rgba(255,0,0,0.6)",
+                        padding: 20
+                    }}
                     onHide={() => this.state.onHide.fun(this.state.onHide.param)}
                 >
                     <div className="message">
@@ -72,14 +72,14 @@ class Notify extends React.Component {
                 </ScaleModal>
                 <ScaleModal
                     ref="warn"
-                    className="modal-error"
+                    className="modal-warn"
                     modalStyle={{
-                    background: "rgba(0,0,0,0)"
-                }}
+                        background: "rgba(0,0,0,0)"
+                    }}
                     contentStyle={{
-                    background: "rgba(255,255,0,0.6)",
-                    padding: 20
-                }}
+                        background: "rgba(255,255,0,0.6)",
+                        padding: 20
+                    }}
                     onHide={this.state.onHide.fun(this.state.onHide.param)}
                 >
                     <div className="message">

@@ -71,7 +71,7 @@ export default class SortableList extends React.Component {
     }
 
     showNotify(type, message, callbacks){
-        this.refs.notify.show(type, message, callbacks);
+        this.props.handleShowNotify(type, message, callbacks);
     }
 
     doMenuOptions(option, index){
@@ -211,7 +211,6 @@ export default class SortableList extends React.Component {
                                     className={this.props.classButton}
                                     onClick={this.createEnd}
                                 >
-                                    Add new
                                 </div>
                                 :
                                 null

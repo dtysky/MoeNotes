@@ -66,7 +66,7 @@ class ChapterList extends SortableList {
                 Storage.nowBook.getIndexes()[0]
             );
         }
-        this.props.handlerChangeChapter();
+        this.props.handleChangeChapter();
         this.refresh();
     }
 
@@ -82,16 +82,16 @@ class ChapterList extends SortableList {
                 this.state.indexes.indexOf(index),
                 name
             );
+            this.select(name, this.setScrollbar);
         }
         else{
             Storage.nowBook.rename(index, name);
         }
-        this.select(name, this.setScrollbar);
     }
 
     select(index, callback){
         Storage.nowBook.change(index);
-        this.props.handlerChangeChapter();
+        this.props.handleChangeChapter();
         this.refresh(callback);
     }
 

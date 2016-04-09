@@ -28,7 +28,7 @@ export default class BookList extends React.Component {
             indexes: Storage.getIndexes(),
             now: Storage.getNow(),
             width: 0,
-            isOpen: true
+            isOpen: false
         };
         bindFunctions(
             this,

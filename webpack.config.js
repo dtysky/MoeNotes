@@ -80,7 +80,7 @@ module.exports = {
         ],
         noParse:[
             "jquery",
-            "autoit.js"
+            /autoit.js/
         ]
     },
 

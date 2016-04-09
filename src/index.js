@@ -12,8 +12,10 @@ import ChapterList from './chapter-list';
 import BookList from './book-list';
 import Page from './page';
 import PageList from './pages-list';
+import Notify from './notify';
 import Storage from './storage';
 import { bindFunctions, stringToColor } from './utils';
+import configManager from './config';
 
 import './theme/styles/sky.css';
 
@@ -34,8 +36,9 @@ class App extends React.Component{
             [
                 "handleChangeBook",
                 "reoffsetChapter",
-                "handlerChangeChapter",
-                "handlerChangePage",
+                "handleChangeChapter",
+                "handleChangePage",
+                "handleShowNotify",
                 "changeColor",
                 "resize"
             ]
@@ -52,21 +55,26 @@ class App extends React.Component{
         });
     }
 
-    handlerChangeChapter(){
+    handleChangeChapter(){
         this.refs.pageList.reload();
         this.changeColor();
     }
 
-    handlerChangePage(){
+    handleChangePage(){
         this.refs.page.reload();
     }
 
+    handleShowNotify(type, message, callbacks){
+        this.refs.notify.show(type, message, callbacks);
+    }
+
     changeColor(){
+        const config = configManager.getConfig();
         this.setState({
-            headLineColor: stringToColor(Storage.nowBook.getNow(), 50, 60, 1),
-            pageListBackColor: stringToColor(Storage.nowBook.getNow(), 20, 40, 0.8),
-            pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), 40, 50, 0.6),
-            pageListButtonFontColor: stringToColor(Storage.nowBook.getNow(), 100, 20, 1)
+            headLineColor: stringToColor(Storage.nowBook.getNow(), config.chapterNowBackSLO),
+            pageListBackColor: stringToColor(Storage.nowBook.getNow(), config.pageListBackSLO),
+            pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonBackSLO),
+            pageListButtonFontColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonFontSLO)
         });
     }
 
@@ -86,15 +94,16 @@ class App extends React.Component{
     render(){
         const width = this.state.width;
         const height = this.state.height;
+        const headHeight = 100;
         this.styles = {
             head: {
-                height: 100
+                height: headHeight
             },
             content: {
-                height: height - 100
+                height: height - headHeight
             },
             bookButtonHeight: 65,
-            bookButtonTop: 25,
+            bookButtonTop: headHeight - 70,
             bookButtonPosition: "absolute",
             bookListMenu: {
                 height: 48
@@ -103,10 +112,10 @@ class App extends React.Component{
                 width: width - this.state.chapterListLeft,
                 left: this.state.chapterListLeft,
                 height: 40,
-                top: 55
+                top: headHeight - 45
             },
             headLine: {
-                top: 95,
+                top: headHeight - 5,
                 height: 5,
                 backgroundColor: this.state.headLineColor
             },
@@ -129,33 +138,41 @@ class App extends React.Component{
             <div>
                 <div
                     ref="head"
-                    className="head"
+                    className="head head-color full-width"
                     style={this.styles.head}
                 >
-                    <BookList
-                        menuStyle={this.styles.bookListMenu}
-                        buttonHeight={this.styles.bookButtonHeight}
-                        buttonTop={this.styles.bookButtonTop}
-                        buttonPosition={this.styles.bookButtonPosition}
-                        handleChangeBook={this.handleChangeBook.bind(this)}
-                        reoffsetChapter={this.reoffsetChapter.bind(this)}
-                    />
-                    <ChapterList
-                        ref="chapterList"
-                        classBackground="chapter-list absolute"
-                        classList=""
-                        classSortableList="chapter-sortable-list inner"
-                        classSortableItem="chapter-sortable-list-item"
-                        classButton="chapter-list-button inner"
-                        style={this.styles.chapterList}
-                        layoutMode="horizontal"
-                        addButtonLocation="end"
-                        handlerChangeChapter={this.handlerChangeChapter.bind(this)}
-                    />
                     <div
-                        className="head-line absolute"
-                        style={this.styles.headLine}
+                        className="head head-image full"
                     >
+                        <Notify
+                            ref="notify"
+                        />
+                        <BookList
+                            menuStyle={this.styles.bookListMenu}
+                            buttonHeight={this.styles.bookButtonHeight}
+                            buttonTop={this.styles.bookButtonTop}
+                            buttonPosition={this.styles.bookButtonPosition}
+                            handleChangeBook={this.handleChangeBook}
+                            reoffsetChapter={this.reoffsetChapter}
+                        />
+                        <ChapterList
+                            ref="chapterList"
+                            classBackground="chapter-list absolute"
+                            classList=""
+                            classSortableList="chapter-sortable-list inner"
+                            classSortableItem="chapter-sortable-list-item"
+                            classButton="chapter-list-button inner button"
+                            style={this.styles.chapterList}
+                            layoutMode="horizontal"
+                            addButtonLocation="end"
+                            handleChangeChapter={this.handleChangeChapter}
+                            handleShowNotify={this.handleShowNotify}
+                        />
+                        <div
+                            className="head-line absolute"
+                            style={this.styles.headLine}
+                        >
+                        </div>
                     </div>
                 </div>
                 <div style={this.styles.content}>
@@ -171,7 +188,8 @@ class App extends React.Component{
                         styleButton={this.styles.pageListButton}
                         layoutMode="vertical"
                         addButtonLocation="front"
-                        handlerChangePage={this.handlerChangePage.bind(this)}
+                        handleChangePage={this.handleChangePage}
+                        handleShowNotify={this.handleShowNotify}
                     />
                     <Page
                         ref="page"

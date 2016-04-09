@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 body::-webkit-scrollbar{
     display: none;
 }
@@ -137,11 +141,16 @@ button{
 }
 
 .page-sortable-list-item{
-    width: 90%;
+    width: 100%;
     padding-top: 4px;
     padding-bottom: 4px;
     margin-bottom: 2px;
     border-bottom: solid 1px rgba(200,200,200,0.2);
+}
+
+.page-sortable-list-item form{
+    width: 90%;
+    padding-left: 4px;
 }
 
 .page-sortable-list-item-active{
@@ -159,19 +168,16 @@ button{
 }
 
 .page-list::-webkit-scrollbar{
-    background: none;
-}
-
-.page-list::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-}
-
-.page-list::-webkit-scrollbar-track {
-    border-radius: 10px;
+    display: none;
 }
 
 .head{
     background-size: 100% auto;
+}
+
+.head-image{
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 .chapter-list{
@@ -186,12 +192,29 @@ button{
     transform:rotateX(180deg);
 }
 
-.chapter-sortable-list-item{
+.chapter-sortable-list-item-normal{
+    transition: 0.3s ease-out;
+}
+
+.chapter-sortable-list-item-normal:hover{
+    transform: translateY(-2px);
+}
+
+.chapter-sortable-list-item form{
+    border-top: solid 1px;
+    border-left: solid 1px;
+    border-right: solid 1px;
+}
+
+.chapter-sortable-list-item form{
+    border-top-left-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
 }
 
 .chapter-sortable-list-item-normal{
     margin-top: 5px;
     height: 25px;
+    /*margin-right: -2px;*/
 }
 
 .chapter-sortable-list-item-active{
@@ -200,12 +223,16 @@ button{
 
 .chapter-sortable-list-item form input{
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .chapter-list-button{
     vertical-align: top;
-    line-height: 30px;
+    height: 25px;
+    width: 30px;
+    background-color: rgba(150,150,150,0.8);
+    background-size: auto 100%;
+    background-position: top;
     transform:rotateX(180deg);
 }
 
