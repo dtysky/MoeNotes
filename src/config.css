@@ -4,7 +4,7 @@
 }
 
 .head-color{
-    background: rgba(200, 157, 154, 0.6);
+    background: rgba(230, 187, 184, 0.6);
 }
 
 .head-image{
@@ -66,32 +66,28 @@
     background-image: url(theme/images/chapter-list-button.png);
 }
 
-.books-button-open{
-    background-image: url(theme/images/book-open-background.png);
+.books-button-open-pre{
+    -webkit-mask-image: url(theme/images/book-pre.png);
 }
 
-.books-button-open:before{
-    background-image: url(theme/images/book-open.png);
-}
-
-.book-text:before{
-    background-image: url(theme/images/book-text.png);
+.book-pre{
+    -webkit-mask-image: url(theme/images/book-pre.png);
 }
 
 .book-button-edit{
-    background-image: url(theme/images/book-button-edit.png);
+    -webkit-mask-image: url(theme/images/book-button-edit.png);
 }
 
 .book-button-remove{
-    background-image: url(theme/images/book-button-remove.png);
+    -webkit-mask-image: url(theme/images/book-button-remove.png);
 }
 
 .book-list-create{
-    background-color: rgba(150,100,100,0.8);
+    background-color: rgba(218, 163, 187, 0.8);
 }
 
 .book-list-load{
-    background-color: rgba(100,150,100,0.8);
+    background-color: rgba(218, 163, 187, 0.8);
 }
 
 .bm-menu-wrap {

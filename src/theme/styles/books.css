@@ -12,13 +12,13 @@
 }
 
 .bm-menu-wrap{
-    background-size: auto 100%;
-    background-position: top;
+    background-size: 100% 100%;
+    background-position: bottom;
 }
 
 /* General sidebar styles */
 .bm-menu {
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -33,51 +33,99 @@
 
 /* Styling of overlay */
 .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
 }
 
 .book{
-    width: 100%;
+    width: 270px;
+    margin-left: 15px;
+    margin-bottom: 10px;
     height: 64px;
+    border-bottom-right-radius: 20px 40px;
+    border-top-right-radius: 20px 40px;
 }
 
-.book-text:before{
-    content: "";
-    display: inline-block;
-    width: 64px;
+.book-pre{
+    margin-left: 4px;
+    margin-right: 12px;
+    width: 48px;
     height: 100%;
-    background-size: auto 100%;
-    background-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% auto;
+    -webkit-mask-position: center;
+}
+
+.book-pre:hover{
+    animation: rotate-full 3s linear 0s infinite normal;
 }
 
 .book-text{
-    width: 250px;
+    width: 150px;
+    background-size: auto 100%;
+    background-position: left;
 }
 
 .book-text input{
     vertical-align: top;
     padding: 0;
     margin-left: 4px;
-    width: 180px;
+    width: 100%;
     font-size: 24px;
 }
 
 .book-buttons{
-    margin-top: 5px;
-    width: 48px;
-    height: 24px;
+    margin-top: 8px;
+    width: 36px;
+    height: 14px;
 }
 
 .book-button{
     display: inline-block;
     width: 50%;
     height: 100%;
-    background-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: auto 100%;
+    transition: 0.5s ease-out;
+}
+
+.book-button:hover{
+    transform: translateY(-3px);
 }
 
 .book-list-button{
-    width: 50%;
-    line-height: 64px;
-    font-size: 24px;
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 36px;
+    font-size: 18px;
     color: white;
+    transition: 0.3s ease-out;
+}
+
+.book-list-create{
+    border-bottom-right-radius: 20px 30px;
+    border-top-right-radius: 20px 30px;
+}
+
+.book-list-create:hover{
+    transform: translateX(5px);
+}
+
+.book-list-load{
+    border-bottom-left-radius: 20px 30px;
+    border-top-left-radius: 20px 30px;
+}
+
+.book-list-load:hover{
+    transform: translateX(-5px);
+}
+
+@keyframes rotate-full {
+    from {
+        transform: rotate(0deg);
+
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

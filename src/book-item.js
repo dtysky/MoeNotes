@@ -8,7 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import { bindFunctions, stringToColor } from './utils';
+import { bindFunctions, stringToColor, stringToHue } from './utils';
 import configManager from './config';
 
 
@@ -51,6 +51,9 @@ export default class Book extends React.Component {
                 "Can't rename, book must have a non-empty name!"
             );
             this.enableInput();
+            return;
+        }
+        if(text === this.props.name){
             return;
         }
 
@@ -105,44 +108,53 @@ export default class Book extends React.Component {
         return (
             <div
                 className="book"
+                style={{
+                    backgroundColor: stringToColor(this.props.name, config.bookBackSLO)
+                }}
             >
                 <div
                     style={{
-                        height: "100%",
-                        backgroundColor: stringToColor(this.props.name, config.bookBackSLO)
+                        backgroundColor: stringToColor(this.props.name, config.bookShapeSLO)
                     }}
+                    className="book-pre button float-left"
+                    onClick={this.onSelect}
                 >
-                    <form
-                        className="book-text button float-left"
-                        onSubmit={this.onSubmit}
-                        onBlur={this.onSubmit}
-                        onClick={this.onSelect}
-                    >
-                        <input
-                            ref="text"
-                            disabled={!this.props.canInput}
-                            type="text"
-                            value={this.state.text}
-                            className="button"
-                            style={{
-                                color: stringToColor(this.props.name, config.bookFontSLO)
-                            }}
-                            onChange={this.onChange}
-                        />
-                    </form>
+                </div>
+                <form
+                    className="book-text button float-left"
+                    onSubmit={this.onSubmit}
+                    onBlur={this.onSubmit}
+                >
+                    <input
+                        ref="text"
+                        disabled={!this.props.canInput}
+                        type="text"
+                        value={this.state.text}
+                        className="button"
+                        style={{
+                            color: stringToColor(this.props.name, config.bookFontSLO)
+                        }}
+                        onChange={this.onChange}
+                    />
+                </form>
+                <div
+                    className="book-buttons float-left"
+                >
                     <div
-                        className="book-buttons float-left"
+                        style={{
+                            backgroundColor: stringToColor(this.props.name, config.bookShapeSLO)
+                        }}
+                        className="book-button-edit book-button button"
+                        onClick={this.onRename}
                     >
-                        <div
-                            className="book-button-edit book-button button"
-                            onClick={this.onRename}
-                        >
-                        </div>
-                        <div
-                            className="book-button-remove book-button button"
-                            onClick={this.onRemove}
-                        >
-                        </div>
+                    </div>
+                    <div
+                        style={{
+                            backgroundColor: stringToColor(this.props.name, config.bookShapeSLO)
+                        }}
+                        className="book-button-remove book-button button"
+                        onClick={this.onRemove}
+                    >
                     </div>
                 </div>
             </div>

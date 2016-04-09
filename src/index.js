@@ -111,7 +111,7 @@ class App extends React.Component{
             chapterList: {
                 width: width - this.state.chapterListLeft,
                 left: this.state.chapterListLeft,
-                height: 40,
+                height: 45,
                 top: headHeight - 45
             },
             headLine: {

@@ -118,6 +118,7 @@ button{
 }
 
 .page-sortable-list{
+    padding-top: 10px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -146,6 +147,7 @@ button{
     padding-bottom: 4px;
     margin-bottom: 2px;
     border-bottom: solid 1px rgba(200,200,200,0.2);
+    transition: 0.3s ease-out;
 }
 
 .page-sortable-list-item form{
@@ -192,14 +194,6 @@ button{
     transform:rotateX(180deg);
 }
 
-.chapter-sortable-list-item-normal{
-    transition: 0.3s ease-out;
-}
-
-.chapter-sortable-list-item-normal:hover{
-    transform: translateY(-2px);
-}
-
 .chapter-sortable-list-item form{
     border-top: solid 1px;
     border-left: solid 1px;
@@ -213,8 +207,16 @@ button{
 
 .chapter-sortable-list-item-normal{
     margin-top: 5px;
-    height: 25px;
-    /*margin-right: -2px;*/
+    height: 30px;
+    margin-right: -2px;
+}
+
+.chapter-sortable-list-item-normal{
+    transition: 0.3s ease-out;
+}
+
+.chapter-sortable-list-item-normal:hover{
+    transform: translateY(-5px);
 }
 
 .chapter-sortable-list-item-active{
@@ -228,12 +230,19 @@ button{
 
 .chapter-list-button{
     vertical-align: top;
-    height: 25px;
-    width: 30px;
-    background-color: rgba(150,150,150,0.8);
-    background-size: auto 100%;
-    background-position: top;
+    height: 30px;
+    width: 35px;
+    margin-left: 2px;
+    background-color: rgba(200,200,200,0.6);
+    background-size: auto 20px;
+    background-repeat: no-repeat;
+    background-position: center;
     transform:rotateX(180deg);
+    border-top-left-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
+    border-top: solid 1px #999999;
+    border-left: solid 1px #999999;
+    border-right: solid 1px #999999;
 }
 
 .chapter-list::-webkit-scrollbar{
@@ -254,16 +263,20 @@ button{
     font-size: 22px;
     margin-left: 10px;
     margin-right: 10px;
+    transition: 0.3s ease-out;
 }
 
-.books-button-open:before{
-    content: "";
-    display: inline-block;
-    vertical-align: top;
-    width: 60px;
+.books-button-open:hover{
+    transform: translateY(-5px);
+}
+
+.books-button-open-pre{
+    width: 40px;
     height: 60px;
     margin-right: 5px;
-    background-size: auto 60px;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: auto 40px;
+    -webkit-mask-position: center;
 }
 
 .head-line{

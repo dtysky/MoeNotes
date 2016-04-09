@@ -13,7 +13,8 @@ const Menu = require('react-burger-menu').slide;
 import Storage from './storage';
 import Notify from './notify';
 import BookPicker from './book-picker';
-import { bindFunctions } from './utils';
+import { bindFunctions, stringToColor } from './utils';
+import configManager from './config';
 
 if (process.env.BROWSER) {
     require('./theme/styles/sky.css');
@@ -172,6 +173,7 @@ export default class BookList extends React.Component {
     }
 
     render(){
+        const config = configManager.getConfig();
         return (
             <div>
                 <Menu
@@ -182,6 +184,9 @@ export default class BookList extends React.Component {
                             position: "absolute",
                             height: 0,
                             width: 0
+                        },
+                        bmOverlay:{
+                            background: "rgba(200,200,200,0.7)"
                         }
                     }}
                 >
@@ -225,11 +230,27 @@ export default class BookList extends React.Component {
                     }}
                     onClick={this.open}
                 >
-                    {
-                        Storage.getName(
-                            this.state.now
-                        )
-                    }
+                    <div
+                        style={{
+                            backgroundColor: stringToColor(
+                                Storage.getName(this.state.now), config.bookShapeSLO
+                            )
+                        }}
+                        className="books-button-open-pre float-left"
+                    >
+                    </div>
+                    <div
+                        style={{
+                            color: stringToColor(
+                                Storage.getName(this.state.now), config.bookShapeSLO
+                            )
+                        }}
+                        className="float-left"
+                    >
+                        {
+                            Storage.getName(this.state.now)
+                        }
+                    </div>
                 </div>
                 <Notify
                     ref="notify"
