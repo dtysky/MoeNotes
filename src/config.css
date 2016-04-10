@@ -4,7 +4,7 @@
 }
 
 .head-color{
-    background: rgba(239, 194, 212, 0.6);
+    /*background: rgba(239, 194, 212, 0.6);*/
 }
 
 .head-image{
@@ -16,15 +16,43 @@
 }
 
 .page-editor{
-    background: rgba(200,200,200,0.7);
+    background: rgba(240,240,240,0.8);
 }
 
 .page-preview{
-    background: rgba(230,230,230,0.7);
+    background: rgba(220,220,220,0.8);
+}
+
+.page-preview blockquote{
+    background-color: rgba(250,250,250,0.7);
+}
+
+.page-preview pre{
+    background-color: rgba(235, 235, 235,0.7);
+}
+
+.page-preview code{
+    background-color: rgba(239, 194, 212, 0.7);
 }
 
 .page-text{
     background: none;
+}
+
+.page-text::-webkit-scrollbar-thumb{
+    background: rgba(239, 194, 212, 1);
+}
+
+.page-text::-webkit-scrollbar-track {
+    background: rgba(213, 200, 197, 0.8);
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb{
+    background: rgba(239, 194, 212, 1);
+}
+
+.ace_scrollbar::-webkit-scrollbar-track {
+    background: rgba(213, 200, 197, 0.8);
 }
 
 .page-list{
@@ -42,24 +70,16 @@
     background-image: url(theme/images/page-list-button.png);
 }
 
-.page-list::-webkit-scrollbar-thumb{
-    background: #fff;
-}
-
-.page-list::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
 .chapter-list{
     background-image: url(theme/images/chapter-list.png);
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: #d896ca;
+    background: rgb(239, 159, 167);
 }
 
 .chapter-list::-webkit-scrollbar-track {
-    background: #ca84a5;
+    background: rgba(255, 242, 239, 0.8);
 }
 
 .chapter-list-button{

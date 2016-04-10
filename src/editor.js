@@ -61,6 +61,10 @@ export default class ReactAce extends Component {
         this.editor.on('blur', this.onBlur);
         this.editor.on('change', this.onChange);
         this.editor.getSession().on('changeScrollTop', this.onChangeScrollTop);
+        this.editor.setFontSize(14);
+        this.editor.setOptions({
+            fontFamily: "sans-serif"
+        });
 
         if (keyboardHandler) {
             this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);

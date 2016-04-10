@@ -1,4 +1,6 @@
-/* Position and sizing of burger button */
+.book-text, .book-list-button{
+    font-family: sans-serif ! important;
+}
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {

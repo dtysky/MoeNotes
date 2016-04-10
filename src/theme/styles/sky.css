@@ -1,3 +1,7 @@
+.books-button-open, .chapter-sortable-list-item, .page-sortable-list-item, .page-list-button{
+    font-family: sans-serif ! important;
+}
+
 body{
     overflow: hidden;
 }
@@ -89,18 +93,28 @@ button{
 
 .page-text::-webkit-scrollbar{
     background: none;
+    width: 7px;
 }
 
 .page-text::-webkit-scrollbar-thumb{
-    background: #fff;
+    border-radius: 10px;
+}
+
+.page-text::-webkit-scrollbar-track {
+    border-radius: 10px;
 }
 
 .ace_scrollbar::-webkit-scrollbar{
     background: none;
+    width: 7px;
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
-    background: #fff;
+    border-radius: 10px;
+}
+
+.ace_scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
 }
 
 .page-text:focus{
@@ -208,7 +222,7 @@ button{
 .chapter-sortable-list-item-normal{
     margin-top: 5px;
     height: 30px;
-    margin-right: -2px;
+    margin-right: -1px;
 }
 
 .chapter-sortable-list-item-normal{
@@ -232,7 +246,7 @@ button{
     vertical-align: top;
     height: 30px;
     width: 35px;
-    margin-left: 2px;
+    margin-left: -1px;
     background-color: rgba(200,200,200,0.6);
     background-size: auto 20px;
     background-repeat: no-repeat;

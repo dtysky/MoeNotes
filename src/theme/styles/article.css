@@ -1,5 +1,5 @@
 h1,h2,h3,h4,h5,h6,p,a{
-    word-break: break-all;
+    word-break: break-word;
 }
 
 @font-face {
@@ -13,7 +13,7 @@ h1,h2,h3,h4,h5,h6,p,a{
     font-style: normal;
 }
 
-.home-article-middle a:after{
+.page-preview a:after{
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     font-style: normal;
@@ -27,165 +27,90 @@ h1,h2,h3,h4,h5,h6,p,a{
     -moz-osx-font-smoothing: grayscale;
 }
 
-.home-icon-disqus:before {
-    content: "\e22b";
-}
-
-.home-article{
-    margin-top: 80px;
-    width: 100%;
-}
-
-.home-article-top{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 100%;
-    text-align: center;
-}
-
-.home-article-top p{
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 100%;
-    color: gray;
-    text-align: center;
-}
-
-.home-article-top a{
-    color: #666666;
-    font-weight: bolder;
-}
-
-.home-article-top a:hover{
-    color: black;
-}
-
-.home-article-sphr{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 2px;
-}
-
-ol{
+.page-preview ol{
     font-size: 14px;
 }
 
-.home-article-middle{
+.page-preview{
     margin-bottom: 20px;
     font-size: 14px;
-    font-family: "Microsoft YaHei", Arial ! important;
+    font-family: sans-serif ! important;
 }
 
-.home-article-middle h1{
+.page-preview h1{
     font-size: 1.5em;
     margin-top: 0.8em;
     margin-bottom: 0.4em;
 }
 
-.home-article-middle h2{
+.page-preview h2{
     font-size: 1.4em;
     margin-top: 0.6em;
     margin-bottom: 0.6em;
 }
 
-.home-article-middle h3{
+.page-preview h3{
     font-size: 1.1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.home-article-middle h4,h5,h6{
+.page-preview h4,h5,h6{
     font-size: 0.9em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.home-article-middle p{
-    line-height: 20px;
-    margin-bottom: 5px;
+.page-preview p{
+    line-height: 28px;
+    margin: 0;
     color: black;
-    word-break: break-all;
     text-align: left;
     display: block;
 }
 
-.home-article-middle a{
-    word-break: break-all;
+.page-preview a{
+    text-decoration: none;
+    font-weight: bolder;
     color: #444444;
 }
 
-.home-article-middle a:after{
+.page-preview a:hover{
+    color: black;
+}
+
+.page-preview a:after{
     margin-left: 2px;
     content: "\e906";
 }
 
-.home-article-bottom{
-    margin-top: 40px;
-}
-
-.home-article-bottom p{
-    width: 100%;
-    color: black;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.index-preview{
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.index-preview p{
-    width: 98%;
-    margin-left: 1%;
-    color: black;
-    font-size: 14px;
-    font-weight: bolder;
-}
-
-.authors-list{
-    margin-top: 100px;
-    width: 100%;
-    text-align: center;
-    list-style: none;
-}
-
-.authors-list li{
-    margin-bottom: 40px;
-}
-
-.authors-list a{
-    width: 100%;
-    font-size: 40px;
-    color: #444444;
-}
-
-blockquote{
-    background-color: #00d6b2;
-    padding: 10px;
+.page-preview blockquote{
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-left: 0;
     margin-right: 0;
 }
 
-pre{
+.page-preview pre{
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     overflow: auto;
 }
 
-pre::-webkit-scrollbar{
+.page-preview pre code{
+    font-family: "Hack" ! important;
+    font-size: 12px;
+    background-color: rgba(0,0,0,0);
+}
+
+.page-preview pre::-webkit-scrollbar{
     display: none;
-}
-
-#disqus_container {
-    margin-top: 30px;
-}
-
-#disqus_button{
-    border: none;
-    cursor: pointer;
-    font-size:16px;
-    background: none;
 }
 
 .highlight{
@@ -194,81 +119,56 @@ pre::-webkit-scrollbar{
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 12px;
-    word-break: break-all;
 }
 
-.text-center{
-    text-align: center;
-}
-
-.tag-cloud{
-    margin-top: 10%;
-    line-height: 30px;
-}
-
-.tag-cloud a{
-    padding: 4px;
-}
-
-img {
+.page-preview img {
     max-width: 100%;
     max-height: 100%;
 }
 
-center {
+.page-preview center {
     font-size: 14px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-#resume-header{
-    width: 100%;
-    height: 125px;
-}
-
-#resume-photo{
-    position: absolute;
-    right: 0;
-    max-height: 125px;
-}
-
-.resume-title{
-    position: absolute;
-    left: 0;
-}
-
-.MathJax {
+.page-preview .MathJax {
     font-size: 22px;
     line-height: 60px;
 }
 
-table{
-    border-color: black;
+.page-preview table{
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-spacing: 0;
     padding: 0;
+    margin: 10px;
 }
 
-tr{
+.page-preview tr{
     text-align: center;
 }
 
-th{
-    background-color: #aaaaaa;
+.page-preview th{
     padding: 10px;
-    text-align: center;
 }
 
-td{
+.page-preview td{
     padding: 10px;
-    text-align: center;
 }
 
-blockquote{
-    -webkit-transition: background-color 1s ease-in;
-    -moz-transition: background-color 1s ease-in;
-    -o-transition: background-color 1s ease-in;
-    transition: background-color 1s ease-in;
+.page-preview table, th, td {
+    border: 1px solid;
+    border-color: rgba(20, 20, 20,0.8);
 }
 
-code{
+.page-preview th{
+    background-color: rgba(160, 160, 160, 0.8);
+}
+
+.page-preview code{
     font-weight: bolder;
+    padding: 2px;
 }

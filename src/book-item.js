@@ -121,7 +121,7 @@ export default class Book extends React.Component {
                 >
                 </div>
                 <form
-                    className="book-text button float-left"
+                    className="book-text float-left"
                     onSubmit={this.onSubmit}
                     onBlur={this.onSubmit}
                 >

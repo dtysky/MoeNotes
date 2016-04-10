@@ -26,6 +26,7 @@ class App extends React.Component{
             width: window.innerWidth,
             height: window.innerHeight,
             chapterListLeft: 100,
+            headBackColor: "rgba(0,0,0,0)",
             headLineColor: "rgba(0,0,0,0)",
             pageListBackColor: "rgba(0,0,0,0)",
             pageListButtonBackColor: "rgba(0,0,0,0)",
@@ -71,6 +72,7 @@ class App extends React.Component{
     changeColor(){
         const config = configManager.getConfig();
         this.setState({
+            headBackColor: stringToColor(Storage.getName(Storage.getNow()), config.headBackSLO),
             headLineColor: stringToColor(Storage.nowBook.getNow(), config.chapterNowBackSLO),
             pageListBackColor: stringToColor(Storage.nowBook.getNow(), config.pageListBackSLO),
             pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonBackSLO),
@@ -97,7 +99,8 @@ class App extends React.Component{
         const headHeight = 100;
         this.styles = {
             head: {
-                height: headHeight
+                height: headHeight,
+                backgroundColor: this.state.headBackColor
             },
             content: {
                 height: height - headHeight

@@ -109,7 +109,7 @@ export default class BookList extends React.Component {
         if(index === Storage.getNow()){
             Storage.change(0);
         }
-        this.select(index);
+        this.refresh();
     }
 
     select(index){
@@ -186,7 +186,11 @@ export default class BookList extends React.Component {
                             width: 0
                         },
                         bmOverlay:{
+                            zIndex: 10,
                             background: "rgba(200,200,200,0.7)"
+                        },
+                        bmMenuWrap: {
+                          zIndex: 11
                         }
                     }}
                 >
