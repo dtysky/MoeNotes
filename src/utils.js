@@ -12,6 +12,7 @@ import moment from 'moment';
 import colorSpace from 'color-space';
 import stringHash from 'string-hash';
 import configManager from './config';
+import Storage from './storage';
 
 
 export function bindFunctions(self, methods){
@@ -71,9 +72,20 @@ export function stringToColor(string, sla){
     return "rgba(" + color.join(",") + ")";
 }
 
+function logFunctionApply(file, f, args){
+    let data = `Call:\nFunction: ${f.name}\nArgs: ${JSON.stringify(args)}\n\n`;
+    //data += `StorageTop:\n${JSON.stringify(Storage.books, null, "    ")}\n`;
+    //data += `StorageBook:\n${JSON.stringify(Storage.nowBook.book, null, "    ")}\n\n\n`;
+    data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
+    fs.appendFileSync(file, data);
+}
+
 function tryCatchWrapper(f, handler) {
     return function() {
         try {
+            logFunctionApply(
+                configManager.getSysConfig().logPath, f, arguments
+            );
             return f.apply(this, arguments);
         } catch(e) {
             return handler(e);
@@ -94,7 +106,9 @@ export function createObjectWithErrorHandler(obj, handler){
 export function logError(file){
     return function (error){
         const message = error.stack + "\n";
-        let data = message + "\n\n";
+        let data = message + "\n";
+        data += `StorageTop:\n${JSON.stringify(Storage.books, null, "    ")}\n`;
+        data += `StorageBook:\n${JSON.stringify(Storage.nowBook.book, null, "    ")}\n\n\n`;
         data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
         fs.appendFileSync(file, data);
 

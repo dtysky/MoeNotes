@@ -88,7 +88,10 @@ export default class Book extends React.Component {
     }
 
     enableInput(){
-        ReactDom.findDOMNode(this.refs.text).focus();
+        const element = ReactDom.findDOMNode(this.refs.text);
+        const length = this.state.text.length;
+        element.focus();
+        element.setSelectionRange(length, length);
     }
 
     componentDidMount(){

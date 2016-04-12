@@ -105,7 +105,7 @@ class PageList extends SortableList {
 
     reload(){
         if(Storage.nowBook.isEmpty(Storage.nowBook.getNow())){
-            this.refresh(this.createEnd.bind(this));
+            this.refresh(this.createEnd);
         }
         else{
             const chapter = Storage.nowBook.getNow();

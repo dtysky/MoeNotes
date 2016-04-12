@@ -54,7 +54,7 @@ class Notify extends React.Component {
                     message: message,
                     level: "info",
                     position: "tr",
-                    onRemove: cbs.onHide,
+                    onRemove: () => { cbs.onHide.fun(cbs.onHide.param); },
                     autoDismiss: 2
                 });
             }

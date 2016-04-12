@@ -86,7 +86,10 @@ export default ContextMenuLayer(
     },
 
     enableInput: function(){
-        ReactDom.findDOMNode(this.refs.text).focus();
+        const element = ReactDom.findDOMNode(this.refs.text);
+        const length = this.state.text.length;
+        element.focus();
+        element.setSelectionRange(length, length);
     },
 
     resizeInput: function(callback){
