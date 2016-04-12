@@ -106,7 +106,7 @@ export default ContextMenuLayer(
     },
 
     select: function(event){
-        if(!this.props.canInput){
+        if(!this.props.canInput && !this.props.active){
             this.props.doMenuOptions("select", this.state.text);
         }
     },
@@ -138,13 +138,13 @@ export default ContextMenuLayer(
         } : {};
         let className;
         if(this.props.chapter === undefined){
-            className = Storage.nowBook.getNow() === this.props.index ? this.props.className + "-active" : this.props.className + "-normal" ;
+            className = this.props.active ? this.props.className + "-active" : this.props.className + "-normal" ;
             this.state.style.color = Storage.nowBook.getNow() === this.props.index ?
                 stringToColor(this.props.index, config.chapterNowFontSLO) :
                 stringToColor(this.props.index, config.chapterNormalFontSLO);
         }
         else{
-            className = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?  this.props.className + "-active" : this.props.className + "-normal";
+            className = this.props.active ?  this.props.className + "-active" : this.props.className + "-normal";
             this.state.style.color = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?
                 stringToColor(this.props.chapter, config.pageNowFontSLO) :
                 stringToColor(this.props.chapter, config.pageNormalFontSLO);

@@ -139,6 +139,9 @@ class App extends React.Component{
         };
         return (
             <div>
+                <Notify
+                    ref="notify"
+                />
                 <div
                     ref="head"
                     className="head head-color full-width"
@@ -147,9 +150,6 @@ class App extends React.Component{
                     <div
                         className="head head-image full"
                     >
-                        <Notify
-                            ref="notify"
-                        />
                         <BookList
                             menuStyle={this.styles.bookListMenu}
                             buttonHeight={this.styles.bookButtonHeight}
@@ -157,6 +157,7 @@ class App extends React.Component{
                             buttonPosition={this.styles.bookButtonPosition}
                             handleChangeBook={this.handleChangeBook}
                             reoffsetChapter={this.reoffsetChapter}
+                            handleShowNotify={this.handleShowNotify}
                         />
                         <ChapterList
                             ref="chapterList"
@@ -197,6 +198,7 @@ class App extends React.Component{
                     <Page
                         ref="page"
                         style={this.styles.page}
+                        handleShowNotify={this.handleShowNotify}
                     />
                 </div>
 

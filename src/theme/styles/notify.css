@@ -1,39 +1,31 @@
+.modal{
+    font-family: sans-serif ! important;
+}
+
 .modal-error{
-    width: 200px;
     text-align: center;
-}
-
-.modal-error .message{
-    padding: 10px;
-    font-size: 16px;
-}
-
-.modal-error .button{
-    width: 70px;
-    height: 40px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    outline: none;
 }
 
 .modal-warn{
-    width: 200px;
     text-align: center;
 }
 
-.modal-warn .message{
+.modal-message{
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.modal-warn .button{
+.modal-button{
     width: 70px;
-    height: 40px;
-    margin: 10px;
-    font-size: 16px;
+    height: 30px;
+    margin: 20px;
+    font-size: 14px;
     cursor: pointer;
     border: none;
     outline: none;
+    border-bottom-left-radius: 10px 20px;
+    border-top-left-radius: 10px 20px;
+    border-bottom-right-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
+    background-color: rgba(255,255,255,1);
 }

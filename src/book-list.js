@@ -43,6 +43,7 @@ export default class BookList extends React.Component {
                 "remove",
                 "select",
                 "open",
+                "isMenuOpen",
                 "resizeButton",
                 "doMenuOptions",
                 "handleTextChange",
@@ -125,6 +126,10 @@ export default class BookList extends React.Component {
         });
     }
 
+    isMenuOpen(state){
+        this.state.isOpen = state.isOpen;
+    }
+
     resizeButton(){
         const width = ReactDom.findDOMNode(this.refs.buttonsOpen).offsetWidth;
         this.props.reoffsetChapter(width);
@@ -165,7 +170,7 @@ export default class BookList extends React.Component {
     }
 
     showNotify(type, message, callbacks){
-        this.refs.notify.show(type, message, callbacks);
+        this.props.handleShowNotify(type, message, callbacks);
     }
 
     componentDidMount(){
@@ -179,6 +184,7 @@ export default class BookList extends React.Component {
                 <Menu
                     className="book-list"
                     isOpen={this.state.isOpen}
+                    onStateChange={this.isMenuOpen}
                     styles={{
                         bmBurgerButton:{
                             position: "absolute",

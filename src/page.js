@@ -13,6 +13,7 @@ import { debounce } from 'lodash';
 import parse from './parser';
 import AceEditor from './editor';
 import { bindFunctions } from './utils';
+import configManager from './config';
 
 import './theme/styles/sky.css';
 import './theme/styles/highlight.css';
@@ -23,6 +24,7 @@ export default class Page extends React.Component{
     constructor(props){
         super(props);
         const text = Storage.nowBook.readNowPage();
+        this.last_markdown = text;
         this.state = {
             markdown: text,
             html : parse(text)
@@ -33,6 +35,7 @@ export default class Page extends React.Component{
                 "parsePage",
                 "refresh",
                 "reload",
+                "save",
                 "onChange",
                 "onBlur",
                 "onScroll"
@@ -47,7 +50,6 @@ export default class Page extends React.Component{
     }
 
     refresh(value, callback){
-        Storage.save(value);
         const cb = callback === undefined ? () => {} : callback;
         this.setState({
             markdown: value
@@ -62,12 +64,26 @@ export default class Page extends React.Component{
         );
     }
 
+    save(text){
+        Storage.nowBook.save(text);
+        this.last_markdown = this.state.markdown;
+        const book = Storage.getName(Storage.getNow());
+        const chapter = Storage.nowBook.getNow();
+        const page = Storage.nowBook.getNow(chapter);
+        this.props.handleShowNotify(
+            "info",
+            `Book '${book}', Chapter '${chapter}', Page '${page}' is saved!`
+        );
+    }
+
     onChange(value){
         this.refresh(value);
     }
 
     onBlur(){
-        Storage.nowBook.save(this.state.markdown);
+        if(this.last_markdown !== this.state.markdown){
+            this.save(this.state.markdown);
+        }
     }
 
     onScroll(percent){
@@ -76,6 +92,7 @@ export default class Page extends React.Component{
     }
 
     render(){
+        const config = configManager.getConfig();
         return (
             <div
                 className="page-content full-height float-left"
@@ -90,6 +107,7 @@ export default class Page extends React.Component{
                         name="src"
                         value={this.state.markdown}
                         fontSize={14}
+                        font={config.font}
                         tabSize={4}
                         onChange={this.onChange}
                         onBlur={this.onBlur}

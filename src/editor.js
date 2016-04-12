@@ -33,6 +33,7 @@ export default class ReactAce extends Component {
             name,
             mode,
             theme,
+            font,
             fontSize,
             value,
             cursorStart,
@@ -63,7 +64,7 @@ export default class ReactAce extends Component {
         this.editor.getSession().on('changeScrollTop', this.onChangeScrollTop);
         this.editor.setFontSize(14);
         this.editor.setOptions({
-            fontFamily: "sans-serif"
+            fontFamily: font
         });
 
         if (keyboardHandler) {
@@ -140,6 +141,7 @@ export default class ReactAce extends Component {
 ReactAce.propTypes = {
     name: PropTypes.string,
     className: PropTypes.string,
+    font: PropTypes.string,
     fontSize: PropTypes.number,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
@@ -154,6 +156,7 @@ ReactAce.propTypes = {
 ReactAce.defaultProps = {
     name: 'brace-editor',
     value: '',
+    font: "",
     fontSize: 12,
     onChange: null,
     tabSize: 4,

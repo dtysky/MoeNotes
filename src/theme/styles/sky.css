@@ -26,6 +26,15 @@ input{
     color: black;
 }
 
+input:focus{
+    outline: none;
+}
+
+/*input:-webkit-autofill {*/
+    /*-webkit-box-shadow: 0 0 0 1000px white inset;*/
+/*}*/
+
+
 button{
     margin: 0;
     padding: 0;

@@ -63,6 +63,7 @@
     "react-burger-menu": "^1.5.7",
     "react-contextmenu": "^1.2.0",
     "react-dom": "^0.14.7",
+    "react-notification-system": "^0.2.7",
     "rimraf": "^2.5.2",
     "string-hash": "^1.1.0",
     "string-width": "^1.0.1"
