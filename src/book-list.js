@@ -119,9 +119,6 @@ export default class BookList extends React.Component {
             this.create();
             return;
         }
-        if(index === Storage.getNow()){
-            Storage.change(0);
-        }
         this.refresh();
     }
 

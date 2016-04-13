@@ -167,8 +167,12 @@ class App extends React.Component{
         return Storage.isEmpty() ? (
             <div
                 key="start"
+                className="full text-center"
+                style={{
+                    lineHeight: 200
+                }}
             >
-                Select your first book!
+                <h1>Select your first book!</h1>
             </div>
         )
             :

@@ -89,7 +89,7 @@ export default ContextMenuLayer(
         const element = ReactDom.findDOMNode(this.refs.text);
         const length = this.state.text.length;
         element.focus();
-        element.setSelectionRange(length, length);
+        //element.setSelectionRange(length, length);
     },
 
     resizeInput: function(callback){

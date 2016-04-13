@@ -69,12 +69,13 @@
 .book-text input{
     vertical-align: top;
     padding: 0;
-    margin-left: 4px;
+    margin: 0;
     width: 100%;
     font-size: 24px;
 }
 
 .book-buttons{
+    margin-left: 4px;
     margin-top: 8px;
     width: 36px;
     height: 14px;
