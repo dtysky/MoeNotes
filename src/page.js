@@ -58,9 +58,11 @@ export default class Page extends React.Component{
     }
 
     reload(){
+        const nowPage = Storage.nowBook.readNowPage();
+        this.last_markdown = nowPage;
         this.refresh(
-            Storage.nowBook.readNowPage(),
-            this.refs.editor.focus()
+            nowPage,
+            this.refs.editor.focus
         );
     }
 

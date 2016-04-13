@@ -26,6 +26,10 @@
     z-index: 1688;
 }
 
+.page-sortable-list .ui-sortable-item .ui-sortable-dragging{
+    background-color: white;
+}
+
 .ui-sortable .ui-sortable-placeholder {
     display: none;
 }
@@ -39,8 +43,10 @@
 
 .ui-sortable .ui-sortable-placeholder.visible {
     opacity: .4;
-    -ms-filter: opacity(alpha=40);
-    border: 1px #ccc dashed;
+}
+
+.page-sortable-list .ui-sortable-placeholder .visible{
+    border: 2px #fff solid;
 }
 
 .ui-sortable.style-for-test {

@@ -8,6 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import BookPicker from './book-picker';
 import ChapterList from './chapter-list';
 import BookList from './book-list';
 import Page from './page';
@@ -41,7 +42,9 @@ class App extends React.Component{
                 "handleChangePage",
                 "handleShowNotify",
                 "changeColor",
-                "resize"
+                "create",
+                "resize",
+                "initOptions"
             ]
         );
     }
@@ -87,10 +90,34 @@ class App extends React.Component{
         });
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', this.resize.bind(this));
+    initOptions(){
+        window.addEventListener('resize', this.resize);
         this.changeColor();
         this.resize();
+    }
+
+    create(){
+        BookPicker.create(
+            dp => {
+                if(dp === null && Storage.isEmpty()){
+                    this.create();
+                    return;
+                }
+                Storage.create(dp);
+                Storage.change(dp);
+                Storage.save();
+                this.initOptions();
+                this.setState({});
+            }
+        );
+    }
+
+    componentDidMount() {
+        if(Storage.isEmpty()){
+            this.create();
+            return;
+        }
+        this.initOptions();
     }
 
     render(){
@@ -137,20 +164,31 @@ class App extends React.Component{
                 width: width - 200
             }
         };
-        return (
-            <div>
+        return Storage.isEmpty() ? (
+            <div
+                key="start"
+            >
+                Select your first book!
+            </div>
+        )
+            :
+        (
+            <div
+                key="normal"
+            >
                 <Notify
                     ref="notify"
                 />
                 <div
                     ref="head"
-                    className="head head-color full-width"
+                    className="head full-width"
                     style={this.styles.head}
                 >
                     <div
                         className="head head-image full"
                     >
                         <BookList
+                            ref="bookList"
                             menuStyle={this.styles.bookListMenu}
                             buttonHeight={this.styles.bookButtonHeight}
                             buttonTop={this.styles.bookButtonTop}
@@ -201,7 +239,6 @@ class App extends React.Component{
                         handleShowNotify={this.handleShowNotify}
                     />
                 </div>
-
             </div>
         );
     }

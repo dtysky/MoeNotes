@@ -35,7 +35,8 @@ export default class SortableList extends React.Component {
                 "doMenuOptions",
                 "handleTextChange",
                 "handleErrorCannotChange",
-                "showNotify"
+                "showNotify",
+                "save"
             ]
         );
     }
@@ -139,6 +140,10 @@ export default class SortableList extends React.Component {
             element.scrollTop = element.scrollHeight;
         }
         this.setState({});
+    }
+
+    save(){
+        Storage.nowBook.save();
     }
 
     componentDidMount(){

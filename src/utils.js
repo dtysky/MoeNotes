@@ -83,9 +83,9 @@ function logFunctionApply(file, f, args){
 function tryCatchWrapper(f, handler) {
     return function() {
         try {
-            logFunctionApply(
-                configManager.getSysConfig().logPath, f, arguments
-            );
+            //logFunctionApply(
+            //    configManager.getSysConfig().logPath, f, arguments
+            //);
             return f.apply(this, arguments);
         } catch(e) {
             return handler(e);

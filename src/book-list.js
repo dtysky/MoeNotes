@@ -31,6 +31,7 @@ export default class BookList extends React.Component {
             width: 0,
             isOpen: false
         };
+        this._sortkey = 0;
         bindFunctions(
             this,
             [
@@ -43,6 +44,7 @@ export default class BookList extends React.Component {
                 "remove",
                 "select",
                 "open",
+                "save",
                 "isMenuOpen",
                 "resizeButton",
                 "doMenuOptions",
@@ -62,6 +64,8 @@ export default class BookList extends React.Component {
     }
 
     refresh(){
+        this.save();
+        this._sortkey ++;
         this.setState({
             indexes: Storage.getIndexes(),
             now: Storage.getNow()
@@ -71,10 +75,13 @@ export default class BookList extends React.Component {
     create() {
         BookPicker.create(
             dp => {
+                if(dp === null && Storage.isEmpty()){
+                    this.create();
+                    return;
+                }
                 if(!Storage.has(dp)){
                     Storage.create(dp);
                 }
-                this.state.isOpen = false;
                 this.select(dp);
             }
         );
@@ -86,7 +93,6 @@ export default class BookList extends React.Component {
                 if(!Storage.has(dp)){
                     Storage.create(dp);
                 }
-                this.state.isOpen = false;
                 this.select(dp);
             }
         );
@@ -96,9 +102,15 @@ export default class BookList extends React.Component {
         Storage.remove(index);
         if(Storage.isEmpty()){
             this.create();
+            return;
         }
-        this.props.handleChangeBook();
+        if(Storage.getNow() === index){
+            Storage.change(
+                Storage.getIndexes()[0]
+            );
+        }
         this.refresh();
+        this.props.handleChangeBook();
     }
 
     rename(index, name){
@@ -115,15 +127,18 @@ export default class BookList extends React.Component {
 
     select(index){
         Storage.change(index);
-        Storage.save();
-        this.props.handleChangeBook();
         this.refresh();
+        this.props.handleChangeBook();
     }
 
     open(){
         this.setState({
             isOpen: true
         });
+    }
+
+    save(){
+        Storage.save();
     }
 
     isMenuOpen(state){
@@ -204,7 +219,7 @@ export default class BookList extends React.Component {
                         this.state.indexes.map((index, no) => {
                             return (
                                 <Book
-                                    key={no}
+                                    key={this._sortkey}
                                     ref={index}
                                     index={index}
                                     name={Storage.getName(index)}

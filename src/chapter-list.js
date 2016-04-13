@@ -40,11 +40,13 @@ class ChapterList extends SortableList {
     refresh(callback){
         this._sortkey ++;
         this.state.indexes = Storage.nowBook.getIndexes();
-        this.setState({}, callback === undefined ?
-            () => {}
-            :
-            callback()
-        );
+        const cb = () => {
+            this.save();
+            if (callback !== undefined) {
+                callback();
+            }
+        };
+        this.setState({}, cb);
     }
 
     onSort(indexes) {

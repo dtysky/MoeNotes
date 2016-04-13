@@ -50,7 +50,21 @@ export default class StorageBook{
                 JSON.stringify(this.createTree(dp))
             );
         }
+        else{
+            try{
+                JSON.parse(
+                    fs.readFileSync(treePath, "utf8")
+                );
+            }
+            catch(e){
+                fs.writeFileSync(
+                    treePath,
+                    JSON.stringify(this.createTree(dp))
+                );
+            }
+        }
         this.book = this.parse(dp);
+        this.save();
     }
 
     createTree(dp){
@@ -80,6 +94,12 @@ export default class StorageBook{
     }
 
     recreateIndexesWithNow(oldObj, newObj){
+        if(oldObj === undefined){
+            return newObj;
+        }
+        if(newObj === undefined){
+            return oldObj;
+        }
         if(arrayIsLike(oldObj.indexes, newObj.indexes)){
             return oldObj;
         }
@@ -100,7 +120,7 @@ export default class StorageBook{
         for(let key in treeRecord.chapters){
             if(!arrayHas(treeNow.indexes, key)){
                 treeRecord.indexes.splice(
-                    treeRecord.indexes.indexOf(key) ,1
+                    treeRecord.indexes.indexOf(key), 1
                 );
                 delete treeRecord.chapters[key];
                 continue;
@@ -115,6 +135,10 @@ export default class StorageBook{
                 treeRecord.indexes.push(key);
                 treeRecord.chapters[key] = treeNow.chapters[key];
             }
+            treeRecord.chapters[key] = this.recreateIndexesWithNow(
+                treeRecord.chapters[key],
+                treeNow.chapters[key]
+            );
         }
         return treeRecord;
     }
@@ -174,11 +198,13 @@ export default class StorageBook{
     }
 
     save(text){
-        const chapter = this.getNow();
-        fs.writeFileSync(
-            this.getPath(this.getNow(chapter), chapter),
-            text
-        );
+        if(text !== undefined){
+            const chapter = this.getNow();
+            fs.writeFileSync(
+                this.getPath(this.getNow(chapter), chapter),
+                text
+            );
+        }
         const treePath = path.join(this.book.root, ".tree");
         fs.writeFileSync(
             treePath,

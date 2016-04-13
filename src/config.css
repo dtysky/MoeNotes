@@ -3,10 +3,6 @@
     background-size: cover;
 }
 
-.head-color{
-    /*background: rgba(239, 194, 212, 0.6);*/
-}
-
 .head-image{
     background-image: url(theme/images/head.png);
 }

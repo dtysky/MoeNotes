@@ -44,11 +44,11 @@ export default class StorageTop {
     load(){
         if(!fs.existsSync(this.treePath)){
             this.books = this.createTree();
-            this.save();
         }
         else{
             this.parse();
         }
+        this.save();
     }
 
     //indexes: books' paths

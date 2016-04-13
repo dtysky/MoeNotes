@@ -8,7 +8,7 @@
 'use strict';
 
 import React from 'react';
-import { WaveModal } from 'boron';
+import { FadeModal as Modal } from 'boron';
 import NotificationSystem from 'react-notification-system';
 import configManager from './config';
 
@@ -98,7 +98,7 @@ class Notify extends React.Component {
         };
         return (
             <div>
-                <WaveModal
+                <Modal
                     ref="error"
                     className="modal-error modal"
                     backdropStyle={{
@@ -121,8 +121,8 @@ class Notify extends React.Component {
                     >
                         Close
                     </button>
-                </WaveModal>
-                <WaveModal
+                </Modal>
+                <Modal
                     ref="warn"
                     className="modal-warn modal"
                     backdropStyle={{
@@ -157,7 +157,7 @@ class Notify extends React.Component {
                     >
                         Cancel
                     </button>
-                </WaveModal>
+                </Modal>
                 <NotificationSystem
                     ref="info"
                     style={style}
