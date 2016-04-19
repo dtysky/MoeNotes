@@ -1,7 +1,3 @@
-.books-button-open, .chapter-sortable-list-item, .page-sortable-list-item, .page-list-button{
-    font-family: sans-serif ! important;
-}
-
 body{
     overflow: hidden;
 }

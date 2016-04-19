@@ -9,7 +9,9 @@ import mock from 'mock-fs';
 const filesWithoutTree = {
     book1: {},
     book2: {},
-    config: {}
+    user: {
+        "error.log": ""
+    }
 };
 
 export function initWithoutTree(){
@@ -55,8 +57,9 @@ const filesWithTree = {
     book1: {},
     book2: {},
     book3: {},
-    config: {
-        ".tree": JSON.stringify(treeFilesWithTree)
+    user: {
+        ".tree": JSON.stringify(treeFilesWithTree),
+        "error.log": ""
     }
 };
 

@@ -1,3 +1,7 @@
+.book-text, .book-list-button, .modal, .books-button-open, .chapter-sortable-list-item, .page-sortable-list-item, .page-list-button, .react-context-menu-link{
+    font-family: "theme/fonts/Hack-Regular.ttf" ! important;
+}
+
 #react-content{
     background-image: url(theme/images/body.png);
     background-size: cover;
@@ -108,4 +112,28 @@
 
 .bm-menu-wrap {
     background-image: url(theme/images/book-list.png);
+}
+
+.modal-error .modal-head{
+    background: url(theme/images/error-head.png);
+}
+
+.modal-error .modal-body{
+    background: rgb(255, 255, 255);
+}
+
+.modal-warn .modal-head{
+    background: url(theme/images/warn-head.png);
+}
+
+.modal-warn .modal-body{
+    background: rgb(255, 255, 255);
+}
+
+.react-context-menu {
+    background-image: url(theme/images/menu-background.png);
+}
+.react-context-menu-link.active,
+.react-context-menu-link:hover {
+    background: rgba(218, 163, 187, 0.4);
 }

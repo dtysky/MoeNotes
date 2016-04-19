@@ -35,25 +35,25 @@ class ContextMenuMain extends React.Component {
             >
                 <MenuItem
                     data={{option: "remove"}}
-                    onClick={this.handleClick.bind(this)}
+                    onClick={this.handleClick}
                 >
                     Remove
                 </MenuItem>
                 <MenuItem
                     data={{option: "rename"}}
-                    onClick={this.handleClick.bind(this)}
+                    onClick={this.handleClick}
                 >
                     Rename
                 </MenuItem>
                 <MenuItem
                     data={{option: "create"}}
-                    onClick={this.handleClick.bind(this)}
+                    onClick={this.handleClick}
                 >
                     Create
                 </MenuItem>
                 <MenuItem
                     data={{option: "copy"}}
-                    onClick={this.handleClick.bind(this)}
+                    onClick={this.handleClick}
                 >
                     Copy
                 </MenuItem>

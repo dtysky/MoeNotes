@@ -9,10 +9,12 @@ import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { initWithoutTree, filesWithoutTree, treeWithoutTree } from './testcase-storage-book';
 import { initWithTree, filesWithTree, treeWithTree } from './testcase-storage-book';
+import { initWithErrorTree, filesWithErrorTree, treeWithError } from './testcase-storage-book';
 import { initEmpty, filesEmpty, treeEmpty } from './testcase-storage-book';
 import { arrayIsEqual, objectIsEqual, loadBook } from './utils';
 
 import fs from 'fs';
+
 
 describe("StorageBook ", () => {
     let tree = null;
@@ -32,6 +34,25 @@ describe("StorageBook ", () => {
             ).toBeTruthy();
             expect(
                 objectIsEqual(JSON.parse(fs.readFileSync("book1/.tree")), tree)
+            ).toBeTruthy();
+        });
+
+        it("Recreate indexes with now", () => {
+            let oldIndexes = {
+                now: "page1",
+                indexes: ["page1", "page2"]
+            };
+            let newIndexes = undefined;
+            expect(
+                objectIsEqual(storage.recreateIndexesWithNow(oldIndexes, newIndexes), oldIndexes)
+            ).toBeTruthy();
+            oldIndexes = undefined;
+            newIndexes = {
+                now: "page1",
+                indexes: ["page1", "page2"]
+            };
+            expect(
+                objectIsEqual(storage.recreateIndexesWithNow(oldIndexes, newIndexes), newIndexes)
             ).toBeTruthy();
         });
 
@@ -222,6 +243,23 @@ describe("StorageBook ", () => {
             initEmpty();
             tree = deepcopy(treeEmpty);
             files = deepcopy(filesEmpty);
+            storage = new StorageBook("book1");
+        });
+
+        it("Initialize", () => {
+            expect(
+                objectIsEqual(storage.book, tree)
+            ).toBeTruthy();
+        });
+
+        afterEach(mock.restore);
+    });
+
+    describe("With error .tree file", () => {
+        beforeEach(() => {
+            initWithErrorTree();
+            tree = deepcopy(treeWithError);
+            files = deepcopy(filesWithErrorTree);
             storage = new StorageBook("book1");
         });
 

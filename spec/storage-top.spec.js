@@ -23,7 +23,7 @@ describe("StorageTop ", () => {
             initWithTree();
             tree = deepcopy(treeWithTree);
             files = deepcopy(filesWithTree);
-            storage = new StorageTop("config/.tree");
+            storage = new StorageTop("user/.tree");
         });
 
         it("Initialize", () => {
@@ -50,6 +50,10 @@ describe("StorageTop ", () => {
 
         it("Get name", () => {
             expect(storage.getName("book1")).toBe("bookA");
+        });
+
+        it("Get now", () => {
+            expect(storage.getNow()).toBe("book1");
         });
 
         it("Has", () => {
@@ -132,14 +136,16 @@ describe("StorageTop ", () => {
             initWithoutTree();
             tree = deepcopy(treeWithoutTree);
             files = deepcopy(filesWithoutTree);
-            storage = new StorageTop("config/.tree");
+            storage = new StorageTop("user/.tree");
         });
 
         it("Initialize", () => {
             expect(
                 objectIsEqual(storage.books, tree)
             ).toBeTruthy();
-            expect(storage.nowBook).toBe(null);
+            expect(
+                objectIsEqual(storage.nowBook, {})
+            ).toBeTruthy();
             expect(
                 objectIsEqual(storage.cache, {})
             ).toBeTruthy();
@@ -151,5 +157,4 @@ describe("StorageTop ", () => {
 
         afterEach(mock.restore);
     });
-
 });

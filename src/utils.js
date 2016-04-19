@@ -72,20 +72,9 @@ export function stringToColor(string, sla){
     return "rgba(" + color.join(",") + ")";
 }
 
-function logFunctionApply(file, f, args){
-    let data = `Call:\nFunction: ${f.name}\nArgs: ${JSON.stringify(args)}\n\n`;
-    //data += `StorageTop:\n${JSON.stringify(Storage.books, null, "    ")}\n`;
-    //data += `StorageBook:\n${JSON.stringify(Storage.nowBook.book, null, "    ")}\n\n\n`;
-    data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
-    fs.appendFileSync(file, data);
-}
-
 function tryCatchWrapper(f, handler) {
     return function() {
         try {
-            //logFunctionApply(
-            //    configManager.getSysConfig().logPath, f, arguments
-            //);
             return f.apply(this, arguments);
         } catch(e) {
             return handler(e);

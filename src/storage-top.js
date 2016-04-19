@@ -19,7 +19,7 @@ export default class StorageTop {
         this.treePath = treePath;
         this.books = {};
         this.cache = {};
-        this.nowBook = null;
+        this.nowBook = {};
         this.load();
         bindFunctions(
             this,
@@ -66,6 +66,7 @@ export default class StorageTop {
             fs.readFileSync(this.treePath, "utf8")
         );
         treeRecord.indexes.forEach(index => {
+            //console.log(treeRecord, index, !fs.existsSync(index));
             if(!fs.existsSync(index)){
                 treeRecord.indexes.splice(
                     treeRecord.indexes.indexOf(index)
@@ -85,7 +86,7 @@ export default class StorageTop {
         else if(!arrayHas(this.books.indexes, this.books.now)){
             this.books.now = this.books.indexes[0];
         }
-        this.nowBook = this.cache[this.books.now];
+        this.nowBook = this.cache[this.books.now] || {};
     }
 
     getIndexes() {

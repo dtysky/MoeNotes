@@ -49,9 +49,5 @@
     border: 2px #fff solid;
 }
 
-.ui-sortable.style-for-test {
-    display: inline-block;
-}
-
 .ui-sortable.full-width .ui-sortable-item{
 }

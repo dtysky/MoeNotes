@@ -919,3 +919,2280 @@ StorageBook:
 }
 
 
+2016-04-17 02:33:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:62250:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141403:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at select (http://localhost:8000/assets/main.bundle.js:66968:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "789",
+                "-0809i"
+            ],
+            "now": "789"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6"
+            ],
+            "now": "page5"
+        }
+    },
+    "now": "语音识别"
+}
+
+
+2016-04-17 02:33:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at select (http://localhost:8000/assets/main.bundle.js:66968:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "789",
+                "-0809i"
+            ],
+            "now": "789"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6"
+            ],
+            "now": "page5"
+        }
+    },
+    "now": "语音识别"
+}
+
+
+2016-04-17 02:33:06
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:62267:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141391:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "789",
+                "-0809i"
+            ],
+            "now": "789"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6"
+            ],
+            "now": "page5"
+        }
+    },
+    "now": "语音识别"
+}
+
+
+2016-04-17 02:33:06
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:62224:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:77957:54)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangePage (http://localhost:8000/assets/main.bundle.js:9604:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141392:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "789",
+                "-0809i"
+            ],
+            "now": "789"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6"
+            ],
+            "now": "page5"
+        }
+    },
+    "now": "语音识别"
+}
+
+
+2016-04-17 02:33:06
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:62203:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:141341:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141393:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "789",
+                "-0809i"
+            ],
+            "now": "789"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6"
+            ],
+            "now": "page5"
+        }
+    },
+    "now": "语音识别"
+}
+
+
+2016-04-17 03:26:04
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:62250:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141403:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at select (http://localhost:8000/assets/main.bundle.js:66968:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:04
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at select (http://localhost:8000/assets/main.bundle.js:66968:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:04
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:62267:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141391:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:04
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:62224:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:77957:54)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangePage (http://localhost:8000/assets/main.bundle.js:9604:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141392:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:04
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/Python/undefined.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:62224:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:77957:54)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangePage (http://localhost:8000/assets/main.bundle.js:9604:29)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:04
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:62203:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:141341:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141393:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:12
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:62231:63)
+    at StorageBook.save (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.save (http://localhost:8000/assets/main.bundle.js:77964:40)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:77980:23)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:118689:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:12
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.save (http://localhost:8000/assets/main.bundle.js:77968:51)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at Page.onBlur (http://localhost:8000/assets/main.bundle.js:77980:23)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ReactAce.onBlur (http://localhost:8000/assets/main.bundle.js:118689:29)
+    at ReactAce.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at EventEmitter._emit.EventEmitter._dispatchEvent (http://localhost:8000/assets/main.bundle.js:122125:22)
+    at onBlur (http://localhost:8000/assets/main.bundle.js:130510:15)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        }
+    },
+    "now": "Python"
+}
+
+
+2016-04-17 03:26:19
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:62250:48)
+    at StorageBook.isEmpty (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141403:44)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at select (http://localhost:8000/assets/main.bundle.js:66968:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6",
+                "undefined"
+            ],
+            "now": "page1"
+        }
+    },
+    "now": "FPGA"
+}
+
+
+2016-04-17 03:26:19
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:56)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at select (http://localhost:8000/assets/main.bundle.js:66968:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6",
+                "undefined"
+            ],
+            "now": "page1"
+        }
+    },
+    "now": "FPGA"
+}
+
+
+2016-04-17 03:26:19
+TypeError: Cannot set property 'now' of undefined
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:62267:46)
+    at StorageBook.change (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141391:40)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+    at ChapterList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at ChapterList.doMenuOptions (http://localhost:8000/assets/main.bundle.js:65865:23)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6",
+                "undefined"
+            ],
+            "now": "page1"
+        }
+    },
+    "now": "FPGA"
+}
+
+
+2016-04-17 03:26:19
+TypeError: Cannot read property 'now' of undefined
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:62187:48)
+    at StorageBook.getNow (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:62224:65)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:77957:54)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangePage (http://localhost:8000/assets/main.bundle.js:9604:29)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141392:25)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6",
+                "undefined"
+            ],
+            "now": "page1"
+        }
+    },
+    "now": "FPGA"
+}
+
+
+2016-04-17 03:26:19
+Error: ENOENT: no such file or directory, open 'booksForTest/book1/FPGA/undefined.md'
+    at Error (native)
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.module.(anonymous function) [as openSync] (ATOM_SHELL_ASAR.js:157:20)
+    at Object.fs.readFileSync (fs.js:431:33)
+    at Object.fs.readFileSync (ATOM_SHELL_ASAR.js:425:29)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:62224:34)
+    at StorageBook.readNowPage (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at Page.reload (http://localhost:8000/assets/main.bundle.js:77957:54)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangePage (http://localhost:8000/assets/main.bundle.js:9604:29)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6",
+                "undefined"
+            ],
+            "now": "page1"
+        }
+    },
+    "now": "FPGA"
+}
+
+
+2016-04-17 03:26:19
+TypeError: Cannot read property 'indexes' of undefined
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:62203:72)
+    at StorageBook.getIndexes (http://localhost:8000/assets/main.bundle.js:29860:23)
+    at PageList.refresh (http://localhost:8000/assets/main.bundle.js:141341:61)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.select (http://localhost:8000/assets/main.bundle.js:141393:19)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at PageList.reload (http://localhost:8000/assets/main.bundle.js:141407:23)
+    at PageList.<anonymous> (http://localhost:8000/assets/main.bundle.js:9895:38)
+    at App.handleChangeChapter (http://localhost:8000/assets/main.bundle.js:9598:33)
+    at ChapterList.select (http://localhost:8000/assets/main.bundle.js:65696:25)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book2": "笔记二"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "语音识别",
+        "1111111111111111111111111111",
+        "戴天宇",
+        "Node",
+        "DigitalOcean",
+        "99999999999999999",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6"
+            ],
+            "now": "6"
+        },
+        "1111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page2",
+                "page3",
+                "page5",
+                "page6",
+                "undefined"
+            ],
+            "now": "page1"
+        }
+    },
+    "now": "FPGA"
+}
+
+

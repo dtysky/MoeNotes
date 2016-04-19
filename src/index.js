@@ -94,6 +94,7 @@ class App extends React.Component{
         window.addEventListener('resize', this.resize);
         this.changeColor();
         this.resize();
+        this.refs.notify.show("info", "test");
     }
 
     create(){

@@ -83,6 +83,51 @@ const treeWithTree = {
     }
 };
 
+const treeFilesWithErrorTree= `
+    root: "book1",
+    now: "cp3",
+    indexes: [
+        "cp1"
+    ],
+    chapters: {
+        cp1: {
+            now: "page1",
+            indexes: [
+                "page1"
+            ]
+        }
+    }`;
+
+export const filesWithErrorTree = {
+    book1: {
+        cp1: {
+            "page1.md": "Here is page1 in cp1"
+        },
+        ".tree": treeFilesWithErrorTree
+    }
+};
+
+export function initWithErrorTree() {
+    mock(filesWithErrorTree);
+}
+
+export const treeWithError = {
+    root: "book1",
+    now: "cp1",
+    indexes: [
+        "cp1"
+    ],
+    chapters: {
+        cp1: {
+            now: "page1",
+            indexes: [
+                "page1"
+            ]
+        }
+    }
+};
+
+
 const treeFilesWithTree= {
     root: "book1",
     now: "cp3",

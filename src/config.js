@@ -6,7 +6,7 @@
 
 
 const defaultConfig = {
-    "font": "sans-serif",
+    "font": "hack",
     "defaultHighlight": "VHDL",
     "chapterNowBackSLO":  [50, 60, 1],
     "chapterNowBorderSLO": [50, 60, 1],
@@ -28,10 +28,9 @@ const defaultConfig = {
     "hueRange": [260, 380],
     "modalBackDrop": "rgba(100,100,100,0.6)",
     "warnNotifyBack": "url(theme/images/warn-background.png)",
-    "warnNotifyShadow": "inset 0 0 40px rgba(220,220,0,0.6), 0 0 10px rgba(220,220,0,0.6)",
     "errorNotifyBack": "url(theme/images/error-background.png)",
-    "errorNotifyShadow": "inset 0 0 40px rgba(220,0,0,0.6), 0 0 10px rgba(220,0,0,0.6)",
-    "infoNotifyBack": "url(theme/images/info-background.png)",
+    //"infoNotifyBack": "url(theme/images/info-background.png)",
+    "infoNotifyBack": "rgba(239, 194, 212, 0.9)",
     "infoNotifyShadow": ""
 };
 

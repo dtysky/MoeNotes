@@ -1,7 +1,3 @@
-.book-text, .book-list-button{
-    font-family: sans-serif ! important;
-}
-
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
     height: 24px;

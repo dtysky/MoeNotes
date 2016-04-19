@@ -15,7 +15,6 @@ content starts at 4-columns in.
 
 > Block quotes are
 > written like so.
->
 > They can span multiple paragraphs,
 > if you like.
 
@@ -50,7 +49,7 @@ from the left side). Here's a code sample:
                     count <= 0;
                 else
                     count <= count + 1;
-                end if;
+                end if; 
         end process;
     end
                 

@@ -10,7 +10,6 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Sortable from 'react-anything-sortable';
 import SortableListItem from './sortable-item';
-import Notify from './notify';
 import Storage from './storage';
 import { ContextMenuMain } from './context-menu';
 import { bindFunctions } from './utils';
@@ -79,10 +78,10 @@ export default class SortableList extends React.Component {
         if(option === "remove"){
             this.showNotify(
                 "warn",
-                this.props.chapter === undefined ?
-                    "This chapter  will be deleted irrevocably, are you sure ?"
+                this.name === "page-list" ?
+                    "This page  will be deleted irrevocably, are you sure ?"
                     :
-                    "This page will be deleted irrevocably, are you sure ?",
+                    "This chapter will be deleted irrevocably, are you sure ?",
                 {
                     onOk: {
                         fun: this.remove,
@@ -162,9 +161,6 @@ export default class SortableList extends React.Component {
                     style={this.props.styleList}
                     className={this.props.classList}
                 >
-                    <Notify
-                        ref="notify"
-                    />
                     <ContextMenuMain
                         name={this.state.menuName}
                         handleClick={this.onContextMenu}

@@ -6,7 +6,7 @@
 
 import { bindFunctions, getDirectories, getFiles, getNameFromPath} from '../src/utils';
 import { arrayIsEqual, arrayIsLike, arrayHas } from '../src/utils';
-import { createObjectWithErrorHandler, logError } from '../src/utils';
+import { createObjectWithErrorHandler, logError, stringToColor } from '../src/utils';
 import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { objectIsEqual, loadBook } from './utils';
@@ -154,6 +154,18 @@ describe("Utils", () => {
             /\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\nError: error[\s\S]+/.test(results)
         ).toBeTruthy();
         mock.restore();
+    });
+
+    it("String to color", () => {
+        let string = "";
+        let sla = [50, 50, 0.8];
+        expect(stringToColor(string, sla)).toBe("rgba(191,65,63,0.8)");
+        string = "哈哈哈哈哈哈";
+        sla = [100, 50, 0.8];
+        expect(stringToColor(string, sla)).toBe("rgba(255,4,0,0.8)");
+        string = "Hahahahaha";
+        sla = [100, 100, 0.8];
+        expect(stringToColor(string, sla)).toBe("rgba(255,255,255,0.8)");
     });
 
 });

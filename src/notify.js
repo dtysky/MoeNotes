@@ -77,10 +77,9 @@ class Notify extends React.Component {
                     width: "100%",
                     height: "100%",
                     borderTop: "none",
-                    backgroundColor: "none",
-                    backgroundImage: config.infoNotifyBack,
-                    backgroundSize: "100% auto",
-                    backgroundPosition: "center"
+                    background: config.infoNotifyBack,
+                    backgroundSize: "100% 100%",
+                    backgroundPosition: "top"
                 }
             },
             MessageWrapper: {
@@ -101,62 +100,72 @@ class Notify extends React.Component {
                 <Modal
                     ref="error"
                     className="modal-error modal"
+                    modalStyle={{
+                        padding: 20
+                    }}
                     backdropStyle={{
                         backgroundColor: config.modalBackDrop
                     }}
                     contentStyle={{
                         backgroundSize: "100% 100%",
-                        background: config.errorNotifyBack,
-                        boxShadow: config.errorNotifyShadow,
-                        padding: 20
+                        background: config.errorNotifyBack
                     }}
                     onHide={() => this.state.onHide.fun(this.state.onHide.param)}
                 >
-                    <div className="modal-message">
-                        {this.state.message}
+                    <div className="modal-head">
                     </div>
-                    <button
-                        className="modal-button button"
-                        onClick={() => this.refs.error.hide()}
-                    >
-                        Close
-                    </button>
+                    <div className="modal-body">
+                        <div className="modal-message">
+                            {this.state.message}
+                        </div>
+                        <button
+                            className="modal-button button"
+                            onClick={() => this.refs.error.hide()}
+                        >
+                            Close
+                        </button>
+                    </div>
                 </Modal>
                 <Modal
                     ref="warn"
                     className="modal-warn modal"
+                    modalStyle={{
+                        padding: 20
+                    }}
                     backdropStyle={{
                         backgroundColor: config.modalBackDrop
                     }}
                     contentStyle={{
                         backgroundSize: "100% 100%",
-                        background: config.warnNotifyBack,
-                        boxShadow: config.warnNotifyShadow,
-                        padding: 20
+                        background: config.warnNotifyBack
                     }}
                     onHide={this.state.onHide.fun(this.state.onHide.param)}
                 >
-                    <div className="modal-message">
-                        {this.state.message}
+                    <div className="modal-head">
                     </div>
-                    <button
-                        className="modal-button button"
-                        onClick={() => {
+                    <div className="modal-body">
+                        <div className="modal-message">
+                            {this.state.message}
+                        </div>
+                        <button
+                            className="modal-button button"
+                            onClick={() => {
                             this.refs.warn.hide();
                             this.state.onOk.fun(this.state.onOk.param);
                         }}
-                    >
-                        Ok
-                    </button>
-                    <button
-                        className="modal-button button"
-                        onClick={() => {
+                        >
+                            Ok
+                        </button>
+                        <button
+                            className="modal-button button"
+                            onClick={() => {
                             this.refs.warn.hide();
                             this.state.onCancel.fun(this.state.onCancel.param);
                         }}
-                    >
-                        Cancel
-                    </button>
+                        >
+                            Cancel
+                        </button>
+                    </div>
                 </Modal>
                 <NotificationSystem
                     ref="info"

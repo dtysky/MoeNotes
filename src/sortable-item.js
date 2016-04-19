@@ -85,11 +85,14 @@ export default ContextMenuLayer(
         );
     },
 
-    enableInput: function(){
+    enableInput: function(setTail){
+        console.log(setTail);
         const element = ReactDom.findDOMNode(this.refs.text);
-        const length = this.state.text.length;
         element.focus();
-        //element.setSelectionRange(length, length);
+        if(setTail){
+            const length = this.state.text.length;
+            element.setSelectionRange(length, length);
+        }
     },
 
     resizeInput: function(callback){
@@ -116,7 +119,7 @@ export default ContextMenuLayer(
 
     componentDidMount: function(){
         if (this.props.canInput){
-            this.enableInput();
+            this.enableInput(true);
         }
         else{
             this.resizeInput();
