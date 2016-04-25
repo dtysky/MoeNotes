@@ -4,11 +4,25 @@
  * Description: Editor theme.
  */
 
+
+
 ace.define("ace/theme/magic-book",["require","exports","module","ace/lib/dom"], function(acequire, exports, module) {
 
     exports.isDark = false;
     exports.cssClass = "ace-magic-book";
     exports.cssText = "\
+@font-face{\
+    font-family: 'hack';\
+    src:    url('theme/fonts/Hack-Bold.ttf');\
+    url('theme/fonts/Hack-Bold.ttf') format('truetype');\
+}\
+.ace-magic-book .ace_text-layer{\
+    font-family: hack ! important;\
+}\
+.ace-magic-book .ace_cjk{\
+    font-family: Microsoft YaHei,Arial, sans-serif ! important;\
+    font-size: 14px\
+}\
 .ace-magic-book .ace_gutter {\
 background: #e8e8e8;\
 color: #333\
@@ -18,7 +32,7 @@ width: 1px;\
 background: #e8e8e8\
 }\
 .ace-magic-book {\
-color: #000000;\
+color: #333333;\
 }\
 .ace-magic-book .ace_cursor {\
 color: #000000\
@@ -64,7 +78,7 @@ color: #3A00DC\
 .ace-magic-book .ace_entity.ace_other.ace_attribute-name,\
 .ace-magic-book .ace_support.ace_constant,\
 .ace-magic-book .ace_support.ace_function {\
-color: #450084\
+color: #333333\
 }\
 .ace-magic-book .ace_fold {\
 background-color: #C800A4;\
@@ -79,10 +93,10 @@ color: #790EAD\
 color: #C900A4\
 }\
 .ace-magic-book .ace_string {\
-color: #DF0002\
+color: #777777\
 }\
 .ace-magic-book .ace_comment {\
-color: #008E00\
+color: #555555\
 }\
 .ace-magic-book .ace_indent-guide {\
 background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==) right repeat-y\

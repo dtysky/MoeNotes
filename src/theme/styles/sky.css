@@ -143,6 +143,19 @@ button{
     overflow-x: hidden;
 }
 
+.page-sortable-list::-webkit-scrollbar{
+    background: none;
+    width: 7px;
+}
+
+.page-sortable-list::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}
+
+.page-sortable-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
 .page-list-button{
     width: auto;
     height: 24px;

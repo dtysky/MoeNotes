@@ -229,7 +229,7 @@ class App extends React.Component{
                         ref="pageList"
                         classBackground="page-list-background float-left"
                         classList="page-list full-height"
-                        classSortableList="page-sortable-list full-width"
+                        classSortableList="page-sortable-list"
                         classSortableItem="page-sortable-list-item"
                         classButton="page-list-button button"
                         style={this.styles.pageListBackground}

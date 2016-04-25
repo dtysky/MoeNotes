@@ -62,10 +62,7 @@ export default class ReactAce extends Component {
         this.editor.on('blur', this.onBlur);
         this.editor.on('change', this.onChange);
         this.editor.getSession().on('changeScrollTop', this.onChangeScrollTop);
-        this.editor.setFontSize(14);
-        this.editor.setOptions({
-            fontFamily: font
-        });
+        this.editor.setFontSize(13);
 
         if (keyboardHandler) {
             this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);
@@ -101,7 +98,6 @@ export default class ReactAce extends Component {
     onChange() {
         if (this.props.onChange && !this.silent) {
             const value = this.editor.getValue();
-            console.log(value);
             this.props.onChange(value);
         }
     }

@@ -1,5 +1,9 @@
 .book-text, .book-list-button, .modal, .books-button-open, .chapter-sortable-list-item, .page-sortable-list-item, .page-list-button, .react-context-menu-link{
-    font-family: "theme/fonts/Hack-Regular.ttf" ! important;
+    font-family: Microsoft YaHei,Arial, sans-serif ! important;
+}
+
+p{
+    line-height: 14px;
 }
 
 #react-content{
@@ -15,23 +19,23 @@
 }
 
 .page-editor{
-    background: rgba(240,240,240,0.8);
+    background: rgba(255,255,255,0.5);
 }
 
 .page-preview{
-    background: rgba(220,220,220,0.8);
+    background: rgba(243, 214, 230, 0.4);
 }
 
 .page-preview blockquote{
-    background-color: rgba(250,250,250,0.7);
+    background-color: rgba(255,255,255,0.7);
 }
 
 .page-preview pre{
-    background-color: rgba(235, 235, 235,0.7);
+    background-color: rgba(245, 245, 245,0.7);
 }
 
 .page-preview code{
-    background-color: rgba(239, 194, 212, 0.7);
+    background-color: rgba(239, 194, 212, 0.8);
 }
 
 .page-text{
@@ -43,7 +47,7 @@
 }
 
 .page-text::-webkit-scrollbar-track {
-    background: rgba(213, 200, 197, 0.8);
+    background: rgba(208, 198, 188, 0.8);
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
@@ -60,12 +64,28 @@
 .page-list-background{
 }
 
+.page-sortable-list::-webkit-scrollbar-thumb{
+    background: rgba(239, 194, 212, 1);
+}
+
+.page-sortable-list::-webkit-scrollbar-track {
+    background: rgba(252, 249, 243, 0.8);
+}
+
 .page-sortable-list-item-normal:hover{
     background-color: rgba(255,255,255,0.4);
 }
 
 .page-list-button:before{
     background-image: url(../images/page-list-button.png);
+}
+
+.page-sortable-list .ui-sortable-dragging{
+    background-color: rgba(230,230,230,0.9);
+}
+
+.page-sortable-list .ui-sortable-placeholder.visible {
+    background-color: rgba(230,230,230,0.9);
 }
 
 .chapter-list-background{

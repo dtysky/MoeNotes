@@ -9,18 +9,22 @@
     clear: both;
 }
 
-.ui-sortable .ui-sortable-item {
+.ui-sortable-item {
     float: left;
+    cursor: move;
+}
+
+.ui-sortable-item form{
+    cursor: move;
+}
+
+.ui-sortable-item form input{
     cursor: move;
 }
 
 .ui-sortable .ui-sortable-item.ui-sortable-dragging {
     position: absolute;
     z-index: 1688;
-}
-
-.page-sortable-list .ui-sortable-item .ui-sortable-dragging{
-    background-color: white;
 }
 
 .ui-sortable .ui-sortable-placeholder {

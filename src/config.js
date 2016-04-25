@@ -7,7 +7,6 @@
 import fs from 'fs';
 
 const defaultConfig = {
-    "font": "../fonts/Hack-Regular.ttf",
     "defaultHighlight": "VHDL",
     "hueRange": [260, 380],
     "chapterNowBackSLO":  [50, 60, 1],
@@ -28,8 +27,8 @@ const defaultConfig = {
     "bookFontSLO": [80, 50, 0.8],
     "bookShapeSLO": [50, 50, 0.8],
     "notifyDropBack": "rgba(100,100,100,0.6)",
-    "notifyWarnBack": "url(theme/images/warn-background.png)",
-    "notifyErrorBack": "url(theme/images/error-background.png)",
+    "notifyWarnBack": "",
+    "notifyErrorBack": "",
     "notifyInfoBack": "rgba(239, 194, 212, 0.9)"
 };
 

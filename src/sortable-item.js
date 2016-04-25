@@ -28,6 +28,7 @@ export default ContextMenuLayer(
     mixins: [SortableItemMixin],
 
     getInitialState: function(){
+        this.canInputNow = false;
         return {
             text: this.props.index,
             style: {}
@@ -83,14 +84,16 @@ export default ContextMenuLayer(
         this.props.handleTextChange(
             this.props.index, this.state.text
         );
+        this.canInputNow = false;
     },
 
-    enableInput: function(setTail){
+    enableInput: function(){
         const element = ReactDom.findDOMNode(this.refs.text);
         element.focus();
-        if(setTail){
+        if(!this.canInputNow && this.props.canInput){
             const length = this.state.text.length;
             element.setSelectionRange(length, length);
+            this.canInputNow = true;
         }
     },
 

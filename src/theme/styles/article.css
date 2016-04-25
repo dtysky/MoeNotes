@@ -32,7 +32,7 @@ h1,h2,h3,h4,h5,h6,p,a{
 }
 
 .page-preview{
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-size: 14px;
     font-family: sans-serif ! important;
 }
@@ -62,7 +62,7 @@ h1,h2,h3,h4,h5,h6,p,a{
 }
 
 .page-preview p{
-    line-height: 28px;
+    line-height: 20px;
     margin: 0;
     color: black;
     text-align: left;
