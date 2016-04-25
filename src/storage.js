@@ -11,5 +11,8 @@ import configManager from './config';
 
 
 export default createObjectWithErrorHandler(
-    new StorageTop("user/.tree"), logError(configManager.getSysConfig().logPath)
+    new StorageTop(
+        configManager.getSysConfig().treePath),
+        logError(configManager.getSysConfig().logPath
+    )
 );

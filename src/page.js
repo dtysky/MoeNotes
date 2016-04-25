@@ -15,10 +15,12 @@ import AceEditor from './editor';
 import { bindFunctions } from './utils';
 import configManager from './config';
 
-import './theme/styles/sky.css';
-import './theme/styles/highlight.css';
-import './theme/styles/katex.css';
-import './theme/styles/article.css';
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+    require ('./theme/styles/highlight.css');
+    require ('./theme/styles/katex.css');
+    require ('./theme/styles/article.css');
+}
 
 export default class Page extends React.Component{
     constructor(props){

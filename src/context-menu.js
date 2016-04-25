@@ -10,10 +10,12 @@
 import React from 'react';
 import { ContextMenu, MenuItem, ContextMenuLayer } from 'react-contextmenu';
 
-import './theme/styles/context-menu.css';
-import './theme/styles/sky.css';
 import { bindFunctions } from './utils';
 
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+    require ('./theme/styles/context-menu.css');
+}
 
 class ContextMenuMain extends React.Component {
     constructor(props){

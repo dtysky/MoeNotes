@@ -12,8 +12,10 @@ import { FadeModal as Modal } from 'boron';
 import NotificationSystem from 'react-notification-system';
 import configManager from './config';
 
-import './theme/styles/sky.css';
-import './theme/styles/notify.css';
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+    require ('./theme/styles/notify.css');
+}
 
 
 class Notify extends React.Component {
@@ -77,7 +79,7 @@ class Notify extends React.Component {
                     width: "100%",
                     height: "100%",
                     borderTop: "none",
-                    background: config.infoNotifyBack,
+                    background: config.notifyInfoBack,
                     backgroundSize: "100% 100%",
                     backgroundPosition: "top"
                 }
@@ -104,11 +106,11 @@ class Notify extends React.Component {
                         padding: 20
                     }}
                     backdropStyle={{
-                        backgroundColor: config.modalBackDrop
+                        backgroundColor: config.notifyDropBack
                     }}
                     contentStyle={{
                         backgroundSize: "100% 100%",
-                        background: config.errorNotifyBack
+                        background: config.notifyErrorBack
                     }}
                     onHide={() => this.state.onHide.fun(this.state.onHide.param)}
                 >
@@ -133,11 +135,11 @@ class Notify extends React.Component {
                         padding: 20
                     }}
                     backdropStyle={{
-                        backgroundColor: config.modalBackDrop
+                        backgroundColor: config.notifyDropBack
                     }}
                     contentStyle={{
                         backgroundSize: "100% 100%",
-                        background: config.warnNotifyBack
+                        background: config.notifyWarnBack
                     }}
                     onHide={this.state.onHide.fun(this.state.onHide.param)}
                 >

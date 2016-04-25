@@ -86,7 +86,6 @@ export default ContextMenuLayer(
     },
 
     enableInput: function(setTail){
-        console.log(setTail);
         const element = ReactDom.findDOMNode(this.refs.text);
         element.focus();
         if(setTail){

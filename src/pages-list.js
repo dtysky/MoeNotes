@@ -12,7 +12,9 @@ import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions } from './utils';
 
-import './theme/styles/sky.css';
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+}
 
 
 class PageList extends SortableList {

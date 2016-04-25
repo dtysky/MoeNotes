@@ -18,7 +18,9 @@ import Storage from './storage';
 import { bindFunctions, stringToColor } from './utils';
 import configManager from './config';
 
-import './theme/styles/sky.css';
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+}
 
 class App extends React.Component{
     constructor(props){
@@ -94,7 +96,7 @@ class App extends React.Component{
         window.addEventListener('resize', this.resize);
         this.changeColor();
         this.resize();
-        this.refs.notify.show("info", "test");
+        //this.refs.notify.show("info", "test");
     }
 
     create(){
@@ -204,8 +206,8 @@ class App extends React.Component{
                         />
                         <ChapterList
                             ref="chapterList"
-                            classBackground="chapter-list absolute"
-                            classList=""
+                            classBackground="chapter-list-background absolute"
+                            classList="chapter-list"
                             classSortableList="chapter-sortable-list inner"
                             classSortableItem="chapter-sortable-list-item"
                             classButton="chapter-list-button inner button"
@@ -225,7 +227,7 @@ class App extends React.Component{
                 <div style={this.styles.content}>
                     <PageList
                         ref="pageList"
-                        classBackground="page-list-background  float-left"
+                        classBackground="page-list-background float-left"
                         classList="page-list full-height"
                         classSortableList="page-sortable-list full-width"
                         classSortableItem="page-sortable-list-item"

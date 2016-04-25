@@ -12,7 +12,7 @@ import { bindFunctions } from './utils';
 
 import 'brace/ext/searchbox';
 import 'brace/mode/markdown';
-import './theme/styles/magic-book';
+import './theme/config/magic-book';
 
 export default class ReactAce extends Component {
     constructor(props) {
@@ -101,6 +101,7 @@ export default class ReactAce extends Component {
     onChange() {
         if (this.props.onChange && !this.silent) {
             const value = this.editor.getValue();
+            console.log(value);
             this.props.onChange(value);
         }
     }

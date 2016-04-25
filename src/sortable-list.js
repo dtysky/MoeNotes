@@ -14,8 +14,10 @@ import Storage from './storage';
 import { ContextMenuMain } from './context-menu';
 import { bindFunctions } from './utils';
 
-import './theme/styles/sky.css';
-import './theme/styles/sortable.css';
+if (process.env.BROWSER) {
+    require ('./theme/styles/sky.css');
+    require ('./theme/styles/sortable.css');
+}
 
 
 export default class SortableList extends React.Component {

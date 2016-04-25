@@ -3,12 +3,11 @@
 }
 
 #react-content{
-    background-image: url(theme/images/body.png);
-    background-size: cover;
+    background-image: url(../images/body.png);
 }
 
 .head-image{
-    background-image: url(theme/images/head.png);
+    /*background-image: url(theme/images/head.png);*/
 }
 
 .page-content{
@@ -59,7 +58,6 @@
 }
 
 .page-list-background{
-    /*background-image: url(theme/images/page-list.png);*/
 }
 
 .page-sortable-list-item-normal:hover{
@@ -67,11 +65,13 @@
 }
 
 .page-list-button:before{
-    background-image: url(theme/images/page-list-button.png);
+    background-image: url(../images/page-list-button.png);
+}
+
+.chapter-list-background{
 }
 
 .chapter-list{
-    background-image: url(theme/images/chapter-list.png);
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
@@ -83,23 +83,23 @@
 }
 
 .chapter-list-button{
-    background-image: url(theme/images/chapter-list-button.png);
+    background-image: url(../images/chapter-list-button.png);
 }
 
 .books-button-open-pre{
-    -webkit-mask-image: url(theme/images/book-pre.png);
+    -webkit-mask-image: url(../images/book-pre.png);
 }
 
 .book-pre{
-    -webkit-mask-image: url(theme/images/book-pre.png);
+    -webkit-mask-image: url(../images/book-pre.png);
 }
 
 .book-button-edit{
-    -webkit-mask-image: url(theme/images/book-button-edit.png);
+    -webkit-mask-image: url(../images/book-button-edit.png);
 }
 
 .book-button-remove{
-    -webkit-mask-image: url(theme/images/book-button-remove.png);
+    -webkit-mask-image: url(../images/book-button-remove.png);
 }
 
 .book-list-create{
@@ -111,11 +111,11 @@
 }
 
 .bm-menu-wrap {
-    background-image: url(theme/images/book-list.png);
+    background-image: url(../images/book-list.png);
 }
 
 .modal-error .modal-head{
-    background: url(theme/images/error-head.png);
+    background: url(../images/error-head.png);
 }
 
 .modal-error .modal-body{
@@ -123,7 +123,7 @@
 }
 
 .modal-warn .modal-head{
-    background: url(theme/images/warn-head.png);
+    background: url(../images/warn-head.png);
 }
 
 .modal-warn .modal-body{
@@ -131,7 +131,7 @@
 }
 
 .react-context-menu {
-    background-image: url(theme/images/menu-background.png);
+    background-image: url(../images/menu-background.png);
 }
 .react-context-menu-link.active,
 .react-context-menu-link:hover {

@@ -2,8 +2,9 @@ body{
     overflow: hidden;
 }
 
-body::-webkit-scrollbar{
-    display: none;
+#react-content{
+    background-size: cover;
+    background-position: top;
 }
 
 form{
@@ -127,8 +128,8 @@ button{
 }
 
 .page-list-background{
-    background-size: auto 100%;
-    background-position: center;
+    background-size: 100% auto;
+    background-position: bottom;
     height: 100%;
 }
 
@@ -161,6 +162,7 @@ button{
 }
 
 .page-sortable-list-item{
+    float: left;
     width: 100%;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -201,8 +203,15 @@ button{
     background-repeat: no-repeat;
 }
 
+.chapter-list-background{
+    width: auto;
+    background-size: auto 100%;
+    background-position: bottom;
+}
+
 .chapter-list{
     width: auto;
+    height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     transform:rotateX(180deg);

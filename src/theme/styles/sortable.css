@@ -1,15 +1,8 @@
 .ui-sortable {
     position: relative;
-    overflow: visible;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-}
-
-.ui-sortable:before,
-.ui-sortable:after{
-    content: " ";
-    display: table;
 }
 
 .ui-sortable:after{

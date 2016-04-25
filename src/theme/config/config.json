@@ -1,13 +1,5 @@
-/**
- * Copyright(c) dtysky<dtysky@outlook.com>
- * Created: 16/3/18
- * Description: Configure.
- */
-
-import fs from 'fs';
-
-const defaultConfig = {
-    "font": "../fonts/Hack-Regular.ttf",
+{
+    "font": "hack",
     "defaultHighlight": "VHDL",
     "hueRange": [260, 380],
     "chapterNowBackSLO":  [50, 60, 1],
@@ -31,36 +23,4 @@ const defaultConfig = {
     "notifyWarnBack": "url(theme/images/warn-background.png)",
     "notifyErrorBack": "url(theme/images/error-background.png)",
     "notifyInfoBack": "rgba(239, 194, 212, 0.9)"
-};
-
-const sysConfig = {
-    treePath: ".tree",
-    logPath: "error.log",
-    configPath: "theme/config/config.json"
-};
-
-class ConfigManager{
-    constructor(){
-        this.config = {};
-        this.refresh();
-        this.sysConfig = sysConfig;
-    }
-    refresh(){
-        try {
-            this.config = JSON.parse(
-                fs.readFileSync(this.sysConfig.configPath)
-            );
-        }
-        catch(e) {
-            this.config = defaultConfig;
-        }
-    }
-    getConfig(){
-        return this.config;
-    }
-    getSysConfig(){
-        return this.sysConfig;
-    }
 }
-
-export default new ConfigManager();
