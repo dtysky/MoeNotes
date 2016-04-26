@@ -90,13 +90,13 @@ class App extends React.Component{
             width: window.innerWidth,
             height: window.innerHeight
         });
+        this.refs.page.refs.editor.editor.resize();
     }
 
     initOptions(){
         window.addEventListener('resize', this.resize);
         this.changeColor();
         this.resize();
-        //this.refs.notify.show("info", "test");
     }
 
     create(){

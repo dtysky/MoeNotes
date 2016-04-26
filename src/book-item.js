@@ -20,6 +20,7 @@ if (process.env.BROWSER) {
 export default class Book extends React.Component {
     constructor(props){
         super(props);
+        this.canInputNow = false;
         this.state = {
             text: this.props.name
         };
@@ -85,13 +86,17 @@ export default class Book extends React.Component {
         this.props.handleTextChange(
             this.props.index, this.state.text
         );
+        this.canInputNow = false;
     }
 
     enableInput(){
         const element = ReactDom.findDOMNode(this.refs.text);
-        const length = this.state.text.length;
         element.focus();
-        //element.setSelectionRange(length, length);
+        if(!this.canInputNow && this.props.canInput){
+            const length = this.state.text.length;
+            element.setSelectionRange(length, length);
+            this.canInputNow = true;
+        }
     }
 
     componentDidMount(){

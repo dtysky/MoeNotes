@@ -11,11 +11,6 @@ ace.define("ace/theme/magic-book",["require","exports","module","ace/lib/dom"], 
     exports.isDark = false;
     exports.cssClass = "ace-magic-book";
     exports.cssText = "\
-@font-face{\
-    font-family: 'hack';\
-    src:    url('theme/fonts/Hack-Bold.ttf');\
-    url('theme/fonts/Hack-Bold.ttf') format('truetype');\
-}\
 .ace-magic-book .ace_text-layer{\
     font-family: hack ! important;\
 }\

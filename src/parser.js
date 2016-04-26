@@ -9,8 +9,11 @@
 import markdown from 'marked';
 import configManager from './config';
 import katex from 'parse-katex';
+import highlighter from 'highlight.js';
 
 const defaultHighlight = configManager.getConfig().defaultHighlight;
+
+const renderer = new markdown.Renderer();
 
 function highlight(code, callback){
     var re = /:::(\S+)\n([\s\S]+)/.exec(code);
@@ -23,16 +26,16 @@ function highlight(code, callback){
         lang = defaultHighlight;
         content = code;
     }
-    return require('highlight.js').highlight(lang, content).value;
+    return highlighter.highlight(lang, content).value;
 }
 
 const options = {
-    renderer: new markdown.Renderer(),
+    renderer: renderer,
     gfm: true,
     tables: true,
     breaks: false,
     pedantic: false,
-    sanitize: true,
+    sanitize: false,
     smartLists: true,
     smartypants: false,
     highlight: highlight
@@ -40,7 +43,7 @@ const options = {
 
 
 export default function parse(page){
-    var html = markdown.parse(
+    const html = markdown.parse(
         page,
         options
     );

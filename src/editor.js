@@ -61,8 +61,17 @@ export default class ReactAce extends Component {
         this.editor.on('focus', this.onFocus);
         this.editor.on('blur', this.onBlur);
         this.editor.on('change', this.onChange);
+        this.editor.$blockScrolling = Infinity;
+        this.editor.commands.addCommand({
+            name: "save",
+            bindKey: {
+                sender: "editor|cli",
+                mac: "Command-S",
+                windows: "Ctrl-S"
+            },
+            exec: this.props.onSave
+        });
         this.editor.getSession().on('changeScrollTop', this.onChangeScrollTop);
-        this.editor.setFontSize(13);
 
         if (keyboardHandler) {
             this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);
@@ -143,6 +152,7 @@ ReactAce.propTypes = {
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
+    onSave: PropTypes.func,
     value: PropTypes.string,
     tabSize: PropTypes.number,
     cursorStart: PropTypes.number,

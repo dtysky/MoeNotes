@@ -18,7 +18,6 @@ import configManager from './config';
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
     require ('./theme/styles/highlight.css');
-    require ('./theme/styles/katex.css');
     require ('./theme/styles/article.css');
 }
 
@@ -115,6 +114,7 @@ export default class Page extends React.Component{
                         tabSize={4}
                         onChange={this.onChange}
                         onBlur={this.onBlur}
+                        onSave={this.onBlur}
                         onChangeScrollTop={this.onScroll}
                     />
                 </div>

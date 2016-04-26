@@ -140,12 +140,12 @@ term/definition pair to spread things out more.)
 Here's a "line block":
 
 | Line one
-|   Line too
+| Line too
 | Line tree
 
 and images can be specified like so:
 
-![example image](example-image.jpg "An exemplary image")
+![example image](https://avatars0.githubusercontent.com/u/7337763?v=3&s=460 "An exemplary image")
 
 Inline math equations go in like so: $\omega = d\phi / dt$. Display
 math should get its own line and be put in in double-dollarsigns:

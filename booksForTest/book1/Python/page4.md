@@ -6,6 +6,7 @@ Summary:继续深入研究，身心俱疲，这里是一些坑和结论。
 年轻人，初入职场，没事不要给自己找坑。
 
 ***
+
 继续深入研究，身心俱疲，这里是一些坑和结论。
 
 ***
@@ -20,7 +21,7 @@ Summary:继续深入研究，身心俱疲，这里是一些坑和结论。
 TREK1000套件的定位算法基本是直接解算，产品则对原始的测距信息有限幅，定位输出有卡尔曼滤波。  
 以下Python随便写的用最小二乘法通过同一个平面的若干个基站和tag的距离求xy坐标的函数，比较糙，有兴趣自己看看吧：  
 函数输入是每个anchor的位置构成的数组,以及每个anchor和tag的距离序列构成的数组.
-
+    
     :::python
     from scipy.optimize import leastsq, curve_fit
     from numpy import sqrt, square, array, subtract, add, multiply
