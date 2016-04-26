@@ -138,7 +138,6 @@ export default class Book extends React.Component {
                         disabled={!this.props.canInput}
                         type="text"
                         value={this.state.text}
-                        className="button"
                         style={{
                             color: stringToColor(this.props.name, config.bookFontSLO)
                         }}

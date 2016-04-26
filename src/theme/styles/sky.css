@@ -323,3 +323,17 @@ button{
 .head-line{
     width: 100%;
 }
+
+.toolbar-item{
+    width: auto;
+    margin: 4px;
+    height: 100%;
+    transition: 0.3s ease-out;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: auto 100%;
+    -webkit-mask-position: center;
+}
+
+.toolbar-item:hover{
+    transform: translateY(-5px);
+}

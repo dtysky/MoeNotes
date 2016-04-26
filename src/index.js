@@ -14,6 +14,7 @@ import BookList from './book-list';
 import Page from './page';
 import PageList from './pages-list';
 import Notify from './notify';
+import Toolbar from './toolbar';
 import Storage from './storage';
 import { bindFunctions, stringToColor } from './utils';
 import configManager from './config';
@@ -29,6 +30,7 @@ class App extends React.Component{
             width: window.innerWidth,
             height: window.innerHeight,
             chapterListLeft: 100,
+            toolbarColor: "rgba(0,0,0,0)",
             headBackColor: "rgba(0,0,0,0)",
             headLineColor: "rgba(0,0,0,0)",
             pageListBackColor: "rgba(0,0,0,0)",
@@ -77,6 +79,7 @@ class App extends React.Component{
     changeColor(){
         const config = configManager.getConfig();
         this.setState({
+            toolbarColor: stringToColor(Storage.getName(Storage.getNow()), config.toolbarSLO),
             headBackColor: stringToColor(Storage.getName(Storage.getNow()), config.headBackSLO),
             headLineColor: stringToColor(Storage.nowBook.getNow(), config.chapterNowBackSLO),
             pageListBackColor: stringToColor(Storage.nowBook.getNow(), config.pageListBackSLO),
@@ -121,6 +124,7 @@ class App extends React.Component{
             return;
         }
         this.initOptions();
+        //this.refs.toolbar.showAbout();
     }
 
     render(){
@@ -134,6 +138,15 @@ class App extends React.Component{
             },
             content: {
                 height: height - headHeight
+            },
+            toolbar: {
+                height: 24,
+                right: 20,
+                top: 10
+            },
+            toolbarItem: {
+                width: 24,
+                backgroundColor: this.state.toolbarColor
             },
             bookButtonHeight: 65,
             bookButtonTop: headHeight - 70,
@@ -222,6 +235,11 @@ class App extends React.Component{
                             style={this.styles.headLine}
                         >
                         </div>
+                        <Toolbar
+                            ref="toolbar"
+                            style={this.styles.toolbar}
+                            styleItem={this.styles.toolbarItem}
+                        />
                     </div>
                 </div>
                 <div style={this.styles.content}>

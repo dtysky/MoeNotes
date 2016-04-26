@@ -145,6 +145,10 @@ p{
     background-image: url(../images/book-list.png);
 }
 
+.modal-error, .modal-warn{
+    box-shadow: 0 0 1em black;
+}
+
 .modal-error .modal-head{
     background: url(../images/error-head.png);
 }
@@ -163,8 +167,17 @@ p{
 
 .react-context-menu {
     background-image: url(../images/menu-background.png);
+    box-shadow: 0 0 10px black;
 }
 .react-context-menu-link.active,
 .react-context-menu-link:hover {
     background: rgba(218, 163, 187, 0.4);
+}
+
+.toolbar-about{
+    -webkit-mask-image: url(../images/about.png);
+}
+
+.toolbar-reload{
+    -webkit-mask-image: url(../images/reload.png);
 }

@@ -103,7 +103,6 @@ class Notify extends React.Component {
                     ref="error"
                     className="modal-error modal"
                     modalStyle={{
-                        padding: 20
                     }}
                     backdropStyle={{
                         backgroundColor: config.notifyDropBack
@@ -132,12 +131,12 @@ class Notify extends React.Component {
                     ref="warn"
                     className="modal-warn modal"
                     modalStyle={{
-                        padding: 20
                     }}
                     backdropStyle={{
                         backgroundColor: config.notifyDropBack
                     }}
                     contentStyle={{
+                        animationDuration: 0,
                         backgroundSize: "100% 100%",
                         background: config.notifyWarnBack
                     }}

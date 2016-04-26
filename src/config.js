@@ -26,6 +26,7 @@ const defaultConfig = {
     "bookBackSLO": [50, 80, 0.8],
     "bookFontSLO": [80, 50, 0.8],
     "bookShapeSLO": [50, 50, 0.8],
+    "toolbarSLO": [60, 50, 0.7],
     "notifyDropBack": "rgba(100,100,100,0.6)",
     "notifyWarnBack": "",
     "notifyErrorBack": "",
@@ -40,15 +41,20 @@ const sysConfig = {
 
 class ConfigManager{
     constructor(){
-        this.config = {};
+        this.config = defaultConfig;
         this.refresh();
         this.sysConfig = sysConfig;
     }
     refresh(){
         try {
-            this.config = JSON.parse(
+            const config = JSON.parse(
                 fs.readFileSync(this.sysConfig.configPath)
             );
+            for (let key in config){
+                if(this.config.hasOwnProperty(key)){
+                    this.config[key] = config[key];
+                }
+            }
         }
         catch(e) {
             this.config = defaultConfig;

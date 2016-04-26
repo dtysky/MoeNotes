@@ -1,4 +1,8 @@
 .modal{
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: anim_151461681900776;
+    animation-timing-function: ease-out;
 }
 
 .modal-error{

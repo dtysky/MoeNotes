@@ -4,7 +4,7 @@
  * Description: Main.
  */
 
-
+const shell = require('shell');
 const app = require('app');
 const jade = require('jade');
 const BrowserWindow = require("browser-window");
@@ -30,5 +30,9 @@ app.on('ready', function() {
     mainWindow.openDevTools();
     mainWindow.on('closed', function() {
         mainWindow = null;
+    });
+    mainWindow.webContents.on('will-navigate', function(event, url) {
+        event.preventDefault();
+        shell.openExternal(url);
     });
 });
