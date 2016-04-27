@@ -142,21 +142,23 @@ export default ContextMenuLayer(
                 stringToColor(this.props.index, config.chapterNormalBackSLO),
             borderColor: Storage.nowBook.getNow() === this.props.index ?
                 stringToColor(this.props.index, config.chapterNowBorderSLO) :
-                stringToColor(this.props.index, config.chapterNormalBorderSLO)
+                stringToColor(this.props.index, config.chapterNormalBorderSLO),
+            width: this.state.style.width
         } : {};
-        let className;
+        let className, color;
         if(this.props.chapter === undefined){
             className = this.props.active ? this.props.className + "-active" : this.props.className + "-normal" ;
-            this.state.style.color = Storage.nowBook.getNow() === this.props.index ?
+            color = Storage.nowBook.getNow() === this.props.index ?
                 stringToColor(this.props.index, config.chapterNowFontSLO) :
                 stringToColor(this.props.index, config.chapterNormalFontSLO);
         }
         else{
             className = this.props.active ?  this.props.className + "-active" : this.props.className + "-normal";
-            this.state.style.color = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?
+            color = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?
                 stringToColor(this.props.chapter, config.pageNowFontSLO) :
                 stringToColor(this.props.chapter, config.pageNormalFontSLO);
         }
+        //style.width = this.state.style.width + 20;
         return (
             <div
                 onClick={this.select}
@@ -165,11 +167,13 @@ export default ContextMenuLayer(
                 <form
                     style={style}
                     onSubmit={this.onSubmit}
-                    //onBlur will be called...
                     onBlur={this.onSubmit}
                 >
                     <input
-                        style={this.state.style}
+                        style={{
+                            width: "100%",
+                            color: color
+                        }}
                         ref="text"
                         disabled={!this.props.canInput}
                         type="text"

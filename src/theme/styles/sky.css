@@ -12,7 +12,6 @@ form{
 }
 
 input{
-    min-width: 60px;
     height: 100%;
     border: 0;
     margin-top: 0;
@@ -242,8 +241,13 @@ button{
 }
 
 .chapter-sortable-list-item form{
+    min-width: 60px;
     border-top-left-radius: 10px 20px;
     border-top-right-radius: 10px 20px;
+}
+
+.chapter-sortable-list-item form input{
+    width: 100%;
 }
 
 .chapter-sortable-list-item-normal{
