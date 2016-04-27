@@ -5,11 +5,7 @@
     animation-timing-function: ease-out;
 }
 
-.modal-error{
-    text-align: center;
-}
-
-.modal-warn{
+.modal-error, .modal-warn, .modal-sys-info{
     text-align: center;
 }
 
@@ -21,13 +17,41 @@
 }
 
 .modal-body {
+    margin-top: 10px;
     width: 100%;
 }
 
 .modal-message{
+    min-height: 30px;
+    max-height: 400px;
+    overflow: auto;
+    margin-left: 10%;
+    width: 80%;
     padding-top: 20px;
     padding-bottom: 10px;
     font-size: 16px;
+}
+
+.modal-sys-info .modal-message{
+    text-align: left;
+}
+
+.modal-sys-info .modal-message a,p{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.modal-sys-info .modal-message a{
+    color: grey;
+}
+
+.modal-sys-info .modal-message a:hover{
+    color: black;
+}
+
+.modal-sys-info .modal-message h1,h2,h3,h4,h5,h6{
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .modal-button{

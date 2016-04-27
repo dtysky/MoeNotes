@@ -30,6 +30,7 @@ const defaultConfig = {
     "notifyDropBack": "rgba(100,100,100,0.6)",
     "notifyWarnBack": "",
     "notifyErrorBack": "",
+    "notifySysInfoBack": "",
     "notifyInfoBack": "rgba(239, 194, 212, 0.9)"
 };
 

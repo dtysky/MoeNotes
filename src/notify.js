@@ -48,7 +48,7 @@ class Notify extends React.Component {
             onOk: cbs.onOk,
             onCancel: cbs.onCancel
         }, (preState, currPorps) => {
-            if(type === "warn" || type === "error"){
+            if(type === "warn" || type === "error" || type === "sysInfo"){
                 this.refs[type].show();
             }
             else{
@@ -109,15 +109,18 @@ class Notify extends React.Component {
                     }}
                     contentStyle={{
                         backgroundSize: "100% 100%",
-                        background: config.notifyErrorBack
+                        background: config.notifyErrorBack,
+                        outline: "none"
                     }}
                     onHide={() => this.state.onHide.fun(this.state.onHide.param)}
                 >
                     <div className="modal-head">
                     </div>
                     <div className="modal-body">
-                        <div className="modal-message">
-                            {this.state.message}
+                        <div
+                            className="modal-message"
+                            dangerouslySetInnerHTML={{__html: this.state.message}}
+                        >
                         </div>
                         <button
                             className="modal-button button"
@@ -138,15 +141,18 @@ class Notify extends React.Component {
                     contentStyle={{
                         animationDuration: 0,
                         backgroundSize: "100% 100%",
-                        background: config.notifyWarnBack
+                        background: config.notifyWarnBack,
+                        outline: "none"
                     }}
                     onHide={this.state.onHide.fun(this.state.onHide.param)}
                 >
                     <div className="modal-head">
                     </div>
                     <div className="modal-body">
-                        <div className="modal-message">
-                            {this.state.message}
+                        <div
+                            className="modal-message"
+                            dangerouslySetInnerHTML={{__html: this.state.message}}
+                        >
                         </div>
                         <button
                             className="modal-button button"
@@ -165,6 +171,38 @@ class Notify extends React.Component {
                         }}
                         >
                             Cancel
+                        </button>
+                    </div>
+                </Modal>
+                <Modal
+                    ref="sysInfo"
+                    className="modal-sys-info modal"
+                    modalStyle={{
+                    }}
+                    backdropStyle={{
+                        backgroundColor: config.notifyDropBack
+                    }}
+                    contentStyle={{
+                        animationDuration: 0,
+                        backgroundSize: "100% 100%",
+                        background: config.notifySysInfoBack,
+                        outline: "none"
+                    }}
+                    onHide={this.state.onHide.fun(this.state.onHide.param)}
+                >
+                    <div className="modal-head">
+                    </div>
+                    <div className="modal-body">
+                        <div
+                            className="modal-message"
+                            dangerouslySetInnerHTML={{__html: this.state.message}}
+                        >
+                        </div>
+                        <button
+                            className="modal-button button"
+                            onClick={() => this.refs.sysInfo.hide()}
+                        >
+                            Close
                         </button>
                     </div>
                 </Modal>

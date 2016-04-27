@@ -239,6 +239,7 @@ class App extends React.Component{
                             ref="toolbar"
                             style={this.styles.toolbar}
                             styleItem={this.styles.toolbarItem}
+                            handleShowNotify={this.handleShowNotify}
                         />
                     </div>
                 </div>

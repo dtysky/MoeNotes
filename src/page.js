@@ -109,7 +109,7 @@ export default class Page extends React.Component{
                         className="page-text"
                         name="src"
                         value={this.state.markdown}
-                        fontSize={14}
+                        fontSize={13}
                         font={config.font}
                         tabSize={4}
                         onChange={this.onChange}

@@ -1,6 +1,6 @@
 {
   "name": "MoeNotes",
-  "version": "0.1.0",
+  "version": "0.8.0",
   "description": "I'm the god of magic, here is my spellbook.",
   "main": "main.js",
   "scripts": {
@@ -10,12 +10,12 @@
     "type": "git",
     "url": "https://github.com/dtysky/MoeNotes.git"
   },
-  "author": "dtysky@outlook.com",
-  "license": "MIT",
+  "author": "Tianyu Dai (dtysky)<dtysky@outlook.com>",
+  "license": "GPL V3",
   "bugs": {
     "url": "https://github.com/dtysky/MoeNotes/issues"
   },
-  "homepage": "https://github.com/dtysky/MoeNotes",
+  "homepage": "http://moe-notes.dtysky.moe",
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.4",

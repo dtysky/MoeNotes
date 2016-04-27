@@ -9,6 +9,7 @@
 import ace from 'brace';
 import React, { Component, PropTypes } from 'react';
 import { bindFunctions } from './utils';
+import { ipcRenderer } from 'electron';
 
 import 'brace/ext/searchbox';
 import 'brace/mode/markdown';
@@ -76,7 +77,12 @@ export default class ReactAce extends Component {
         if (keyboardHandler) {
             this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);
         }
+
+        ipcRenderer.on("findInPage", () => {
+            this.editor.execCommand("find");
+        });
     }
+
 
     componentWillReceiveProps(nextProps) {
         const oldProps = this.props;

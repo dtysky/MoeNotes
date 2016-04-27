@@ -7,37 +7,36 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import { remote } from 'electron';
-const dialog = remote.dialog;
+import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
 import { bindFunctions } from './utils';
 
 const aboutMessage = `
-    MeoNotes
+    <h1>MeoNotes</h1>
 
-    A simple app for writing notes with markdown, and without any database(you can manage your .md files by yourself).
-    For more information, please check here:
+    <p>A simple app for writing notes with markdown, and without any database(you can manage your .md files by yourself).</p>
+    <p>For more information, please check here:</p>
 
-    Homepage:
-        http://moe-notes.dtysky.moe
-    Github:
-        https://github.com/dtysky/MoeNotes
+    <h4>Homepage:</h4>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://moe-notes.dtysky.moe">moe-notes.dtysky.moe</a>
+    <h4>Github:</h4>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/dtysky/MoeNotes">github.com/dtysky/MoeNotes</a>
 
-    Copyright (C) 2016  Tianyu Dai (dtysky)<dtysky@outlook.com>
+    <p>Copyright (C) 2016  Tianyu Dai (dtysky)&lt;dtysky@outlook.com&gt;</p>
 
-    This program is free software: you can redistribute it and/or modify
+    <p>This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+    (at your option) any later version.</p>
 
-    This program is distributed in the hope that it will be useful,
+    <p>This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+    GNU General Public License for more details.</p>
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-`;
+    <p>You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+</p>`;
 
 export default class BookPicker extends React.Component{
     constructor(props){
@@ -49,16 +48,14 @@ export default class BookPicker extends React.Component{
                 "reloadAPP"
             ]
         );
+        ipcRenderer.on("showAbout", () => {
+            this.showAbout();
+        });
     }
 
     showAbout(){
-        dialog.showMessageBox(
-            {
-                type: "info",
-                title: "About",
-                message: aboutMessage,
-                buttons: []
-            }
+        this.props.handleShowNotify(
+            "sysInfo", aboutMessage
         );
     }
 
