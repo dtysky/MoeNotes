@@ -12342,3 +12342,143 @@ StorageBook:
 }
 
 
+2016-04-27 10:20:39
+TypeError: Cannot read property 'replace' of null
+    at getNameFromPath (http://localhost:8000/assets/main.bundle.js:29832:14)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:62041:64)
+    at StorageTop.create (http://localhost:8000/assets/main.bundle.js:29867:23)
+    at http://localhost:8000/assets/main.bundle.js:73214:40
+    at http://localhost:8000/assets/main.bundle.js:29708:22
+    at CallbacksRegistry.apply (/Users/dtysky/.nvm/v0.10.37/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/atom.asar/common/api/callbacks-registry.js:58:39)
+    at EventEmitter.<anonymous> (/Users/dtysky/.nvm/v0.10.37/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/atom.asar/renderer/api/remote.js:238:28)
+    at emitThree (events.js:97:13)
+    at EventEmitter.emit (events.js:175:7)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        null
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "Python",
+        "FPGA",
+        "DigitalOcean",
+        "99999999999999999",
+        "111111111111111111111111111",
+        "Node",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "哈哈哈",
+        "戴天宇",
+        "语音识别",
+        "YYYYYYYYYYYYYYYYYYY"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6",
+                "222",
+                "3455",
+                "333"
+            ],
+            "now": "6"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "-0809i",
+                "789"
+            ],
+            "now": "000"
+        },
+        "111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page4",
+                "page2",
+                "page3"
+            ],
+            "now": "page1"
+        },
+        "YYYYYYYYYYYYYYYYYYY": {
+            "indexes": [
+                "X"
+            ],
+            "now": "X"
+        }
+    },
+    "now": "Python"
+}
+
+

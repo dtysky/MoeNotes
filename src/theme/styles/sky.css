@@ -77,6 +77,9 @@ button{
     display: -webkit-inline-box;
 }
 
+.init-load{
+}
+
 .page-content{
     background-size: auto 100%;
     background-position: bottom;

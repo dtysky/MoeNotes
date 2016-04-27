@@ -85,8 +85,11 @@ export default class StorageTop {
         }
         else if(!arrayHas(this.books.indexes, this.books.now)){
             this.books.now = this.books.indexes[0];
+            this.nowBook = this.cache[this.books.now];
         }
-        this.nowBook = this.cache[this.books.now] || {};
+        else{
+            this.nowBook = this.cache[this.books.now];
+        }
     }
 
     getIndexes() {

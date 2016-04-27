@@ -52,7 +52,7 @@ class BookPicker{
     create(callback){
         this.show(
             ["createDirectory", "openDirectory"],
-            "Open a book",
+            "Create a book",
             callback
         );
     }
@@ -60,7 +60,7 @@ class BookPicker{
     open(callback){
         this.show(
             ["openDirectory"],
-            "Pick a book",
+            "Open a book",
             callback
         );
     }

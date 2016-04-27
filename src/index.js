@@ -124,7 +124,6 @@ class App extends React.Component{
             return;
         }
         this.initOptions();
-        //this.refs.toolbar.showAbout();
     }
 
     render(){
@@ -183,12 +182,8 @@ class App extends React.Component{
         return Storage.isEmpty() ? (
             <div
                 key="start"
-                className="full text-center"
-                style={{
-                    lineHeight: 200
-                }}
+                className="init-load absolute full-width text-center"
             >
-                <h1>Select your first book!</h1>
             </div>
         )
             :
