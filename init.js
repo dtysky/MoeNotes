@@ -6,13 +6,7 @@
 
 const shell = require('shell');
 const app = require('app');
-const BrowserWindow = require("browser-window");
 const Menu = require("menu");
-const MenuItem = require('menu-item');
-const Tray = require('tray');
-const paths = require('./config').paths;
-
-var mainWindow = null;
 
 var shouldQuit = app.makeSingleInstance(
     function(commandLine, workingDirectory) {
@@ -30,14 +24,14 @@ if (shouldQuit) {
 }
 
 function sendIPCToWindow(window, action, data) {
-    mainWindow.webContents.send(action, data || {});
+    window.webContents.send(action, data || {});
 }
 
 function initDockMenu(){
     app.dock.setIcon(__dirname + "/logo.png");
 }
 
-function initMenu() {
+function initMenu(mainWindow) {
 
     var template = [
         //{
@@ -259,27 +253,8 @@ function initMenu() {
     Menu.setApplicationMenu(menu);
 }
 
-app.on('ready', function() {
-    const screen = require('screen');
-    const size = screen.getPrimaryDisplay().workAreaSize;
-    mainWindow = new BrowserWindow({
-        width: size.width,
-        height: size.height,
-        title: "MoeNotes",
-        icon: __dirname + "/logo.png"
-    });
-    mainWindow.loadURL(
-        paths.urlPath
-    );
-    mainWindow.openDevTools();
-    mainWindow.on('closed', function() {
-        mainWindow = null;
-        app.quit();
-    });
-    mainWindow.webContents.on('will-navigate', function(event, url) {
-        event.preventDefault();
-        shell.openExternal(url);
-    });
-    initMenu();
-    initDockMenu();
-});
+
+module.exports = {
+    initMenu: initMenu,
+    initDockMenu: initDockMenu
+};

@@ -10,6 +10,7 @@
 import React from 'react';
 import { FadeModal as Modal } from 'boron';
 import NotificationSystem from 'react-notification-system';
+import { bindFunctions, logError } from './utils';
 import configManager from './config';
 
 if (process.env.BROWSER) {
@@ -31,6 +32,13 @@ class Notify extends React.Component {
             onOk: this.defaltCallback,
             onCancel: this.defaltCallback
         };
+        bindFunctions(
+            this,
+            [
+                "show"
+            ],
+            logError(configManager.getSysConfig().logPath)
+        );
     }
 
     show(type, message, callbacks){

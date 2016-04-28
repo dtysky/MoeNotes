@@ -4,8 +4,6 @@
  * Description: Editor theme.
  */
 
-
-
 ace.define("ace/theme/magic-book",["require","exports","module","ace/lib/dom"], function(acequire, exports, module) {
 
     exports.isDark = false;
@@ -17,6 +15,17 @@ ace.define("ace/theme/magic-book",["require","exports","module","ace/lib/dom"], 
 .ace-magic-book .ace_cjk{\
     font-family: Microsoft YaHei,Arial, sans-serif ! important;\
     font-size: 14px\
+}\
+.ace-magic-book .ace_constant {\
+color:#FB83A4\
+}\
+.ace-magic-book .ace_heading {\
+bold: border;\
+color: #E85B82\
+}\
+.ace-magic-book .ace_heading .ace_cjk{\
+bold: border;\
+color: #E85B82\
 }\
 .ace-magic-book .ace_gutter {\
 background: #e8e8e8;\
@@ -30,10 +39,10 @@ background: #e8e8e8\
 color: #333333;\
 }\
 .ace-magic-book .ace_cursor {\
-color: #000000\
+color: #C35774\
 }\
 .ace-magic-book .ace_marker-layer .ace_selection {\
-background: #B5D5FF\
+background: #EAC9D2\
 }\
 .ace-magic-book.ace_multiselect .ace_selection.ace_start {\
 box-shadow: 0 0 3px 0px #FFFFFF;\
@@ -46,7 +55,7 @@ margin: -1px 0 0 -1px;\
 border: 1px solid #BFBFBF\
 }\
 .ace-magic-book .ace_marker-layer .ace_active-line {\
-background: rgba(0, 0, 0, 0.071)\
+background: rgba(224, 141, 170, 0.15)\
 }\
 .ace-magic-book .ace_gutter-active-line {\
 background-color: rgba(0, 0, 0, 0.071)\

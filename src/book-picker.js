@@ -8,7 +8,8 @@
 import { remote } from 'electron';
 const dialog = remote.dialog;
 import fs from 'fs';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
+import configManager from './config';
 
 class BookPicker{
     constructor(){
@@ -20,7 +21,8 @@ class BookPicker{
                 "show",
                 "create",
                 "open"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 

@@ -7,11 +7,13 @@
 const path = require('path');
 
 const rootPath = path.resolve(__dirname, './');
-const paths = {
+var paths = {
     rootPath: rootPath,
     srcPath: path.join(rootPath, 'src'),
-    testPath: path.join(rootPath, 'tests'),
-    urlPath: "http://localhost:8000"
+    distPath: path.join(rootPath, "dist"),
+    urlPath: "http://localhost:8000",
+    debugPort: 8000,
+    publicPath: "file://" + path.join(rootPath, "dist", "index.html")
 };
 
 module.exports = {

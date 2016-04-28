@@ -15,12 +15,6 @@ import configManager from './config';
 import Storage from './storage';
 
 
-export function bindFunctions(self, methods){
-    methods.forEach(method => {
-        self[method] = self[method].bind(self);
-    });
-}
-
 export function getDirectories(dp) {
     return fs.readdirSync(dp).filter(file => {
         return fs.statSync(path.join(dp, file)).isDirectory();
@@ -100,6 +94,16 @@ export function logError(file){
         data += `StorageBook:\n${JSON.stringify(Storage.nowBook.book, null, "    ")}\n\n\n`;
         data = moment().format("YYYY-MM-DD hh:mm:ss") + "\n" +data;
         fs.appendFileSync(file, data);
-
     };
+}
+
+export function bindFunctions(self, methods, tryCatchHandler){
+    methods.forEach(method => {
+        self[method] = self[method].bind(self);
+        if(tryCatchHandler){
+            self[method] = tryCatchWrapper(
+                self[method], tryCatchHandler
+            );
+        }
+    });
 }

@@ -7,22 +7,19 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const paths = require('./config').paths;
+var config = require('./config');
+var paths = config.paths;
 const srcPath = paths.srcPath;
 
 module.exports = {
     cache: true,
     debug: true,
     entry: {
-        main: [
-            'webpack-dev-server/client?' + paths.urlPath,
-            'webpack/hot/only-dev-server',
-            path.join(srcPath, 'index.js')
-        ]
-    }
-    ,
+        main: [path.join(srcPath, 'index.js')]
+    },
 
     output: {
+        path: paths.distPath + "/assets/",
         filename: "main.js",
         publicPath: '/assets/'
     },
@@ -36,7 +33,6 @@ module.exports = {
     devtool: false,
 
     resolve: {
-        //root: [srcPath],
         extensions: ["", ".webpack.js", ".web.js", ".js"],
         alias: {
             config: "config.js"
@@ -48,7 +44,7 @@ module.exports = {
     module: {
         preLoaders: [{
             test: /\.js$/,
-            exclude: [/node_modules|src\/theme\/*/],
+            exclude: [/node_modules|src\/theme/],
             loader: 'jsxhint'
         }],
         loaders: [

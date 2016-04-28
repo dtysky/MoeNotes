@@ -2,7 +2,7 @@
   "name": "MoeNotes",
   "version": "0.8.0",
   "description": "I'm the god of magic, here is my spellbook.",
-  "main": "main.js",
+  "main": "mainPublic.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,6 +29,10 @@
     "grunt": "^0.4.5",
     "grunt-shell": "^1.2.1",
     "grunt-webpack": "^1.0.11",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-compress": "^1.0.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-uglify": "^0.11.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "jsdom": "^8.2.0",

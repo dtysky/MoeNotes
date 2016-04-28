@@ -12,7 +12,7 @@ import Storage from './storage';
 import { debounce } from 'lodash';
 import parse from './parser';
 import AceEditor from './editor';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
 import configManager from './config';
 
 if (process.env.BROWSER) {
@@ -40,7 +40,8 @@ export default class Page extends React.Component{
                 "onChange",
                 "onBlur",
                 "onScroll"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 

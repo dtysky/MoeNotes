@@ -8,7 +8,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import { bindFunctions, stringToColor, stringToHue } from './utils';
+import { bindFunctions, stringToColor, stringToHue, logError } from './utils';
 import configManager from './config';
 
 
@@ -34,7 +34,8 @@ export default class Book extends React.Component {
                 "onSelect",
                 "handleTextChange",
                 "enableInput"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 

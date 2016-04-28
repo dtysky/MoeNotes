@@ -102,6 +102,7 @@ button{
 .page-text::-webkit-scrollbar{
     background: none;
     width: 7px;
+    height: 7px;
 }
 
 .page-text::-webkit-scrollbar-thumb{
@@ -115,6 +116,7 @@ button{
 .ace_scrollbar::-webkit-scrollbar{
     background: none;
     width: 7px;
+    height: 7px;
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{

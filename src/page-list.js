@@ -10,7 +10,8 @@ import React from 'react';
 import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
+import configManager from './config';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -36,7 +37,8 @@ class PageList extends SortableList {
                 "copy",
                 "reload",
                 "setScrollbar"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 
@@ -115,6 +117,10 @@ class PageList extends SortableList {
             const chapter = Storage.nowBook.getNow();
             this.select(Storage.nowBook.getNow(chapter));
         }
+    }
+
+    resize(){
+        this.resizeSortableList();
     }
 
     render(){

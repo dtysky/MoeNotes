@@ -12,14 +12,15 @@ import stringWidth from 'string-width';
 import { SortableItemMixin } from 'react-anything-sortable';
 import Storage from './storage';
 import { ContextMenuLayer } from './context-menu';
-import { bindFunctions, stringToColor } from './utils';
+import { createObjectWithErrorHandler, stringToColor, logError } from './utils';
 import configManager from './config';
 
+if (process.env.BROWSER) {
+    require('./theme/styles/sky.css');
+    require('./theme/styles/sortable.css');
+}
 
-import './theme/styles/sky.css';
-import './theme/styles/sortable.css';
-
-export default ContextMenuLayer(
+const SortableItem = ContextMenuLayer(
     (props) => (props.menuName),
     (props) => ({
         name: props.index
@@ -158,7 +159,6 @@ export default ContextMenuLayer(
                 stringToColor(this.props.chapter, config.pageNowFontSLO) :
                 stringToColor(this.props.chapter, config.pageNormalFontSLO);
         }
-        //style.width = this.state.style.width + 20;
         return (
             <div
                 onClick={this.select}
@@ -194,3 +194,8 @@ export default ContextMenuLayer(
             );
     }
 }));
+
+export default createObjectWithErrorHandler(
+    SortableItem,
+    logError(configManager.getSysConfig().logPath)
+);

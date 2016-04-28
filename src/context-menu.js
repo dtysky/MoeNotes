@@ -10,7 +10,8 @@
 import React from 'react';
 import { ContextMenu, MenuItem, ContextMenuLayer } from 'react-contextmenu';
 
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
+import configManager from './config';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -22,7 +23,10 @@ class ContextMenuMain extends React.Component {
         super(props);
         bindFunctions(
             this,
-            ["handleClick"]
+            [
+                "handleClick"
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 

@@ -12,7 +12,9 @@ import configManager from './config';
 
 export default createObjectWithErrorHandler(
     new StorageTop(
-        configManager.getSysConfig().treePath),
-        logError(configManager.getSysConfig().logPath
+        configManager.getSysConfig().treePath
+    ),
+    logError(
+        configManager.getSysConfig().logPath
     )
 );

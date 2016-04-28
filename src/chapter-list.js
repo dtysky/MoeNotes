@@ -10,7 +10,9 @@ import React from 'react';
 import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
+import configManager from './config';
+
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -34,7 +36,8 @@ class ChapterList extends SortableList {
                 "select",
                 "copy",
                 "reload"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 

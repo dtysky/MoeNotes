@@ -7,6 +7,7 @@
 
 const grunt = require('grunt');
 const webpackDevConfig = require('./webpack.config.js');
+const webpackDistConfig = require('./webpack.dist.config.js');
 const paths = require('./config').paths;
 
 module.exports = function (grunt) {
@@ -17,12 +18,15 @@ module.exports = function (grunt) {
     var pkgConfig = grunt.file.readJSON('package.json');
 
     grunt.initConfig({
-        pkg: pkgConfig,
+        pkg: {
+            src: paths.srcPath,
+            dist: paths.distPath
+        },
 
         'webpack-dev-server': {
             options: {
                 hot: true,
-                port: 8000,
+                port: paths.debugPort,
                 webpack: webpackDevConfig,
                 publicPath: '/assets/',
                 contentBase: paths.srcPath,
@@ -33,6 +37,57 @@ module.exports = function (grunt) {
                 keepAlive: true
             }
         },
+
+        webpack:{
+            dist: webpackDistConfig
+        },
+
+        copy: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: "<%= pkg.src %>/theme/images",
+                        src: '**/*',
+                        dest: '<%= pkg.dist %>/theme/images/'
+                    },
+                    {
+                        expand: true,
+                        cwd: "<%= pkg.src %>/theme/fonts",
+                        src: '**/*',
+                        dest: '<%= pkg.dist %>/theme/fonts/'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: ['<%= pkg.src %>/theme/config/*'],
+                        dest: '<%= pkg.dist %>/theme/config/',
+                        filter: 'isFile'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: [
+                            '<%= pkg.src %>/index.html'
+                        ],
+                        dest: '<%= pkg.dist %>/',
+                        filter: 'isFile'
+                    }
+                ]
+            }
+        },
+
+        clean: {
+            dist: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '<%= pkg.dist %>'
+                    ]
+                }]
+            }
+        },
+
 
         'build-atom-shell': {
             tag: 'v0.19.5',
@@ -54,7 +109,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['shell:test']);
 
+    grunt.registerTask('pre-build', ['clean:dist', 'webpack:dist', 'copy:dist']);
+
     grunt.registerTask('build', ['build-atom-shell']);
+
+    grunt.registerTask('release', ['pre-build', 'build']);
 
     grunt.registerTask('default', ['build']);
 };

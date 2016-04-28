@@ -9,12 +9,13 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
+import configManager from './config';
 
 const aboutMessage = `
-    <h1>MeoNotes</h1>
+    <h1>MoeNotes</h1>
 
-    <p>A simple app for writing notes with markdown, and without any database(you can manage your .md files by yourself).</p>
+    <p>A simple application for writing notes with markdown, and without any database(you can manage your .md files by yourself).</p>
     <p>For more information, please check here:</p>
 
     <h4>Homepage:</h4>
@@ -46,7 +47,8 @@ export default class BookPicker extends React.Component{
             [
                 "showAbout",
                 "reloadAPP"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
         ipcRenderer.on("showAbout", () => {
             this.showAbout();

@@ -13,7 +13,7 @@ const Menu = require('react-burger-menu').slide;
 import Storage from './storage';
 import Notify from './notify';
 import BookPicker from './book-picker';
-import { bindFunctions, stringToColor } from './utils';
+import { bindFunctions, stringToColor, logError } from './utils';
 import configManager from './config';
 
 if (process.env.BROWSER) {
@@ -51,7 +51,8 @@ export default class BookList extends React.Component {
                 "handleTextChange",
                 "handleErrorCannotChange",
                 "showNotify"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 

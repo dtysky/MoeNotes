@@ -12,7 +12,8 @@ import Sortable from 'react-anything-sortable';
 import SortableListItem from './sortable-item';
 import Storage from './storage';
 import { ContextMenuMain } from './context-menu';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
+import configManager from './config';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -38,7 +39,8 @@ export default class SortableList extends React.Component {
                 "handleErrorCannotChange",
                 "showNotify",
                 "save"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 
@@ -109,11 +111,11 @@ export default class SortableList extends React.Component {
     }
 
     resizeSortableList(){
-        let length = 0;
-        const elements = document.getElementsByClassName(
-            this.props.classSortableItem
-        );
         if(this.props.layoutMode === "horizontal"){
+            let length = 0;
+            const elements = document.getElementsByClassName(
+                this.props.classSortableItem
+            );
             for (let i = 0; i< elements.length; i++){
                 length += elements.item(i).offsetWidth;
             }
@@ -127,6 +129,19 @@ export default class SortableList extends React.Component {
                     }
                 });
             }
+        }else{
+            const elementMain = ReactDom.findDOMNode(
+                this.refs.main
+            );
+            const elementButton = ReactDom.findDOMNode(
+                this.refs.button
+            );
+            const height = elementMain.offsetHeight - elementButton.offsetHeight;
+            this.setState({
+                styleSortableList: {
+                    height: height
+                }
+            });
         }
     }
 
@@ -170,6 +185,7 @@ export default class SortableList extends React.Component {
                     {
                         this.props.addButtonLocation === "front" ?
                             <div
+                                ref="button"
                                 className={this.props.classButton}
                                 style={this.props.styleButton}
                                 onClick={this.createEnd}
@@ -181,9 +197,19 @@ export default class SortableList extends React.Component {
                     }
                     <div
                         style={this.state.styleSortableList}
+                        className={
+                            this.props.layoutMode === "horizontal" ?
+                                "" :
+                                this.props.classSortableList
+                        }
                     >
                         <Sortable
-                            className={this.props.classSortableList}
+                            ref="list"
+                            className={
+                                this.props.layoutMode === "horizontal" ?
+                                    this.props.classSortableList :
+                                    ""
+                            }
                             key={this._sortkey}
                             onSort={this.onSort}
                         >
@@ -219,6 +245,7 @@ export default class SortableList extends React.Component {
                         {
                             this.props.addButtonLocation === "end" ?
                                 <div
+                                    ref="button"
                                     className={this.props.classButton}
                                     onClick={this.createEnd}
                                 >

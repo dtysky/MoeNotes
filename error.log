@@ -12482,3 +12482,172 @@ StorageBook:
 }
 
 
+2016-04-28 12:17:55
+Error: Unknown language: "c#"
+Please report this to https://github.com/chjj/marked.
+    at Object.highlight (http://localhost:8000/assets/main.bundle.js:102828:14)
+    at Object.highlight (http://localhost:8000/assets/main.bundle.js:78175:33)
+    at Renderer.code (http://localhost:8000/assets/main.bundle.js:78967:29)
+    at Parser.tok (http://localhost:8000/assets/main.bundle.js:79191:29)
+    at Parser.parse (http://localhost:8000/assets/main.bundle.js:79136:18)
+    at Function.Parser.parse (http://localhost:8000/assets/main.bundle.js:79123:18)
+    at Function.marked [as parse] (http://localhost:8000/assets/main.bundle.js:79419:20)
+    at parse (http://localhost:8000/assets/main.bundle.js:78191:34)
+    at Page.parsePage (http://localhost:8000/assets/main.bundle.js:78039:45)
+    at Page.<anonymous> (http://localhost:8000/assets/main.bundle.js:9913:38)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Starry_Dream/pages",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Starry_Dream/pages"
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Starry_Dream/pages": "pages"
+    }
+}
+StorageBook:
+{
+    "root": "/Users/dtysky/Starry_Dream/pages",
+    "indexes": [
+        "Art",
+        "Create",
+        "Life",
+        "Skill"
+    ],
+    "chapters": {
+        "Art": {
+            "indexes": [
+                "2014_05_05_a",
+                "2014_05_08_a",
+                "2014_05_08_b",
+                "2014_05_08_c",
+                "2015_02_21_a",
+                "2015_03_27_a",
+                "2015_05_05_a",
+                "2015_09_23_a",
+                "TrainToNewYear",
+                "不押韵",
+                "大海行",
+                "彼岸疾走",
+                "我是一个死宅",
+                "我是一个行者",
+                "我是一棵树",
+                "春",
+                "梦蝶.Re",
+                "翼根，羽梦",
+                "致天空",
+                "花",
+                "过年",
+                "银河列车",
+                "银河列车II",
+                "银河列车III",
+                "银河列车IV",
+                "飘",
+                "麦地"
+            ],
+            "now": "2014_05_08_a"
+        },
+        "Create": {
+            "indexes": [
+                "2014_12_19_a",
+                "2015_02_18_a",
+                "2015_02_19_a",
+                "2015_02_21_a",
+                "2015_03_22_a",
+                "2015_03_22_b",
+                "2015_03_22_c",
+                "2015_05_04_a",
+                "2015_06_02_a",
+                "2015_06_05_a",
+                "2016_03_12_a",
+                "MyResume",
+                "MyResumeEn",
+                "Summary"
+            ],
+            "now": "2015_06_05_a"
+        },
+        "Life": {
+            "indexes": [
+                "2014_05_03_a",
+                "2014_05_06_a",
+                "2014_05_12_a",
+                "2014_06_06_a",
+                "2015_02_15_a",
+                "2015_03_06_a",
+                "2015_05_14_a",
+                "2015_08_09_a",
+                "2014_05_02_a",
+                "2016_02_10_a",
+                "Summary_old"
+            ],
+            "now": "Summary_old"
+        },
+        "Skill": {
+            "indexes": [
+                "2014_04_30_a",
+                "2014_05_02_a",
+                "2014_05_05_a",
+                "2014_05_08_a",
+                "2014_05_09_a",
+                "2014_05_09_b",
+                "2014_05_09_c",
+                "2014_05_09_d",
+                "2014_05_10_a",
+                "2014_05_12_a",
+                "2014_05_12_b",
+                "2014_05_12_c",
+                "2014_06_12_a",
+                "2014_06_22_a",
+                "2014_06_23_a",
+                "2015_02_17_a",
+                "2015_02_18_a",
+                "2015_02_18_b",
+                "2015_02_19_a",
+                "2015_02_20_a",
+                "2015_02_22_b",
+                "2015_03_02_a",
+                "2015_04_12_a",
+                "2015_04_26_a",
+                "2015_02_22_a",
+                "2015_05_05_a",
+                "2015_05_08_a",
+                "2015_05_08_b",
+                "2015_05_10_a",
+                "2015_05_09_a",
+                "2015_05_11_a",
+                "2015_05_11_b",
+                "2015_05_14_a",
+                "2015_05_15_a",
+                "2015_05_16_a",
+                "2015_05_16_b",
+                "2015_05_17_a",
+                "2015_05_17_b",
+                "2015_05_19_a",
+                "2015_05_20_a",
+                "2015_05_20_b",
+                "2015_05_21_a",
+                "2015_05_22_a",
+                "2015_05_25_a",
+                "2015_05_25_b",
+                "2015_05_26_a",
+                "2015_05_27_a",
+                "2015_05_27_b",
+                "2015_05_27_c",
+                "2015_05_29_a",
+                "2015_05_29_b",
+                "2015_05_30_a",
+                "2015_05_31_a",
+                "2015_09_10_a",
+                "2015_11_21_a",
+                "2016_01_30_a"
+            ],
+            "now": "2014_05_09_b"
+        }
+    },
+    "now": "Skill"
+}
+
+

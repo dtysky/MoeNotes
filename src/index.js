@@ -12,11 +12,11 @@ import BookPicker from './book-picker';
 import ChapterList from './chapter-list';
 import BookList from './book-list';
 import Page from './page';
-import PageList from './pages-list';
+import PageList from './page-list';
 import Notify from './notify';
 import Toolbar from './toolbar';
 import Storage from './storage';
-import { bindFunctions, stringToColor } from './utils';
+import { bindFunctions, stringToColor, logError } from './utils';
 import configManager from './config';
 
 if (process.env.BROWSER) {
@@ -49,7 +49,8 @@ class App extends React.Component{
                 "create",
                 "resize",
                 "initOptions"
-            ]
+            ],
+            logError(configManager.getSysConfig().logPath)
         );
     }
 
@@ -94,6 +95,7 @@ class App extends React.Component{
             height: window.innerHeight
         });
         this.refs.page.refs.editor.editor.resize();
+        this.refs.pageList.resize();
     }
 
     initOptions(){

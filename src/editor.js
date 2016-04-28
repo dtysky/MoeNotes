@@ -8,8 +8,9 @@
 
 import ace from 'brace';
 import React, { Component, PropTypes } from 'react';
-import { bindFunctions } from './utils';
+import { bindFunctions, logError } from './utils';
 import { ipcRenderer } from 'electron';
+import configManager from './config';
 
 import 'brace/ext/searchbox';
 import 'brace/mode/markdown';
@@ -20,13 +21,15 @@ export default class ReactAce extends Component {
         super(props);
         bindFunctions(
             this,
-        [
-            'focus',
-            'onChange',
-            'onFocus',
-            'onBlur',
-            'onChangeScrollTop'
-        ]);
+            [
+                'focus',
+                'onChange',
+                'onFocus',
+                'onBlur',
+                'onChangeScrollTop'
+            ],
+            logError(configManager.getSysConfig().logPath)
+        );
     }
 
     componentDidMount() {
