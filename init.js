@@ -168,7 +168,7 @@ function initMenu(mainWindow) {
             label: name,
             submenu: [
                 {
-                    label: 'About ' + name,
+                    label: 'About MoeNotes',
                     click: function (item, window) {
                         sendIPCToWindow(window, "showAbout");
                     }

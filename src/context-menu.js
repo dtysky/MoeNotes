@@ -7,7 +7,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { ContextMenu, MenuItem, ContextMenuLayer } from 'react-contextmenu';
 
 import { bindFunctions, logError } from './utils';
@@ -68,6 +68,13 @@ class ContextMenuMain extends React.Component {
     }
 }
 
+ContextMenuMain.propTypes = {
+    handleClick: PropTypes.func
+};
+
+ContextMenuMain.defaultProps = {
+    handleClick: (data) => {}
+};
 
 
 export { ContextMenuMain, ContextMenuLayer };

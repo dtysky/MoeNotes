@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import Book from './book-item';
 const Menu = require('react-burger-menu').slide;
@@ -282,3 +282,20 @@ export default class BookList extends React.Component {
         );
     }
 }
+
+BookList.propTypes = {
+    menuStyle: PropTypes.object,
+    buttonHeight: PropTypes.number,
+    buttonTop: PropTypes.number,
+    buttonPosition: PropTypes.string,
+    handleChangeBook: PropTypes.func,
+    reoffsetChapter: PropTypes.func,
+    handleShowNotify: PropTypes.func
+};
+
+BookList.defaultProps = {
+    menuStyle: {},
+    handleChangeBook: () => {},
+    reoffsetChapter: (width) => {},
+    handleShowNotify: (type, message, callbacks) => {}
+};

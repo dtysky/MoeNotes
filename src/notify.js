@@ -7,7 +7,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { FadeModal as Modal } from 'boron';
 import NotificationSystem from 'react-notification-system';
 import { bindFunctions, logError } from './utils';
@@ -19,7 +19,7 @@ if (process.env.BROWSER) {
 }
 
 
-class Notify extends React.Component {
+export default class Notify extends React.Component {
     constructor(props){
         super(props);
         this.defaltCallback = {
@@ -223,4 +223,8 @@ class Notify extends React.Component {
     }
 }
 
-export default Notify;
+Notify.propTypes = {
+};
+
+Notify.defaultProps = {
+};

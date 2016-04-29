@@ -5,7 +5,7 @@
  */
 
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
@@ -39,7 +39,7 @@ const aboutMessage = `
     along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
 </p>`;
 
-export default class BookPicker extends React.Component{
+export default class Toolbar extends React.Component{
     constructor(props){
         super(props);
         bindFunctions(
@@ -88,3 +88,15 @@ export default class BookPicker extends React.Component{
         );
     }
 }
+
+Toolbar.propTypes = {
+    style: PropTypes.object,
+    styleItem: PropTypes.object,
+    handleShowNotify: PropTypes.func
+};
+
+Toolbar.defaultProps = {
+    style: {},
+    styleItem: {},
+    handleShowNotify: (type, message, callbacks) => {}
+};

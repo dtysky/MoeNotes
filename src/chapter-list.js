@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
@@ -18,7 +18,7 @@ if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
 }
 
-class ChapterList extends SortableList {
+export default class ChapterList extends SortableList {
     constructor(props){
         super(props);
         this.initState(
@@ -123,4 +123,27 @@ class ChapterList extends SortableList {
     }
 }
 
-export default ChapterList;
+ChapterList.propTypes = {
+    classBackground: PropTypes.string,
+    classList: PropTypes.string,
+    classSortableList: PropTypes.string,
+    classSortableItem: PropTypes.string,
+    classButton: PropTypes.string,
+    style: PropTypes.object,
+    styleList: PropTypes.object,
+    styleButton: PropTypes.object,
+    layoutMode: PropTypes.string,
+    addButtonLocation: PropTypes.func,
+    handleChangeChapter: PropTypes.func,
+    handleShowNotify: PropTypes.func
+};
+
+ChapterList.defaultProps = {
+    style: {},
+    styleList: {},
+    styleButton: {},
+    layoutMode: "horizontal",
+    addButtonLocation: "end",
+    handleChangeChapter: () => {},
+    handleShowNotify: (type, message, callbacks) => {}
+};

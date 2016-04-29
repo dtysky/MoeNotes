@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import stringWidth from 'string-width';
 import { SortableItemMixin } from 'react-anything-sortable';
@@ -194,6 +194,30 @@ const SortableItem = ContextMenuLayer(
             );
     }
 }));
+
+
+SortableItem.propTypes = {
+    index: PropTypes.string,
+    layoutMode: PropTypes.string,
+    menuName: PropTypes.string,
+    chapter: PropTypes.string,
+    sortData: PropTypes.string,
+    className: PropTypes.string,
+    active: PropTypes.bool,
+    canInput: PropTypes.bool,
+    handleTextChange: PropTypes.func,
+    handleErrorCannotChange: PropTypes.func,
+    doMenuOptions: PropTypes.func
+};
+
+SortableItem.defaultProps = {
+    canInput: false,
+    active: false,
+    handleTextChange: (index, name) => {},
+    handleErrorCannotChange: (message) => {},
+    doMenuOptions: (option, index) => {}
+};
+
 
 export default createObjectWithErrorHandler(
     SortableItem,

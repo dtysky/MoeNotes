@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import Storage from './storage';
 import { debounce } from 'lodash';
@@ -133,3 +133,13 @@ export default class Page extends React.Component{
         );
     }
 }
+
+Page.propTypes = {
+    style: PropTypes.object,
+    handleShowNotify: PropTypes.func
+};
+
+Page.defaultProps = {
+    style: {},
+    handleShowNotify: (type, message, callbacks) => {}
+};

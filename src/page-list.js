@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
@@ -18,7 +18,7 @@ if (process.env.BROWSER) {
 }
 
 
-class PageList extends SortableList {
+export default class PageList extends SortableList {
     constructor(props){
         super(props);
         this.initState(
@@ -128,4 +128,27 @@ class PageList extends SortableList {
     }
 }
 
-export default PageList;
+PageList.propTypes = {
+    classBackground: PropTypes.string,
+    classList: PropTypes.string,
+    classSortableList: PropTypes.string,
+    classSortableItem: PropTypes.string,
+    classButton: PropTypes.string,
+    style: PropTypes.object,
+    styleList: PropTypes.object,
+    styleButton: PropTypes.object,
+    layoutMode: PropTypes.string,
+    addButtonLocation: PropTypes.func,
+    handleChangeChapter: PropTypes.func,
+    handleShowNotify: PropTypes.func
+};
+
+PageList.defaultProps = {
+    style: {},
+    styleList: {},
+    styleButton: {},
+    layoutMode: "vertical",
+    addButtonLocation: "front",
+    handleChangeChapter: () => {},
+    handleShowNotify: (type, message, callbacks) => {}
+};

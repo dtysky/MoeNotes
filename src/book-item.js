@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import { bindFunctions, stringToColor, stringToHue, logError } from './utils';
 import configManager from './config';
@@ -169,3 +169,19 @@ export default class Book extends React.Component {
         );
     }
 }
+
+Book.propTypes = {
+    index: PropTypes.string,
+    name: PropTypes.string,
+    canInput: PropTypes.bool,
+    handleTextChange: PropTypes.func,
+    handleErrorCannotChange: PropTypes.func,
+    doMenuOptions: PropTypes.func
+};
+
+Book.defaultProps = {
+    canInput: false,
+    handleTextChange: (index, name) => {},
+    handleErrorCannotChange: (message) => {},
+    doMenuOptions: (option, index) => {}
+};
