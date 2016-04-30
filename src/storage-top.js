@@ -66,7 +66,6 @@ export default class StorageTop {
             fs.readFileSync(this.treePath, "utf8")
         );
         treeRecord.indexes.forEach(index => {
-            //console.log(treeRecord, index, !fs.existsSync(index));
             if(!fs.existsSync(index)){
                 treeRecord.indexes.splice(
                     treeRecord.indexes.indexOf(index)

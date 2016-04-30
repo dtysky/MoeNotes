@@ -18,7 +18,7 @@ app.on('ready', function() {
         width: size.width,
         height: size.height,
         title: "MoeNotes",
-        icon: __dirname + "/logo.png"
+        icon: paths.rootPath + "/logo.png"
     });
     mainWindow.loadURL(
         paths.urlPath

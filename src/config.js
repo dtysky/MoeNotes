@@ -5,6 +5,7 @@
  */
 
 import fs from 'fs';
+import { remote } from 'electron';
 
 const defaultConfig = {
     "defaultHighlight": "VHDL",
@@ -34,9 +35,13 @@ const defaultConfig = {
     "notifyInfoBack": "rgba(239, 194, 212, 0.9)"
 };
 
+const userPath = remote.app.envRelease ?
+    remote.app.getPath("userData") :
+    ".";
+
 const sysConfig = {
-    treePath: ".tree",
-    logPath: "error.log",
+    treePath: userPath + "/.tree",
+    logPath: userPath + "/error.log",
     configPath: "theme/config/config.json"
 };
 

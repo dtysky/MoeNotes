@@ -21,7 +21,8 @@ module.exports = function (grunt) {
         pkg: {
             root: paths.rootPath,
             src: paths.srcPath,
-            dist: paths.distPath
+            dist: paths.distPath,
+            release: paths.releasePath
         },
 
         'webpack-dev-server': {
@@ -70,7 +71,8 @@ module.exports = function (grunt) {
                         expand: true,
                         src: [
                             '<%= pkg.src %>/index.html',
-                            '<%= pkg.root %>/mainPublic.js',
+                            '<%= pkg.root %>/package.json',
+                            '<%= pkg.root %>/mainRelease.js',
                             '<%= pkg.root %>/init.js',
                             '<%= pkg.root %>/config.js',
                             '<%= pkg.root %>/logo.png',
@@ -91,6 +93,14 @@ module.exports = function (grunt) {
                         '<%= pkg.dist %>'
                     ]
                 }]
+            },
+            release: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '<%= pkg.release %>'
+                    ]
+                }]
             }
         },
 
@@ -98,78 +108,70 @@ module.exports = function (grunt) {
             dist: {
                 files: [
                     {
-                        src: ['<%= pkg.dist %>/mainPublic.js'],
+                        src: ['<%= pkg.dist %>/mainRelease.js'],
                         dest: '<%= pkg.dist %>/main.js'
                     }
                 ]
             }
         },
 
-
-        electron: {
+        'electron-packager': {
             buildAll: {
                 options: {
                     name: 'MoeNotes',
                     "app-version": "0.8.0",
-                    icon: "logo.png",
+                    "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
+                    icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
-                    out: 'public',
+                    out: 'release',
                     version: '0.37.2',
                     platform: 'all',
-                    arch: 'all',
-                    overwrite: true
+                    prune: true,
+                    arch: 'all'
+                }
+            },
+            buildOSX: {
+                options: {
+                    name: 'MoeNotes',
+                    "app-version": "0.8.0",
+                    "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
+                    icon: "<%= pkg.root %>/logo",
+                    dir: 'dist',
+                    out: 'release',
+                    version: '0.37.2',
+                    platform: 'darwin',
+                    prune: true,
+                    arch: 'all'
+                }
+            },
+            buildLinux: {
+                options: {
+                    name: 'MoeNotes',
+                    "app-version": "0.8.0",
+                    "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
+                    icon: "<%= pkg.root %>/logo",
+                    dir: 'dist',
+                    out: 'release',
+                    version: '0.37.2',
+                    platform: 'linux',
+                    prune: true,
+                    arch: 'all'
+                }
+            },
+            buildWindows: {
+                options: {
+                    name: 'MoeNotes',
+                    "app-version": "0.8.0",
+                    "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
+                    icon: "<%= pkg.root %>/logo",
+                    dir: 'dist',
+                    out: 'release',
+                    version: '0.37.2',
+                    platform: 'win32',
+                    prune: true,
+                    arch: 'all'
                 }
             }
-            //osxBuild32: {
-            //    options: {
-            //        name: 'MoeNotes',
-            //        dir: 'dist',
-            //        out: 'public/osx64',
-            //        version: '0.37.2',
-            //        platform: 'darwin',
-            //        arch: 'x86'
-            //    }
-            //},
-            //linuxBuild64: {
-            //    options: {
-            //        name: 'MoeNotes',
-            //        dir: 'dist',
-            //        out: 'public/osx32',
-            //        version: '0.37.2',
-            //        platform: 'darwin',
-            //        arch: 'x64'
-            //    }
-            //},
-            //linuxBuild32: {
-            //    options: {
-            //        name: 'MoeNotes',
-            //        dir: 'dist',
-            //        out: 'public/osx64',
-            //        version: '0.37.2',
-            //        platform: 'darwin',
-            //        arch: 'x86'
-            //    }
-            //},
-            //windowsBuild64: {
-            //    options: {
-            //        name: 'MoeNotes',
-            //        dir: 'dist',
-            //        out: 'public/osx32',
-            //        version: '0.37.2',
-            //        platform: 'darwin',
-            //        arch: 'x64'
-            //    }
-            //},
-            //windowsBuild32: {
-            //    options: {
-            //        name: 'MoeNotes',
-            //        dir: 'dist',
-            //        out: 'public/osx64',
-            //        version: '0.37.2',
-            //        platform: 'darwin',
-            //        arch: 'x86'
-            //    }
-            //}
         },
 
         shell: {
@@ -184,11 +186,17 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['shell:test']);
 
-    grunt.registerTask('pre-build', ['clean:dist', 'webpack:dist', 'copy:dist', 'rename:dist']);
+    grunt.registerTask('build-pre', ['clean:dist', 'webpack:dist', 'copy:dist', 'rename:dist']);
 
-    grunt.registerTask('build', ['electron:buildAll']);
+    grunt.registerTask('build-osx', ['clean:release', 'electron-packager:buildOSX']);
+    grunt.registerTask('build-linux', ['clean:release', 'electron-packager:buildLinux']);
+    grunt.registerTask('build-windows', ['clean:release', 'electron-packager:buildWindows']);
+    grunt.registerTask('build-all', ['clean:release', 'electron-packager:buildAll']);
 
-    grunt.registerTask('release', ['pre-build', 'build']);
+    grunt.registerTask('release-osx', ['pre-build', 'build-osx']);
+    grunt.registerTask('release-linux', ['pre-build', 'build-linux']);
+    grunt.registerTask('release-windows', ['pre-build', 'build-windows']);
+    grunt.registerTask('release-all', ['pre-build', 'build-all']);
 
     grunt.registerTask('default', ['debug']);
 };

@@ -10,6 +10,7 @@ const paths = require('./config').paths;
 const init = require('./init');
 
 var mainWindow = null;
+app.envRelease = true;
 
 app.on('ready', function() {
     const screen = require('screen');
@@ -18,12 +19,12 @@ app.on('ready', function() {
         width: size.width,
         height: size.height,
         title: "MoeNotes",
-        icon: __dirname + "/logo.png"
+        icon: paths.rootPath + "/logo.png"
     });
     mainWindow.loadURL(
-        paths.publicPath
+        paths.realPath
     );
-    console.log(paths.publicPath);
+    console.log(paths.realPath);
     mainWindow.on('closed', function() {
         mainWindow = null;
         app.quit();

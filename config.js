@@ -13,7 +13,8 @@ var paths = {
     distPath: path.join(rootPath, "dist"),
     urlPath: "http://localhost:8000",
     debugPort: 8000,
-    publicPath: "file://" + path.join(rootPath, "index.html")
+    releasePath: path.join(rootPath, 'release'),
+    realPath: "file://" + path.join(rootPath, "index.html")
 };
 
 module.exports = {
