@@ -80,6 +80,9 @@ export default class BookList extends React.Component {
                     this.create();
                     return;
                 }
+                if(dp === null){
+                    return;
+                }
                 if(!Storage.has(dp)){
                     Storage.create(dp);
                 }
@@ -91,6 +94,13 @@ export default class BookList extends React.Component {
     load() {
         BookPicker.open(
             dp => {
+                if(dp === null && Storage.isEmpty()){
+                    this.load();
+                    return;
+                }
+                if(dp === null){
+                    return;
+                }
                 if(!Storage.has(dp)){
                     Storage.create(dp);
                 }
@@ -140,7 +150,11 @@ export default class BookList extends React.Component {
     }
 
     isMenuOpen(state){
-        this.state.isOpen = state.isOpen;
+        if(!state.isOpen){
+            this.setState({
+                isOpen: false
+            });
+        }
     }
 
     resizeButton(){
@@ -275,9 +289,6 @@ export default class BookList extends React.Component {
                         }
                     </div>
                 </div>
-                <Notify
-                    ref="notify"
-                />
             </div>
         );
     }

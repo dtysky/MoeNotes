@@ -12651,3 +12651,481 @@ StorageBook:
 }
 
 
+2016-04-30 02:33:24
+TypeError: Cannot read property 'replace' of null
+    at getNameFromPath (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21364:14)
+    at StorageTop.create (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:55234:64)
+    at StorageTop.create (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21399:23)
+    at file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:66592:40
+    at file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21239:22
+    at CallbacksRegistry.apply (/Users/dtysky/.nvm/versions/node/v5.9.0/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/electron.asar/common/api/callbacks-registry.js:54:39)
+    at EventEmitter.<anonymous> (/Users/dtysky/.nvm/versions/node/v5.9.0/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/electron.asar/renderer/api/remote.js:243:28)
+    at emitThree (events.js:110:13)
+    at EventEmitter.emit (events.js:188:7)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Starry_Dream/pages",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Starry_Dream/pages",
+        null
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Starry_Dream/pages": "MyBlog"
+    }
+}
+StorageBook:
+{
+    "root": "/Users/dtysky/Starry_Dream/pages",
+    "indexes": [
+        "Create",
+        "Life",
+        "Skill",
+        "Art"
+    ],
+    "chapters": {
+        "Art": {
+            "indexes": [
+                "2014_05_05_a",
+                "2014_05_08_a",
+                "2014_05_08_b",
+                "2014_05_08_c",
+                "2015_02_21_a",
+                "2015_03_27_a",
+                "2015_05_05_a",
+                "2015_09_23_a",
+                "TrainToNewYear",
+                "不押韵",
+                "大海行",
+                "彼岸疾走",
+                "我是一个死宅",
+                "我是一个行者",
+                "我是一棵树",
+                "春",
+                "梦蝶.Re",
+                "翼根，羽梦",
+                "致天空",
+                "花",
+                "过年",
+                "银河列车",
+                "银河列车II",
+                "银河列车III",
+                "银河列车IV",
+                "飘",
+                "麦地"
+            ],
+            "now": "2014_05_05_a"
+        },
+        "Create": {
+            "indexes": [
+                "2014_12_19_a",
+                "2015_02_18_a",
+                "2015_02_19_a",
+                "2015_02_21_a",
+                "2015_03_22_a",
+                "2015_03_22_b",
+                "2015_03_22_c",
+                "2015_05_04_a",
+                "2015_06_02_a",
+                "2015_06_05_a",
+                "2016_03_12_a",
+                "MyResume",
+                "MyResumeEn",
+                "Summary"
+            ],
+            "now": "2014_12_19_a"
+        },
+        "Life": {
+            "indexes": [
+                "2014_05_03_a",
+                "2014_05_06_a",
+                "2014_05_12_a",
+                "2014_06_06_a",
+                "2015_02_15_a",
+                "2015_03_06_a",
+                "2015_05_14_a",
+                "2015_08_09_a",
+                "Summary_old",
+                "2014_05_02_a",
+                "2016_02_10_a"
+            ],
+            "now": "Summary_old"
+        },
+        "Skill": {
+            "indexes": [
+                "2014_04_30_a",
+                "2014_05_02_a",
+                "2014_05_05_a",
+                "2014_05_08_a",
+                "2014_05_09_a",
+                "2014_05_09_b",
+                "2014_05_09_c",
+                "2014_05_09_d",
+                "2014_05_10_a",
+                "2014_05_12_a",
+                "2014_05_12_b",
+                "2014_05_12_c",
+                "2014_06_12_a",
+                "2014_06_22_a",
+                "2014_06_23_a",
+                "2015_02_17_a",
+                "2015_02_18_a",
+                "2015_02_18_b",
+                "2015_02_19_a",
+                "2015_02_20_a",
+                "2015_02_22_b",
+                "2015_03_02_a",
+                "2015_04_12_a",
+                "2015_04_26_a",
+                "2015_02_22_a",
+                "2015_05_05_a",
+                "2015_05_08_a",
+                "2015_05_08_b",
+                "2015_05_10_a",
+                "2015_05_09_a",
+                "2015_05_11_a",
+                "2015_05_11_b",
+                "2015_05_14_a",
+                "2015_05_15_a",
+                "2015_05_16_a",
+                "2015_05_16_b",
+                "2015_05_17_a",
+                "2015_05_17_b",
+                "2015_05_19_a",
+                "2015_05_20_a",
+                "2015_05_20_b",
+                "2015_05_21_a",
+                "2015_05_22_a",
+                "2015_05_25_a",
+                "2015_05_25_b",
+                "2015_05_26_a",
+                "2015_05_27_a",
+                "2015_05_27_b",
+                "2015_05_27_c",
+                "2015_05_29_a",
+                "2015_05_29_b",
+                "2015_05_30_a",
+                "2015_05_31_a",
+                "2015_09_10_a",
+                "2015_11_21_a",
+                "2016_01_30_a"
+            ],
+            "now": "2016_01_30_a"
+        }
+    },
+    "now": "Create"
+}
+
+
+2016-04-30 02:35:37
+TypeError: Cannot read property 'replace' of null
+    at getNameFromPath (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21364:14)
+    at StorageTop.create (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:55234:64)
+    at StorageTop.create (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21399:23)
+    at file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:66592:40
+    at file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21239:22
+    at CallbacksRegistry.apply (/Users/dtysky/.nvm/versions/node/v5.9.0/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/electron.asar/common/api/callbacks-registry.js:54:39)
+    at EventEmitter.<anonymous> (/Users/dtysky/.nvm/versions/node/v5.9.0/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/electron.asar/renderer/api/remote.js:243:28)
+    at emitThree (events.js:110:13)
+    at EventEmitter.emit (events.js:188:7)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Starry_Dream/pages",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Starry_Dream/pages",
+        null
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Starry_Dream/pages": "MyBlog"
+    }
+}
+StorageBook:
+{
+    "root": "/Users/dtysky/Starry_Dream/pages",
+    "indexes": [
+        "Create",
+        "Life",
+        "Skill",
+        "Art"
+    ],
+    "chapters": {
+        "Art": {
+            "indexes": [
+                "2014_05_05_a",
+                "2014_05_08_a",
+                "2014_05_08_b",
+                "2014_05_08_c",
+                "2015_02_21_a",
+                "2015_03_27_a",
+                "2015_05_05_a",
+                "2015_09_23_a",
+                "TrainToNewYear",
+                "不押韵",
+                "大海行",
+                "彼岸疾走",
+                "我是一个死宅",
+                "我是一个行者",
+                "我是一棵树",
+                "春",
+                "梦蝶.Re",
+                "翼根，羽梦",
+                "致天空",
+                "花",
+                "过年",
+                "银河列车",
+                "银河列车II",
+                "银河列车III",
+                "银河列车IV",
+                "飘",
+                "麦地"
+            ],
+            "now": "2014_05_05_a"
+        },
+        "Create": {
+            "indexes": [
+                "2014_12_19_a",
+                "2015_02_18_a",
+                "2015_02_19_a",
+                "2015_02_21_a",
+                "2015_03_22_a",
+                "2015_03_22_b",
+                "2015_03_22_c",
+                "2015_05_04_a",
+                "2015_06_02_a",
+                "2015_06_05_a",
+                "2016_03_12_a",
+                "MyResume",
+                "MyResumeEn",
+                "Summary"
+            ],
+            "now": "2014_12_19_a"
+        },
+        "Life": {
+            "indexes": [
+                "2014_05_03_a",
+                "2014_05_06_a",
+                "2014_05_12_a",
+                "2014_06_06_a",
+                "2015_02_15_a",
+                "2015_03_06_a",
+                "2015_05_14_a",
+                "2015_08_09_a",
+                "Summary_old",
+                "2014_05_02_a",
+                "2016_02_10_a"
+            ],
+            "now": "Summary_old"
+        },
+        "Skill": {
+            "indexes": [
+                "2014_04_30_a",
+                "2014_05_02_a",
+                "2014_05_05_a",
+                "2014_05_08_a",
+                "2014_05_09_a",
+                "2014_05_09_b",
+                "2014_05_09_c",
+                "2014_05_09_d",
+                "2014_05_10_a",
+                "2014_05_12_a",
+                "2014_05_12_b",
+                "2014_05_12_c",
+                "2014_06_12_a",
+                "2014_06_22_a",
+                "2014_06_23_a",
+                "2015_02_17_a",
+                "2015_02_18_a",
+                "2015_02_18_b",
+                "2015_02_19_a",
+                "2015_02_20_a",
+                "2015_02_22_b",
+                "2015_03_02_a",
+                "2015_04_12_a",
+                "2015_04_26_a",
+                "2015_02_22_a",
+                "2015_05_05_a",
+                "2015_05_08_a",
+                "2015_05_08_b",
+                "2015_05_10_a",
+                "2015_05_09_a",
+                "2015_05_11_a",
+                "2015_05_11_b",
+                "2015_05_14_a",
+                "2015_05_15_a",
+                "2015_05_16_a",
+                "2015_05_16_b",
+                "2015_05_17_a",
+                "2015_05_17_b",
+                "2015_05_19_a",
+                "2015_05_20_a",
+                "2015_05_20_b",
+                "2015_05_21_a",
+                "2015_05_22_a",
+                "2015_05_25_a",
+                "2015_05_25_b",
+                "2015_05_26_a",
+                "2015_05_27_a",
+                "2015_05_27_b",
+                "2015_05_27_c",
+                "2015_05_29_a",
+                "2015_05_29_b",
+                "2015_05_30_a",
+                "2015_05_31_a",
+                "2015_09_10_a",
+                "2015_11_21_a",
+                "2016_01_30_a"
+            ],
+            "now": "2016_01_30_a"
+        }
+    },
+    "now": "Create"
+}
+
+
+2016-04-30 02:37:21
+TypeError: Cannot read property 'replace' of null
+    at getNameFromPath (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21364:14)
+    at StorageTop.create (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:55234:64)
+    at StorageTop.create (file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21399:23)
+    at file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:66592:40
+    at file:///Users/dtysky/Complex_Mind/MoeNotes/dist/assets/main.js:21239:22
+    at CallbacksRegistry.apply (/Users/dtysky/.nvm/versions/node/v5.9.0/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/electron.asar/common/api/callbacks-registry.js:54:39)
+    at EventEmitter.<anonymous> (/Users/dtysky/.nvm/versions/node/v5.9.0/lib/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/electron.asar/renderer/api/remote.js:243:28)
+    at emitThree (events.js:110:13)
+    at EventEmitter.emit (events.js:188:7)
+
+StorageTop:
+{
+    "now": "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+    "indexes": [
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1",
+        "/Users/dtysky/Starry_Dream/pages",
+        null
+    ],
+    "names": {
+        "/Users/dtysky/Complex_Mind/MoeNotes/booksForTest/book1": "book1",
+        "/Users/dtysky/Starry_Dream/pages": "MyBlog"
+    }
+}
+StorageBook:
+{
+    "root": "booksForTest/book1",
+    "indexes": [
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋",
+        "Python",
+        "99999999999999999",
+        "111111111111111111111111111",
+        "DigitalOcean",
+        "FPGA",
+        "Node",
+        "cp2",
+        "xxxxxxxxxxxxxxxxx",
+        "哈哈哈",
+        "戴天宇",
+        "语音识别",
+        "YYYYYYYYYYYYYYYYYYY"
+    ],
+    "chapters": {
+        "99999999999999999": {
+            "indexes": [
+                "9"
+            ],
+            "now": "9"
+        },
+        "cp2": {
+            "indexes": [
+                "page1",
+                "page2"
+            ],
+            "now": "page1"
+        },
+        "xxxxxxxxxxxxxxxxx": {
+            "indexes": [
+                "z"
+            ],
+            "now": "z"
+        },
+        "你是大笨蛋蛋蛋蛋蛋蛋蛋": {
+            "indexes": [
+                "4"
+            ],
+            "now": "4"
+        },
+        "哈哈哈": {
+            "indexes": [
+                "2"
+            ],
+            "now": "2"
+        },
+        "戴天宇": {
+            "indexes": [
+                "3",
+                "4"
+            ],
+            "now": "3"
+        },
+        "Node": {
+            "indexes": [
+                "5"
+            ],
+            "now": "5"
+        },
+        "DigitalOcean": {
+            "indexes": [
+                "6",
+                "222",
+                "3455",
+                "333"
+            ],
+            "now": "222"
+        },
+        "语音识别": {
+            "indexes": [
+                "-=\\",
+                "0",
+                "0009",
+                "1",
+                "undefined"
+            ],
+            "now": "-=\\"
+        },
+        "FPGA": {
+            "indexes": [
+                "000",
+                "0",
+                "-0809i",
+                "789"
+            ],
+            "now": "000"
+        },
+        "111111111111111111111111111": {
+            "indexes": [
+                "1"
+            ],
+            "now": "1"
+        },
+        "Python": {
+            "indexes": [
+                "page1",
+                "page4",
+                "page2",
+                "page34"
+            ],
+            "now": "page34"
+        },
+        "YYYYYYYYYYYYYYYYYYY": {
+            "indexes": [
+                "X"
+            ],
+            "now": "X"
+        }
+    },
+    "now": "你是大笨蛋蛋蛋蛋蛋蛋蛋"
+}
+
+

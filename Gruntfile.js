@@ -19,6 +19,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: {
+            root: paths.rootPath,
             src: paths.srcPath,
             dist: paths.distPath
         },
@@ -68,7 +69,12 @@ module.exports = function (grunt) {
                         flatten: true,
                         expand: true,
                         src: [
-                            '<%= pkg.src %>/index.html'
+                            '<%= pkg.src %>/index.html',
+                            '<%= pkg.root %>/mainPublic.js',
+                            '<%= pkg.root %>/init.js',
+                            '<%= pkg.root %>/config.js',
+                            '<%= pkg.root %>/logo.png',
+                            '<%= pkg.root %>/LICENSE'
                         ],
                         dest: '<%= pkg.dist %>/',
                         filter: 'isFile'
@@ -88,13 +94,82 @@ module.exports = function (grunt) {
             }
         },
 
+        rename: {
+            dist: {
+                files: [
+                    {
+                        src: ['<%= pkg.dist %>/mainPublic.js'],
+                        dest: '<%= pkg.dist %>/main.js'
+                    }
+                ]
+            }
+        },
 
-        'build-atom-shell': {
-            tag: 'v0.19.5',
-            nodeVersion: '0.18.0',
-            buildDir: (process.env.TMPDIR || process.env.TEMP || '/tmp') + '/atom-shell',
-            projectName: 'mycoolapp',
-            productName: 'MyCoolApp'
+
+        electron: {
+            buildAll: {
+                options: {
+                    name: 'MoeNotes',
+                    "app-version": "0.8.0",
+                    icon: "logo.png",
+                    dir: 'dist',
+                    out: 'public',
+                    version: '0.37.2',
+                    platform: 'all',
+                    arch: 'all',
+                    overwrite: true
+                }
+            }
+            //osxBuild32: {
+            //    options: {
+            //        name: 'MoeNotes',
+            //        dir: 'dist',
+            //        out: 'public/osx64',
+            //        version: '0.37.2',
+            //        platform: 'darwin',
+            //        arch: 'x86'
+            //    }
+            //},
+            //linuxBuild64: {
+            //    options: {
+            //        name: 'MoeNotes',
+            //        dir: 'dist',
+            //        out: 'public/osx32',
+            //        version: '0.37.2',
+            //        platform: 'darwin',
+            //        arch: 'x64'
+            //    }
+            //},
+            //linuxBuild32: {
+            //    options: {
+            //        name: 'MoeNotes',
+            //        dir: 'dist',
+            //        out: 'public/osx64',
+            //        version: '0.37.2',
+            //        platform: 'darwin',
+            //        arch: 'x86'
+            //    }
+            //},
+            //windowsBuild64: {
+            //    options: {
+            //        name: 'MoeNotes',
+            //        dir: 'dist',
+            //        out: 'public/osx32',
+            //        version: '0.37.2',
+            //        platform: 'darwin',
+            //        arch: 'x64'
+            //    }
+            //},
+            //windowsBuild32: {
+            //    options: {
+            //        name: 'MoeNotes',
+            //        dir: 'dist',
+            //        out: 'public/osx64',
+            //        version: '0.37.2',
+            //        platform: 'darwin',
+            //        arch: 'x86'
+            //    }
+            //}
         },
 
         shell: {
@@ -109,11 +184,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['shell:test']);
 
-    grunt.registerTask('pre-build', ['clean:dist', 'webpack:dist', 'copy:dist']);
+    grunt.registerTask('pre-build', ['clean:dist', 'webpack:dist', 'copy:dist', 'rename:dist']);
 
-    grunt.registerTask('build', ['build-atom-shell']);
+    grunt.registerTask('build', ['electron:buildAll']);
 
     grunt.registerTask('release', ['pre-build', 'build']);
 
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', ['debug']);
 };

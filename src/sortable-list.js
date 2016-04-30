@@ -6,7 +6,7 @@
 
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import Sortable from 'react-anything-sortable';
 import SortableListItem from './sortable-item';
@@ -265,3 +265,28 @@ export default class SortableList extends React.Component {
         );
     }
 }
+
+SortableList.propTypes = {
+    classBackground: PropTypes.string,
+    classList: PropTypes.string,
+    classSortableList: PropTypes.string,
+    classSortableItem: PropTypes.string,
+    classButton: PropTypes.string,
+    style: PropTypes.object,
+    styleList: PropTypes.object,
+    styleButton: PropTypes.object,
+    layoutMode: PropTypes.string,
+    addButtonLocation: PropTypes.string,
+    handleChangeChapter: PropTypes.func,
+    handleShowNotify: PropTypes.func
+};
+
+SortableList.defaultProps = {
+    style: {},
+    styleList: {},
+    styleButton: {},
+    layoutMode: "horizontal",
+    addButtonLocation: "end",
+    handleChangeChapter: () => {},
+    handleShowNotify: (type, message, callbacks) => {}
+};

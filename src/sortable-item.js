@@ -12,7 +12,7 @@ import stringWidth from 'string-width';
 import { SortableItemMixin } from 'react-anything-sortable';
 import Storage from './storage';
 import { ContextMenuLayer } from './context-menu';
-import { createObjectWithErrorHandler, stringToColor, logError } from './utils';
+import { bindTryCatchWrapper, stringToColor, logError } from './utils';
 import configManager from './config';
 
 if (process.env.BROWSER) {
@@ -20,16 +20,26 @@ if (process.env.BROWSER) {
     require('./theme/styles/sortable.css');
 }
 
-const SortableItem = ContextMenuLayer(
-    (props) => (props.menuName),
-    (props) => ({
-        name: props.index
-    })
-)(React.createClass({
+let SortableItem = React.createClass({
     mixins: [SortableItemMixin],
 
     getInitialState: function(){
         this.canInputNow = false;
+        bindTryCatchWrapper(
+            this,
+            [
+                "onChange",
+                "onSubmit",
+                "handleTextChange",
+                "enableInput",
+                "resizeInput",
+                "resizeInput",
+                "select",
+                "renderGen"
+
+            ],
+            logError(configManager.getSysConfig().logPath)
+        );
         return {
             text: this.props.index,
             style: {}
@@ -193,7 +203,7 @@ const SortableItem = ContextMenuLayer(
                 this.renderGen()
             );
     }
-}));
+});
 
 
 SortableItem.propTypes = {
@@ -219,7 +229,9 @@ SortableItem.defaultProps = {
 };
 
 
-export default createObjectWithErrorHandler(
-    SortableItem,
-    logError(configManager.getSysConfig().logPath)
-);
+export default ContextMenuLayer(
+    (props) => (props.menuName),
+    (props) => ({
+        name: props.index
+    })
+)(SortableItem);

@@ -127,28 +127,3 @@ export default class PageList extends SortableList {
         return this.renderGen();
     }
 }
-
-PageList.propTypes = {
-    classBackground: PropTypes.string,
-    classList: PropTypes.string,
-    classSortableList: PropTypes.string,
-    classSortableItem: PropTypes.string,
-    classButton: PropTypes.string,
-    style: PropTypes.object,
-    styleList: PropTypes.object,
-    styleButton: PropTypes.object,
-    layoutMode: PropTypes.string,
-    addButtonLocation: PropTypes.func,
-    handleChangeChapter: PropTypes.func,
-    handleShowNotify: PropTypes.func
-};
-
-PageList.defaultProps = {
-    style: {},
-    styleList: {},
-    styleButton: {},
-    layoutMode: "vertical",
-    addButtonLocation: "front",
-    handleChangeChapter: () => {},
-    handleShowNotify: (type, message, callbacks) => {}
-};

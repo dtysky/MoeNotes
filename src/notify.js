@@ -225,6 +225,3 @@ export default class Notify extends React.Component {
 
 Notify.propTypes = {
 };
-
-Notify.defaultProps = {
-};

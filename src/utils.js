@@ -76,6 +76,14 @@ function tryCatchWrapper(f, handler) {
     };
 }
 
+export function bindTryCatchWrapper(self, methods, handler) {
+    methods.forEach(method => {
+        self[method] = tryCatchWrapper(
+            self[method], handler
+        );
+    });
+}
+
 export function createObjectWithErrorHandler(obj, handler){
     for(let name in obj){
         const m = obj[name];

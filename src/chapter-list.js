@@ -121,29 +121,5 @@ export default class ChapterList extends SortableList {
     render(){
         return this.renderGen();
     }
+
 }
-
-ChapterList.propTypes = {
-    classBackground: PropTypes.string,
-    classList: PropTypes.string,
-    classSortableList: PropTypes.string,
-    classSortableItem: PropTypes.string,
-    classButton: PropTypes.string,
-    style: PropTypes.object,
-    styleList: PropTypes.object,
-    styleButton: PropTypes.object,
-    layoutMode: PropTypes.string,
-    addButtonLocation: PropTypes.func,
-    handleChangeChapter: PropTypes.func,
-    handleShowNotify: PropTypes.func
-};
-
-ChapterList.defaultProps = {
-    style: {},
-    styleList: {},
-    styleButton: {},
-    layoutMode: "horizontal",
-    addButtonLocation: "end",
-    handleChangeChapter: () => {},
-    handleShowNotify: (type, message, callbacks) => {}
-};
