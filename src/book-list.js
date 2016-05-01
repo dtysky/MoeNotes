@@ -44,6 +44,7 @@ export default class BookList extends React.Component {
                 "remove",
                 "select",
                 "open",
+                "close",
                 "save",
                 "isMenuOpen",
                 "resizeButton",
@@ -87,6 +88,7 @@ export default class BookList extends React.Component {
                     Storage.create(dp);
                 }
                 this.select(dp);
+                this.close();
             }
         );
     }
@@ -105,6 +107,7 @@ export default class BookList extends React.Component {
                     Storage.create(dp);
                 }
                 this.select(dp);
+                this.close();
             }
         );
     }
@@ -145,15 +148,19 @@ export default class BookList extends React.Component {
         });
     }
 
+    close(){
+        this.setState({
+            isOpen: false
+        });
+    }
+
     save(){
         Storage.save();
     }
 
     isMenuOpen(state){
         if(!state.isOpen){
-            this.setState({
-                isOpen: false
-            });
+            this.close();
         }
     }
 

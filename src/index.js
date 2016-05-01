@@ -47,6 +47,7 @@ class App extends React.Component{
                 "handleShowNotify",
                 "changeColor",
                 "create",
+                "createDefault",
                 "resize",
                 "initOptions"
             ],
@@ -94,14 +95,29 @@ class App extends React.Component{
             width: window.innerWidth,
             height: window.innerHeight
         });
-        this.refs.page.refs.editor.editor.resize();
-        this.refs.pageList.resize();
+        if(!Storage.nowBook.isEmpty()){
+            this.refs.page.refs.editor.editor.resize();
+            this.refs.pageList.resize();
+        }
     }
 
     initOptions(){
         window.addEventListener('resize', this.resize);
         this.changeColor();
         this.resize();
+    }
+
+    createDefault(){
+        Storage.nowBook.create(
+            0, "Chapter"
+        );
+        Storage.nowBook.change("Chapter");
+        Storage.nowBook.create(
+            0, "Page", "Chapter"
+        );
+        Storage.nowBook.change(
+            "Page", "Chapter"
+        );
     }
 
     create(){
@@ -114,17 +130,32 @@ class App extends React.Component{
                 Storage.create(dp);
                 Storage.change(dp);
                 Storage.save();
+                this.createDefault();
                 this.initOptions();
-                this.setState({});
+                this.handleChangeBook();
             }
         );
     }
 
-    componentDidMount() {
+    componentWillMount(){
         if(Storage.isEmpty()){
             this.create();
             return;
         }
+        if(Storage.nowBook.isEmpty()){
+            this.createDefault();
+        }
+    }
+
+    componentDidMount() {
+        //if(Storage.isEmpty()){
+        //    this.create();
+        //    return;
+        //}
+        //if(Storage.nowBook.isEmpty()){
+        //    this.createDefault();
+        //    return;
+        //}
         this.initOptions();
     }
 

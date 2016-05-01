@@ -62,9 +62,15 @@ export default class StorageTop {
     }
 
     parse(){
-        let treeRecord = JSON.parse(
-            fs.readFileSync(this.treePath, "utf8")
-        );
+        let treeRecord;
+        try{
+            treeRecord = JSON.parse(
+                fs.readFileSync(this.treePath, "utf8")
+            );
+        }
+        catch(e){
+            treeRecord = this.createTree();
+        }
         treeRecord.indexes.forEach(index => {
             if(!fs.existsSync(index)){
                 treeRecord.indexes.splice(

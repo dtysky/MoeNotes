@@ -228,7 +228,7 @@ function initMenu(mainWindow) {
     //preferences item on linux and windows
     if (process.platform != "darwin") {
         template[1].submenu.push({
-            label: 'About ' + name,
+            label: 'About MoeNotes',
             click: function (item, window) {
                 sendIPCToWindow(window, "showAbout");
             }
