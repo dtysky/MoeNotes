@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { remote } from 'electron';
-import Storage from './storage';
+import { bindFunctions, stringToColor, logError } from './utils';
 
 const defaultConfig = {
     "defaultHighlight": "VHDL",
@@ -41,10 +41,14 @@ const userPath = remote.app.envRelease ?
     remote.app.getPath("userData") :
     ".";
 
+
 const sysConfig = {
     treePath: userPath + "/.tree",
     logPath: userPath + "/error.log",
-    configRoot: "theme/config",
+    configRoot: remote.app.envRelease ?
+        "theme/config" :
+        "src/theme/config",
+    configRootLink: "theme/config",
     defaultTheme: "sakura"
 };
 
@@ -52,19 +56,55 @@ class ConfigManager{
     constructor(){
         this.config = defaultConfig;
         this.sysConfig = sysConfig;
-        this.themes = this.refreshThemes();
-        this.nowTheme = {};
-        this.refresh(Storage.getTheme());
+        bindFunctions(
+            this,
+            [
+                "getExistedThemes",
+                "initTheme",
+                "save",
+                "loadTheme",
+                "loadConfig",
+                "refresh",
+                "getThemes",
+                "getConfig",
+                "getStyles",
+                "getSysConfig"
+            ]
+        );
+        this.themes = this.getExistedThemes();
+        this.nowTheme = "";
+        this.initTheme();
+        this.refresh(this.nowTheme);
     }
 
-    refreshThemes(){
-        return fs.readdirSync(
-            this.sysConfig.configRoot
-        ).filter(function(file) {
+    getExistedThemes(){
+        const configRoot = this.sysConfig.configRoot;
+        return fs.readdirSync(configRoot).filter(function(file) {
             return fs.statSync(path.join(
-                this.sysConfig.configRoot, file
+                configRoot, file
             )).isDirectory();
         });
+    }
+
+    initTheme(){
+        try{
+            this.nowTheme = fs.readFileSync(
+                path.join(
+                    this.sysConfig.configRoot, ".now"
+                )
+            ).toString();
+        }
+        catch (e){
+            this.nowTheme = this.sysConfig.defaultTheme;
+        }
+    }
+
+    save(){
+        fs.writeFileSync(
+            path.join(
+                this.sysConfig.configRoot, ".now"
+            ), this.nowTheme
+        );
     }
 
     loadTheme(theme){
@@ -94,16 +134,8 @@ class ConfigManager{
         if(theme === undefined){
             theme = this.sysConfig.defaultTheme;
         }
-        Storage.setTheme(theme);
-        Storage.save();
-        this.nowTheme = {
-            css: path.join(
-                this.sysConfig.configRoot, theme, "config.css"
-            ),
-            editor: path.join(
-                this.sysConfig.configRoot, theme, "magic-book.js"
-            )
-        };
+        this.nowTheme = theme;
+        this.save();
         this.loadTheme(theme);
     }
 
@@ -116,7 +148,14 @@ class ConfigManager{
     }
 
     getStyles(){
-        return this.nowTheme;
+        return {
+            css: path.join(
+                this.sysConfig.configRootLink, this.nowTheme, "config.css"
+            ),
+            editor: path.join(
+                this.sysConfig.configRoot, this.nowTheme, "editor.css"
+            )
+        };
     }
 
     getSysConfig(){

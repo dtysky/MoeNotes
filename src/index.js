@@ -19,6 +19,7 @@ import Storage from './storage';
 import { bindFunctions, stringToColor, logError } from './utils';
 import configManager from './config';
 
+
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
 }
@@ -45,6 +46,7 @@ class App extends React.Component{
                 "handleChangeChapter",
                 "handleChangePage",
                 "handleShowNotify",
+                "loadTheme",
                 "changeColor",
                 "create",
                 "createDefault",
@@ -101,8 +103,19 @@ class App extends React.Component{
         }
     }
 
+    loadTheme(){
+        const theme = configManager.getStyles();
+        const head = document.head;
+        let link = document.createElement('link');
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = theme.css;
+        head.appendChild(link);
+    }
+
     initOptions(){
         window.addEventListener('resize', this.resize);
+        this.loadTheme();
         this.changeColor();
         this.resize();
     }
@@ -130,7 +143,6 @@ class App extends React.Component{
                 Storage.create(dp);
                 Storage.change(dp);
                 Storage.save();
-                this.createDefault();
                 this.initOptions();
                 this.handleChangeBook();
             }

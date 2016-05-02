@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Hack';
-    src: url('theme/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?v=2.020');
-    src: url('theme/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'),
-    url('theme/fonts/hack/woff2/latin/hack-regular-latin-webfont.woff2?v=2.020') format('woff2'),
-    url('theme/fonts/hack/woff/latin/hack-regular-latin-webfont.woff?v=2.020') format('woff'),
-    url('theme/fonts/hack/web-ttf/latin/hack-regular-latin-webfont.ttf?v=2.020') format('truetype');
+    src: url('/theme/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?v=2.020');
+    src: url('/theme/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'),
+    url('/theme/fonts/hack/woff2/latin/hack-regular-latin-webfont.woff2?v=2.020') format('woff2'),
+    url('/theme/fonts/hack/woff/latin/hack-regular-latin-webfont.woff?v=2.020') format('woff'),
+    url('/theme/fonts/hack/web-ttf/latin/hack-regular-latin-webfont.ttf?v=2.020') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -14,15 +14,15 @@
 }
 
 #react-content{
-    background-image: url(theme/images/body.png);
+    background-image: url(/theme/images/body.png);
 }
 
 .head-image{
-    /*background-image: url(theme/images/head.png);*/
+    /*background-image: url(/theme/images/head.png);*/
 }
 
 .page-content{
-    /*background-image: url(theme/images/page.png);*/
+    /*background-image: url(/theme/images/page.png);*/
     background-color: white;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .page-list-button:before{
-    background-image: url(theme/images/page-list-button.png);
+    background-image: url(/theme/images/page-list-button.png);
 }
 
 .page-sortable-list .ui-sortable-dragging{
@@ -111,23 +111,23 @@
 }
 
 .chapter-list-button{
-    background-image: url(theme/images/chapter-list-button.png);
+    background-image: url(/theme/images/chapter-list-button.png);
 }
 
 .books-button-open-pre{
-    -webkit-mask-image: url(theme/images/book-pre.png);
+    -webkit-mask-image: url(/theme/images/book-pre.png);
 }
 
 .book-pre{
-    -webkit-mask-image: url(theme/images/book-pre.png);
+    -webkit-mask-image: url(/theme/images/book-pre.png);
 }
 
 .book-button-edit{
-    -webkit-mask-image: url(theme/images/book-button-edit.png);
+    -webkit-mask-image: url(/theme/images/book-button-edit.png);
 }
 
 .book-button-remove{
-    -webkit-mask-image: url(theme/images/book-button-remove.png);
+    -webkit-mask-image: url(/theme/images/book-button-remove.png);
 }
 
 .book-list-create{
@@ -139,7 +139,7 @@
 }
 
 .bm-menu-wrap {
-    background-image: url(theme/images/book-list.png);
+    background-image: url(/theme/images/book-list.png);
 }
 
 .modal-error, .modal-warn{
@@ -147,7 +147,7 @@
 }
 
 .modal-error .modal-head{
-    background: url(theme/images/error-head.png);
+    background: url(/theme/images/error-head.png);
 }
 
 .modal-error .modal-body{
@@ -155,7 +155,7 @@
 }
 
 .modal-warn .modal-head{
-    background: url(theme/images/warn-head.png);
+    background: url(/theme/images/warn-head.png);
 }
 
 .modal-warn .modal-body{
@@ -163,7 +163,7 @@
 }
 
 .modal-sys-info .modal-head{
-    background: url(theme/images/sys-info-head.png);
+    background: url(/theme/images/sys-info-head.png);
 }
 
 .modal-sys-info .modal-body {
@@ -171,7 +171,7 @@
 }
 
 .react-context-menu {
-    background-image: url(theme/images/menu-background.png);
+    background-image: url(/theme/images/menu-background.png);
     box-shadow: 0 0 10px black;
 }
 .react-context-menu-link.active,
@@ -180,9 +180,9 @@
 }
 
 .toolbar-about{
-    -webkit-mask-image: url(theme/images/about.png);
+    -webkit-mask-image: url(/theme/images/about.png);
 }
 
 .toolbar-reload{
-    -webkit-mask-image: url(theme/images/reload.png);
+    -webkit-mask-image: url(/theme/images/reload.png);
 }

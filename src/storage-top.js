@@ -30,8 +30,6 @@ export default class StorageTop {
                 "getNow",
                 "getIndexes",
                 "getName",
-                "getTheme",
-                "setTheme",
                 "has",
                 "isEmpty",
                 "change",
@@ -114,14 +112,6 @@ export default class StorageTop {
 
     getName(index) {
         return this.books.names[index];
-    }
-
-    getTheme(){
-        return this.books.theme;
-    }
-
-    setTheme(theme){
-        this.books.theme = theme;
     }
 
     isEmpty() {

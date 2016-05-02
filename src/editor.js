@@ -6,15 +6,21 @@
 
 'use strict';
 
-import ace from 'brace';
+import brace from 'brace';
 import React, { Component, PropTypes } from 'react';
+import fs from 'fs';
 import { bindFunctions, logError } from './utils';
 import { ipcRenderer } from 'electron';
 import configManager from './config';
 
+// Real hacking !!!!
+global.editorTheme = fs.readFileSync(
+    configManager.getStyles().editor
+).toString();
+
 import 'brace/ext/searchbox';
 import 'brace/mode/markdown';
-import './theme/config/magic-book';
+import './editor-theme';
 
 export default class ReactAce extends Component {
     constructor(props) {
@@ -37,7 +43,6 @@ export default class ReactAce extends Component {
             name,
             mode,
             theme,
-            font,
             fontSize,
             value,
             cursorStart,
@@ -46,7 +51,7 @@ export default class ReactAce extends Component {
             keyboardHandler,
             } = this.props;
 
-        this.editor = ace.edit(name);
+        this.editor = brace.edit(name);
 
         const editorProps = Object.keys(this.props.editorProps);
         for (let i = 0; i < editorProps.length; i++) {
