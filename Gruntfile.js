@@ -70,6 +70,15 @@ module.exports = function (grunt) {
                         flatten: true,
                         expand: true,
                         src: [
+                            '<%= pkg.src %>/theme/styles/katex.css'
+                        ],
+                        dest: '<%= pkg.dist %>/theme/styles/katex.css',
+                        filter: 'isFile'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: [
                             '<%= pkg.src %>/index.html',
                             '<%= pkg.root %>/package.json',
                             '<%= pkg.root %>/mainRelease.js',

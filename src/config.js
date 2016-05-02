@@ -5,7 +5,9 @@
  */
 
 import fs from 'fs';
+import path from 'path';
 import { remote } from 'electron';
+import Storage from './storage';
 
 const defaultConfig = {
     "defaultHighlight": "VHDL",
@@ -42,19 +44,40 @@ const userPath = remote.app.envRelease ?
 const sysConfig = {
     treePath: userPath + "/.tree",
     logPath: userPath + "/error.log",
-    configPath: "theme/config/config.json"
+    configRoot: "theme/config",
+    defaultTheme: "sakura"
 };
 
 class ConfigManager{
     constructor(){
         this.config = defaultConfig;
-        this.refresh();
         this.sysConfig = sysConfig;
+        this.themes = this.refreshThemes();
+        this.nowTheme = {};
+        this.refresh(Storage.getTheme());
     }
-    refresh(){
+
+    refreshThemes(){
+        return fs.readdirSync(
+            this.sysConfig.configRoot
+        ).filter(function(file) {
+            return fs.statSync(path.join(
+                this.sysConfig.configRoot, file
+            )).isDirectory();
+        });
+    }
+
+    loadTheme(theme){
+        const themeConfigPath = path.join(
+            this.sysConfig.configRoot, theme, "config.json"
+        );
+        this.loadConfig(themeConfigPath);
+    }
+
+    loadConfig(themeConfigPath){
         try {
             const config = JSON.parse(
-                fs.readFileSync(this.sysConfig.configPath)
+                fs.readFileSync(themeConfigPath)
             );
             for (let key in config){
                 if(this.config.hasOwnProperty(key)){
@@ -66,12 +89,40 @@ class ConfigManager{
             this.config = defaultConfig;
         }
     }
+
+    refresh(theme){
+        if(theme === undefined){
+            theme = this.sysConfig.defaultTheme;
+        }
+        Storage.setTheme(theme);
+        Storage.save();
+        this.nowTheme = {
+            css: path.join(
+                this.sysConfig.configRoot, theme, "config.css"
+            ),
+            editor: path.join(
+                this.sysConfig.configRoot, theme, "magic-book.js"
+            )
+        };
+        this.loadTheme(theme);
+    }
+
+    getThemes(){
+        return this.themes;
+    }
+
     getConfig(){
         return this.config;
     }
+
+    getStyles(){
+        return this.nowTheme;
+    }
+
     getSysConfig(){
         return this.sysConfig;
     }
+
 }
 
 export default new ConfigManager();

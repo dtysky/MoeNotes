@@ -148,14 +148,6 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        //if(Storage.isEmpty()){
-        //    this.create();
-        //    return;
-        //}
-        //if(Storage.nowBook.isEmpty()){
-        //    this.createDefault();
-        //    return;
-        //}
         this.initOptions();
     }
 
