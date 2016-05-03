@@ -19,6 +19,7 @@
     "bookBackSLO": [50, 80, 0.8],
     "bookFontSLO": [80, 50, 0.8],
     "bookShapeSLO": [50, 50, 0.8],
+    "toolbarSLO": [60, 50, 0.7],
     "notifyDropBack": "rgba(100,100,100,0.6)",
     "notifyWarnBack": "",
     "notifyErrorBack": "",

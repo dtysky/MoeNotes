@@ -8,7 +8,7 @@
 
 .page-content{
     /*background-image: url(/theme/images/page.png);*/
-    background-color: white;
+    background-color: #d6ffee;
 }
 
 .page-editor{
@@ -20,7 +20,7 @@
 }
 
 .page-preview blockquote{
-    background-color: rgba(243, 216, 222, 0.6);
+    background-color: rgba(160, 243, 212, 0.6);
 }
 
 .page-preview pre{
@@ -28,7 +28,7 @@
 }
 
 .page-preview code{
-    background-color: rgba(239, 194, 212, 0.6);
+    background-color: rgba(162, 239, 190, 0.6);
 }
 
 .page-text{
@@ -36,19 +36,19 @@
 }
 
 .page-text::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(128, 205, 174);
 }
 
 .page-text::-webkit-scrollbar-track {
-    background: rgba(208, 198, 188, 0.8);
+    background: rgba(187, 208, 187, 0.8);
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(128, 205, 174);
 }
 
 .ace_scrollbar::-webkit-scrollbar-track {
-    background: rgba(213, 200, 197, 0.8);
+    background: rgba(187, 208, 187, 0.8);
 }
 
 .page-list{
@@ -58,11 +58,11 @@
 }
 
 .page-sortable-list::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(117, 191, 160);
 }
 
 .page-sortable-list::-webkit-scrollbar-track {
-    background: rgba(252, 249, 243, 0.8);
+    background: rgba(187, 208, 187, 0.8);
 }
 
 .page-sortable-list-item-normal:hover{
@@ -88,11 +88,11 @@
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: rgb(239, 159, 167);
+    background: rgb(139, 219, 188);
 }
 
 .chapter-list::-webkit-scrollbar-track {
-    background: rgba(255, 242, 239, 0.8);
+    background: rgba(225, 246, 225, 0.8);
 }
 
 .chapter-list-button{
@@ -116,11 +116,11 @@
 }
 
 .book-list-create{
-    background-color: rgba(218, 163, 187, 0.8);
+    background-color: rgba(100, 218, 154, 0.8);
 }
 
 .book-list-load{
-    background-color: rgba(218, 163, 187, 0.8);
+    background-color: rgba(100, 218, 154, 0.8);
 }
 
 .bm-menu-wrap {
@@ -161,7 +161,7 @@
 }
 .react-context-menu-link.active,
 .react-context-menu-link:hover {
-    background: rgba(218, 163, 187, 0.4);
+    background: rgba(101, 218, 134, 0.4);
 }
 
 .toolbar-about{
@@ -186,7 +186,7 @@
 .hljs-literal,
 .hljs-strong,
 .hljs-name {
-    color: #f92672;
+    color: #3fb16f;
 }
 
 .hljs-code {
@@ -201,7 +201,7 @@
 .hljs-symbol,
 .hljs-regexp,
 .hljs-link {
-    color: #bf79db;
+    color: #85dbd7;
 }
 
 .hljs-string,

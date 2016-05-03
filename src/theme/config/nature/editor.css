@@ -6,15 +6,15 @@
     font-size: 14px
 }
 .ace-magic-book .ace_constant {
-color:#FB83A4
+color: #9ffbcc
 }
 .ace-magic-book .ace_heading {
 bold: border;
-color: #E85B82
+color: #38d17d
 }
 .ace-magic-book .ace_heading .ace_cjk{
 bold: border;
-color: #E85B82
+color: #38d17d
 }
 .ace-magic-book .ace_gutter {
 background: #e8e8e8;
@@ -28,10 +28,10 @@ background: #e8e8e8
 color: #333333;
 }
 .ace-magic-book .ace_cursor {
-color: #C35774
+color: #38d17d
 }
 .ace-magic-book .ace_marker-layer .ace_selection {
-background: #EAC9D2
+background: #c1eacd
 }
 .ace-magic-book.ace_multiselect .ace_selection.ace_start {
 box-shadow: 0 0 3px 0px #FFFFFF;
@@ -44,7 +44,7 @@ margin: -1px 0 0 -1px;
 border: 1px solid #BFBFBF
 }
 .ace-magic-book .ace_marker-layer .ace_active-line {
-background: rgba(224, 141, 170, 0.15)
+background: rgba(141, 224, 170, 0.25)
 }
 .ace-magic-book .ace_gutter-active-line {
 background-color: rgba(0, 0, 0, 0.071)
@@ -56,7 +56,7 @@ border: 1px solid #B5D5FF
 .ace-magic-book .ace_keyword,
 .ace-magic-book .ace_meta,
 .ace-magic-book .ace_variable.ace_language {
-color: #C800A4
+color: #0ac800
 }
 .ace-magic-book .ace_invisible {
 color: #BFBFBF
@@ -74,7 +74,7 @@ color: #3A00DC
 color: #333333
 }
 .ace-magic-book .ace_fold {
-background-color: #C800A4;
+background-color: #0ac800;
 border-color: #000000
 }
 .ace-magic-book .ace_entity.ace_name.ace_tag,
@@ -83,7 +83,7 @@ border-color: #000000
 color: #790EAD
 }
 .ace-magic-book .ace_storage {
-color: #C900A4
+color: #00c988
 }
 .ace-magic-book .ace_string {
 color: #777777
