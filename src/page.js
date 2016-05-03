@@ -17,7 +17,6 @@ import configManager from './config';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
-    require ('./theme/styles/highlight.css');
     require ('./theme/styles/article.css');
 }
 

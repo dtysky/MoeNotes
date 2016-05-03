@@ -66,20 +66,22 @@ class ConfigManager{
                 "loadConfig",
                 "refresh",
                 "getThemes",
+                "getNow",
                 "getConfig",
                 "getStyles",
                 "getSysConfig"
             ]
         );
-        this.themes = this.getExistedThemes();
+        this.themes = [];
         this.nowTheme = "";
+        this.getExistedThemes();
         this.initTheme();
         this.refresh(this.nowTheme);
     }
 
     getExistedThemes(){
         const configRoot = this.sysConfig.configRoot;
-        return fs.readdirSync(configRoot).filter(function(file) {
+        this.themes = fs.readdirSync(configRoot).filter(function(file) {
             return fs.statSync(path.join(
                 configRoot, file
             )).isDirectory();
@@ -141,6 +143,10 @@ class ConfigManager{
 
     getThemes(){
         return this.themes;
+    }
+
+    getNow(){
+        return this.nowTheme;
     }
 
     getConfig(){

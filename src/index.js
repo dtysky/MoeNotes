@@ -184,6 +184,10 @@ class App extends React.Component{
                 width: 24,
                 backgroundColor: this.state.toolbarColor
             },
+            toolbarThemeSelector: {
+                color: this.state.toolbarColor,
+                borderColor: this.state.toolbarColor
+            },
             bookButtonHeight: 65,
             bookButtonTop: headHeight - 70,
             bookButtonPosition: "absolute",
@@ -271,6 +275,7 @@ class App extends React.Component{
                             ref="toolbar"
                             style={this.styles.toolbar}
                             styleItem={this.styles.toolbarItem}
+                            styleThemeSelector={this.styles.toolbarThemeSelector}
                             handleShowNotify={this.handleShowNotify}
                         />
                     </div>

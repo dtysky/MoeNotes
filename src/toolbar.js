@@ -46,7 +46,8 @@ export default class Toolbar extends React.Component{
             this,
             [
                 "showAbout",
-                "reloadAPP"
+                "reloadAPP",
+                "changeTheme"
             ],
             logError(configManager.getSysConfig().logPath)
         );
@@ -65,12 +66,40 @@ export default class Toolbar extends React.Component{
         remote.getCurrentWindow().reload();
     }
 
+    changeTheme(event){
+        const theme = event.target.value;
+        configManager.refresh(theme);
+        this.reloadAPP();
+    }
+
     render(){
         return (
             <div
                 className="toolbar absolute"
                 style={this.props.style}
             >
+                <select
+                    key="toolbar-theme-selector"
+                    className="toolbar-theme-selector float-left"
+                    style={this.props.styleThemeSelector}
+                    size={1}
+                    defaultValue={configManager.getNow()}
+                    onChange={this.changeTheme}
+                >
+                    {
+                        configManager.getThemes().map(theme => {
+                            return (
+                                <option
+                                    key={theme}
+                                    className="toolbar-theme-selector-item"
+                                    value={theme}
+                                >
+                                    {theme}
+                                </option>
+                            );
+                        })
+                    }
+                </select>
                 <div
                     className="toolbar-item toolbar-reload button float-left"
                     style={this.props.styleItem}
@@ -83,7 +112,6 @@ export default class Toolbar extends React.Component{
                     onClick={this.showAbout}
                 >
                 </div>
-
             </div>
         );
     }
