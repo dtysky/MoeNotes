@@ -100,15 +100,18 @@ button{
     background-position: bottom;
 }
 
-.page{
+.page-editor, .page-preview{
     width: 50%;
+}
+
+.page{
     height: 100%;
 }
 
 .page-text{
-    width: 98%;
+    width: 96%;
     height: 98%;
-    margin-left: 1%;
+    margin-left: 2%;
     margin-top: 2%;
     border: none;
     overflow: auto;

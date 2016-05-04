@@ -45,6 +45,7 @@ class App extends React.Component{
                 "reoffsetChapter",
                 "handleChangeChapter",
                 "handleChangePage",
+                "handleChangeMode",
                 "handleShowNotify",
                 "loadTheme",
                 "changeColor",
@@ -74,6 +75,10 @@ class App extends React.Component{
 
     handleChangePage(){
         this.refs.page.reload();
+    }
+
+    handleChangeMode(mode){
+        this.refs.page.changeMode(mode);
     }
 
     handleShowNotify(type, message, callbacks){
@@ -277,6 +282,7 @@ class App extends React.Component{
                             styleItem={this.styles.toolbarItem}
                             styleThemeSelector={this.styles.toolbarThemeSelector}
                             handleShowNotify={this.handleShowNotify}
+                            handleChangeMode={this.handleChangeMode}
                         />
                     </div>
                 </div>
