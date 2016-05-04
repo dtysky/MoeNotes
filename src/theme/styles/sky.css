@@ -196,21 +196,20 @@ button{
 .page-sortable-list-item{
     float: left;
     width: 100%;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-bottom: 2px;
     border-bottom: solid 1px rgba(200,200,200,0.2);
     transition: 0.3s ease-out;
 }
 
 .page-sortable-list-item form{
-    width: 90%;
-    padding-left: 4px;
+    width: 92%;
+    padding-left: 2%;
+    padding-right: 6%;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .page-sortable-list-item-active{
     width: 100%;
-    background-color: #fff0ff;
 }
 
 .page-sortable-list-item form input{
@@ -362,7 +361,7 @@ button{
     transform: translateY(-5px);
 }
 
-.toolbar-theme-selector{
+.toolbar-selector{
     -webkit-appearance: menulist-button;
     margin: 4px;
     width: 80px;

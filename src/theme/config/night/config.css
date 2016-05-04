@@ -2,6 +2,18 @@
     background-image: url(/theme/images/night/body.png);
 }
 
+.page-text{
+    color: floralwhite;
+}
+
+.page-preview a{
+    color: #a0a0a0;
+}
+
+.page-preview a:hover{
+    color: white;
+}
+
 .head-image{
     /*background-image: url(/theme/images/head.png);*/
 }
@@ -12,23 +24,31 @@
 }
 
 .page-editor{
-    background: rgba(255,255,255,0.5);
+    background: rgb(74, 75, 76);
 }
 
 .page-preview{
-    background: rgba(228, 228, 228, 0.4);
+    background: rgb(52, 49, 50);
 }
 
 .page-preview blockquote{
-    background-color: rgba(243, 216, 222, 0.6);
+    background-color: rgba(58, 70, 92, 0.6);
 }
 
 .page-preview pre{
-    background-color: rgba(255, 255, 255,0.9);
+    background-color: rgba(127, 127, 127, 0.6);
 }
 
 .page-preview code{
-    background-color: rgba(239, 194, 212, 0.6);
+    background-color: rgba(90, 102, 185, 0.8);
+}
+
+.page-preview table, th, td {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.page-preview th{
+    background-color: rgba(101, 101, 101, 0.8);
 }
 
 .page-text{
@@ -36,7 +56,7 @@
 }
 
 .page-text::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(230, 230, 230);
 }
 
 .page-text::-webkit-scrollbar-track {
@@ -44,7 +64,7 @@
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(230, 230, 230);
 }
 
 .ace_scrollbar::-webkit-scrollbar-track {
@@ -58,7 +78,7 @@
 }
 
 .page-sortable-list::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(230, 230, 230)
 }
 
 .page-sortable-list::-webkit-scrollbar-track {
@@ -74,7 +94,7 @@
 }
 
 .page-sortable-list .ui-sortable-dragging{
-    background-color: rgba(230,230,230,0.9);
+    background-color: rgba(240, 240, 240, 0.9);
 }
 
 .page-sortable-list .ui-sortable-placeholder.visible {
@@ -88,11 +108,11 @@
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: rgb(239, 159, 167);
+    background: rgb(230, 229, 213)
 }
 
 .chapter-list::-webkit-scrollbar-track {
-    background: rgba(255, 242, 239, 0.8);
+    background: rgba(196, 183, 180, 0.8);
 }
 
 .chapter-list-button{
@@ -116,15 +136,27 @@
 }
 
 .book-list-create{
-    background-color: rgba(218, 163, 187, 0.8);
+    background-color: rgba(92, 120, 205, 0.8);
 }
 
 .book-list-load{
-    background-color: rgba(218, 163, 187, 0.8);
+    background-color: rgba(92, 120, 205, 0.8);
 }
 
 .bm-menu-wrap {
     background-image: url(/theme/images/night/book-list.png);
+}
+
+.modal-body, .modal-button{
+    color: rgb(200,200,200);
+}
+
+.modal-body{
+    background: rgb(30,30,30);
+}
+
+.modal-button{
+    background-color: rgb(80,80,80);
 }
 
 .modal-error, .modal-warn{
@@ -135,33 +167,30 @@
     background: url(/theme/images/night/error-head.png);
 }
 
-.modal-error .modal-body{
-    background: rgb(255, 255, 255);
-}
-
 .modal-warn .modal-head{
     background: url(/theme/images/night/warn-head.png);
-}
-
-.modal-warn .modal-body{
-    background: rgb(255, 255, 255);
 }
 
 .modal-sys-info .modal-head{
     background: url(/theme/images/night/sys-info-head.png);
 }
 
-.modal-sys-info .modal-body {
-    background: rgb(255, 255, 255);
+.modal-sys-info .modal-message a:hover{
+    color: white;
 }
 
 .react-context-menu {
     background-image: url(/theme/images/night/menu-background.png);
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px grey;
 }
+
+.react-context-menu-link{
+    color: rgb(200,200,200);
+}
+
 .react-context-menu-link.active,
 .react-context-menu-link:hover {
-    background: rgba(218, 163, 187, 0.4);
+    background: rgba(214, 204, 218, 0.4);
 }
 
 .toolbar-about{
@@ -170,6 +199,10 @@
 
 .toolbar-reload{
     -webkit-mask-image: url(/theme/images/reload.png);
+}
+
+.toolbar-selector{
+    background-color: grey;
 }
 
 /*Hightlight style*/
@@ -226,7 +259,7 @@
 .hljs-quote,
 .hljs-deletion,
 .hljs-meta {
-    color: #75715e;
+    color: #a4a4a2;
 }
 
 .hljs-keyword,

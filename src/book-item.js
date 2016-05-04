@@ -118,12 +118,12 @@ export default class Book extends React.Component {
             <div
                 className="book"
                 style={{
-                    backgroundColor: stringToColor(this.props.name, config.bookBackSLO)
+                    backgroundColor: stringToColor(this.props.name, config.bookBackCSC)
                 }}
             >
                 <div
                     style={{
-                        backgroundColor: stringToColor(this.props.name, config.bookShapeSLO)
+                        backgroundColor: stringToColor(this.props.name, config.bookShapeCSC)
                     }}
                     className="book-pre button float-left"
                     onClick={this.onSelect}
@@ -140,7 +140,7 @@ export default class Book extends React.Component {
                         type="text"
                         value={this.state.text}
                         style={{
-                            color: stringToColor(this.props.name, config.bookFontSLO)
+                            color: stringToColor(this.props.name, config.bookFontCSC)
                         }}
                         onChange={this.onChange}
                     />
@@ -150,7 +150,7 @@ export default class Book extends React.Component {
                 >
                     <div
                         style={{
-                            backgroundColor: stringToColor(this.props.name, config.bookShapeSLO)
+                            backgroundColor: stringToColor(this.props.name, config.bookShapeCSC)
                         }}
                         className="book-button-edit book-button button"
                         onClick={this.onRename}
@@ -158,7 +158,7 @@ export default class Book extends React.Component {
                     </div>
                     <div
                         style={{
-                            backgroundColor: stringToColor(this.props.name, config.bookShapeSLO)
+                            backgroundColor: stringToColor(this.props.name, config.bookShapeCSC)
                         }}
                         className="book-button-remove book-button button"
                         onClick={this.onRemove}

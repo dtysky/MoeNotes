@@ -79,8 +79,8 @@ export default class Toolbar extends React.Component{
                 style={this.props.style}
             >
                 <select
-                    key="toolbar-theme-selector"
-                    className="toolbar-theme-selector float-left"
+                    key="toolbar-selector"
+                    className="toolbar-selector float-left"
                     style={this.props.styleThemeSelector}
                     size={1}
                     defaultValue={configManager.getNow()}
@@ -91,7 +91,7 @@ export default class Toolbar extends React.Component{
                             return (
                                 <option
                                     key={theme}
-                                    className="toolbar-theme-selector-item"
+                                    className="toolbar-selector-item"
                                     value={theme}
                                 >
                                     {theme}
