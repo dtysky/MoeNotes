@@ -4,7 +4,7 @@
     "CDCMode": "lightness",
     "CDCRange": [40, 80],
     "chapterNowBackCSC":  [240, 0, 1, [10, 50]],
-    "chapterNowBorderCSC": [240, 0, 1],
+    "chapterNowBorderCSC": [240, 0, 1, "saturation"],
     "chapterNowFontCSC": [60, 100, 1, "saturation"],
     "chapterNormalBackCSC": [240, 0, 0.7, [20, 60]],
     "chapterNormalBorderCSC": [240, 0, 1, [0, 40]],

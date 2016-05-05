@@ -7,7 +7,7 @@
 }
 
 .page-preview a{
-    color: #a0a0a0;
+    color: #c0c0c0;
 }
 
 .page-preview a:hover{
@@ -32,7 +32,7 @@
 }
 
 .page-preview blockquote{
-    background-color: rgba(58, 70, 92, 0.6);
+    background-color: rgba(178, 180, 183, 0.6);
 }
 
 .page-preview pre{
@@ -40,7 +40,7 @@
 }
 
 .page-preview code{
-    background-color: rgba(90, 102, 185, 0.8);
+    background-color: rgba(141, 142, 146, 0.8);
 }
 
 .page-preview table, th, td {
@@ -56,19 +56,19 @@
 }
 
 .page-text::-webkit-scrollbar-thumb{
-    background: rgb(230, 230, 230);
+    background: rgb(100, 100, 100);
 }
 
 .page-text::-webkit-scrollbar-track {
-    background: rgba(208, 198, 188, 0.8);
+    background: rgba(216, 216, 216, 0.9);
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
-    background: rgb(230, 230, 230);
+    background: rgb(100, 100, 100);
 }
 
 .ace_scrollbar::-webkit-scrollbar-track {
-    background: rgba(213, 200, 197, 0.8);
+    background: rgba(227, 214, 211, 0.8);
 }
 
 .page-list{
@@ -202,7 +202,7 @@
 }
 
 .toolbar-selector{
-    background-color: grey;
+    background-color: rgba(100,100,100,0.8);
 }
 
 /*Hightlight style*/

@@ -92,6 +92,7 @@ export default class ChapterList extends SortableList {
         }
         else{
             Storage.nowBook.rename(index, name);
+            this.select(name);
         }
     }
 

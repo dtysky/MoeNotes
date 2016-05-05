@@ -66,6 +66,7 @@ class App extends React.Component{
         this.setState({
             chapterListLeft: width + 30
         });
+        this.changeColor();
     }
 
     handleChangeChapter(){
