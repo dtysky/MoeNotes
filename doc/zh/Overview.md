@@ -13,7 +13,7 @@ MoeNotes是一个简单的日记写作软件（当然，我也用其写一些不
 
 一般用户  
 - [快速开始](./QuickStart.md)
-- [预定义主题](./Theme-PreDefine)
+- [预定义主题](./Theme-PreDefine.md)
 
 进阶用户
 - [自定义主题]()
