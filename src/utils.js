@@ -11,7 +11,7 @@ import deepcopy from 'deepcopy';
 import moment from 'moment';
 import colorSpace from 'color-space';
 import stringHash from 'string-hash';
-import configManager from './config';
+import configManager from './configManager';
 import Storage from './storage';
 
 

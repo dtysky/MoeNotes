@@ -6,8 +6,15 @@
 
 import fs from 'fs';
 import path from 'path';
-import { remote } from 'electron';
 import { bindFunctions, stringToColor, logError } from './utils';
+
+let remote;
+if (process.env.BROWSER) {
+    remote = require('electron').remote;
+}
+else{
+    remote = {app: {}};
+}
 
 const defaultConfig = {
     "defaultHighlight": "VHDL",
@@ -41,7 +48,6 @@ const defaultConfig = {
 const userPath = remote.app.envRelease ?
     remote.app.getPath("userData") :
     ".";
-
 
 const sysConfig = {
     treePath: userPath + "/.tree",
@@ -171,4 +177,4 @@ class ConfigManager{
 
 }
 
-export default new ConfigManager();
+module.exports = new ConfigManager();

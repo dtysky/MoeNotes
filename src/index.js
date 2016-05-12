@@ -17,7 +17,7 @@ import Notify from './notify';
 import Toolbar from './toolbar';
 import Storage from './storage';
 import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 
 if (process.env.BROWSER) {

@@ -11,7 +11,6 @@ import fs from 'fs';
 import rmdir from 'rimraf';
 import { getDirectories, getFiles, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
 
-
 export default class StorageBook{
     constructor(dp){
         this.book = {};

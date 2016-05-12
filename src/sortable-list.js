@@ -13,7 +13,7 @@ import SortableListItem from './sortable-item';
 import Storage from './storage';
 import { ContextMenuMain } from './context-menu';
 import { bindFunctions, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');

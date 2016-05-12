@@ -7,9 +7,21 @@
 "use strict";
 
 import markdown from 'marked';
-import configManager from './config';
 import katex from 'parse-katex';
 import highlighter from 'highlight.js';
+
+
+let configManager;
+//妈的智障 babel-istanbul
+if (process.env.BROWSER) {
+    configManager = require('./configManager');
+}
+else{
+    //For UnitTest..................
+    configManager = require('./configManagerZhiZhang');
+}
+//妈的智障 babel-istanbul
+
 
 const defaultHighlight = configManager.getConfig().defaultHighlight;
 

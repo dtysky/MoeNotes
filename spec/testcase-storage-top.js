@@ -68,3 +68,33 @@ export function initWithTree(){
 }
 
 export { filesWithTree, treeWithTree };
+
+
+const treeFilesWithErrorTree= `
+    now: "book1",
+    indexes: [
+        "book1"
+    ],
+    names: {
+        book1: bookA
+    }`;
+
+export const filesWithErrorTree = {
+    book1: {},
+    user: {
+        ".tree": treeFilesWithErrorTree,
+        "error.log": ""
+    }
+};
+
+export function initWithErrorTree() {
+    mock(filesWithErrorTree);
+}
+
+export const treeWithError = {
+    now: "",
+    indexes: [
+    ],
+    names: {
+    }
+};

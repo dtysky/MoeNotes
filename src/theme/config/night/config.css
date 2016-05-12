@@ -78,7 +78,7 @@
 }
 
 .page-sortable-list::-webkit-scrollbar-thumb{
-    background: rgb(230, 230, 230)
+    background: rgb(100, 100, 100)
 }
 
 .page-sortable-list::-webkit-scrollbar-track {
@@ -108,11 +108,11 @@
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: rgb(230, 229, 213)
+    background: rgb(100, 100, 100)
 }
 
 .chapter-list::-webkit-scrollbar-track {
-    background: rgba(196, 183, 180, 0.8);
+    background: rgba(227, 214, 211, 0.8);
 }
 
 .chapter-list-button{

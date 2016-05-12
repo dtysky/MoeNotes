@@ -11,7 +11,7 @@ import React, { Component, PropTypes } from 'react';
 import fs from 'fs';
 import { bindFunctions, logError } from './utils';
 import { ipcRenderer } from 'electron';
-import configManager from './config';
+import configManager from './configManager';
 
 // Real hacking !!!!
 global.editorTheme = fs.readFileSync(

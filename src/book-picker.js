@@ -9,7 +9,7 @@ import { remote } from 'electron';
 const dialog = remote.dialog;
 import fs from 'fs';
 import { bindFunctions, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 class BookPicker{
     constructor(){
