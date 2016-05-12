@@ -14,7 +14,7 @@ import Storage from './storage';
 import Notify from './notify';
 import BookPicker from './book-picker';
 import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 if (process.env.BROWSER) {
     require('./theme/styles/sky.css');
@@ -277,7 +277,7 @@ export default class BookList extends React.Component {
                     <div
                         style={{
                             backgroundColor: stringToColor(
-                                Storage.getName(this.state.now), config.bookShapeSLO
+                                Storage.getName(this.state.now), config.bookShapeCSC
                             )
                         }}
                         className="books-button-open-pre float-left"
@@ -286,7 +286,7 @@ export default class BookList extends React.Component {
                     <div
                         style={{
                             color: stringToColor(
-                                Storage.getName(this.state.now), config.bookShapeSLO
+                                Storage.getName(this.state.now), config.bookShapeCSC
                             )
                         }}
                         className="float-left"

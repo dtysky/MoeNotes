@@ -11,7 +11,7 @@ import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -96,6 +96,12 @@ export default class PageList extends SortableList {
         }
         else{
             Storage.nowBook.rename(index, name, Storage.nowBook.getNow());
+            if(Storage.nowBook.getNow(Storage.nowBook.getNow()) === index){
+                this.select(name);
+            }
+            else{
+                this.refresh();
+            }
         }
     }
 

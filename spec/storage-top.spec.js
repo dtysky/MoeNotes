@@ -11,6 +11,7 @@ import deepcopy from 'deepcopy';
 import { arrayIsEqual, objectIsEqual, loadBook } from './utils';
 import { initWithoutTree, filesWithoutTree, treeWithoutTree } from './testcase-storage-top';
 import { initWithTree, filesWithTree, treeWithTree } from './testcase-storage-top';
+import { initWithErrorTree, filesWithErrorTree, treeWithError } from './testcase-storage-top';
 
 import fs from 'fs';
 
@@ -153,6 +154,23 @@ describe("StorageTop ", () => {
 
         it("Is empty", () => {
             expect(storage.isEmpty()).toBeTruthy();
+        });
+
+        afterEach(mock.restore);
+    });
+
+    describe("With error .tree file", () => {
+        beforeEach(() => {
+            initWithErrorTree();
+            tree = deepcopy(treeWithError);
+            files = deepcopy(filesWithErrorTree);
+            storage = new StorageTop("user/.tree");
+        });
+
+        it("Initialize", () => {
+            expect(
+                objectIsEqual(storage.books, tree)
+            ).toBeTruthy();
         });
 
         afterEach(mock.restore);

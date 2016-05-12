@@ -44,7 +44,7 @@ module.exports = {
     module: {
         preLoaders: [{
             test: /\.js$/,
-            exclude: [/node_modules|src\/theme/],
+            exclude: [/node_modules|src\/theme\/*|src\/editor-theme/],
             loader: 'jsxhint'
         }],
         loaders: [

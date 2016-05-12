@@ -13,11 +13,10 @@ import { debounce } from 'lodash';
 import parse from './parser';
 import AceEditor from './editor';
 import { bindFunctions, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
-    require ('./theme/styles/highlight.css');
     require ('./theme/styles/article.css');
 }
 
@@ -36,6 +35,7 @@ export default class Page extends React.Component{
                 "parsePage",
                 "refresh",
                 "reload",
+                "changeMode",
                 "save",
                 "onChange",
                 "onBlur",
@@ -66,6 +66,24 @@ export default class Page extends React.Component{
             nowPage,
             this.refs.editor.focus
         );
+    }
+
+    changeMode(mode){
+        const editor = ReactDom.findDOMNode(this.refs.editorContainer);
+        const preview = ReactDom.findDOMNode(this.refs.previewContainer);
+        if(mode === "normal"){
+            editor.style.width = "50%";
+            preview.style.width = "50%";
+        }
+        else if(mode === "writing"){
+            editor.style.width = "100%";
+            preview.style.width = "0";
+        }
+        else if(mode === "view"){
+            editor.style.width = "0";
+            preview.style.width = "100%";
+        }
+        //this.setState({});
     }
 
     save(text){
@@ -103,6 +121,7 @@ export default class Page extends React.Component{
                 style={this.props.style}
             >
                 <div
+                    ref="editorContainer"
                     className="page page-editor float-left"
                 >
                     <AceEditor
@@ -120,6 +139,7 @@ export default class Page extends React.Component{
                     />
                 </div>
                 <div
+                    ref="previewContainer"
                     className="page page-preview float-left"
                 >
                     <div

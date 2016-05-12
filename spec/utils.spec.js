@@ -4,7 +4,7 @@
  * Description:
  */
 
-import { bindFunctions, getDirectories, getFiles, getNameFromPath} from '../src/utils';
+import { bindFunctions, getDirectories, getFiles, getNameFromPath, bindTryCatchWrapper} from '../src/utils';
 import { arrayIsEqual, arrayIsLike, arrayHas } from '../src/utils';
 import { createObjectWithErrorHandler, logError, stringToColor } from '../src/utils';
 import mock from 'mock-fs';
@@ -18,7 +18,7 @@ describe("Utils", () => {
 
     });
 
-    it("Bind functions", () => {
+    it("Bind functions without handler", () => {
         class Test{
             constructor(message){
                 this.message = message;
@@ -43,6 +43,31 @@ describe("Utils", () => {
         const message = "Bind successfully !";
         const test = new Test(message);
         expect(test.test()).toBe(message);
+    });
+
+    it("Bind functions with handler", () => {
+        function handler(error){
+            return error.message;
+        }
+        class Test{
+            constructor(){
+                this.var = "";
+                bindFunctions(
+                    this,
+                    ["test_normal", "test_error"],
+                    handler
+                );
+            }
+            test_normal(message){
+                return "normal " + message;
+            }
+            test_error(){
+                throw new Error("throw error");
+            }
+        }
+        const obj = new Test();
+        expect(obj.test_normal("test")).toBe("normal test");
+        expect(obj.test_error()).toBe("throw error");
     });
 
     it("Array is equal", () => {
@@ -158,14 +183,53 @@ describe("Utils", () => {
 
     it("String to color", () => {
         let string = "";
-        let sla = [50, 50, 0.8];
-        expect(stringToColor(string, sla)).toBe("rgba(191,65,63,0.8)");
+        let colorConstraints = [50, 50, 0.8];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(191,65,63,0.8)");
         string = "哈哈哈哈哈哈";
-        sla = [100, 50, 0.8];
-        expect(stringToColor(string, sla)).toBe("rgba(255,4,0,0.8)");
+        colorConstraints = [100, 50, 0.8];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(255,4,0,0.8)");
         string = "Hahahahaha";
-        sla = [100, 100, 0.8];
-        expect(stringToColor(string, sla)).toBe("rgba(255,255,255,0.8)");
+        colorConstraints = [100, 100, 0.8];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(255,255,255,0.8)");
+
+        colorConstraints = [100, 100, 0.8, "saturation"];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(255,255,255,0.8)");
+
+        colorConstraints = [100, 100, 0.8, [0, 360]];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(255,255,255,0.8)");
+        colorConstraints = [100, 100, 0.8, "saturation", [0, 100]];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(255,255,255,0.8)");
+        colorConstraints = [100, 100, 0.8, "lightness", [0, 100]];
+        expect(stringToColor(string, colorConstraints)).toBe("rgba(132,255,71,0.8)");
+    });
+
+    it("Bind try-catch wrapper", () => {
+        function handler(error){
+            return error.message;
+        }
+        class Test{
+            constructor(){
+                this.var = "";
+                bindFunctions(
+                    this,
+                    ["test_normal", "test_error"]
+                );
+                bindTryCatchWrapper(
+                    this,
+                    ["test_normal", "test_error"],
+                    handler
+                );
+            }
+            test_normal(message){
+                return "normal " + message;
+            }
+            test_error(){
+                throw new Error("throw error");
+            }
+        }
+        const obj = new Test();
+        expect(obj.test_normal("test")).toBe("normal test");
+        expect(obj.test_error()).toBe("throw error");
     });
 
 });

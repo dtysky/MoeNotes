@@ -11,7 +11,7 @@ import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 
 if (process.env.BROWSER) {
@@ -92,6 +92,12 @@ export default class ChapterList extends SortableList {
         }
         else{
             Storage.nowBook.rename(index, name);
+            if(Storage.nowBook.getNow() === index){
+                this.select(name);
+            }
+            else{
+                this.refresh();
+            }
         }
     }
 

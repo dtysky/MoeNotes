@@ -17,7 +17,8 @@ import Notify from './notify';
 import Toolbar from './toolbar';
 import Storage from './storage';
 import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
+
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
@@ -44,7 +45,9 @@ class App extends React.Component{
                 "reoffsetChapter",
                 "handleChangeChapter",
                 "handleChangePage",
+                "handleChangeMode",
                 "handleShowNotify",
+                "loadTheme",
                 "changeColor",
                 "create",
                 "createDefault",
@@ -63,6 +66,7 @@ class App extends React.Component{
         this.setState({
             chapterListLeft: width + 30
         });
+        this.changeColor();
     }
 
     handleChangeChapter(){
@@ -74,6 +78,10 @@ class App extends React.Component{
         this.refs.page.reload();
     }
 
+    handleChangeMode(mode){
+        this.refs.page.changeMode(mode);
+    }
+
     handleShowNotify(type, message, callbacks){
         this.refs.notify.show(type, message, callbacks);
     }
@@ -81,12 +89,12 @@ class App extends React.Component{
     changeColor(){
         const config = configManager.getConfig();
         this.setState({
-            toolbarColor: stringToColor(Storage.getName(Storage.getNow()), config.toolbarSLO),
-            headBackColor: stringToColor(Storage.getName(Storage.getNow()), config.headBackSLO),
-            headLineColor: stringToColor(Storage.nowBook.getNow(), config.chapterNowBackSLO),
-            pageListBackColor: stringToColor(Storage.nowBook.getNow(), config.pageListBackSLO),
-            pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonBackSLO),
-            pageListButtonFontColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonFontSLO)
+            toolbarColor: stringToColor(Storage.getName(Storage.getNow()), config.toolbarCSC),
+            headBackColor: stringToColor(Storage.getName(Storage.getNow()), config.headBackCSC),
+            headLineColor: stringToColor(Storage.nowBook.getNow(), config.chapterNowBackCSC),
+            pageListBackColor: stringToColor(Storage.nowBook.getNow(), config.pageListBackCSC),
+            pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonBackCSC),
+            pageListButtonFontColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonFontCSC)
         });
     }
 
@@ -101,8 +109,19 @@ class App extends React.Component{
         }
     }
 
+    loadTheme(){
+        const theme = configManager.getStyles();
+        const head = document.head;
+        let link = document.createElement('link');
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = theme.css;
+        head.appendChild(link);
+    }
+
     initOptions(){
         window.addEventListener('resize', this.resize);
+        this.loadTheme();
         this.changeColor();
         this.resize();
     }
@@ -130,7 +149,6 @@ class App extends React.Component{
                 Storage.create(dp);
                 Storage.change(dp);
                 Storage.save();
-                this.createDefault();
                 this.initOptions();
                 this.handleChangeBook();
             }
@@ -148,14 +166,6 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        //if(Storage.isEmpty()){
-        //    this.create();
-        //    return;
-        //}
-        //if(Storage.nowBook.isEmpty()){
-        //    this.createDefault();
-        //    return;
-        //}
         this.initOptions();
     }
 
@@ -179,6 +189,10 @@ class App extends React.Component{
             toolbarItem: {
                 width: 24,
                 backgroundColor: this.state.toolbarColor
+            },
+            toolbarThemeSelector: {
+                color: this.state.toolbarColor,
+                borderColor: this.state.toolbarColor
             },
             bookButtonHeight: 65,
             bookButtonTop: headHeight - 70,
@@ -267,7 +281,9 @@ class App extends React.Component{
                             ref="toolbar"
                             style={this.styles.toolbar}
                             styleItem={this.styles.toolbarItem}
+                            styleThemeSelector={this.styles.toolbarThemeSelector}
                             handleShowNotify={this.handleShowNotify}
+                            handleChangeMode={this.handleChangeMode}
                         />
                     </div>
                 </div>

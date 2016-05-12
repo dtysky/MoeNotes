@@ -10,7 +10,7 @@ import ReactDom from 'react-dom';
 import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
 import { bindFunctions, logError } from './utils';
-import configManager from './config';
+import configManager from './configManager';
 
 const aboutMessage = `
     <h1>MoeNotes</h1>
@@ -46,7 +46,9 @@ export default class Toolbar extends React.Component{
             this,
             [
                 "showAbout",
-                "reloadAPP"
+                "reloadAPP",
+                "changeTheme",
+                "changeMode"
             ],
             logError(configManager.getSysConfig().logPath)
         );
@@ -65,12 +67,67 @@ export default class Toolbar extends React.Component{
         remote.getCurrentWindow().reload();
     }
 
+    changeTheme(event){
+        const theme = event.target.value;
+        configManager.refresh(theme);
+        this.reloadAPP();
+    }
+
+    changeMode(event){
+        const mode = event.target.value;
+        this.props.handleChangeMode(mode);
+    }
+
     render(){
         return (
             <div
                 className="toolbar absolute"
                 style={this.props.style}
             >
+                <select
+                    key="toolbar-selector-mode"
+                    className="toolbar-selector float-left"
+                    style={this.props.styleThemeSelector}
+                    size={1}
+                    defaultValue="normal"
+                    onChange={this.changeMode}
+                >
+                    {
+                        ["normal", "writing", "view"].map(theme => {
+                            return (
+                                <option
+                                    key={theme}
+                                    className="toolbar-selector-item"
+                                    value={theme}
+                                >
+                                    {theme}
+                                </option>
+                            );
+                        })
+                    }
+                </select>
+                <select
+                    key="toolbar-selector-theme"
+                    className="toolbar-selector float-left"
+                    style={this.props.styleThemeSelector}
+                    size={1}
+                    defaultValue={configManager.getNow()}
+                    onChange={this.changeTheme}
+                >
+                    {
+                        configManager.getThemes().map(theme => {
+                            return (
+                                <option
+                                    key={theme}
+                                    className="toolbar-selector-item"
+                                    value={theme}
+                                >
+                                    {theme}
+                                </option>
+                            );
+                        })
+                    }
+                </select>
                 <div
                     className="toolbar-item toolbar-reload button float-left"
                     style={this.props.styleItem}
@@ -83,7 +140,6 @@ export default class Toolbar extends React.Component{
                     onClick={this.showAbout}
                 >
                 </div>
-
             </div>
         );
     }

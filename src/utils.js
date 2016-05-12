@@ -11,7 +11,7 @@ import deepcopy from 'deepcopy';
 import moment from 'moment';
 import colorSpace from 'color-space';
 import stringHash from 'string-hash';
-import configManager from './config';
+import configManager from './configManager';
 import Storage from './storage';
 
 
@@ -53,16 +53,38 @@ export function arrayHas(a, e){
     return a.indexOf(e) > -1;
 }
 
-export function stringToColor(string, sla){
-    const s = sla[0];
-    const l = sla[1];
-    const a = sla[2];
+export function stringToColor(string, colorConstraints){
     const config = configManager.getConfig();
-    const hueRange = config.hueRange[1] - config.hueRange[0];
-    const hueStart = config.hueRange[0];
-    const hue = Math.round(stringHash(string) % hueRange) + hueStart;
-    let color = colorSpace.hsl.rgb([hue, s, l]).map(num => parseInt(num));
-    color.push(a);
+    let mode = config.CDCMode;
+    let CDC = config.CDCRange;
+    const c1 = colorConstraints[0];
+    const c2 = colorConstraints[1];
+    const alpha = colorConstraints[2];
+    if(colorConstraints[3] !== undefined){
+        if(typeof colorConstraints[3] === "string"){
+            mode = colorConstraints[3];
+        }
+        else{
+            CDC = colorConstraints[3];
+        }
+    }
+    if(colorConstraints[4] !== undefined){
+        CDC = colorConstraints[4];
+    }
+    const CDCRange = CDC[1] - CDC[0];
+    const CDCStart = CDC[0];
+    const d = Math.round(stringHash(string) % CDCRange) + CDCStart;
+    let color;
+    if(mode === "hue"){
+        color = colorSpace.hsl.rgb([d, c1, c2]).map(num => parseInt(num));
+    }
+    else if(mode === "saturation"){
+        color = colorSpace.hsl.rgb([c1, d, c2]).map(num => parseInt(num));
+    }
+    else if(mode === "lightness"){
+        color = colorSpace.hsl.rgb([c1, c2, d]).map(num => parseInt(num));
+    }
+    color.push(alpha);
     return "rgba(" + color.join(",") + ")";
 }
 
