@@ -74,16 +74,17 @@ export default class Page extends React.Component{
         if(mode === "normal"){
             editor.style.width = "50%";
             preview.style.width = "50%";
+            this.refs.editor.editor.resize();
         }
         else if(mode === "writing"){
             editor.style.width = "100%";
             preview.style.width = "0";
+            this.refs.editor.editor.resize();
         }
         else if(mode === "view"){
             editor.style.width = "0";
             preview.style.width = "100%";
         }
-        //this.setState({});
     }
 
     save(text){
