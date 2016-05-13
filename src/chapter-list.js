@@ -11,7 +11,7 @@ import SortableList from './sortable-list';
 import Storage from './storage';
 import Notify from './notify';
 import { bindFunctions, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 
 if (process.env.BROWSER) {

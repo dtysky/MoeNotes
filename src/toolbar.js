@@ -10,7 +10,7 @@ import ReactDom from 'react-dom';
 import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
 import { bindFunctions, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 const aboutMessage = `
     <h1>MoeNotes</h1>

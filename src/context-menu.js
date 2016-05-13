@@ -11,7 +11,7 @@ import React, { PropTypes } from 'react';
 import { ContextMenu, MenuItem, ContextMenuLayer } from 'react-contextmenu';
 
 import { bindFunctions, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');

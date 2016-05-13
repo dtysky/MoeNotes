@@ -6,10 +6,10 @@
 
 ## 框架
 
-使用Electron作为本软件的开发框架，版本是0.37.8，在本软件开发中这是一个全局的lib，没有包含在`package.json`中，你需要使用以下命令来安装：  
+使用Electron作为本软件的开发框架，版本是0.37.2，在本软件开发中这是一个全局的lib，没有包含在`package.json`中，你需要使用以下命令来安装：  
 
     :::bash
-    npm install electron-prebuilt@0.37.8 -g
+    npm install electron-prebuilt@0.37.2 -g
 
 在web方面，本软件采用的视图框架是React.js，所以需要你有一些React组件化开发的基础。
 

@@ -14,7 +14,7 @@ import Storage from './storage';
 import Notify from './notify';
 import BookPicker from './book-picker';
 import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 if (process.env.BROWSER) {
     require('./theme/styles/sky.css');

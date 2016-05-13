@@ -11,7 +11,7 @@ import fs from 'fs';
 import StorageBook from './storage-book';
 import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
 import { createObjectWithErrorHandler, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 
 export default class StorageTop {

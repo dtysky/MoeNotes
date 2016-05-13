@@ -7,7 +7,7 @@
 
 import StorageTop from './storage-top';
 import { createObjectWithErrorHandler, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 export default createObjectWithErrorHandler(
     new StorageTop(

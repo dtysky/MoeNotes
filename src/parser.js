@@ -14,11 +14,11 @@ import highlighter from 'highlight.js';
 let configManager;
 //妈的智障 babel-istanbul
 if (process.env.BROWSER) {
-    configManager = require('./configManager');
+    configManager = require('./config-manager');
 }
 else{
     //For UnitTest..................
-    configManager = require('./configManagerZhiZhang');
+    configManager = require('./config-manager-zhizhang');
 }
 //妈的智障 babel-istanbul
 

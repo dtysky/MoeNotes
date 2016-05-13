@@ -13,7 +13,7 @@ import { SortableItemMixin } from 'react-anything-sortable';
 import Storage from './storage';
 import { ContextMenuLayer } from './context-menu';
 import { bindTryCatchWrapper, stringToColor, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 if (process.env.BROWSER) {
     require('./theme/styles/sky.css');

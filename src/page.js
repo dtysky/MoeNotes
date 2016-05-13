@@ -13,7 +13,7 @@ import { debounce } from 'lodash';
 import parse from './parser';
 import AceEditor from './editor';
 import { bindFunctions, logError } from './utils';
-import configManager from './configManager';
+import configManager from './config-manager';
 
 if (process.env.BROWSER) {
     require ('./theme/styles/sky.css');
