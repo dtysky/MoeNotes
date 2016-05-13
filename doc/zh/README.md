@@ -1,7 +1,7 @@
 # 概览
 
 English version:  
-[Overview](http://moe-notes.dtysky.moe/en)  
+[Overview](../en)  
 
 # 介绍
 
