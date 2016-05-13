@@ -28,8 +28,8 @@ const defaultHighlight = configManager.getConfig().defaultHighlight;
 const renderer = new markdown.Renderer();
 
 function highlight(code, callback){
-    var re = /:::(\S+)\n([\s\S]+)/.exec(code);
-    var lang, content;
+    const re = /:::(\S+)\n([\s\S]+)/.exec(code);
+    let lang, content;
     if(re){
         lang = re[1];
         content = re[2];
@@ -38,7 +38,14 @@ function highlight(code, callback){
         lang = defaultHighlight;
         content = code;
     }
-    return highlighter.highlight(lang, content).value;
+    let result;
+    try{
+        result = highlighter.highlight(lang, content).value;
+    }
+    catch (e){
+        result = highlighter.highlight(defaultHighlight, content).value;
+    }
+    return result;
 }
 
 const options = {
