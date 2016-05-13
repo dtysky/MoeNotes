@@ -27,6 +27,9 @@ MoeNotes是一个简单的日记写作软件（当然，我也用其写一些不
 - [React组件](./Development-Components.md)
 - [单元测试](./Development-UnitTests.md)
 
+感谢
+- [使用的工具和素材](./Thanks.md)
+
 ## 许可
 
 Copyright © 2015, 戴天宇, Tianyu Dai (dtysky<dtysky@outlook.com>). All Rights Reserved. This project is free software and released under the GNU General Public License (GPL V3).
