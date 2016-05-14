@@ -60,6 +60,23 @@ from the left side). Here's a code sample:
         end process;
     end
 
+If lang is undfined:
+
+    :::wtfwtf
+    signal count:std_logic_vector(3 downto 0) := 0;
+    begin
+        Count:process(clk, rst_n)
+            if rise_edge(clk) then
+                if rst_n == '0' then
+                    count <= 0;
+                elsif count == 15 then
+                    count <= 0;
+                else
+                    count <= count + 1;
+                end if;
+        end process;
+    end
+
 
 As you probably guessed, indented 4 spaces. By the way, instead of
 indenting the block, you can use delimited blocks, if you like:
@@ -195,6 +212,20 @@ Unicode is supported. ☺</p>
 from the left side). Here's a code sample:</p>
 <pre><code># Let me re-iterate ...
 <span class="hljs-keyword">signal</span> count:<span class="hljs-built_in">std_logic_vector</span>(<span class="hljs-number">3</span> <span class="hljs-keyword">downto</span> <span class="hljs-number">0</span>) := <span class="hljs-number">0</span>;
+<span class="hljs-keyword">begin</span>
+    Count:<span class="hljs-keyword">process</span>(clk, rst_n)
+        <span class="hljs-keyword">if</span> rise_edge(clk) <span class="hljs-keyword">then</span>
+            <span class="hljs-keyword">if</span> rst_n == <span class="hljs-literal">'0'</span> <span class="hljs-keyword">then</span>
+                count &lt;= <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">elsif</span> count == <span class="hljs-number">15</span> <span class="hljs-keyword">then</span>
+                count &lt;= <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">else</span>
+                count &lt;= count + <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">process</span>;
+<span class="hljs-keyword">end</span>
+</code></pre><p>If lang is undfined:</p>
+<pre><code><span class="hljs-keyword">signal</span> count:<span class="hljs-built_in">std_logic_vector</span>(<span class="hljs-number">3</span> <span class="hljs-keyword">downto</span> <span class="hljs-number">0</span>) := <span class="hljs-number">0</span>;
 <span class="hljs-keyword">begin</span>
     Count:<span class="hljs-keyword">process</span>(clk, rst_n)
         <span class="hljs-keyword">if</span> rise_edge(clk) <span class="hljs-keyword">then</span>

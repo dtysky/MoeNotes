@@ -110,7 +110,7 @@ export default class Page extends React.Component{
     }
 
     onScroll(percent){
-        var domNode = ReactDom.findDOMNode(this.refs.preview);
+        let domNode = ReactDom.findDOMNode(this.refs.preview);
         domNode.scrollTop = percent * domNode.scrollHeight;
     }
 
