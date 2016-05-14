@@ -8,7 +8,8 @@
 
 .page-content{
     /*background-image: url(/theme/images/page.png);*/
-    background-color: #D1E4F9;
+    /*background-color: #D1E4F9;*/
+    background-color: rgba(209,228,249,0.4);
 }
 
 .page-editor{
@@ -16,7 +17,7 @@
 }
 
 .page-preview{
-    background: rgba(228, 228, 228, 0.4);
+    background: rgba(228, 228, 228, 0.5);
 }
 
 .page-preview blockquote{
@@ -238,4 +239,8 @@
 .hljs-type,
 .hljs-selector-id {
     font-weight: bold;
+}
+
+.hljs-number{
+    color: #6064da;
 }

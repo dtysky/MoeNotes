@@ -20,15 +20,15 @@
 
 .page-content{
     /*background-image: url(/theme/images/page.png);*/
-    background-color: white;
+    background-color: rgba(20,20,20,0.6);
 }
 
 .page-editor{
-    background: rgb(74, 75, 76);
+    background: rgba(74, 75, 76, 0.5);
 }
 
 .page-preview{
-    background: rgb(52, 49, 50);
+    background: rgba(52, 49, 50, 0.5);
 }
 
 .page-preview blockquote{
@@ -271,4 +271,8 @@
 .hljs-type,
 .hljs-selector-id {
     font-weight: bold;
+}
+
+.hljs-number{
+    color: #af9dff;
 }

@@ -8,7 +8,7 @@
     "chapterNormalBackCSC": [40, 70, 0.6],
     "chapterNormalBorderCSC": [40, 50, 1],
     "chapterNormalFontCSC": [100, 25, 1],
-    "pageListBackCSC": [20, 40, 0.5],
+    "pageListBackCSC": [20, 50, 0.6],
     "pageButtonBackCSC": [30, 50, 0.6],
     "pageButtonFontCSC": [100, 20, 1],
     "pageNowBackCSC": [100, 100, 1],

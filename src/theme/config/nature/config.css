@@ -8,7 +8,7 @@
 
 .page-content{
     /*background-image: url(/theme/images/page.png);*/
-    background-color: #d6ffee;
+    background-color: rgba(214,255,238,0.8);
 }
 
 .page-editor{
@@ -88,7 +88,7 @@
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: rgb(139, 219, 188);
+    background: rgb(115, 186, 157);
 }
 
 .chapter-list::-webkit-scrollbar-track {
@@ -238,4 +238,8 @@
 .hljs-type,
 .hljs-selector-id {
     font-weight: bold;
+}
+
+.hljs-number{
+    color: #6064da;
 }
