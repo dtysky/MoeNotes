@@ -1,13 +1,13 @@
 #react-content{
-    background-image: url(/theme/images/lolita/body.png);
+    background-image: url(../../images/lolita/body.png);
 }
 
 .head-image{
-    /*background-image: url(/theme/images/head.png);*/
+    /*background-image: url(../../images/head.png);*/
 }
 
 .page-content{
-    /*background-image: url(/theme/images/page.png);*/
+    /*background-image: url(../../images/page.png);*/
     background-color: rgba(255,255,255,0.6);
 }
 
@@ -70,7 +70,7 @@
 }
 
 .page-list-button:before{
-    background-image: url(/theme/images/page-list-button.png);
+    background-image: url(../../images/page-list-button.png);
 }
 
 .page-sortable-list .ui-sortable-dragging{
@@ -96,15 +96,15 @@
 }
 
 .chapter-list-button{
-    background-image: url(/theme/images/chapter-list-button.png);
+    background-image: url(../../images/chapter-list-button.png);
 }
 
 .books-button-open-pre{
-    -webkit-mask-image: url(/theme/images/lolita/book-pre.png);
+    -webkit-mask-image: url(../../images/lolita/book-pre.png);
 }
 
 .book-pre{
-    -webkit-mask-image: url(/theme/images/lolita/book-pre.png);
+    -webkit-mask-image: url(../../images/lolita/book-pre.png);
 }
 
 .book-pre:hover{
@@ -127,11 +127,11 @@
 }
 
 .book-button-edit{
-    -webkit-mask-image: url(/theme/images/book-button-edit.png);
+    -webkit-mask-image: url(../../images/book-button-edit.png);
 }
 
 .book-button-remove{
-    -webkit-mask-image: url(/theme/images/book-button-remove.png);
+    -webkit-mask-image: url(../../images/book-button-remove.png);
 }
 
 .book-list-create{
@@ -143,7 +143,7 @@
 }
 
 .bm-menu-wrap {
-    background-image: url(/theme/images/lolita/book-list.png);
+    background-image: url(../../images/lolita/book-list.png);
 }
 
 .modal-error, .modal-warn{
@@ -151,7 +151,7 @@
 }
 
 .modal-error .modal-head{
-    background: url(/theme/images/lolita/error-head.png);
+    background: url(../../images/lolita/error-head.png);
 }
 
 .modal-error .modal-body{
@@ -159,7 +159,7 @@
 }
 
 .modal-warn .modal-head{
-    background: url(/theme/images/lolita/warn-head.png);
+    background: url(../../images/lolita/warn-head.png);
 }
 
 .modal-warn .modal-body{
@@ -167,7 +167,7 @@
 }
 
 .modal-sys-info .modal-head{
-    background: url(/theme/images/lolita/sys-info-head.png);
+    background: url(../../images/lolita/sys-info-head.png);
 }
 
 .modal-sys-info .modal-body {
@@ -175,7 +175,7 @@
 }
 
 .react-context-menu {
-    background-image: url(/theme/images/lolita/menu-background.png);
+    background-image: url(../../images/lolita/menu-background.png);
     box-shadow: 0 0 10px black;
 }
 .react-context-menu-link.active,
@@ -184,11 +184,11 @@
 }
 
 .toolbar-about{
-    -webkit-mask-image: url(/theme/images/about.png);
+    -webkit-mask-image: url(../../images/about.png);
 }
 
 .toolbar-reload{
-    -webkit-mask-image: url(/theme/images/reload.png);
+    -webkit-mask-image: url(../../images/reload.png);
 }
 
 .toolbar-theme-selector-item:hover{

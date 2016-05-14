@@ -9,7 +9,8 @@ import path from 'path';
 import { bindFunctions, stringToColor, logError } from './utils';
 
 let remote;
-if (process.env.BROWSER) {
+
+if (!process.env.running_under_istanbul) {
     remote = require('electron').remote;
 }
 else{
@@ -48,14 +49,17 @@ const defaultConfig = {
 const userPath = remote.app.envRelease ?
     remote.app.getPath("userData") :
     ".";
+const appPath = remote.app.envRelease ?
+    remote.app.getAppPath() :
+    ".";
 
 const sysConfig = {
     treePath: userPath + "/.tree",
     logPath: userPath + "/error.log",
     configRoot: remote.app.envRelease ?
-        "theme/config" :
-        "src/theme/config",
-    configRootLink: "theme/config",
+        appPath + "/theme/config" :
+        appPath + "/src/theme/config",
+    configRootLink: appPath + "/theme/config",
     defaultTheme: "sakura"
 };
 

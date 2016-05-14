@@ -35,6 +35,7 @@
     "grunt-electron-packager": "0.0.7",
     "grunt-shell": "^1.2.1",
     "grunt-webpack": "^1.0.11",
+    "grunt-zip-directories": "^0.1.3",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "jsdom": "^8.2.0",

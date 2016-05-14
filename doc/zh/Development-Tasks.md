@@ -24,3 +24,7 @@
 ### release-xxx系列
 
 这系列任务整合了`build-pre`和`build-xxx`系列任务，直接发布。
+
+### zip
+
+将release文件夹下的所有文件夹分别压缩,便于发布。

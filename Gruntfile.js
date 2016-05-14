@@ -60,11 +60,10 @@ module.exports = function (grunt) {
                         dest: '<%= pkg.dist %>/theme/fonts/'
                     },
                     {
-                        flatten: true,
+                        cwd: '<%= pkg.src %>/theme/config',
                         expand: true,
-                        src: ['<%= pkg.src %>/theme/config/*'],
-                        dest: '<%= pkg.dist %>/theme/config/',
-                        filter: 'isFile'
+                        src: ['**'],
+                        dest: '<%= pkg.dist %>/theme/config/'
                     },
                     {
                         flatten: true,
@@ -72,7 +71,7 @@ module.exports = function (grunt) {
                         src: [
                             '<%= pkg.src %>/theme/styles/katex.css'
                         ],
-                        dest: '<%= pkg.dist %>/theme/styles/katex.css',
+                        dest: '<%= pkg.dist %>/theme/styles',
                         filter: 'isFile'
                     },
                     {
@@ -132,7 +131,7 @@ module.exports = function (grunt) {
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
-                    out: 'release',
+                    out: '<%= pkg.release %>',
                     version: '0.37.2',
                     platform: 'all',
                     prune: true,
@@ -146,7 +145,7 @@ module.exports = function (grunt) {
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
-                    out: 'release',
+                    out: '<%= pkg.release %>',
                     version: '0.37.2',
                     platform: 'darwin',
                     prune: true,
@@ -160,7 +159,7 @@ module.exports = function (grunt) {
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
-                    out: 'release',
+                    out: '<%= pkg.release %>',
                     version: '0.37.2',
                     platform: 'linux',
                     prune: true,
@@ -174,7 +173,7 @@ module.exports = function (grunt) {
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
-                    out: 'release',
+                    out: '<%= pkg.release %>',
                     version: '0.37.2',
                     platform: 'win32',
                     prune: true,
@@ -186,6 +185,18 @@ module.exports = function (grunt) {
         shell: {
             test: {
                 command: 'node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/jasmine --colors'
+            }
+        },
+
+        zip_directories: {
+            release: {
+                files: [{
+                    filter: 'isDirectory',
+                    expand: true,
+                    cwd: '<%= pkg.release %>',
+                    src: ['*'],
+                    dest: '<%= pkg.release %>'
+                }]
             }
         }
 
@@ -202,10 +213,12 @@ module.exports = function (grunt) {
     grunt.registerTask('build-windows', ['clean:release', 'electron-packager:buildWindows']);
     grunt.registerTask('build-all', ['clean:release', 'electron-packager:buildAll']);
 
-    grunt.registerTask('release-osx', ['pre-build', 'build-osx']);
-    grunt.registerTask('release-linux', ['pre-build', 'build-linux']);
-    grunt.registerTask('release-windows', ['pre-build', 'build-windows']);
-    grunt.registerTask('release-all', ['pre-build', 'build-all']);
+    grunt.registerTask('release-osx', ['build-pre', 'build-osx']);
+    grunt.registerTask('release-linux', ['build-pre', 'build-linux']);
+    grunt.registerTask('release-windows', ['build-pre', 'build-windows']);
+    grunt.registerTask('release-all', ['build-pre', 'build-all']);
+
+    grunt.registerTask('zip', ['zip_directories:release']);
 
     grunt.registerTask('default', ['debug']);
 };

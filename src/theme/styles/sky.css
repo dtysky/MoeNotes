@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Hack';
-    src: url('/theme/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?v=2.020');
-    src: url('/theme/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'),
-    url('/theme/fonts/hack/woff2/latin/hack-regular-latin-webfont.woff2?v=2.020') format('woff2'),
-    url('/theme/fonts/hack/woff/latin/hack-regular-latin-webfont.woff?v=2.020') format('woff'),
-    url('/theme/fonts/hack/web-ttf/latin/hack-regular-latin-webfont.ttf?v=2.020') format('truetype');
+    src: url('../fonts/hack/eot/latin/hack-regular-latin-webfont.eot?v=2.020');
+    src: url('../fonts/hack/eot/latin/hack-regular-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'),
+    url('../fonts/hack/woff2/latin/hack-regular-latin-webfont.woff2?v=2.020') format('woff2'),
+    url('../fonts/hack/woff/latin/hack-regular-latin-webfont.woff?v=2.020') format('woff'),
+    url('../fonts/hack/web-ttf/latin/hack-regular-latin-webfont.ttf?v=2.020') format('truetype');
     font-weight: 400;
     font-style: normal;
 }

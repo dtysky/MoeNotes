@@ -1,36 +1,19 @@
 # MoeNotes
-I'm the god of magic, here is my spellbook.
 
+[文档](http://moe-notes.dtysky.moe)  
+[Documents](http://moe-notes.dtysky.moe/en)  
 
-## Design
+[视屏演示]()  
+[Video Demo]()
 
-复杂是一剂毒药，  
-诱惑，诱惑，使你堕入泥沼。  
-日常，是简单的。  
-它们都应该切实的存在。  
-这里没有数据库，  
-只有你所爱的markdown。  
-将他们加入你自己的仓库！  
-不受制于平台。  
-我们不生产日志 —  
-我们只是日志的搬运工。  
+MoeNotes是一个简单的日记写作软件（当然，我也用其写一些不是特别复杂的小说和文章），不同于印象笔记、Onenote、Leanote等，本软件没有这么大的野心，它所要解决的问题仅仅是“本地展示”，也就是在本地管理你的日志文件，并提供一个类似于Onenote的分类体验。  
+本软件使用Markdown作为笔记编写语言，每一篇日记都会以.md文件的形式保存到本地而不是数据库中，用户可以自行选择如何同步这些文章以及将它们同步到多少地方，完全不依赖于平台，这也是我编写本软件而不使用现成日记软件的一个主要的原因。当然，对文章和分类进行拖动排序也是被支持的。除此之外，本软件还支持“即写即看”，“专注写作”和“专注阅读”三种模式，也可以进行主题的切换和自定义，由于是基于web进行得开发，所以扩展起来也十分方便和简单。  
 
-
-这是一个简单的markdown日记管理平台，不同于印象笔记、Onenote、leanote等，这个平台没有那么大的野心。此平台所要解决的问题仅仅是“本地View”，也就是在本地管理你的日志文件，提供一个近似于onenote的分类体验。  
-所有在本平台的笔记都需要完全使用markdown进行编写，每一个笔记都会对应本地的一个md文件，并提供和onenote类似的分类层级，这些分类完全是用文件夹进行管理的，每一个分类（无论是一级分类还是二级分类）都对应一个文件夹。  
-你可以自己选择呢用什么方式将这些文件同步到什么地方，比如我就是同步到了自己的Github私有仓库，所以从这个角度来讲，本平台实现的不过是Gitbook的一小块功能，但至少不用每个月再交7$是吧www  
-本平台将会拥有以下功能：  
-
-1. 带有实时预览的Markdown编辑器（包括代码高亮、Tex、Table、Flowchart等常用扩展）。
-2. 目录管理，将本地目录映射为分类并快速切换。
-3. 基础操作，比如新建分类、新建文章啥的。
-4. （可能）同步到Github，
-
-就这些，慢慢填坑。  
+MoeNotes is a simple note application(I also use it to write some simple novel or article), it's different from evernote, oneonte or leanote...
 
 
 ## License
 
-Copyright © 2015, 戴天宇, Tianyu Dai (dtysky\<dtysky@outlook.com\>). All Rights Reserved.
+Copyright © 2015, 戴天宇, Tianyu Dai (dtysky<dtysky@outlook.com>). All Rights Reserved.
 This project is free software and released under the **[GNU General Public License (GPL V3)](http://www.gnu.org/licenses/gpl.html)**.
 
