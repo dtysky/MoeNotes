@@ -213,12 +213,12 @@ module.exports = function (grunt) {
     grunt.registerTask('build-windows', ['clean:release', 'electron-packager:buildWindows']);
     grunt.registerTask('build-all', ['clean:release', 'electron-packager:buildAll']);
 
-    grunt.registerTask('release-osx', ['build-pre', 'build-osx']);
-    grunt.registerTask('release-linux', ['build-pre', 'build-linux']);
-    grunt.registerTask('release-windows', ['build-pre', 'build-windows']);
-    grunt.registerTask('release-all', ['build-pre', 'build-all']);
-
     grunt.registerTask('zip', ['zip_directories:release']);
+
+    grunt.registerTask('release-osx', ['build-pre', 'build-osx', 'zip']);
+    grunt.registerTask('release-linux', ['build-pre', 'build-linux', 'zip']);
+    grunt.registerTask('release-windows', ['build-pre', 'build-windows', 'zip']);
+    grunt.registerTask('release-all', ['build-pre', 'build-all', 'zip']);
 
     grunt.registerTask('default', ['debug']);
 };

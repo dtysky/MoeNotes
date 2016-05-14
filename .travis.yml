@@ -1,0 +1,21 @@
+os: osx
+osx_image: xcode7.3
+
+language: node_js
+
+sudo: false
+
+node_js:
+    - '5.9.0'
+
+before_install:
+  - brew update
+
+install:
+  - brew install wine
+  - npm install grunt-cli -g
+  - npm install electron-prebuilt@0.37.2 -g
+  - npm install
+
+script:
+    - grunt release-all
