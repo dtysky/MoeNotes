@@ -35,4 +35,4 @@ MoeNotes是一个简单的日记写作软件（当然，我也用其写一些不
 
 ## 许可
 
-Copyright © 2015, 戴天宇, Tianyu Dai (dtysky<dtysky@outlook.com>). All Rights Reserved. This project is free software and released under the GNU General Public License (GPL V3).
+Copyright © 2015, 戴天宇, Tianyu Dai (dtysky < dtysky@outlook.com >). All Rights Reserved. This project is free software and released under the GNU General Public License (GPL V3).
