@@ -12,10 +12,9 @@ before_install:
   - brew update
 
 install:
-  - brew install wine
   - npm install grunt-cli -g
   - npm install electron-prebuilt@0.37.2 -g
   - npm install
 
 script:
-    - grunt release-all
+    - grunt release-osx
