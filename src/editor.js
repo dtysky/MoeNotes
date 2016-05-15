@@ -52,6 +52,18 @@ export default class ReactAce extends Component {
             } = this.props;
 
         this.editor = brace.edit(name);
+        this.autoPairLookupTable = {
+            "[": "]",
+            "{": "}",
+            "(": ")",
+            "*": "*",
+            "_": "_",
+            "'": "'",
+            '"': '"',
+            "“": "”",
+            "【": "】",
+            "‘": "’"
+        };
 
         const editorProps = Object.keys(this.props.editorProps);
         for (let i = 0; i < editorProps.length; i++) {
@@ -118,9 +130,16 @@ export default class ReactAce extends Component {
         this.editor.gotoLine(n + 1);
     }
 
-    onChange() {
+    onChange(event) {
         if (this.props.onChange && !this.silent) {
-            const value = this.editor.getValue();
+            let value = this.editor.getValue();
+            if(event.action === "insert"){
+                const newChar = event.lines[0];
+                const end = this.editor.session.getTextRange({start:{column:0,row:0},end: event.end}).length;
+                if(this.autoPairLookupTable[newChar] !== undefined){
+                    value = value.substring(0, end) + this.autoPairLookupTable[newChar] + value.substring(end);
+                }
+            }
             this.props.onChange(value);
         }
     }

@@ -1,7 +1,7 @@
 # MoeNotes
   
 
-[Documents](http://moe-notes.dtysky.moe/en) 
+[Documents](http://moe-notes.dtysky.moe/en)  
 [文档](http://moe-notes.dtysky.moe)   
 
 [Video Demo]()  
