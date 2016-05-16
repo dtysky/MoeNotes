@@ -1,11 +1,16 @@
 # MoeNotes
   
 
+![logo](doc/logo.png)  
+
 [Documents](http://moe-notes.dtysky.moe/en)  
 [文档](http://moe-notes.dtysky.moe)   
 
 [Video Demo]()  
 [视屏演示]()  
+
+[下载]()  
+[Download]()  
 
 [![Build Status](https://travis-ci.org/dtysky/MoeNotes.svg?branch=master)](https://travis-ci.org/dtysky/MoeNotes)  
 

@@ -1,10 +1,18 @@
 # 概览
 
-English documents:  
+English documents（Translated by [npk48](https://github.com/npk48)）:  
 [Overview](../en)  
 
 演示：  
-[演示视频]()
+[演示视频]()  
+
+Github:  
+[MoeNotes](https://github.com/dtysky/MoeNotes)  
+
+下载：  
+[Release]()  
+
+![logo](../logo.png)  
 
 # 介绍
 
