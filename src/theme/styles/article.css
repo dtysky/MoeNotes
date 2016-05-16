@@ -34,7 +34,6 @@ h1,h2,h3,h4,h5,h6,p,a{
 .page-preview{
     margin-bottom: 22px;
     font-size: 14px;
-    font-family: sans-serif ! important;
 }
 
 .page-preview h1{
@@ -106,8 +105,8 @@ h1,h2,h3,h4,h5,h6,p,a{
 
 .page-preview pre code{
     font-family: "Hack" ! important;
-    font-size: 12px;
     background-color: rgba(0,0,0,0);
+    font-size: 13px;
 }
 
 .page-preview pre::-webkit-scrollbar{
@@ -170,6 +169,5 @@ h1,h2,h3,h4,h5,h6,p,a{
 }
 
 .page-preview code{
-    font-weight: bolder;
     padding: 2px;
 }

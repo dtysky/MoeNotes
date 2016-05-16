@@ -1,5 +1,7 @@
 # 概览
 
+![logo](../logo.png)  
+
 English documents（Translated by [npk48](https://github.com/npk48)）:  
 [Overview](../en)  
 
@@ -11,8 +13,6 @@ Github:
 
 下载：  
 [Release]()  
-
-![logo](../logo.png)  
 
 # 介绍
 
