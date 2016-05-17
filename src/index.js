@@ -149,8 +149,10 @@ class App extends React.Component{
                 Storage.create(dp);
                 Storage.change(dp);
                 Storage.save();
-                this.initOptions();
-                this.handleChangeBook();
+                if(Storage.nowBook.isEmpty()){
+                    this.createDefault();
+                }
+                this.forceUpdate();
             }
         );
     }
@@ -167,6 +169,7 @@ class App extends React.Component{
 
     componentDidMount() {
         this.initOptions();
+        this.handleChangeBook();
     }
 
     render(){

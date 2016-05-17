@@ -17,7 +17,7 @@ import Storage from './storage';
 
 export function getDirectories(dp) {
     return fs.readdirSync(dp).filter(file => {
-        return fs.statSync(path.join(dp, file)).isDirectory();
+        return fs.statSync(path.join(dp, file)).isDirectory() && file.substr(0, 1) !== ".";
     });
 }
 
