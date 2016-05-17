@@ -99,8 +99,8 @@ export default class Page extends React.Component{
         );
     }
 
-    onChange(value){
-        this.refresh(value);
+    onChange(value, callback){
+        this.refresh(value, callback);
     }
 
     onBlur(){

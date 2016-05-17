@@ -131,16 +131,23 @@ export default class ReactAce extends Component {
     }
 
     onChange(event) {
+        let callback = () => {};
         if (this.props.onChange && !this.silent) {
             let value = this.editor.getValue();
             if(event.action === "insert"){
                 const newChar = event.lines[0];
-                const end = this.editor.session.getTextRange({start:{column:0,row:0},end: event.end}).length;
                 if(this.autoPairLookupTable[newChar] !== undefined){
+                    const end = this.editor.session.getTextRange({
+                        start:{column:0,row:0},
+                        end: event.end
+                    }).length;
                     value = value.substring(0, end) + this.autoPairLookupTable[newChar] + value.substring(end);
+                    callback = () => {
+                        this.editor.selection.moveTo(event.end.row, event.end.column - 1);
+                    };
                 }
             }
-            this.props.onChange(value);
+            this.props.onChange(value, callback);
         }
     }
 
