@@ -243,7 +243,7 @@ export default class StorageBook{
     createToDevice(type, name) {
         let newPath = path.join(this.book.root, name);
         if(type === "folder"){
-            fs.mkdir(newPath);
+            fs.mkdirSync(newPath);
         }
         else{
             fs.writeFileSync(newPath + ".md", "# ");
@@ -300,7 +300,7 @@ export default class StorageBook{
     renameFromDevice(oldname, name) {
         let oldPath = path.join(this.book.root, oldname);
         let newPath = path.join(this.book.root, name);
-        fs.rename(oldPath, newPath);
+        fs.renameSync(oldPath, newPath);
     }
 
     rename(oldName, name, chapter) {

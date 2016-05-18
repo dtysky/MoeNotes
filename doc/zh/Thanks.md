@@ -5,7 +5,7 @@
 ## 特别感谢
 
 英文文档翻译协助-[npk48](https://github.com/npk48)  
-Logo原型设计-[七七]()  
+Logo原型设计-[七七](http://www.pixiv.net/member.php?id=5673800)  
 
 ## 开源软件
 

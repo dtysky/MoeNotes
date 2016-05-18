@@ -153,7 +153,7 @@ export default class ReactAce extends Component {
 
     onChangeScrollTop(value){
         if (this.props.onChangeScrollTop){
-            var height =
+            const height =
                 this.editor.getSession().getDocument().getLength() *
                 this.editor.renderer.lineHeight;
             this.props.onChangeScrollTop(value / height);
