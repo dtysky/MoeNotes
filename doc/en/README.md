@@ -41,6 +41,6 @@ Developer
 Thanks
 - [Used tool and materials](./Thanks.md)
 
-## 许可
+## License
 
 Copyright © 2015, 戴天宇, Tianyu Dai (dtysky<dtysky@outlook.com>). All Rights Reserved. This project is free software and released under the GNU General Public License (GPL V3).
