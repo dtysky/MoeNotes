@@ -43,6 +43,7 @@ class BookPicker{
             paths => {
                 if(paths === undefined){
                     callback(null);
+                    return;
                 }
                 const dp = paths[0];
                 this.lastPath = dp;
