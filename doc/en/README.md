@@ -6,7 +6,7 @@ Chinese documents:
 [Overview](../zh)  
 
 Demo：  
-[Demo_Video]()  
+[Demo Video]()  
 
 Github:  
 [MoeNotes](https://github.com/dtysky/MoeNotes)  
