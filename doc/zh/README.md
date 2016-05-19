@@ -12,7 +12,7 @@ Github:
 [MoeNotes](https://github.com/dtysky/MoeNotes)  
 
 下载：  
-[Release]()  
+[下载](https://github.com/dtysky/MoeNotes/releases)  
 
 # 介绍
 

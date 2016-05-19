@@ -62,7 +62,8 @@ export default class ReactAce extends Component {
             '"': '"',
             "“": "”",
             "【": "】",
-            "‘": "’"
+            "‘": "’",
+            "`": "`"
         };
 
         const editorProps = Object.keys(this.props.editorProps);

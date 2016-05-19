@@ -10,7 +10,7 @@
 [视屏演示]()  
 
 [下载]()  
-[Download]()  
+[Download](https://github.com/dtysky/MoeNotes/releases)  
 
 [![Build Status](https://travis-ci.org/dtysky/MoeNotes.svg?branch=master)](https://travis-ci.org/dtysky/MoeNotes)  
 
