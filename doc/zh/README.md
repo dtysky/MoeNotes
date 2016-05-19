@@ -32,7 +32,7 @@ MoeNotes是一个简单的日记写作软件（当然，我也用其写一些不
 - [自定义主题](./Theme-Advance.md)
 
 开发者
-- [开发环境](./Development-Enverment.md)
+- [开发环境](./Development-Environment.md)
 - [Grunt任务](./Development-Tasks.md)
 - [核心库](./Development-Cores.md)
 - [React组件](./Development-Components.md)
