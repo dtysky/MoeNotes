@@ -6,7 +6,7 @@ English documents（Translated by [npk48](https://github.com/npk48)）:
 [Overview](../en)  
 
 演示：  
-[演示视频]()  
+[演示视频](http://www.bilibili.com/video/av4703145/)  
 
 Github:  
 [MoeNotes](https://github.com/dtysky/MoeNotes)  

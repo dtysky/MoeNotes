@@ -6,10 +6,10 @@
 [Documents](http://moe-notes.dtysky.moe/en)  
 [文档](http://moe-notes.dtysky.moe)   
 
-[Video Demo]()  
-[视屏演示]()  
+[Video Demo](https://youtu.be/UhnbvLA0SMo)  
+[视屏演示](http://www.bilibili.com/video/av4703145/)  
 
-[下载]()  
+[下载](https://github.com/dtysky/MoeNotes/releases)  
 [Download](https://github.com/dtysky/MoeNotes/releases)  
 
 [![Build Status](https://travis-ci.org/dtysky/MoeNotes.svg?branch=master)](https://travis-ci.org/dtysky/MoeNotes)  
