@@ -8,6 +8,7 @@ const app = require('app');
 const BrowserWindow = require("browser-window");
 const paths = require('./config').paths;
 const init = require('./init');
+const shell = require('shell');
 
 var mainWindow = null;
 app.envRelease = true;
