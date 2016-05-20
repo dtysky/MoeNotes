@@ -28,7 +28,7 @@ function sendIPCToWindow(window, action, data) {
 }
 
 function initDockMenu(){
-    if(process.platform != "darwin"){
+    if(process.platform === "darwin"){
         app.dock.setIcon(__dirname + "/logo.png");
     }
 }
