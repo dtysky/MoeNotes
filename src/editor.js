@@ -63,7 +63,9 @@ export default class ReactAce extends Component {
             "“": "”",
             "【": "】",
             "‘": "’",
-            "`": "`"
+            "`": "`",
+            "《": "》",
+            "（": "）"
         };
 
         const editorProps = Object.keys(this.props.editorProps);
@@ -205,7 +207,7 @@ ReactAce.defaultProps = {
     name: 'brace-editor',
     value: '',
     font: "",
-    fontSize: 12,
+    fontSize: 16,
     onChange: null,
     tabSize: 4,
     cursorStart: 1,
