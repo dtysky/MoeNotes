@@ -29,6 +29,7 @@ export default class Page extends React.Component{
             markdown: text,
             html : parse(text)
         };
+        this.mode = "normal";
         bindFunctions(
             this,
             [
@@ -56,7 +57,9 @@ export default class Page extends React.Component{
         this.setState({
             markdown: value
         }, cb);
-        debounce(this.parsePage, 10)(value);
+        if(this.props.mode !== "writing"){
+            debounce(this.parsePage, 10)(value);
+        }
     }
 
     reload(){
@@ -85,6 +88,9 @@ export default class Page extends React.Component{
             editor.style.width = "0";
             preview.style.width = "100%";
         }
+        this.refresh(
+            this.state.markdown
+        );
     }
 
     save(text){
@@ -132,6 +138,7 @@ export default class Page extends React.Component{
                         value={this.state.markdown}
                         fontSize={process.platform === "darwin" ? 15 : 16}
                         font={config.font}
+                        mode={this.mode}
                         tabSize={4}
                         onChange={this.onChange}
                         onBlur={this.onBlur}
