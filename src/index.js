@@ -8,16 +8,16 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import BookPicker from './book-picker';
-import ChapterList from './chapter-list';
-import BookList from './book-list';
-import Page from './page';
-import PageList from './page-list';
-import Notify from './notify';
-import Toolbar from './toolbar';
-import Storage from './storage';
-import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './config-manager';
+import BookPicker from './components/book-picker';
+import ChapterList from './components/chapter-list';
+import BookList from './components/book-list';
+import Page from './components/page';
+import PageList from './components/page-list';
+import Notify from './components/notify';
+import Toolbar from './components/toolbar';
+import Storage from './cores/storage';
+import { bindFunctions, stringToColor, logError } from './cores/utils';
+import configManager from './cores/config-manager';
 
 
 if (process.env.BROWSER) {

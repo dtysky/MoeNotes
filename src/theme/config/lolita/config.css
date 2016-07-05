@@ -191,6 +191,10 @@
     -webkit-mask-image: url(../../images/reload.png);
 }
 
+.toolbar-export{
+    -webkit-mask-image: url(../../images/export.png);
+}
+
 .toolbar-theme-selector-item:hover{
     background-color: rgba(218, 163, 187, 0.8);
 }

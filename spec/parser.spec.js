@@ -5,7 +5,7 @@
  */
 
 
-import parse from '../src/parser';
+import parse from '../src/cores/parser';
 import { markdown, html } from './testcase-parser';
 import { DomIsEqual } from './utils';
 

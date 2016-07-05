@@ -8,16 +8,16 @@
 
 import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
-import Storage from './storage';
+import Storage from '../cores/storage';
 import { debounce } from 'lodash';
-import parse from './parser';
+import parse from '../cores/parser';
 import AceEditor from './editor';
-import { bindFunctions, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 if (process.env.BROWSER) {
-    require ('./theme/styles/sky.css');
-    require ('./theme/styles/article.css');
+    require ('../theme/styles/sky.css');
+    require ('../theme/styles/article.css');
 }
 
 export default class Page extends React.Component{

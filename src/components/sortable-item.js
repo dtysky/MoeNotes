@@ -10,14 +10,14 @@ import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import stringWidth from 'string-width';
 import { SortableItemMixin } from 'react-anything-sortable';
-import Storage from './storage';
+import Storage from '../cores/storage';
 import { ContextMenuLayer } from './context-menu';
-import { bindTryCatchWrapper, stringToColor, logError } from './utils';
-import configManager from './config-manager';
+import { bindTryCatchWrapper, stringToColor, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 if (process.env.BROWSER) {
-    require('./theme/styles/sky.css');
-    require('./theme/styles/sortable.css');
+    require('../theme/styles/sky.css');
+    require('../theme/styles/sortable.css');
 }
 
 let SortableItem = React.createClass({

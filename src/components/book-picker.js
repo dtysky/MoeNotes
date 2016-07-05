@@ -8,8 +8,8 @@
 import { remote } from 'electron';
 const dialog = remote.dialog;
 import fs from 'fs';
-import { bindFunctions, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, logError } from './../cores/utils';
+import configManager from '../cores/config-manager';
 
 class BookPicker{
     constructor(){
@@ -28,7 +28,7 @@ class BookPicker{
 
     check(){
         if(!fs.existsSync(this.lastPath)){
-            this.lastPath = "~";
+            this.lastPath = ".";
         }
     }
 

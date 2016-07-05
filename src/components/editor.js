@@ -9,9 +9,9 @@
 import brace from 'brace';
 import React, { Component, PropTypes } from 'react';
 import fs from 'fs';
-import { bindFunctions, logError } from './utils';
+import { bindFunctions, logError } from '../cores/utils';
 import { ipcRenderer } from 'electron';
-import configManager from './config-manager';
+import configManager from '../cores/config-manager';
 
 // Real hacking !!!!
 global.editorTheme = fs.readFileSync(

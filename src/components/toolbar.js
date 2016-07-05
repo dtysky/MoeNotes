@@ -9,8 +9,9 @@ import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
-import { bindFunctions, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
+import fileExporter from './file-exporter';
 
 const aboutMessage = `
     <h1>MoeNotes</h1>
@@ -45,6 +46,7 @@ export default class Toolbar extends React.Component{
         bindFunctions(
             this,
             [
+                "exportFile",
                 "showAbout",
                 "reloadAPP",
                 "changeTheme",
@@ -55,6 +57,10 @@ export default class Toolbar extends React.Component{
         ipcRenderer.on("showAbout", () => {
             this.showAbout();
         });
+    }
+
+    exportFile(){
+        fileExporter.exportFile();
     }
 
     showAbout(){
@@ -128,6 +134,12 @@ export default class Toolbar extends React.Component{
                         })
                     }
                 </select>
+                <div
+                    className="toolbar-item toolbar-export button float-left"
+                    style={this.props.styleItem}
+                    onClick={this.exportFile}
+                >
+                </div>
                 <div
                     className="toolbar-item toolbar-reload button float-left"
                     style={this.props.styleItem}

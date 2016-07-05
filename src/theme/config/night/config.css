@@ -201,6 +201,10 @@
     -webkit-mask-image: url(../../images/reload.png);
 }
 
+.toolbar-export{
+    -webkit-mask-image: url(../../images/export.png);
+}
+
 .toolbar-selector{
     background-color: rgba(100,100,100,0.8);
 }

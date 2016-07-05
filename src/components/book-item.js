@@ -8,13 +8,13 @@
 
 import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
-import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, stringToColor, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 
 if (process.env.BROWSER) {
-    require ('./theme/styles/sky.css');
-    require ('./theme/styles/books.css');
+    require ('../theme/styles/sky.css');
+    require ('../theme/styles/books.css');
 }
 
 export default class Book extends React.Component {

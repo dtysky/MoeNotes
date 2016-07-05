@@ -4,7 +4,7 @@
  * Description:
  */
 
-import StorageBook from '../src/storage-book';
+import StorageBook from '../src/cores/storage-book';
 import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { initWithoutTree, filesWithoutTree, treeWithoutTree } from './testcase-storage-book';

@@ -10,14 +10,14 @@ import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import Sortable from 'react-anything-sortable';
 import SortableListItem from './sortable-item';
-import Storage from './storage';
+import Storage from '../cores/storage';
 import { ContextMenuMain } from './context-menu';
-import { bindFunctions, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 if (process.env.BROWSER) {
-    require ('./theme/styles/sky.css');
-    require ('./theme/styles/sortable.css');
+    require ('../theme/styles/sky.css');
+    require ('../theme/styles/sortable.css');
 }
 
 

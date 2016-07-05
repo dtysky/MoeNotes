@@ -4,8 +4,8 @@
  * Description:
  */
 
-import StorageTop from '../src/storage-top';
-import StorageBook from '../src/storage-book';
+import StorageTop from '../src/cores/storage-top';
+import StorageBook from '../src/cores/storage-book';
 import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { arrayIsEqual, objectIsEqual, loadBook } from './utils';

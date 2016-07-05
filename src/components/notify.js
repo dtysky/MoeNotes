@@ -10,12 +10,12 @@
 import React, { PropTypes } from 'react';
 import { FadeModal as Modal } from 'boron';
 import NotificationSystem from 'react-notification-system';
-import { bindFunctions, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 if (process.env.BROWSER) {
-    require ('./theme/styles/sky.css');
-    require ('./theme/styles/notify.css');
+    require ('../theme/styles/sky.css');
+    require ('../theme/styles/notify.css');
 }
 
 

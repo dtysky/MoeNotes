@@ -10,15 +10,15 @@ import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import Book from './book-item';
 const Menu = require('react-burger-menu').slide;
-import Storage from './storage';
+import Storage from '../cores/storage';
 import Notify from './notify';
 import BookPicker from './book-picker';
-import { bindFunctions, stringToColor, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, stringToColor, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 if (process.env.BROWSER) {
-    require('./theme/styles/sky.css');
-    require('./theme/styles/books.css');
+    require('../theme/styles/sky.css');
+    require('../theme/styles/books.css');
 }
 
 

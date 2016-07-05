@@ -172,6 +172,10 @@
     -webkit-mask-image: url(../../images/reload.png);
 }
 
+.toolbar-export{
+    -webkit-mask-image: url(../../images/export.png);
+}
+
 /*Hightlight style*/
 .hljs {
     display: block;

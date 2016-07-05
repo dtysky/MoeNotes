@@ -4,9 +4,9 @@
  * Description:
  */
 
-import { bindFunctions, getDirectories, getFiles, getNameFromPath, bindTryCatchWrapper} from '../src/utils';
-import { arrayIsEqual, arrayIsLike, arrayHas } from '../src/utils';
-import { createObjectWithErrorHandler, logError, stringToColor } from '../src/utils';
+import { bindFunctions, getDirectories, getFiles, getNameFromPath, bindTryCatchWrapper} from '../src/cores/utils';
+import { arrayIsEqual, arrayIsLike, arrayHas } from '../src/cores/utils';
+import { createObjectWithErrorHandler, logError, stringToColor } from '../src/cores/utils';
 import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
 import { objectIsEqual, loadBook } from './utils';

@@ -8,14 +8,14 @@
 
 import React, { PropTypes } from 'react';
 import SortableList from './sortable-list';
-import Storage from './storage';
+import Storage from '../cores/storage';
 import Notify from './notify';
-import { bindFunctions, logError } from './utils';
-import configManager from './config-manager';
+import { bindFunctions, logError } from '../cores/utils';
+import configManager from '../cores/config-manager';
 
 
 if (process.env.BROWSER) {
-    require ('./theme/styles/sky.css');
+    require ('../theme/styles/sky.css');
 }
 
 export default class ChapterList extends SortableList {
