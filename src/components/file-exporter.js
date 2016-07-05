@@ -19,7 +19,6 @@ class FileExporter{
             [
                 "showSave",
                 "create",
-                "open",
                 "exportFile"
             ]
         );
