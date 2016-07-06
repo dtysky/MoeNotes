@@ -42,7 +42,7 @@ Provides some useul method.
 
 Retrive all the .md files under dp folder, the returned array has already removed '.md' , e.g "1.md" will be "1".
 
-### arrayIsLike(a1, a2)
+### arrayAreSimilar(a1, a2)
 
 Check if two arrays are similar (elements are same but orders doesn't matter):
 

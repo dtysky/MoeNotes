@@ -9,7 +9,7 @@ import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
 import StorageBook from './storage-book';
-import { getDirectories, getFiles, getNameFromPath, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
+import { getDirectories, getFiles, getNameFromPath, arrayAreEqual, arrayHas, arrayAreSimilar, bindFunctions } from './utils';
 import { createObjectWithErrorHandler, logError } from './utils';
 import configManager from './config-manager';
 

@@ -9,7 +9,7 @@ import path from 'path';
 import deepcopy from 'deepcopy';
 import fs from 'fs';
 import rmdir from 'rimraf';
-import { getDirectories, getFiles, arrayIsEqual, arrayHas, arrayIsLike, bindFunctions } from './utils';
+import { getDirectories, getFiles, arrayAreEqual, arrayHas, arrayAreSimilar, bindFunctions } from './utils';
 
 export default class StorageBook{
     constructor(dp){
@@ -99,7 +99,7 @@ export default class StorageBook{
         if(newObj === undefined){
             return oldObj;
         }
-        if(arrayIsLike(oldObj.indexes, newObj.indexes)){
+        if(arrayAreSimilar(oldObj.indexes, newObj.indexes)){
             return oldObj;
         }
         oldObj.indexes = newObj.indexes;
@@ -172,7 +172,7 @@ export default class StorageBook{
 
     setIndexes(indexes, chapter) {
         if(chapter === undefined){
-            if(!arrayIsLike(indexes, this.book.indexes)){
+            if(!arrayAreSimilar(indexes, this.book.indexes)){
                 throw new Error(
                     `New book's indexes must be similar to old one !\n${indexes}\n${this.book.indexes}`
                 );
@@ -180,7 +180,7 @@ export default class StorageBook{
             this.book.indexes = indexes;
             return;
         }
-        if(!arrayIsLike(indexes, this.getIndexes(chapter))) {
+        if(!arrayAreSimilar(indexes, this.getIndexes(chapter))) {
             throw new Error(
                 `New chapter's indexes must be similar to old one !\n${indexes}\n${this.book.chapters[chapter].indexes}`
             );

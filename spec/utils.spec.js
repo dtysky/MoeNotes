@@ -5,7 +5,7 @@
  */
 
 import { bindFunctions, getDirectories, getFiles, getNameFromPath, bindTryCatchWrapper} from '../src/cores/utils';
-import { arrayIsEqual, arrayIsLike, arrayHas } from '../src/cores/utils';
+import { arrayAreEqual, arrayAreSimilar, arrayHas } from '../src/cores/utils';
 import { createObjectWithErrorHandler, logError, stringToColor } from '../src/cores/utils';
 import mock from 'mock-fs';
 import deepcopy from 'deepcopy';
@@ -72,19 +72,19 @@ describe("Utils", () => {
 
     it("Array is equal", () => {
         expect(
-            arrayIsEqual(["1", 2.0, 3], ["1", 2, 3])
+            arrayAreEqual(["1", 2.0, 3], ["1", 2, 3])
         ).toBeTruthy();
         expect(
-            arrayIsEqual(["1", 2.0, 3], [3, 2.0, "1"])
+            arrayAreEqual(["1", 2.0, 3], [3, 2.0, "1"])
         ).toBeFalsy();
     });
 
     it("Array is like", () => {
         expect(
-            arrayIsLike(["1", 2.0, 3], [3, 2.0, "1"])
+            arrayAreSimilar(["1", 2.0, 3], [3, 2.0, "1"])
         ).toBeTruthy();
         expect(
-            arrayIsLike(["1", 2.0, 3], ["1", 2.0])
+            arrayAreSimilar(["1", 2.0, 3], ["1", 2.0])
         ).toBeFalsy();
     });
 
@@ -106,10 +106,10 @@ describe("Utils", () => {
             dir2: {}
         });
         expect(
-            arrayIsEqual(getDirectories("dir1"), ["d1"])
+            arrayAreEqual(getDirectories("dir1"), ["d1"])
         ).toBeTruthy();
         expect(
-            arrayIsEqual(getDirectories("dir2"), [])
+            arrayAreEqual(getDirectories("dir2"), [])
         ).toBeTruthy();
         mock.restore();
     });
@@ -124,10 +124,10 @@ describe("Utils", () => {
             dir2: {}
         });
         expect(
-            arrayIsEqual(getFiles("dir1"), ["f1"])
+            arrayAreEqual(getFiles("dir1"), ["f1"])
         ).toBeTruthy();
         expect(
-            arrayIsEqual(getFiles("dir2"), [])
+            arrayAreEqual(getFiles("dir2"), [])
         ).toBeTruthy();
         mock.restore();
     });

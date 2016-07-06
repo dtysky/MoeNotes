@@ -39,11 +39,11 @@ export function getNameFromPath(p) {
     return p.replace(/^.*[\\\/]/, '');
 }
 
-export function arrayIsEqual(a1, a2){
+export function arrayAreEqual(a1, a2){
     return lodash.isEqual(a1, a2);
 }
 
-export function arrayIsLike(a1, a2){
+export function arrayAreSimilar(a1, a2){
     let a1_tmp = deepcopy(a1).sort();
     let a2_tmp = deepcopy(a2).sort();
     return lodash.isEqual(a1_tmp, a2_tmp);
