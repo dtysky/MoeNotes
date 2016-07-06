@@ -27,7 +27,7 @@ export default class StorageTop {
                 "load",
                 "createTree",
                 "parse",
-                "getNow",
+                "getCurrent",
                 "getIndexes",
                 "getName",
                 "has",
@@ -105,7 +105,7 @@ export default class StorageTop {
         return this.books.indexes.indexOf(index) > -1;
     }
 
-    getNow() {
+    getCurrent() {
         return this.books.now;
     }
 

@@ -22,7 +22,7 @@ export default class StorageBook{
                 "createTree",
                 "parse",
                 "getIndexes",
-                "getNow",
+                "getCurrent",
                 "getPath",
                 "readNowPage",
                 "setIndexes",
@@ -142,7 +142,7 @@ export default class StorageBook{
         return treeRecord;
     }
 
-    getNow(chapter) {
+    getCurrent(chapter) {
         if(chapter === undefined){
             return this.book.now;
         }
@@ -189,18 +189,18 @@ export default class StorageBook{
     }
 
     readNowPage(){
-        const chapter = this.getNow();
+        const chapter = this.getCurrent();
         return fs.readFileSync(
-            this.getPath(this.getNow(chapter), chapter),
+            this.getPath(this.getCurrent(chapter), chapter),
             "utf8"
         );
     }
 
     save(text){
         if(text !== undefined){
-            const chapter = this.getNow();
+            const chapter = this.getCurrent();
             fs.writeFileSync(
-                this.getPath(this.getNow(chapter), chapter),
+                this.getPath(this.getCurrent(chapter), chapter),
                 text
             );
         }

@@ -23,7 +23,7 @@ export default class PageList extends SortableList {
         super(props);
         this.initState(
             "page-list",
-            Storage.nowBook.getIndexes(Storage.nowBook.getNow())
+            Storage.nowBook.getIndexes(Storage.nowBook.getCurrent())
         );
         bindFunctions(
             this,
@@ -44,7 +44,7 @@ export default class PageList extends SortableList {
 
     refresh(callback){
         this._sortkey ++;
-        this.state.indexes = Storage.nowBook.getIndexes(Storage.nowBook.getNow());
+        this.state.indexes = Storage.nowBook.getIndexes(Storage.nowBook.getCurrent());
         const cb = () => {
             this.save();
             if (callback !== undefined) {
@@ -55,12 +55,12 @@ export default class PageList extends SortableList {
     }
 
     onSort(indexes) {
-        Storage.nowBook.setIndexes(indexes, Storage.nowBook.getNow());
+        Storage.nowBook.setIndexes(indexes, Storage.nowBook.getCurrent());
         this.refresh();
     }
 
     remove(index) {
-        const chapter = Storage.nowBook.getNow();
+        const chapter = Storage.nowBook.getCurrent();
         if(Storage.nowBook.canNotRemove(chapter)){
             this.showNotify(
                 "error",
@@ -69,7 +69,7 @@ export default class PageList extends SortableList {
             return;
         }
         Storage.nowBook.remove(index, chapter);
-        if(index === Storage.nowBook.getNow(chapter)){
+        if(index === Storage.nowBook.getCurrent(chapter)){
             Storage.nowBook.change(
                 Storage.nowBook.getIndexes(chapter)[0],
                 chapter
@@ -86,17 +86,17 @@ export default class PageList extends SortableList {
     }
 
     rename(index, name){
-        if(!Storage.nowBook.has(index, Storage.nowBook.getNow())){
+        if(!Storage.nowBook.has(index, Storage.nowBook.getCurrent())){
             Storage.nowBook.create(
                 this.state.indexes.indexOf(index),
                 name,
-                Storage.nowBook.getNow()
+                Storage.nowBook.getCurrent()
             );
             this.select(name, this.setScrollbar);
         }
         else{
-            Storage.nowBook.rename(index, name, Storage.nowBook.getNow());
-            if(Storage.nowBook.getNow(Storage.nowBook.getNow()) === index){
+            Storage.nowBook.rename(index, name, Storage.nowBook.getCurrent());
+            if(Storage.nowBook.getCurrent(Storage.nowBook.getCurrent()) === index){
                 this.select(name);
             }
             else{
@@ -106,22 +106,22 @@ export default class PageList extends SortableList {
     }
 
     select(index, callback){
-        Storage.nowBook.change(index, Storage.nowBook.getNow());
+        Storage.nowBook.change(index, Storage.nowBook.getCurrent());
         this.props.handleChangePage();
         this.refresh(callback);
     }
 
     copy(index){
-        this.clipBoard = Storage.nowBook.getPath(index, Storage.nowBook.getNow());
+        this.clipBoard = Storage.nowBook.getPath(index, Storage.nowBook.getCurrent());
     }
 
     reload(){
-        if(Storage.nowBook.isEmpty(Storage.nowBook.getNow())){
+        if(Storage.nowBook.isEmpty(Storage.nowBook.getCurrent())){
             this.refresh(this.createEnd);
         }
         else{
-            const chapter = Storage.nowBook.getNow();
-            this.select(Storage.nowBook.getNow(chapter));
+            const chapter = Storage.nowBook.getCurrent();
+            this.select(Storage.nowBook.getCurrent(chapter));
         }
     }
 

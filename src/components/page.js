@@ -96,9 +96,9 @@ export default class Page extends React.Component{
     save(text){
         Storage.nowBook.save(text);
         this.last_markdown = this.state.markdown;
-        const book = Storage.getName(Storage.getNow());
-        const chapter = Storage.nowBook.getNow();
-        const page = Storage.nowBook.getNow(chapter);
+        const book = Storage.getName(Storage.getCurrent());
+        const chapter = Storage.nowBook.getCurrent();
+        const page = Storage.nowBook.getCurrent(chapter);
         this.props.handleShowNotify(
             "info",
             `Book '${book}', Chapter '${chapter}', Page '${page}' is saved!`

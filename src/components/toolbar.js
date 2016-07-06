@@ -11,7 +11,7 @@ import { remote, ipcRenderer } from 'electron';
 import fs from 'fs';
 import { bindFunctions, logError } from '../cores/utils';
 import configManager from '../cores/config-manager';
-import fileExporter from './file-exporter';
+import FileExporter from './file-exporter';
 
 const aboutMessage = `
     <h1>MoeNotes</h1>
@@ -46,21 +46,17 @@ export default class Toolbar extends React.Component{
         bindFunctions(
             this,
             [
-                "exportFile",
                 "showAbout",
                 "reloadAPP",
                 "changeTheme",
-                "changeMode"
+                "changeMode",
+                "exportFile"
             ],
             logError(configManager.getSysConfig().logPath)
         );
         ipcRenderer.on("showAbout", () => {
             this.showAbout();
         });
-    }
-
-    exportFile(){
-        fileExporter.exportFile();
     }
 
     showAbout(){
@@ -71,6 +67,10 @@ export default class Toolbar extends React.Component{
 
     reloadAPP(){
         remote.getCurrentWindow().reload();
+    }
+
+    exportFile(){
+        this.refs.exporter.show();
     }
 
     changeTheme(event){
@@ -152,6 +152,9 @@ export default class Toolbar extends React.Component{
                     onClick={this.showAbout}
                 >
                 </div>
+                <FileExporter
+                    ref="exporter"
+                />
             </div>
         );
     }

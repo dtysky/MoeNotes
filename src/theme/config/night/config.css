@@ -179,6 +179,14 @@
     color: white;
 }
 
+.modal-export .modal-head{
+    background: url(../../images/night/export-head.png);
+}
+
+.modal-export .modal-body{
+    background: rgb(0, 0, 0);
+}
+
 .react-context-menu {
     background-image: url(../../images/night/menu-background.png);
     box-shadow: 0 0 10px grey;

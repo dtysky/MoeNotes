@@ -217,10 +217,10 @@ export default class SortableList extends React.Component {
                                 this.state.indexes.map((index) => {
                                     let active;
                                     if(this.name === "page-list") {
-                                        active = Storage.nowBook.getNow(Storage.nowBook.getNow()) === index;
+                                        active = Storage.nowBook.getCurrent(Storage.nowBook.getCurrent()) === index;
                                     }
                                     else{
-                                        active = Storage.nowBook.getNow() === index;
+                                        active = Storage.nowBook.getCurrent() === index;
                                     }
                                     return (
                                         <SortableListItem
@@ -229,7 +229,7 @@ export default class SortableList extends React.Component {
                                             index={index}
                                             layoutMode={this.props.layoutMode}
                                             menuName={this.state.menuName}
-                                            chapter={this.name === "page-list" ? Storage.nowBook.getNow() : undefined}
+                                            chapter={this.name === "page-list" ? Storage.nowBook.getCurrent() : undefined}
                                             sortData={index}
                                             className={this.props.classSortableItem}
                                             active={active}

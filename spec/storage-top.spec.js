@@ -54,7 +54,7 @@ describe("StorageTop ", () => {
         });
 
         it("Get now", () => {
-            expect(storage.getNow()).toBe("book1");
+            expect(storage.getCurrent()).toBe("book1");
         });
 
         it("Has", () => {

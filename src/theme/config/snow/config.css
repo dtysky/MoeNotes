@@ -156,6 +156,14 @@
     background: rgb(255, 255, 255);
 }
 
+.modal-export .modal-head{
+    background: url(../../images/snow/export-head.png);
+}
+
+.modal-export .modal-body{
+    background: rgb(255, 255, 255);
+}
+
 .react-context-menu {
     background-image: url(../../images/snow/menu-background.png);
     box-shadow: 0 0 10px black;

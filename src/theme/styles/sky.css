@@ -68,6 +68,10 @@ button{
     float: left;
 }
 
+.float-right{
+    float: right;
+}
+
 .absolute{
     position: absolute;
 }

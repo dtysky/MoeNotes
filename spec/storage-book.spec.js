@@ -58,9 +58,9 @@ describe("StorageBook ", () => {
 
         it("Get now", () => {
             storage.book.now = "cp2";
-            expect(storage.getNow()).toBe("cp2");
+            expect(storage.getCurrent()).toBe("cp2");
             storage.book.chapters["cp2"].now = "page2";
-            expect(storage.getNow("cp2")).toBe("page2");
+            expect(storage.getCurrent("cp2")).toBe("page2");
         });
 
         it("Get path", () => {
@@ -131,9 +131,9 @@ describe("StorageBook ", () => {
 
         it("Change", () => {
             storage.change("cp2");
-            expect(storage.getNow()).toBe("cp2");
+            expect(storage.getCurrent()).toBe("cp2");
             storage.change("page2", "cp2");
-            expect(storage.getNow("cp2")).toBe("page2");
+            expect(storage.getCurrent("cp2")).toBe("page2");
         });
 
         it("Save", () => {

@@ -148,16 +148,16 @@ let SortableItem = React.createClass({
     renderGen: function(){
         const config = configManager.getConfig();
         const style = this.props.chapter === undefined ? {
-            backgroundColor: Storage.nowBook.getNow() === this.props.index ?
+            backgroundColor: Storage.nowBook.getCurrent() === this.props.index ?
                 stringToColor(this.props.index, config.chapterNowBackCSC) :
                 stringToColor(this.props.index, config.chapterNormalBackCSC),
-            borderColor: Storage.nowBook.getNow() === this.props.index ?
+            borderColor: Storage.nowBook.getCurrent() === this.props.index ?
                 stringToColor(this.props.index, config.chapterNowBorderCSC) :
                 stringToColor(this.props.index, config.chapterNormalBorderCSC),
             width: this.state.style.width
         } : {
-            backgroundColor: Storage.nowBook.getNow(
-                Storage.nowBook.getNow()
+            backgroundColor: Storage.nowBook.getCurrent(
+                Storage.nowBook.getCurrent()
             ) === this.props.index ?
                 stringToColor(this.props.chapter, config.pageNowBackCSC) :
                 stringToColor(this.props.chapter, config.pageNormalBackCSC)
@@ -165,13 +165,13 @@ let SortableItem = React.createClass({
         let className, color;
         if(this.props.chapter === undefined){
             className = this.props.active ? this.props.className + "-active" : this.props.className + "-normal" ;
-            color = Storage.nowBook.getNow() === this.props.index ?
+            color = Storage.nowBook.getCurrent() === this.props.index ?
                 stringToColor(this.props.index, config.chapterNowFontCSC) :
                 stringToColor(this.props.index, config.chapterNormalFontCSC);
         }
         else{
             className = this.props.active ?  this.props.className + "-active" : this.props.className + "-normal";
-            color = Storage.nowBook.getNow(this.props.chapter) === this.props.index ?
+            color = Storage.nowBook.getCurrent(this.props.chapter) === this.props.index ?
                 stringToColor(this.props.chapter, config.pageNowFontCSC) :
                 stringToColor(this.props.chapter, config.pageNormalFontCSC);
         }

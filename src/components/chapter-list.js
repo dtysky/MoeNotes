@@ -67,7 +67,7 @@ export default class ChapterList extends SortableList {
             return;
         }
         Storage.nowBook.remove(index);
-        if(index === Storage.nowBook.getNow()){
+        if(index === Storage.nowBook.getCurrent()){
             Storage.nowBook.change(
                 Storage.nowBook.getIndexes()[0]
             );
@@ -92,7 +92,7 @@ export default class ChapterList extends SortableList {
         }
         else{
             Storage.nowBook.rename(index, name);
-            if(Storage.nowBook.getNow() === index){
+            if(Storage.nowBook.getCurrent() === index){
                 this.select(name);
             }
             else{
@@ -116,7 +116,7 @@ export default class ChapterList extends SortableList {
             this.refresh(this.createEnd);
         }
         else{
-            this.select(Storage.nowBook.getNow());
+            this.select(Storage.nowBook.getCurrent());
         }
     }
 

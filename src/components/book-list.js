@@ -27,7 +27,7 @@ export default class BookList extends React.Component {
         super(props);
         this.state = {
             indexes: Storage.getIndexes(),
-            now: Storage.getNow(),
+            now: Storage.getCurrent(),
             width: 0,
             isOpen: false
         };
@@ -70,7 +70,7 @@ export default class BookList extends React.Component {
         this._sortkey ++;
         this.setState({
             indexes: Storage.getIndexes(),
-            now: Storage.getNow()
+            now: Storage.getCurrent()
         }, this.resizeButton);
     }
 
@@ -118,7 +118,7 @@ export default class BookList extends React.Component {
             this.create();
             return;
         }
-        if(Storage.getNow() === index){
+        if(Storage.getCurrent() === index){
             Storage.change(
                 Storage.getIndexes()[0]
             );

@@ -89,12 +89,12 @@ class App extends React.Component{
     changeColor(){
         const config = configManager.getConfig();
         this.setState({
-            toolbarColor: stringToColor(Storage.getName(Storage.getNow()), config.toolbarCSC),
-            headBackColor: stringToColor(Storage.getName(Storage.getNow()), config.headBackCSC),
-            headLineColor: stringToColor(Storage.nowBook.getNow(), config.chapterNowBackCSC),
-            pageListBackColor: stringToColor(Storage.nowBook.getNow(), config.pageListBackCSC),
-            pageListButtonBackColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonBackCSC),
-            pageListButtonFontColor: stringToColor(Storage.nowBook.getNow(), config.pageButtonFontCSC)
+            toolbarColor: stringToColor(Storage.getName(Storage.getCurrent()), config.toolbarCSC),
+            headBackColor: stringToColor(Storage.getName(Storage.getCurrent()), config.headBackCSC),
+            headLineColor: stringToColor(Storage.nowBook.getCurrent(), config.chapterNowBackCSC),
+            pageListBackColor: stringToColor(Storage.nowBook.getCurrent(), config.pageListBackCSC),
+            pageListButtonBackColor: stringToColor(Storage.nowBook.getCurrent(), config.pageButtonBackCSC),
+            pageListButtonFontColor: stringToColor(Storage.nowBook.getCurrent(), config.pageButtonFontCSC)
         });
     }
 
