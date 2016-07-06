@@ -7,17 +7,17 @@
 }
 
 .ace-magic-book .ace_constant {
-    color: #FB83A4
+    color: #beb79c
 }
 
 .ace-magic-book .ace_heading {
     bold: border;
-    color: #E85B82
+    color: #b1b593
 }
 
 .ace-magic-book .ace_heading .ace_cjk {
     bold: border;
-    color: #E85B82
+    color: #b1b593
 }
 
 .ace-magic-book .ace_gutter {
@@ -35,11 +35,11 @@
 }
 
 .ace-magic-book .ace_cursor {
-    color: #C35774
+    color: #b1b593
 }
 
 .ace-magic-book .ace_marker-layer .ace_selection {
-    background: #EAC9D2
+    background: #dddddd
 }
 
 .ace-magic-book.ace_multiselect .ace_selection.ace_start {
@@ -56,7 +56,7 @@
 }
 
 .ace-magic-book .ace_marker-layer .ace_active-line {
-    background: rgba(224, 141, 170, 0.15)
+    background: rgba(200, 202, 182, 0.3)
 }
 
 .ace-magic-book .ace_gutter-active-line {
@@ -71,7 +71,7 @@
 .ace-magic-book .ace_keyword,
 .ace-magic-book .ace_meta,
 .ace-magic-book .ace_variable.ace_language {
-    color: #C800A4
+    color: #b9b391
 }
 
 .ace-magic-book .ace_invisible {
@@ -94,7 +94,7 @@
 }
 
 .ace-magic-book .ace_fold {
-    background-color: #C800A4;
+    background-color: #c5c8a4;
     border-color: #000000
 }
 
@@ -105,7 +105,7 @@
 }
 
 .ace-magic-book .ace_storage {
-    color: #C900A4
+    color: #c9c6ac
 }
 
 .ace-magic-book .ace_string {

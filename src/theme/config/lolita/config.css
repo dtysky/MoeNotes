@@ -1,5 +1,6 @@
 #react-content{
-    background-image: url(../../images/lolita/body.png);
+    background-image: url(../../images/lolita/body.jpg);
+    /*background-color: white;*/
 }
 
 .head-image{
@@ -16,11 +17,11 @@
 }
 
 .page-preview{
-    background: rgba(228, 228, 228, 0.5);
+    background: rgba(234, 234, 234, 0.5);
 }
 
 .page-preview blockquote{
-    background-color: rgba(243, 216, 222, 0.6);
+    background-color: rgba(220, 214, 211, 0.6);
 }
 
 .page-preview pre{
@@ -28,7 +29,7 @@
 }
 
 .page-preview code{
-    background-color: rgba(239, 194, 212, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .page-text{
@@ -36,19 +37,19 @@
 }
 
 .page-text::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(195, 199, 202);
 }
 
 .page-text::-webkit-scrollbar-track {
-    background: rgba(208, 198, 188, 0.8);
+    background: rgba(209, 205, 205, 0.8);
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
-    background: rgba(239, 194, 212, 1);
+    background: rgb(195, 199, 202);
 }
 
 .ace_scrollbar::-webkit-scrollbar-track {
-    background: rgba(213, 200, 197, 0.8);
+    background: rgba(209, 205, 205, 0.8);
 }
 
 .page-list{
@@ -88,7 +89,7 @@
 }
 
 .chapter-list::-webkit-scrollbar-thumb{
-    background: rgb(239, 159, 167);
+    background: rgb(195, 188, 194);
 }
 
 .chapter-list::-webkit-scrollbar-track {
@@ -135,11 +136,11 @@
 }
 
 .book-list-create{
-    background-color: rgba(195, 114, 146, 0.8);
+    background-color: rgba(186, 184, 183, 0.8);
 }
 
 .book-list-load{
-    background-color: rgba(195, 114, 146, 0.8);
+    background-color: rgba(186, 184, 183, 0.8);
 }
 
 .bm-menu-wrap {
