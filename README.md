@@ -22,7 +22,7 @@ MoeNotes是一个简单的日记写作软件（当然，我也用其写一些不
 
 ![preview-main](doc/preview-main.jpg)  
 ![preview-books](doc/preview-books.jpg)  
-![preview-export](../preview-export.jpg)  
+![preview-export](doc/preview-export.jpg)  
 
 
 ## License
