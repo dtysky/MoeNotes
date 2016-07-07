@@ -37,7 +37,7 @@
 }
 
 .page-text::-webkit-scrollbar-thumb{
-    background: rgb(195, 199, 202);
+    background: rgb(181, 185, 188);
 }
 
 .page-text::-webkit-scrollbar-track {
@@ -45,7 +45,7 @@
 }
 
 .ace_scrollbar::-webkit-scrollbar-thumb{
-    background: rgb(195, 199, 202);
+    background: rgb(181, 185, 188);
 }
 
 .ace_scrollbar::-webkit-scrollbar-track {

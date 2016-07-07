@@ -1,6 +1,6 @@
 {
   "name": "MoeNotes",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "I'm the god of magic, here is my spellbook.",
   "main": "main.js",
   "scripts": {
@@ -60,6 +60,7 @@
     "deepcopy": "^0.6.1",
     "file-loader": "^0.8.5",
     "highlight.js": "^9.3.0",
+    "jquery": "^3.0.0",
     "katex": "^0.5.1",
     "lodash": "^4.6.1",
     "marked": "^0.3.5",
@@ -74,6 +75,7 @@
     "react-radio-group": "^3.0.1",
     "rimraf": "^2.5.2",
     "string-hash": "^1.1.0",
-    "string-width": "^1.0.1"
+    "string-width": "^1.0.1",
+    "wkhtmltopdf": "^0.3.1"
   }
 }

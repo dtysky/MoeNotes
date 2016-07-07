@@ -66,6 +66,12 @@ module.exports = function (grunt) {
                         dest: '<%= pkg.dist %>/theme/config/'
                     },
                     {
+                        cwd: '<%= pkg.src %>/theme/export',
+                        expand: true,
+                        src: ['**'],
+                        dest: '<%= pkg.dist %>/theme/export/'
+                    },
+                    {
                         flatten: true,
                         expand: true,
                         src: [
@@ -127,7 +133,7 @@ module.exports = function (grunt) {
             buildAll: {
                 options: {
                     name: 'MoeNotes',
-                    "app-version": "0.8.0",
+                    "app-version": "0.9.0",
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
@@ -141,7 +147,7 @@ module.exports = function (grunt) {
             buildOSX: {
                 options: {
                     name: 'MoeNotes',
-                    "app-version": "0.8.0",
+                    "app-version": "0.9.0",
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
@@ -155,7 +161,7 @@ module.exports = function (grunt) {
             buildLinux: {
                 options: {
                     name: 'MoeNotes',
-                    "app-version": "0.8.0",
+                    "app-version": "0.9.0",
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',
@@ -169,7 +175,7 @@ module.exports = function (grunt) {
             buildWindows: {
                 options: {
                     name: 'MoeNotes',
-                    "app-version": "0.8.0",
+                    "app-version": "0.9.0",
                     "app-copyright": "Tianyu Dai (dtysky) <dtysky@outlook.com>",
                     icon: "<%= pkg.root %>/logo",
                     dir: 'dist',

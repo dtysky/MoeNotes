@@ -55,6 +55,9 @@ const appPath = remote.app.envRelease ?
 const sysConfig = {
     treePath: userPath + "/.tree",
     logPath: userPath + "/error.log",
+    themePath: remote.app.envRelease ?
+    appPath + "/theme" :
+    appPath + "/src/theme",
     configRoot: remote.app.envRelease ?
     appPath + "/theme/config" :
     appPath + "/src/theme/config",

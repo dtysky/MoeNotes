@@ -12,9 +12,29 @@ const dialog = remote.dialog;
 import fs from 'fs';
 import path from 'path';
 import { bindFunctions, getNameFromPath } from '../cores/utils';
+import parse from '../cores/parser';
 import Storage from '../cores/storage';
 import { FadeModal as Modal } from 'boron';
 import configManager from '../cores/config-manager';
+import wkhtmltopdf from 'wkhtmltopdf';
+
+
+const HTMLTemplate = `<!doctype html>
+<html lang="zh" class="full">
+<head>
+<meta charset="utf-8">
+<title>{{title}}</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<style>
+{{style}}
+</style>
+</head>
+<body class="full">
+<div class="content">
+{{content}}
+</div>
+</body>
+</html>`;
 
 
 export default class FileExporter extends Component{
@@ -34,7 +54,7 @@ export default class FileExporter extends Component{
                 "hide",
                 "exportPDF",
                 "exportHTML",
-                "loadCSS"
+                "getCurrentHTML"
             ]
         );
     }
@@ -43,15 +63,11 @@ export default class FileExporter extends Component{
         const chapter = Storage.nowBook.getCurrent();
         const file = Storage.nowBook.getCurrent(chapter);
         const fpMarkdown = Storage.nowBook.getPath(file, chapter);
-        const fpSave = fpMarkdown.split(".")[0];
+        const fpSave = `${fpMarkdown.replace(".md", "")}.${this.state.type}`;
         dialog.showSaveDialog(
             {
                 title: title,
-                defaultPath: fpSave,
-                filters: [
-                    {name: 'PDF/HTML', extensions: ['pdf', 'html']},
-                    {name: 'Light/Dark', extensions: ['light', 'dark']}
-                ]
+                defaultPath: fpSave
             },
             fp => {
                 if(fp === undefined){
@@ -73,14 +89,13 @@ export default class FileExporter extends Component{
     exportFile(){
         this.createFile(
             fp => {
-                console.log(fp);
                 if(fp === null){
                     return;
                 }
-                if(this.state.type === "PDF"){
+                if(this.state.type === "pdf"){
                     this.exportPDF(fp);
                 }
-                else if(this.state.type === "HTML"){
+                else if(this.state.type === "html"){
                     this.exportHTML(fp);
                 }
             }
@@ -88,15 +103,39 @@ export default class FileExporter extends Component{
     }
 
     exportHTML(fp){
-
+        fs.writeFileSync(
+            fp, this.getCurrentHTML()
+        );
     }
 
     exportPDF(fp){
-
+        wkhtmltopdf(this.getCurrentHTML(),
+            {
+                marginBottom: 0,
+                marginTop: 0,
+                marginLeft: 0,
+                marginRight: 0
+            },
+            function(err) {
+                console.log(err);
+            }
+        ).pipe(
+            fs.createWriteStream(fp)
+        );
     }
 
-    loadCSS(){
-
+    getCurrentHTML(){
+        const themePath = configManager.getSysConfig().themePath;
+        const chapter = Storage.nowBook.getCurrent();
+        const title = Storage.nowBook.getCurrent(chapter);
+        const content = parse(Storage.nowBook.readCurrentPage());
+        const style = this.state.theme === "none" ?
+            "" :
+            fs.readFileSync(`${themePath}/export/${this.state.theme}.css`);
+        return HTMLTemplate
+            .replace("{{title}}", title)
+            .replace("{{style}}", style)
+            .replace("{{content}}", content);
     }
 
     show(){
@@ -128,6 +167,11 @@ export default class FileExporter extends Component{
                 </div>
                 <div className="modal-body">
                     <div className="modal-message">
+                        <b>
+                            Please install <a href="http://wkhtmltopdf.org/">wkhtmltopdf</a> for exporting pdf,
+                            <br/>
+                            and connect to internet for exporting with formula !
+                        </b>
                         <div
                             className="float-left"
                         >
@@ -180,7 +224,7 @@ export default class FileExporter extends Component{
                     </div>
                     <button
                         className="modal-button button button-cancel float-left"
-                        onClick={this.hideModal}
+                        onClick={this.hide}
                     >
                         Cancel
                     </button>

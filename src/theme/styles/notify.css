@@ -22,7 +22,7 @@
 }
 
 .modal-export .modal-body {
-    height: 160px;
+    height: 200px;
 }
 
 .modal-message{
@@ -40,7 +40,7 @@
     text-align: left;
 }
 
-.modal-sys-info .modal-message a,p{
+.modal-sys-info .modal-message > a,p,b{
     font-size: 14px;
     line-height: 20px;
 }
@@ -53,13 +53,26 @@
     color: black;
 }
 
-.modal-sys-info .modal-message h1,h2,h3,h4,h5,h6{
+.modal-sys-info .modal-message > h1,h2,h3,h4,h5,h6{
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
+.modal-export .modal-message{
+    padding-top: 0;
+}
+
 .modal-export .modal-message h3{
+    margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.modal-export .modal-message a{
+    color: grey;
+}
+
+.modal-export .modal-message a:hover{
+    color: black;
 }
 
 .modal-button{

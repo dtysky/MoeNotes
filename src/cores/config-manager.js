@@ -53,14 +53,19 @@ const appPath = remote.app.envRelease ?
     remote.app.getAppPath() :
     ".";
 
+console.log(path.get);
+
 const sysConfig = {
     treePath: userPath + "/.tree",
     logPath: userPath + "/error.log",
+    themePath: remote.app.envRelease ?
+        appPath + "/theme" :
+        appPath + "/src/theme",
     configRoot: remote.app.envRelease ?
         appPath + "/theme/config" :
         appPath + "/src/theme/config",
     configRootLink: appPath + "/theme/config",
-    defaultTheme: "sakura"
+    defaultTheme: "lolita"
 };
 
 class ConfigManager{

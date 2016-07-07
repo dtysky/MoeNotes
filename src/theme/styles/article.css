@@ -129,11 +129,6 @@ h1,h2,h3,h4,h5,h6,p,a{
     margin-bottom: 1em;
 }
 
-.page-preview .MathJax {
-    font-size: 1.4em;
-    line-height: 1.8em;
-}
-
 .page-preview table{
     border-top-width: 1px;
     border-right-width: 1px;

@@ -24,7 +24,7 @@ export default class StorageBook{
                 "getIndexes",
                 "getCurrent",
                 "getPath",
-                "readNowPage",
+                "readCurrentPage",
                 "setIndexes",
                 "has",
                 "isEmpty",
@@ -92,7 +92,7 @@ export default class StorageBook{
         return book;
     }
 
-    recreateIndexesWithNow(oldObj, newObj){
+    reCreateIndexesWithNow(oldObj, newObj){
         if(oldObj === undefined){
             return newObj;
         }
@@ -115,7 +115,7 @@ export default class StorageBook{
             fs.readFileSync(treePath, "utf8")
         );
         let treeNow = this.createTree(dp);
-        treeRecord = this.recreateIndexesWithNow(treeRecord, treeNow);
+        treeRecord = this.reCreateIndexesWithNow(treeRecord, treeNow);
         for(let key in treeRecord.chapters){
             if(!arrayHas(treeNow.indexes, key)){
                 treeRecord.indexes.splice(
@@ -124,7 +124,7 @@ export default class StorageBook{
                 delete treeRecord.chapters[key];
                 continue;
             }
-            treeRecord.chapters[key] = this.recreateIndexesWithNow(
+            treeRecord.chapters[key] = this.reCreateIndexesWithNow(
                 treeRecord.chapters[key],
                 treeNow.chapters[key]
             );
@@ -134,7 +134,7 @@ export default class StorageBook{
                 treeRecord.indexes.push(key);
                 treeRecord.chapters[key] = treeNow.chapters[key];
             }
-            treeRecord.chapters[key] = this.recreateIndexesWithNow(
+            treeRecord.chapters[key] = this.reCreateIndexesWithNow(
                 treeRecord.chapters[key],
                 treeNow.chapters[key]
             );
@@ -188,7 +188,7 @@ export default class StorageBook{
         this.book.chapters[chapter].indexes = indexes;
     }
 
-    readNowPage(){
+    readCurrentPage(){
         const chapter = this.getCurrent();
         return fs.readFileSync(
             this.getPath(this.getCurrent(chapter), chapter),

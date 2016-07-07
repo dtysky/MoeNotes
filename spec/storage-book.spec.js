@@ -44,7 +44,7 @@ describe("StorageBook ", () => {
             };
             let newIndexes = undefined;
             expect(
-                objectIsEqual(storage.recreateIndexesWithNow(oldIndexes, newIndexes), oldIndexes)
+                objectIsEqual(storage.reCreateIndexesWithNow(oldIndexes, newIndexes), oldIndexes)
             ).toBeTruthy();
             oldIndexes = undefined;
             newIndexes = {
@@ -52,7 +52,7 @@ describe("StorageBook ", () => {
                 indexes: ["page1", "page2"]
             };
             expect(
-                objectIsEqual(storage.recreateIndexesWithNow(oldIndexes, newIndexes), newIndexes)
+                objectIsEqual(storage.reCreateIndexesWithNow(oldIndexes, newIndexes), newIndexes)
             ).toBeTruthy();
         });
 
@@ -78,7 +78,7 @@ describe("StorageBook ", () => {
         });
 
         it("Read nowPage", () => {
-            expect(storage.readNowPage()).toBe(files.book1.cp1["page1.md"]);
+            expect(storage.readCurrentPage()).toBe(files.book1.cp1["page1.md"]);
         });
 
         it("Set indexes", () => {
@@ -143,7 +143,7 @@ describe("StorageBook ", () => {
             expect(
                 arrayIsEqual(storage.getIndexes(), ["cp3", "cp2", "cp1"])
             ).toBeTruthy();
-            expect(storage.readNowPage()).toBe("Page1 in cp1 has been changed !");
+            expect(storage.readCurrentPage()).toBe("Page1 in cp1 has been changed !");
         });
 
         it("Create", () => {

@@ -23,8 +23,8 @@ if (process.env.BROWSER) {
 export default class Page extends React.Component{
     constructor(props){
         super(props);
-        const text = Storage.nowBook.readNowPage();
-        this.last_markdown = text;
+        const text = Storage.nowBook.readCurrentPage();
+        this.lastMarkdown = text;
         this.state = {
             markdown: text,
             html : parse(text)
@@ -63,8 +63,8 @@ export default class Page extends React.Component{
     }
 
     reload(){
-        const nowPage = Storage.nowBook.readNowPage();
-        this.last_markdown = nowPage;
+        const nowPage = Storage.nowBook.readCurrentPage();
+        this.lastMarkdown = nowPage;
         this.refresh(
             nowPage,
             this.refs.editor.focus
@@ -95,7 +95,7 @@ export default class Page extends React.Component{
 
     save(text){
         Storage.nowBook.save(text);
-        this.last_markdown = this.state.markdown;
+        this.lastMarkdown = this.state.markdown;
         const book = Storage.getName(Storage.getCurrent());
         const chapter = Storage.nowBook.getCurrent();
         const page = Storage.nowBook.getCurrent(chapter);
@@ -110,7 +110,7 @@ export default class Page extends React.Component{
     }
 
     onBlur(){
-        if(this.last_markdown !== this.state.markdown){
+        if(this.lastMarkdown !== this.state.markdown){
             this.save(this.state.markdown);
         }
     }
