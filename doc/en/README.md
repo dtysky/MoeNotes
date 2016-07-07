@@ -17,10 +17,11 @@ Download：
 # Introduction
  
 MoeNotes is a dairy software, unlike Onenote, Leanote, it's running locally, and the problem is solved is "local demonstration", used to provide a Onenote like experience at manage your dairy categories.
-THe app uses markdown is it's editing language, all notes will be saved as .md file locally instead of database, user can choose how these files are synchronized independent of platforms. It supports sorting articles by dragging them around. Besides, it has 'live preview', 'read' and 'write' three modes, and themes can be switched or customized. Since it's based on web, it can be easily extended.
+THe app uses markdown is it's editing language, all notes will be saved as .md file locally instead of database, user can choose how these files are synchronized independent of platforms. It supports sorting articles by dragging them around. Besides, it has 'live preview', 'read' and 'write' three modes, exporting to pdf or html file, and themes can be switched or customized. Since it's based on web, it can be easily extended.
 
 ![preview-main](../preview-main.jpg)  
-![preview-books](../preview-books.jpg)
+![preview-books](../preview-books.jpg)  
+![preview-export](../preview-export.jpg)  
 
 ## Folder
 

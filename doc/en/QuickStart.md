@@ -61,8 +61,9 @@ From left to right：
 
 1. Mode select: normal, writing and view
 2. Theme select: switch themes
-3. Refresh: reload the application
-4. About: some info about this app
+3. Export：export to pdf or html file    
+4. Refresh: reload the application
+5. About: some info about this app
 
 ### 7. Context menu
   

@@ -33,7 +33,7 @@ Logo Design - [七七](http://www.pixiv.net/member.php?id=5673800)
 [string-hash](https://github.com/darkskyapp/string-hash)  
 [string-width](https://github.com/sindresorhus/string-width)  
 [deepcopy](https://github.com/sasaplus1/deepcopy.js)  
-[jsPDF](https://github.com/MrRio/jsPDF)
+[wkhtmltopdf](http://wkhtmltopdf.org/)  
 
 
 ## Materials
