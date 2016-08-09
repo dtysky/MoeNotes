@@ -112,9 +112,9 @@ export default class FileExporter extends Component{
         wkhtmltopdf(this.getCurrentHTML(),
             {
                 marginBottom: 0,
-                marginTop: 0,
-                marginLeft: 0,
-                marginRight: 0
+                marginTop: 20,
+                marginLeft: 10,
+                marginRight: 10
             },
             function(err) {
                 console.log(err);
