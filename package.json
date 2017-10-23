@@ -1,0 +1,92 @@
+{
+  "name": "MoeNotes",
+  "version": "1.0.0",
+  "description": "I'm the god of magic, here is my spellbook.",
+  "main": "main.js",
+  "scripts": {
+    "dev-server": "export NODE_ENV=development && node server.dev.js",
+    "predev-client": "export NODE_ENV=development && ./node_modules/.bin/tsc main/index.ts",
+    "dev-client": "export NODE_ENV=development && node_modules/.bin/electron main/index",
+    "test": "node_modules/.bin/nyc node_modules/.bin/ts-node node_modules/.bin/jasmine --config=jasmine.json",
+    "public": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtysky/MoeNotes.git"
+  },
+  "author": "Tianyu Dai (dtysky)<dtysky@outlook.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dtysky/MoeNotes/issues"
+  },
+  "homepage": "http://moe-notes.dtysky.moe",
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 99,
+    "statements": 99,
+    "functions": 99,
+    "branches": 99,
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [],
+    "reporter": [
+      "lcov",
+      "text-summary",
+      "cobertura"
+    ],
+    "require": [
+      "source-map-support/register"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "cache": true,
+    "all": true,
+    "report-dir": "./coverage"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.6.0",
+    "@types/node": "^7.0.11",
+    "autoprefixer": "^6.7.7",
+    "awesome-typescript-loader": "^3.1.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.27.1",
+    "express": "4.14.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "jasmine": "^2.8.0",
+    "jasmine-core": "^2.8.0",
+    "node-sass": "^4.1.1",
+    "nyc": "^11.2.1",
+    "postcss-loader": "^1.3.3",
+    "postcss-smart-import": "^0.6.11",
+    "precss": "^1.4.0",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "sass-lint": "^1.10.2",
+    "sass-loader": "^4.1.1",
+    "sasslint-loader": "0.0.1",
+    "source-map-loader": "^0.2.0",
+    "source-map-support": "^0.5.0",
+    "style-loader": "^0.13.2",
+    "ts-node": "^3.3.0",
+    "tslint": "4.1.1",
+    "tslint-loader": "^3.3.0",
+    "tslint-microsoft-contrib": "^4.0.0",
+    "typescript": "^2.1.4",
+    "url-loader": "^0.5.7",
+    "webpack": "^3.2.1",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.17.1"
+  },
+  "dependencies": {
+    "@types/es6-shim": "^0.31.32",
+    "electron": "^1.7.9",
+    "es6-shim": "^0.35.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
