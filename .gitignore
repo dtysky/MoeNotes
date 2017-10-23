@@ -7,5 +7,9 @@ release
 .tree
 error.log
 design
+coverage
+main/*.js
+src/**/*.js
 
 old
+.nyc_output
