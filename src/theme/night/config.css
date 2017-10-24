@@ -1,0 +1,293 @@
+#react-content{
+    background-image: url(../../images/night/body.png);
+}
+
+.page-text{
+    color: floralwhite;
+}
+
+.page-preview a{
+    color: #c0c0c0;
+}
+
+.page-preview a:hover{
+    color: white;
+}
+
+.head-image{
+    /*background-image: url(../../images/head.png);*/
+}
+
+.page-content{
+    /*background-image: url(../../images/page.png);*/
+    background-color: rgba(20,20,20,0.6);
+}
+
+.page-editor{
+    background: rgba(74, 75, 76, 0.5);
+}
+
+.page-preview{
+    background: rgba(52, 49, 50, 0.5);
+}
+
+.page-preview blockquote{
+    background-color: rgba(178, 180, 183, 0.6);
+}
+
+.page-preview pre{
+    background-color: rgba(127, 127, 127, 0.6);
+}
+
+.page-preview code{
+    background-color: rgba(141, 142, 146, 0.8);
+}
+
+.page-preview table, th, td {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.page-preview th{
+    background-color: rgba(101, 101, 101, 0.8);
+}
+
+.page-text{
+    background: none;
+}
+
+.page-text::-webkit-scrollbar-thumb{
+    background: rgb(100, 100, 100);
+}
+
+.page-text::-webkit-scrollbar-track {
+    background: rgba(216, 216, 216, 0.9);
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb{
+    background: rgb(100, 100, 100);
+}
+
+.ace_scrollbar::-webkit-scrollbar-track {
+    background: rgba(227, 214, 211, 0.8);
+}
+
+.page-list{
+}
+
+.page-list-background{
+}
+
+.page-sortable-list::-webkit-scrollbar-thumb{
+    background: rgb(100, 100, 100)
+}
+
+.page-sortable-list::-webkit-scrollbar-track {
+    background: rgba(252, 249, 243, 0.8);
+}
+
+.page-sortable-list-item-normal:hover{
+    background-color: rgba(0,0,0,0.4);
+}
+
+.page-list-button:before{
+    background-image: url(../../images/page-list-button.png);
+}
+
+.page-sortable-list .ui-sortable-dragging{
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.page-sortable-list .ui-sortable-placeholder.visible {
+    background-color: rgba(230,230,230,0.9);
+}
+
+.chapter-list-background{
+}
+
+.chapter-list{
+}
+
+.chapter-list::-webkit-scrollbar-thumb{
+    background: rgb(100, 100, 100)
+}
+
+.chapter-list::-webkit-scrollbar-track {
+    background: rgba(227, 214, 211, 0.8);
+}
+
+.chapter-list-button{
+    background-image: url(../../images/chapter-list-button.png);
+}
+
+.books-button-open-pre{
+    -webkit-mask-image: url(../../images/night/book-pre.png);
+}
+
+.book-pre{
+    -webkit-mask-image: url(../../images/night/book-pre.png);
+}
+
+.book-button-edit{
+    -webkit-mask-image: url(../../images/book-button-edit.png);
+}
+
+.book-button-remove{
+    -webkit-mask-image: url(../../images/book-button-remove.png);
+}
+
+.book-list-create{
+    background-color: rgba(92, 120, 205, 0.8);
+}
+
+.book-list-load{
+    background-color: rgba(92, 120, 205, 0.8);
+}
+
+.bm-menu-wrap {
+    background-image: url(../../images/night/book-list.png);
+}
+
+.modal-body, .modal-button{
+    color: rgb(200,200,200);
+}
+
+.modal-body{
+    background: rgb(30,30,30);
+}
+
+.modal-button{
+    background-color: rgb(80,80,80);
+}
+
+.modal-error, .modal-warn{
+    box-shadow: 0 0 10px grey;
+}
+
+.modal-error .modal-head{
+    background: url(../../images/night/error-head.png);
+}
+
+.modal-warn .modal-head{
+    background: url(../../images/night/warn-head.png);
+}
+
+.modal-sys-info .modal-head{
+    background: url(../../images/night/sys-info-head.png);
+}
+
+.modal-sys-info .modal-message a:hover{
+    color: white;
+}
+
+.modal-export .modal-message a:hover{
+    color: white;
+}
+
+.modal-export .modal-head{
+    background: url(../../images/night/export-head.png);
+}
+
+.modal-export .modal-body{
+    background: rgb(0, 0, 0);
+}
+
+.react-context-menu {
+    background-image: url(../../images/night/menu-background.png);
+    box-shadow: 0 0 10px grey;
+}
+
+.react-context-menu-link{
+    color: rgb(200,200,200);
+}
+
+.react-context-menu-link.active,
+.react-context-menu-link:hover {
+    background: rgba(214, 204, 218, 0.4);
+}
+
+.toolbar-about{
+    -webkit-mask-image: url(../../images/about.png);
+}
+
+.toolbar-reload{
+    -webkit-mask-image: url(../../images/reload.png);
+}
+
+.toolbar-export{
+    -webkit-mask-image: url(../../images/export.png);
+}
+
+.toolbar-selector{
+    background-color: rgba(100,100,100,0.8);
+}
+
+/*Hightlight style*/
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #272822; color: #ddd;
+}
+
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-name {
+    color: #f92672;
+}
+
+.hljs-code {
+    color: #66d9ef;
+}
+
+.hljs-class .hljs-title {
+    color: white;
+}
+
+.hljs-attribute,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+    color: #bf79db;
+}
+
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+    color: #a6e22e;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+    color: #a4a4a2;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-title,
+.hljs-section,
+.hljs-type,
+.hljs-selector-id {
+}
+
+.hljs-number{
+    color: #af9dff;
+}

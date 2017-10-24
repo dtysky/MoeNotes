@@ -4,7 +4,7 @@
  * Description:
  */
 import {Menu, App} from 'electron';
-import {TConfig} from '../src/types';
+import {TConfig} from './config';
 
 declare const mainWindow: any;
 

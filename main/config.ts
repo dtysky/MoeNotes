@@ -1,4 +1,12 @@
-import {TConfig} from './src/types';
+export type TConfig = {
+  env: 'development' | 'release',
+  devMode: boolean,
+  paths: {
+    root: string,
+    src: string,
+    entry: string
+  }
+};
 
 const env = process.env.NODE_ENV;
 const devMode = env === 'development';

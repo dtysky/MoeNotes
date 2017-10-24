@@ -5,7 +5,7 @@
  */
 import {app} from 'electron';
 import Main from './Main';
-import config from '../config';
+import config from './config';
 
 const rootPath = __dirname;
 Main.run(app, config);
