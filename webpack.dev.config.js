@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
   entry: [
     'webpack-hot-middleware/client?path=http://localhost:4444/__webpack_hmr&reload=true',
-    path.resolve(__dirname, `./src/index.ts`)
+    path.resolve(__dirname, `./src/index.tsx`)
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),

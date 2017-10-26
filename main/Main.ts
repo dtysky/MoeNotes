@@ -4,7 +4,7 @@
  * Description:
  */
 import {BrowserWindow, App, Menu, screen, shell} from 'electron';
-import {TConfig} from '../src/types';
+import {TConfig} from './config';
 import initMenu from './initMenu';
 
 export default class Main {

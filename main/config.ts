@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 export type TConfig = {
   env: 'development' | 'release',
   devMode: boolean,
@@ -11,8 +13,7 @@ export type TConfig = {
 const env = process.env.NODE_ENV;
 const devMode = env === 'development';
 
-const rootPath = __dirname;
-
+const rootPath = path.resolve(__dirname, '../');
 const devConfig: TConfig = {
   env: 'development',
   devMode: true,
