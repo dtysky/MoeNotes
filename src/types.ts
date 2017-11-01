@@ -1,3 +1,5 @@
+import {Map, List, Record} from 'immutable';
+
 export type TThemeConfig = {
   defaultHighlight: string,
   CDCMode: 'hue' | 'lightness' | 'saturation',
@@ -74,3 +76,22 @@ export type TConfig = {
   devMode: boolean,
   paths: TPaths
 };
+
+export type TItem = {
+  name: string,
+  path: string
+};
+
+export type TPage = Record<{
+  name: string,
+  path: string,
+  markdown: string,
+  html: string
+}>;
+
+export type TList = Record<{
+  name: string,
+  path: string,
+  children: List<Record<TItem>>,
+  lut: Map<string, string>
+}>;

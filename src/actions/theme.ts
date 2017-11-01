@@ -15,11 +15,10 @@ declare const global: any;
 const {theme} = definitions;
 const {paths} = config;
 
-export const init = () => ({type: theme.init});
-export const refresh = (name: string) => ({type: theme.refresh, name});
-
 const updateList = (list: TTheme['list']) => ({type: theme.updateList, list});
 const updateCurrent = (current: TTheme['current']) => ({type: theme.updateCurrent, current});
+export const init = () => ({type: theme.init});
+export const refresh = (name: string) => ({type: theme.refresh, name});
 
 export const initEpic = actions$ =>
   actions$.ofType(theme.init)

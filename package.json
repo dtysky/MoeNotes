@@ -91,7 +91,7 @@
     "@types/react-dom": "^16.0.2",
     "electron": "^1.7.9",
     "es6-shim": "^0.35.3",
-    "immutable": "^3.8.2",
+    "immutable": "^4.0.0-rc.9",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",

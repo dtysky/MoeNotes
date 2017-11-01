@@ -10,7 +10,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import {createLogger} from 'redux-logger';
 import {createEpicMiddleware} from 'redux-observable';
-import {Iterable} from 'immutable';
+import {isImmutable} from 'immutable';
 
 import config from './config';
 import rootReducer from './reducers';
@@ -24,7 +24,7 @@ if (config.devMode) {
     stateTransformer: state => {
       const newState = {};
       for (const i of Object.keys(state)) {
-        if (Iterable.isIterable(state[i])) {
+        if (isImmutable(state[i])) {
           newState[i] = state[i].toJS();
         } else {
           newState[i] = state[i];

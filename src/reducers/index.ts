@@ -5,7 +5,13 @@
  */
 import {combineReducers} from 'redux';
 import theme from './theme';
+import makeListReducer from './makeListReducer';
+import page from './page';
 
 export default combineReducers({
-  theme
+  theme,
+  shelf: makeListReducer('shelf'),
+  book: makeListReducer('book'),
+  chapter: makeListReducer('chapter'),
+  page
 });

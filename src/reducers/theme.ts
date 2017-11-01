@@ -3,12 +3,9 @@
  * Created: 24 Oct 2017
  * Description:
  */
-import {remote} from 'electron';
-import {fromJS, Record} from 'immutable';
+import {Record} from 'immutable';
 import {TTheme, TThemeConfig} from '../types';
 import {definitions} from '../actions';
-
-import {ReducersMapObject} from 'redux';
 
 export const defaultState: TTheme = {
   list: [],
@@ -43,13 +40,13 @@ export const defaultState: TTheme = {
   }
 };
 
-class State extends Record(defaultState) {};
+class State extends Record<TTheme>(defaultState) {};
 
 export default (state = new State(), action: {
   type: string,
   list?: TTheme['list'],
   current?: TTheme['current']
-}) => {  
+}) => {
   switch (action.type) {
     case definitions.theme.updateList:
       return state.merge({list: action.list});
