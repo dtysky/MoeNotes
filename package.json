@@ -89,6 +89,7 @@
     "@types/es6-shim": "^0.31.32",
     "@types/react": "^16.0.18",
     "@types/react-dom": "^16.0.2",
+    "color-space": "^1.15.0",
     "electron": "^1.7.9",
     "es6-shim": "^0.35.3",
     "immutable": "^4.0.0-rc.9",

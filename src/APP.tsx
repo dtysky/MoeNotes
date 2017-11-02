@@ -8,6 +8,7 @@ import {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {init} from './actions/theme';
+import {load} from './actions/shelf';
 
 @connect(state => ({...state}))
 export default class extends Component<any, any> {
@@ -16,6 +17,7 @@ export default class extends Component<any, any> {
     console.log(this.props);
     
     dispatch(init());
+    dispatch(load());
   }
 
   public render() {

@@ -1,38 +1,50 @@
 import {Map, List, Record} from 'immutable';
 
-export type TThemeConfig = {
+export type TCDCMode = 'hue' | 'lightness' | 'saturation';
+
+export type TThemeConfig = Record<{
   defaultHighlight: string,
-  CDCMode: 'hue' | 'lightness' | 'saturation',
-  CDCRange: [number, number],
-  chapterNowBackCSC:  [number, number, number],
-  chapterNowBorderCSC: [number, number, number],
-  chapterNowFontCSC: [number, number, number],
-  chapterNormalBackCSC: [number, number, number],
-  chapterNormalBorderCSC: [number, number, number],
-  chapterNormalFontCSC: [number, number, number],
-  pageListBackCSC: [number, number, number],
-  pageButtonBackCSC: [number, number, number],
-  pageButtonFontCSC: [number, number, number],
-  pageNowBackCSC: [number, number, number],
-  pageNowFontCSC: [number, number, number],
-  pageNormalBackCSC: [number, number, number],
-  pageNormalFontCSC: [number, number, number],
-  bookBackCSC: [number, number, number],
-  bookFontCSC: [number, number, number],
-  bookShapeCSC: [number, number, number],
-  headBackCSC: [number, number, number],
-  toolbarCSC: [number, number, number]
+  CDCMode: TCDCMode,
+  CDCRange: List<number>,
+  chapterNowBackCSC: List<number | string | List<number>>,
+  chapterNowBorderCSC: List<number | string | List<number>>,
+  chapterNowFontCSC: List<number | string | List<number>>,
+  chapterNormalBackCSC: List<number | string | List<number>>,
+  chapterNormalBorderCSC: List<number | string | List<number>>,
+  chapterNormalFontCSC: List<number | string | List<number>>,
+  pageListBackCSC: List<number | string | List<number>>,
+  pageButtonBackCSC: List<number | string | List<number>>,
+  pageButtonFontCSC: List<number | string | List<number>>,
+  pageNowBackCSC: List<number | string | List<number>>,
+  pageNowFontCSC: List<number | string | List<number>>,
+  pageNormalBackCSC: List<number | string | List<number>>,
+  pageNormalFontCSC: List<number | string | List<number>>,
+  bookBackCSC: List<number | string | List<number>>,
+  bookFontCSC: List<number | string | List<number>>,
+  bookShapeCSC: List<number | string | List<number>>,
+  headBackCSC: List<number | string | List<number>>,
+  toolbarCSC: List<number | string | List<number>>
+}>;
+
+export type TThemeList = string[];
+
+export type TThemeCurrent = {
+  name: string,
+  root: string,
+  style: string,
+  editor: string,
+  config: TThemeConfig
 };
 
-export type TTheme = {
-  list: string[],
-  current: {
+export type TTheme = Record<{
+  list: List<string>,
+  current: Record<{
     name: string,
     root: string,
     style: string,
     editor: string,
     config: TThemeConfig
-  },
+  }>,
   // color: {
   //   head: {
   //     bg: string,
@@ -61,7 +73,7 @@ export type TTheme = {
   //     listBg: string
   //   }
   // }
-};
+}>;
 
 export type TPaths = {
   user: string,
@@ -93,5 +105,5 @@ export type TList = Record<{
   name: string,
   path: string,
   children: List<Record<TItem>>,
-  lut: Map<string, string>
+  lut: Map<string, Record<{path: string, index: number}>>
 }>;

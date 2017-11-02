@@ -8,15 +8,17 @@ import * as path from 'path';
 import {Observable} from 'rxjs';
 import config from '../config';
 import definitions from './definitions';
-import {TTheme, TThemeConfig} from '../types';
+import {
+  TTheme, TThemeConfig, TThemeList, TThemeCurrent
+} from '../types';
 
 declare const global: any;
 
 const {theme} = definitions;
 const {paths} = config;
 
-const updateList = (list: TTheme['list']) => ({type: theme.updateList, list});
-const updateCurrent = (current: TTheme['current']) => ({type: theme.updateCurrent, current});
+const updateList = (list: TThemeList) => ({type: theme.updateList, list});
+const updateCurrent = (current: TThemeCurrent) => ({type: theme.updateCurrent, current});
 export const init = () => ({type: theme.init});
 export const refresh = (name: string) => ({type: theme.refresh, name});
 

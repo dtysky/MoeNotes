@@ -3,11 +3,11 @@
  * Created: 24 Oct 2017
  * Description:
  */
-import {Record} from 'immutable';
-import {TTheme, TThemeConfig} from '../types';
+import {Record, fromJS} from 'immutable';
+import {TTheme, TThemeConfig, TThemeList, TThemeCurrent} from '../types';
 import {definitions} from '../actions';
 
-export const defaultState: TTheme = {
+export const defaultState: TTheme = fromJS({
   list: [],
   current: {
     name: '',
@@ -38,20 +38,18 @@ export const defaultState: TTheme = {
       toolbarCSC: [60, 50, 0.7]
     }
   }
-};
+});
 
-class State extends Record<TTheme>(defaultState) {};
-
-export default (state = new State(), action: {
+export default (state = defaultState, action: {
   type: string,
-  list?: TTheme['list'],
-  current?: TTheme['current']
+  list?: string[],
+  current?: TThemeCurrent
 }) => {
   switch (action.type) {
     case definitions.theme.updateList:
-      return state.merge({list: action.list});
+      return state.merge({list: fromJS(action.list)});
     case  definitions.theme.updateCurrent:
-      return state.merge({current: action.current});
+      return state.merge({current: fromJS(action.current)});
     default:
       return state;
   }
