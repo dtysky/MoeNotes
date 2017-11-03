@@ -104,6 +104,12 @@ export type TPage = Record<{
 export type TList = Record<{
   name: string,
   path: string,
+  current: string,
   children: List<Record<TItem>>,
   lut: Map<string, Record<{path: string, index: number}>>
 }>;
+
+export type TRecord = {
+  current: string,
+  children: TItem[],
+};

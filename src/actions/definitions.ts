@@ -4,6 +4,7 @@
  * Description:
  */
 export default {
+  none: 'NONE',
   theme: {
     init: 'THEME_INIT',
     refresh: 'THEME_REFRESH',
@@ -16,13 +17,15 @@ export default {
     delete: 'SHELF_DELETE',
     renameChild: 'SHELF_RENAME_CHILD',
     renameSelf: 'SHELF_RENAME_SELF',
+    select: 'SHELF_SELECT',
     swap: 'SHELF_SWAP',
     loadEpic: 'SHELF_LOAD_EPIC',
     addEpic: 'SHELF_ADD_EPIC',
     deleteEpic: 'SHELF_DELETE_EPIC',
     renameEpic: 'SHELF_RENAME_EPIC',
     selectEpic: 'SHELF_SELECT_EPIC',
-    swapEpic: 'SHELF_SWAP_EPIC'
+    swapEpic: 'SHELF_SWAP_EPIC',
+    saveEpic: 'SHELF_SAVE_EPIC'
   },
   book: {
     load: 'BOOK_RELOAD',
@@ -31,12 +34,14 @@ export default {
     renameChild: 'BOOK_RENAME_CHILD',
     renameSelf: 'BOOK_RENAME_SELF',
     swap: 'BOOK_SWAP',
+    select: 'BOOK_SELECT',
     loadEpic: 'BOOK_RELOAD_EPIC',
     addEpic: 'BOOK_ADD_EPIC',
     deleteEpic: 'BOOK_DELETE_EPIC',
     renameEpic: 'BOOK_RENAME_EPIC',
     selectEpic: 'BOOK_SELECT_EPIC',
-    swapEpic: 'BOOK_SWAP_EPIC'
+    swapEpic: 'BOOK_SWAP_EPIC',
+    saveEpic: 'BOOK_SAVE_EPIC'
   },
   chapter: {
     load: 'CHAPTER_RELOAD',
@@ -45,6 +50,7 @@ export default {
     renameChild: 'CHAPTER_RENAME_CHILD',
     renameSelf: 'CHAPTER_RENAME_SELF',
     swap: 'CHAPTER_SWAP',
+    select: 'CHAPTER_SELECT',
     loadEpic: 'CHAPTER_RELOAD_EPIC',
     addEpic: 'CHAPTER_ADD_EPIC',
     deleteEpic: 'CHAPTER_DELETE_EPIC',

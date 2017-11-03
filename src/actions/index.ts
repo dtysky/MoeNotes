@@ -12,5 +12,6 @@ import * as shelf from './shelf';
 export default combineEpics(
   theme.initEpic,
   theme.refreshEpic,
-  shelf.loadEpic
+  shelf.loadEpic,
+  shelf.saveEpic
 );

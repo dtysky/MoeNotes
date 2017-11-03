@@ -11,6 +11,7 @@ import config from '../config';
 export const defaultState: TList = fromJS({
   name: '',
   path: '',
+  current: '',
   children: [],
   lut: {}
 });
@@ -20,23 +21,23 @@ export default (name: 'shelf' | 'book' | 'chapter') => (
   action: {
     type: string,
     self?: TItem,
-    children?: {[name: string]: string},
+    children?: TItem[],
     child?: TItem,
     child2?: TItem,
     name?: string
   }
-) => {
+): TList => {
   switch (action.type) {
     case definitions[name].load: {
       let lut = state.get('lut', null).clear();
-      const children = fromJS(Object.keys(action.children).map((key, index) => {
-        const p = action.children[key];
+      const children = fromJS(action.children);
+      action.children.forEach(({name: key, path: p}, index) => {
         lut = lut.set(key, fromJS({path: p, index}));
-        return {name: key, path: p};
-      }));
+      });
       const result = fromJS({
         children,
-        lut
+        lut,
+        current: action.name
       });
 
       if (name === 'shelf') {
@@ -75,6 +76,10 @@ export default (name: 'shelf' | 'book' | 'chapter') => (
         .setIn(['lut', action.name], fromJS({
           path: state.getIn(['lut', action.child.name, 'path']), index
         }));
+    }
+
+    case definitions[name].select: {
+      return state.set('current', action.name);
     }
 
     case definitions[name].swap: {

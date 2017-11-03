@@ -5,83 +5,125 @@
  */
 import * as fs from 'fs';
 import {Observable} from 'rxjs';
+
 import config from '../config';
 import definitions from './definitions';
-import {TList, TItem} from '../types';
+import {TList, TItem, TRecord} from '../types';
+import {getNameFromPath} from '../utils';
 
 const {shelf} = definitions;
 const {paths} = config;
 
 export const load = () => ({type: shelf.loadEpic});
-export const add = (item: TItem) => ({type: shelf.addEpic, item});
-export const del = (item: TItem) => ({type: shelf.deleteEpic, item});
-export const select = (item: TItem) => ({type: shelf.selectEpic, item});
-export const rename = (item: TItem, name: string) => ({type: shelf.renameEpic, item, name});
-export const swap = (item1: TItem, item2: TItem) => ({type: shelf.swapEpic, item1, item2});
+export const add = (child: TItem) => ({type: shelf.addEpic, child});
+export const del = (child: TItem) => ({type: shelf.deleteEpic, child});
+export const select = (child: TItem) => ({type: shelf.selectEpic, child});
+export const rename = (child: TItem, name: string) => ({type: shelf.renameEpic, child, name});
+export const swap = (child1: TItem, child2: TItem) => ({type: shelf.swapEpic, child1, child2});
+export const save = () => ({type: shelf.saveEpic});
 
-const createTree = () => {
-  return {
-    now: '',
-    indexes: [],
-    names: {}
-  };
+let record: TRecord = {
+  current: '',
+  children: []
 };
 
 export const loadEpic = actions$ =>
   actions$.ofType(shelf.loadEpic)
-    .map(() => {
-      let record = createTree();
+    .switchMap(() => {
+      let oldRecord;
       if (fs.existsSync(paths.tree)) {
         try {
-          record = JSON.parse(fs.readFileSync(paths.tree, 'utf8'));
+          oldRecord = JSON.parse(fs.readFileSync(paths.tree, 'utf8'));
         } catch(err) {}
       }
 
-      record.indexes.forEach((dirPath, index) => {
+      // todo: 使用新格式，并对老的兼容
+      if (oldRecord && typeof oldRecord.now === 'string') {
+        Object.keys(oldRecord.names).forEach((dirPath, index) => {
+          const name = oldRecord.names[dirPath];
+          record.children.push({name, path: dirPath});
+        });
+        record.current = oldRecord.now;
+      } else {
+        record = <TRecord>oldRecord;
+      }
+
+      let currentInChildren = false;
+      record.children.forEach(({name, path: dirPath}, index) => {
         if (!fs.existsSync(dirPath)) {
-          record.indexes.splice(index);
-          delete record.names[dirPath];
+          record.children.splice(index);
+          currentInChildren = currentInChildren && (name === record.current);
         }
       });
 
-      if (!record.names[record.now]) {
-        record.now = record.indexes[0] || '';
+      if (!currentInChildren) {
+        record.current = (record.children[0] || {name: ''}).name;
       }
 
-      fs.writeFileSync(paths.tree, JSON.stringify(record));
-
-      return {
-        type: shelf.load,
-        children: record.names
-      };
+      return Observable.concat(
+        Observable.of({
+          type: shelf.load,
+          name: record.current,
+          children: record.children
+        }),
+        Observable.of(save())
+      );
     });
 
 export const addEpic = actions$ =>
   actions$.ofType(shelf.addEpic)
-    .map(({item}) => {
+    .map(({child}) => {
+      const {path: dirPath} = child;
+      const name = getNameFromPath(dirPath);
 
+      return {
+        type: shelf.add,
+        child: {path: dirPath, name}
+      };
     });
 
 export const delEpic = actions$ =>
   actions$.ofType(shelf.deleteEpic)
-    .map(({item}) => {
-
+    .map(({child}) => {
+      return {
+        type: shelf.delete,
+        name: child.name
+      };
     });
 
 export const renameEpic = actions$ =>
   actions$.ofType(shelf.renameEpic)
-    .map(({item, name}) => {
-
+    .map(({child, name}) => {
+      return {
+        type: shelf.renameChild,
+        child,
+        name
+      };
     });
 
 export const selectEpic = actions$ =>
   actions$.ofType(shelf.selectEpic)
-    .map(({item}) => {
-
+    .map(({child}) => {
+      
     });
 
 export const swapEpic = actions$ =>
   actions$.ofType(shelf.swapEpic)
-    .map(({item1, item2}) => {
+    .map(({child1, child2}) => {
+      return {
+        type: shelf.swap,
+        child1,
+        child2
+      };
+    });
 
+export const saveEpic = (actions$, store) =>
+  actions$.ofType(shelf.saveEpic)
+    .map(() => {
+      const {children, current} = store.getState().shelf.toJS();
+      console.warn(children, current);
+      
+      fs.writeFileSync(paths.tree, JSON.stringify({children, current}));
+
+      return {type: definitions.none};
     });
