@@ -11,13 +11,14 @@ import config from '../config';
 import definitions from './definitions';
 import {TList, TItem, TRecord} from '../types';
 import {getNameFromPath, getDirectories} from '../utils';
+import {load as loadChapter} from './chapter';
 
 const {book} = definitions;
 
 export const load = (self: TItem) => ({type: book.loadEpic, self});
 export const add = (name: string) => ({type: book.addEpic, name});
 export const del = (name: string) => ({type: book.deleteEpic, name});
-export const select = (child: TItem) => ({type: book.selectEpic, child});
+export const select = (name: string) => ({type: book.selectEpic, name});
 export const rename = (name: string, name2: string) => ({type: book.renameEpic, name, name2});
 export const swap = (name1: string, name2: string) => ({type: book.swapEpic, name1, name2});
 export const save = () => ({type: book.saveEpic});
@@ -31,7 +32,16 @@ export const loadEpic = actions$ =>
   actions$.ofType(book.loadEpic)
     .switchMap(({self}) => {
       if (!self) {
-        return {type: definitions.none};
+        return Observable.concat(
+          Observable.of({
+            type: book.load,
+            self: {name: '', path: ''},
+            name: '',
+            children: []
+          }),
+          Observable.of(save()),
+          Observable.of(select(null))
+        );
       }
 
       const {path} = self;
@@ -88,7 +98,7 @@ export const loadEpic = actions$ =>
       });
 
       if (!currentInChildren) {
-        record.current = (record.children[0] || {name: ''}).name;
+        record.current = (record.children[0] || {name: null}).name;
       }
 
       return Observable.concat(
@@ -98,7 +108,8 @@ export const loadEpic = actions$ =>
           name: record.current,
           children: record.children
         }),
-        Observable.of(save())
+        Observable.of(save()),
+        Observable.of(select(record.current))
       );
     });
 
@@ -107,13 +118,15 @@ export const addEpic = (actions$, store) =>
     .switchMap(({name}) => {
       const path = `${store.getState().book.get('path')}/${name}`;
       fs.mkdirSync(path);
+      const child = {path, name};
 
       return Observable.concat(
         Observable.of({
           type: book.add,
-          child: {path, name}
+          child
         }),
-        Observable.of(save())
+        Observable.of(save()),
+        Observable.of(select(name))
       );
     });
 
@@ -123,13 +136,20 @@ export const delEpic = (actions$, store) =>
       const path = `${store.getState().book.get('path')}/${name}`;
       rmdir.sync(path);
 
-      return Observable.concat(
+      const next = Observable.concat(
         Observable.of({
           type: book.delete,
           name: name
-        }),
-        Observable.of(save())
+        })
       );
+
+      if (name === store.getState().book.get('current')) {
+        return next.concat(Observable.of(select(
+          store.book.getIn(['children', 0, 'name'], null)
+        )));
+      }
+
+      return next;
     });
 
 export const renameEpic = (actions$, store) =>
@@ -150,10 +170,19 @@ export const renameEpic = (actions$, store) =>
       );
     });
 
-export const selectEpic = actions$ =>
+export const selectEpic = (actions$, store) =>
   actions$.ofType(book.selectEpic)
-    .switchMap(({child}) => {
-      
+    .switchMap(({name}) => {
+      const child = name ? {name, path: `${store.getState().book.get('path')}/${name}`} : null;
+
+      return Observable.concat(
+        Observable.of({
+          type: book.select,
+          name: name || ''
+        }),
+        Observable.of(save()),
+        Observable.of(loadChapter(child))
+      );
     });
 
 export const swapEpic = actions$ =>

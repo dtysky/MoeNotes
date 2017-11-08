@@ -12,7 +12,8 @@ export const defaultState: TPage = fromJS({
   name: '',
   path: '',
   markdown: '',
-  html: ''
+  html: '',
+  active: false
 });
 
 export default (state = defaultState, action: {
@@ -27,7 +28,17 @@ export default (state = defaultState, action: {
         name: action.self.name,
         path: action.self.path,
         markdown: action.markdown,
-        html: action.html
+        html: action.html,
+        active: true
+      });
+
+    case definitions.page.disable:
+      return fromJS({
+        name: '',
+        path: '',
+        markdown: '',
+        html: '',
+        active: false
       });
 
     case definitions.page.edit:

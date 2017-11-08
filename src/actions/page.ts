@@ -19,7 +19,11 @@ export const save = () => ({type: page.saveEpic});
 
 export const loadEpic = actions$ =>
   actions$.ofType(page.loadEpic)
-    .switchMap(({self}) => {
+    .map(({self}) => {
+      if (!self) {
+        return {type: page.disable};
+      }
+
       const markdown = fs.readFileSync(self.path, 'utf8');
       const html = parse(markdown);
 
@@ -32,8 +36,8 @@ export const loadEpic = actions$ =>
     });
 
 export const editEpic = actions$ =>
-  actions$.ofType(page.loadEpic)
-    .switchMap(({markdown}) => {
+  actions$.ofType(page.editEpic)
+    .map(({markdown}) => {
       const html = parse(markdown);
 
       return {
@@ -44,8 +48,8 @@ export const editEpic = actions$ =>
     });
 
 export const saveEpic = (actions$, store) =>
-  actions$.ofType(page.loadEpic)
-    .switchMap(() => {
+  actions$.ofType(page.saveEpic)
+    .map(() => {
       const path = store.page.get('path');
       const markdown = store.page.get('markdown');
 

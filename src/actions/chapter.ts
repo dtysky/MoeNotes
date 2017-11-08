@@ -11,13 +11,14 @@ import config from '../config';
 import definitions from './definitions';
 import {TList, TItem, TRecord} from '../types';
 import {getNameFromPath, getDirectories, getFiles} from '../utils';
+import {load as loadPage} from './page';
 
 const {chapter} = definitions;
 
 export const load = (self: TItem) => ({type: chapter.loadEpic, self});
 export const add = (name: string) => ({type: chapter.addEpic, name});
 export const del = (name: string) => ({type: chapter.deleteEpic, name});
-export const select = (child: TItem) => ({type: chapter.selectEpic, child});
+export const select = (name: string) => ({type: chapter.selectEpic, name});
 export const rename = (name: string, name2: string) => ({type: chapter.renameEpic, name, name2});
 export const swap = (name1: string, name2: string) => ({type: chapter.swapEpic, name1, name2});
 export const save = () => ({type: chapter.saveEpic});
@@ -30,6 +31,19 @@ let record: TRecord = {
 export const loadEpic = actions$ =>
   actions$.ofType(chapter.loadEpic)
     .switchMap(({self}) => {
+      if (!self) {
+        return Observable.concat(
+          Observable.of({
+            type: chapter.load,
+            self: {name: '', path: ''},
+            name: '',
+            children: []
+          }),
+          Observable.of(save()),
+          Observable.of(select(null))
+        );
+      }
+
       const {path} = self;
 
       const treePath = `${path}/.tree`;
@@ -60,7 +74,7 @@ export const loadEpic = actions$ =>
       });
 
       if (!currentInChildren) {
-        record.current = (record.children[0] || {name: ''}).name;
+        record.current = (record.children[0] || {name: null}).name;
       }
 
       return Observable.concat(
@@ -70,7 +84,8 @@ export const loadEpic = actions$ =>
           name: record.current,
           children: record.children
         }),
-        Observable.of(save())
+        Observable.of(save()),
+        Observable.of(select(record.current))
       );
     });
 
@@ -85,7 +100,8 @@ export const addEpic = (actions$, store) =>
           type: chapter.add,
           child: {path, name}
         }),
-        Observable.of(save())
+        Observable.of(save()),
+        Observable.of(select(name))
       );
     });
 
@@ -95,13 +111,21 @@ export const delEpic = (actions$, store) =>
       const path = `${store.getState().chapter.get('path')}/${name}.md`;
       fs.unlinkSync(path);
 
-      return Observable.concat(
+      const next = Observable.concat(
         Observable.of({
           type: chapter.delete,
           name: name
         }),
         Observable.of(save())
       );
+
+      if (name === store.getState().chapter.get('current')) {
+        return next.concat(Observable.of(select(
+          store.chapter.getIn(['children', 0, 'name'], null)
+        )));
+      }
+
+      return next;
     });
 
 export const renameEpic = (actions$, store) =>
@@ -122,10 +146,19 @@ export const renameEpic = (actions$, store) =>
       );
     });
 
-export const selectEpic = actions$ =>
+export const selectEpic = (actions$, store) =>
   actions$.ofType(chapter.selectEpic)
-    .switchMap(({child}) => {
-      
+    .switchMap(({name}) => {
+      const child = name ? {name, path: `${store.getState().chapter.get('path')}/${name}.md`} : null;
+
+      return Observable.concat(
+        Observable.of({
+          type: chapter.select,
+          name: name || ''
+        }),
+        Observable.of(save()),
+        Observable.of(loadPage(child))
+      );
     });
 
 export const swapEpic = actions$ =>

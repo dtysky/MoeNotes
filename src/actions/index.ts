@@ -29,4 +29,8 @@ let epics = [];
   epics = epics.concat(getEpicActions(obj));
 });
 
-export default combineEpics(...epics);
+export default (action$, store) =>
+  combineEpics(...epics)(action$, store)
+  .do({error: err => {
+    console.error(err);
+  }});

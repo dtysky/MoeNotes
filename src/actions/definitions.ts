@@ -61,6 +61,7 @@ export default {
   },
   page: {
     load: 'PAGE_LOAD',
+    disable: 'PAGE_DISABLE',
     edit: 'PAGE_EDIT',
     save: 'PAGE_SAVE',
     loadEpic: 'PAGE_LOAD_EPIC',

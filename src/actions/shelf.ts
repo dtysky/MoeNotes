@@ -61,7 +61,7 @@ export const loadEpic = actions$ =>
         record.current = (record.children[0] || {name: ''}).name;
       }
 
-      const current = record.children.filter(child => (child.name === record.current))[0];      
+      const current = record.children.filter(child => (child.name === record.current))[0];
 
       return Observable.concat(
         Observable.of({
@@ -89,16 +89,24 @@ export const addEpic = actions$ =>
       );
     });
 
-export const delEpic = actions$ =>
+export const delEpic = (actions$, store) =>
   actions$.ofType(shelf.deleteEpic)
     .switchMap(({child}) => {
-      return Observable.concat(
+      const next = Observable.concat(
         Observable.of({
           type: shelf.delete,
           name: child.name
         }),
         Observable.of(save())
       );
+
+      if (child.name === store.shelf.get('current')) {
+        return next.concat(Observable.of(select(
+          store.shelf.getIn(['children', 0], null)
+        )));
+      }
+
+      return next;
     });
 
 export const renameEpic = actions$ =>
@@ -120,7 +128,7 @@ export const selectEpic = actions$ =>
       return Observable.concat(
         Observable.of({
           type: shelf.select,
-          name: child.name
+          name: (child || {name: ''}).name
         }),
         Observable.of(save()),
         Observable.of(loadBook(child))

@@ -98,7 +98,8 @@ export type TPage = Record<{
   name: string,
   path: string,
   markdown: string,
-  html: string
+  html: string,
+  active: boolean
 }>;
 
 export type TList = Record<{
@@ -114,11 +115,3 @@ export type TRecord = {
   children: TItem[]
 };
 
-export type TBookRecord = {
-  current: string,
-  children: string[],
-  chapters: {
-    current: string,
-    children: string[]
-  }
-};

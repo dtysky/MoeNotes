@@ -8,7 +8,7 @@ import * as path from 'path';
 import colorSpace from 'color-space';
 import stringHash from 'string-hash';
 import * as marked from 'marked';
-import katex from 'parse-katex';
+import * as katex from 'parse-katex';
 import * as highlighter from 'highlight.js';
 
 import {TThemeConfig, TCDCMode} from './types';

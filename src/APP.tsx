@@ -20,6 +20,10 @@ export default class extends Component<any, any> {
     dispatch(load());
   }
 
+  public componentDidCatch(err) {
+    console.error(err);
+  }
+
   public render() {
     return (
       <div>
