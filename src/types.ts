@@ -111,5 +111,14 @@ export type TList = Record<{
 
 export type TRecord = {
   current: string,
-  children: TItem[],
+  children: TItem[]
+};
+
+export type TBookRecord = {
+  current: string,
+  children: string[],
+  chapters: {
+    current: string,
+    children: string[]
+  }
 };

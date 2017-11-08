@@ -1,5 +1,7 @@
 # MoeNotes
-  
+
+
+**Reworking! You can find the old project on `old` branch.**  
 
 ![logo](doc/logo.png)  
 

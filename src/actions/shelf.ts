@@ -72,49 +72,61 @@ export const loadEpic = actions$ =>
 
 export const addEpic = actions$ =>
   actions$.ofType(shelf.addEpic)
-    .map(({child}) => {
+    .switchMap(({child}) => {
       const {path: dirPath} = child;
       const name = getNameFromPath(dirPath);
 
-      return {
-        type: shelf.add,
-        child: {path: dirPath, name}
-      };
+      return Observable.concat(
+        Observable.of({
+          type: shelf.add,
+          child: {path: dirPath, name}
+        }),
+        Observable.of(save())
+      );
     });
 
 export const delEpic = actions$ =>
   actions$.ofType(shelf.deleteEpic)
-    .map(({child}) => {
-      return {
-        type: shelf.delete,
-        name: child.name
-      };
+    .switchMap(({child}) => {
+      return Observable.concat(
+        Observable.of({
+          type: shelf.delete,
+          name: child.name
+        }),
+        Observable.of(save())
+      );
     });
 
 export const renameEpic = actions$ =>
   actions$.ofType(shelf.renameEpic)
-    .map(({child, name}) => {
-      return {
-        type: shelf.renameChild,
-        child,
-        name
-      };
+    .switchMap(({child, name}) => {
+      return Observable.concat(
+        Observable.of({
+          type: shelf.renameChild,
+          child,
+          name
+        }),
+        Observable.of(save())
+      );
     });
 
 export const selectEpic = actions$ =>
   actions$.ofType(shelf.selectEpic)
-    .map(({child}) => {
+    .switchMap(({child}) => {
       
     });
 
 export const swapEpic = actions$ =>
   actions$.ofType(shelf.swapEpic)
-    .map(({child1, child2}) => {
-      return {
-        type: shelf.swap,
-        child1,
-        child2
-      };
+    .switchMap(({child1, child2}) => {
+      return Observable.concat(
+        Observable.of({
+          type: shelf.swap,
+          child1,
+          child2
+        }),
+        Observable.of(save())
+      );
     });
 
 export const saveEpic = (actions$, store) =>
@@ -122,7 +134,7 @@ export const saveEpic = (actions$, store) =>
     .map(() => {
       const {children, current} = store.getState().shelf.toJS();
       console.warn(children, current);
-      
+
       fs.writeFileSync(paths.tree, JSON.stringify({children, current}));
 
       return {type: definitions.none};
