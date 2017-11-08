@@ -7,35 +7,39 @@ import * as fs from 'fs';
 import * as path from 'path';
 import colorSpace from 'color-space';
 import stringHash from 'string-hash';
+import * as marked from 'marked';
+import katex from 'parse-katex';
+import * as highlighter from 'highlight.js';
 
 import {TThemeConfig, TCDCMode} from './types';
+import config from './config';
 
-export function getDirectories(dirPath: string) {
+export const getDirectories = (dirPath: string) => {
   return fs.readdirSync(dirPath).filter(file =>
     fs.statSync(path.join(dirPath, file)).isDirectory()
       && file.substr(0, 1) !== '.'
   );
-}
+};
 
-export function getFiles(dirPath: string) {
+export const getFiles = (dirPath: string) => {
   return fs.readdirSync(dirPath).filter(file =>
     fs.statSync(path.join(dirPath, file)).isFile()
       && file.replace(/^.*\./, '') === 'md'
   ).map(file => file.replace('.md', ''));
-}
+};
 
-export function getNameFromPath(p: string) {
+export const getNameFromPath = (p: string) => {
   return p.replace(/^.*[\\\/]/, '');
-}
+};
 
-export function stringToColor(
+export const stringToColor = (
   str: string,
   constraints: [number, number, number] |
     [number, number, number, TCDCMode] |
     [number, number, number, [number, number]] |
     [number, number, number, TCDCMode, [number, number]],
   config: TThemeConfig
-) {
+) => {
   let mode = config.get('CDCMode', 'hue');
   let cdc = config.get('CDCRange', null).toJS();
   const c1 = constraints[0];
@@ -65,3 +69,41 @@ export function stringToColor(
   color.push(alpha);
   return 'rgba(' + color.join(',') + ')';
 }
+
+const renderer = new marked.Renderer();
+const highlight = (code: string) => {
+  const re = /:::(\S+)\n([\s\S]+)/.exec(code);
+  let lang = config.defaultHighlight;
+  let content = code;
+
+  if (re) {
+    lang = re[1];
+    content = re[2];
+  }
+
+  let result = '';
+  try {
+    result = highlighter.highlight(lang, content).value;
+  } catch (e) {
+    result = highlighter.highlight(config.defaultHighlight, content).value;
+  }
+
+  return result;
+};
+
+const options = {
+  renderer: renderer,
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  highlight: highlight
+};
+
+export const parse = (page: string) => {
+  const html = marked.parse(page, options);
+  return katex.renderLaTeX(html);
+};

@@ -15,7 +15,7 @@ module.exports = {
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: ['.ts', '.tsx', '.js']
   },
 
   stats: {
@@ -26,7 +26,11 @@ module.exports = {
 
   devtool: false,
 
-  target: "electron",
+  target: 'electron',
+  node: {
+    __dirname: true,
+    __filename: true
+  },
 
   module: {
     rules: [

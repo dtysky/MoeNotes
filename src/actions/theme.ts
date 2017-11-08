@@ -52,7 +52,7 @@ export const refreshEpic = actions$ =>
       const root = path.join(paths.theme, name);
       const editor = fs.readFileSync(path.join(root, 'editor.css')).toString();
       const style = fs.readFileSync(path.join(root, 'config.css')).toString();;
-      const configJSON = fs.readFileSync(path.join(root, 'config.json')).toString();
+      const configJSON = JSON.parse(fs.readFileSync(path.join(root, 'config.json')).toString());
 
       const oldNode = document.getElementById('style');
       const node = document.createElement('style');
@@ -67,11 +67,13 @@ export const refreshEpic = actions$ =>
       // Real hacking !!!!
       global.editorTheme = editor;
 
+      config.defaultHighlight = configJSON.defaultHighlight;
+
       return updateCurrent({
         name,
         root,
         style,
         editor,
-        config: <TThemeConfig>JSON.parse(configJSON)
+        config: <TThemeConfig>configJSON
       });
     });

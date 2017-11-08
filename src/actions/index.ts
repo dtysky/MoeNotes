@@ -8,10 +8,25 @@ import {combineEpics} from 'redux-observable';
 export {default as definitions} from './definitions';
 import * as theme from './theme';
 import * as shelf from './shelf';
+import * as book from './book';
+import * as chapter from './chapter';
+import * as page from './page';
 
-export default combineEpics(
-  theme.initEpic,
-  theme.refreshEpic,
-  shelf.loadEpic,
-  shelf.saveEpic
-);
+const getEpicActions = (obj: any) => {
+  const result = [];
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key) && /.*Epic$/.test(key)) {
+      result.push(obj[key]);
+    }
+  }
+
+  return result;
+};
+
+let epics = [];
+[theme, shelf, book, chapter, page].forEach(obj => {
+  epics = epics.concat(getEpicActions(obj));
+});
+
+export default combineEpics(...epics);

@@ -3,7 +3,6 @@ import {Map, List, Record} from 'immutable';
 export type TCDCMode = 'hue' | 'lightness' | 'saturation';
 
 export type TThemeConfig = Record<{
-  defaultHighlight: string,
   CDCMode: TCDCMode,
   CDCRange: List<number>,
   chapterNowBackCSC: List<number | string | List<number>>,
@@ -86,7 +85,8 @@ export type TPaths = {
 export type TConfig = {
   env: 'development' | 'release',
   devMode: boolean,
-  paths: TPaths
+  paths: TPaths,
+  defaultHighlight: string
 };
 
 export type TItem = {

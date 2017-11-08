@@ -71,10 +71,10 @@ export default (name: 'shelf' | 'book' | 'chapter') => (
 
     case definitions[name].renameChild: {
       const index = state.getIn(['lut', action.child.name, 'index']);
-      return state.setIn(['children', index, 'name'], action.name)
+      return state.setIn(['children', index], fromJS(action.child2))
         .deleteIn(['lut', action.child.name])
-        .setIn(['lut', action.name], fromJS({
-          path: state.getIn(['lut', action.child.name, 'path']), index
+        .setIn(['lut', action.child2.name], fromJS({
+          path: action.child2.path, index
         }));
     }
 

@@ -5,20 +5,21 @@
  */
 import * as fs from 'fs';
 import {Observable} from 'rxjs';
+import rmdir from 'rmdir';
 
 import config from '../config';
 import definitions from './definitions';
 import {TList, TItem, TRecord} from '../types';
-import {getNameFromPath} from '../utils';
+import {getNameFromPath, getDirectories} from '../utils';
 
 const {book} = definitions;
 
 export const load = (self: TItem) => ({type: book.loadEpic, self});
-export const add = (child: TItem) => ({type: book.addEpic, child});
-export const del = (child: TItem) => ({type: book.deleteEpic, child});
+export const add = (name: string) => ({type: book.addEpic, name});
+export const del = (name: string) => ({type: book.deleteEpic, name});
 export const select = (child: TItem) => ({type: book.selectEpic, child});
-export const rename = (child: TItem, name: string) => ({type: book.renameEpic, child, name});
-export const swap = (child1: TItem, child2: TItem) => ({type: book.swapEpic, child1, child2});
+export const rename = (name: string, name2: string) => ({type: book.renameEpic, name, name2});
+export const swap = (name1: string, name2: string) => ({type: book.swapEpic, name1, name2});
 export const save = () => ({type: book.saveEpic});
 
 let record: TRecord = {
@@ -29,7 +30,11 @@ let record: TRecord = {
 export const loadEpic = actions$ =>
   actions$.ofType(book.loadEpic)
     .switchMap(({self}) => {
-      const {path, name} = self;
+      if (!self) {
+        return {type: definitions.none};
+      }
+
+      const {path} = self;
 
       let oldRecord;
       const treePath = `${path}/.tree`;
@@ -42,16 +47,19 @@ export const loadEpic = actions$ =>
       // Using new structure for tree and transform old one
       if (oldRecord && typeof oldRecord.root === 'string') {
         record.current = oldRecord.now;
-        record.children = oldRecord.indexes;
-        oldRecord.indexes.map(name => {
+        record.children = oldRecord.indexes.map(name => {
           const chapterPath = `${path}/${name}`;
-          fs.writeFileSync(`${chapterPath}/.tree`, JSON.stringify({
-            current: oldRecord.chapters.now,
-            children: oldRecord.chapters.indexes.map(pageName => ({
-              name: pageName,
-              path: `${chapterPath}/${pageName}`
-            }))
-          }));
+
+          if (fs.existsSync(chapterPath)) {
+            const tree = JSON.stringify({
+              current: oldRecord.chapters[name].now,
+              children: oldRecord.chapters[name].indexes.map(pageName => ({
+                name: pageName,
+                path: `${chapterPath}/${pageName}.md`
+              }))
+            });
+            fs.writeFileSync(`${chapterPath}/.tree`, tree);
+          }
 
           return {name, path: chapterPath};
         });
@@ -60,10 +68,22 @@ export const loadEpic = actions$ =>
       }
 
       let currentInChildren = false;
+      const oldChildren = record.children.map(child => child.name);
+      const newChildren = getDirectories(path);
       record.children.forEach(({name, path: dirPath}, index) => {
         if (!fs.existsSync(dirPath)) {
+          const i = newChildren.indexOf(name);
+          if (i > 0) {
+            newChildren.splice(i);
+          }
           record.children.splice(index);
           currentInChildren = currentInChildren && (name === record.current);
+        }
+      });
+
+      newChildren.forEach(name => {
+        if (oldChildren.indexOf(name) < 0) {
+          record.children.push({name, path: `${path}/${name}`});
         }
       });
 
@@ -74,6 +94,7 @@ export const loadEpic = actions$ =>
       return Observable.concat(
         Observable.of({
           type: book.load,
+          self,
           name: record.current,
           children: record.children
         }),
@@ -81,41 +102,49 @@ export const loadEpic = actions$ =>
       );
     });
 
-export const addEpic = actions$ =>
+export const addEpic = (actions$, store) =>
   actions$.ofType(book.addEpic)
-    .switchMap(({child}) => {
-      const {path: dirPath} = child;
-      const name = getNameFromPath(dirPath);
+    .switchMap(({name}) => {
+      const path = `${store.getState().book.get('path')}/${name}`;
+      fs.mkdirSync(path);
 
       return Observable.concat(
         Observable.of({
           type: book.add,
-          child: {path: dirPath, name}
+          child: {path, name}
         }),
         Observable.of(save())
       );
     });
 
-export const delEpic = actions$ =>
+export const delEpic = (actions$, store) =>
   actions$.ofType(book.deleteEpic)
-    .switchMap(({child}) => {
+    .switchMap(({name}) => {
+      const path = `${store.getState().book.get('path')}/${name}`;
+      rmdir.sync(path);
+
       return Observable.concat(
         Observable.of({
           type: book.delete,
-          name: child.name
+          name: name
         }),
         Observable.of(save())
       );
     });
 
-export const renameEpic = actions$ =>
+export const renameEpic = (actions$, store) =>
   actions$.ofType(book.renameEpic)
-    .switchMap(({child, name}) => {
+    .switchMap(({name, name2}) => {
+      const path = store.getState().book.get('path');
+      const oldPath = `${path}/${name}`;
+      const newPath = `${path}/${name2}`;
+      fs.renameSync(oldPath, newPath);
+
       return Observable.concat(
         Observable.of({
           type: book.renameChild,
-          child,
-          name
+          child: {name, path: oldPath},
+          child2: {name: name2, path: newPath}
         }),
         Observable.of(save())
       );
@@ -129,12 +158,12 @@ export const selectEpic = actions$ =>
 
 export const swapEpic = actions$ =>
   actions$.ofType(book.swapEpic)
-    .switchMap(({child1, child2}) => {
+    .switchMap(({name1, name2}) => {
       return Observable.concat(
         Observable.of({
           type: book.swap,
-          child1,
-          child2
+          child1: {name: name1},
+          child2: {name: name2}
         }),
         Observable.of(save())
       );
@@ -143,11 +172,8 @@ export const swapEpic = actions$ =>
 export const saveEpic = (actions$, store) =>
   actions$.ofType(book.saveEpic)
     .map(() => {
-      const {children, current} = store.getState().book.toJS();
-      console.warn(children, current);
-
-      fs.writeFileSync(paths.tree, JSON.stringify({children, current}));
+      const {children, current, path} = store.getState().book.toJS();
+      fs.writeFileSync(`${path}/.tree`, JSON.stringify({children, current}));
 
       return {type: definitions.none};
     });
-

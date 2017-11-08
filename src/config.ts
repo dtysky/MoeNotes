@@ -20,7 +20,8 @@ const config: TConfig = {
     tree: `${userPath}/.tree`,
     log: `${userPath}/error.log`,
     theme: `${appPath}/theme`
-  }
+  },
+  defaultHighlight: 'VHDL'
 };
 
 export default config;

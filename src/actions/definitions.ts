@@ -28,14 +28,14 @@ export default {
     saveEpic: 'SHELF_SAVE_EPIC'
   },
   book: {
-    load: 'BOOK_RELOAD',
+    load: 'BOOK_LOAD',
     add: 'BOOK_ADD',
     delete: 'BOOK_DELETE',
     renameChild: 'BOOK_RENAME_CHILD',
     renameSelf: 'BOOK_RENAME_SELF',
     swap: 'BOOK_SWAP',
     select: 'BOOK_SELECT',
-    loadEpic: 'BOOK_RELOAD_EPIC',
+    loadEpic: 'BOOK_LOAD_EPIC',
     addEpic: 'BOOK_ADD_EPIC',
     deleteEpic: 'BOOK_DELETE_EPIC',
     renameEpic: 'BOOK_RENAME_EPIC',
@@ -44,25 +44,25 @@ export default {
     saveEpic: 'BOOK_SAVE_EPIC'
   },
   chapter: {
-    load: 'CHAPTER_RELOAD',
+    load: 'CHAPTER_LOAD',
     add: 'CHAPTER_ADD',
     delete: 'CHAPTER_DELETE',
     renameChild: 'CHAPTER_RENAME_CHILD',
     renameSelf: 'CHAPTER_RENAME_SELF',
     swap: 'CHAPTER_SWAP',
     select: 'CHAPTER_SELECT',
-    loadEpic: 'CHAPTER_RELOAD_EPIC',
+    loadEpic: 'CHAPTER_LOAD_EPIC',
     addEpic: 'CHAPTER_ADD_EPIC',
     deleteEpic: 'CHAPTER_DELETE_EPIC',
     renameEpic: 'CHAPTER_RENAME_EPIC',
     selectEpic: 'CHAPTER_SELECT_EPIC',
-    swapEpic: 'CHAPTER_SWAP_EPIC'
+    swapEpic: 'CHAPTER_SWAP_EPIC',
+    saveEpic: 'CHAPTER_SAVE_EPIC'
   },
   page: {
     load: 'PAGE_LOAD',
     edit: 'PAGE_EDIT',
     save: 'PAGE_SAVE',
-    rename: 'PAGE_RENAME',
     loadEpic: 'PAGE_LOAD_EPIC',
     editEpic: 'PAGE_EDIT_EPIC',
     saveEpic: 'PAGE_SAVE_EPIC'

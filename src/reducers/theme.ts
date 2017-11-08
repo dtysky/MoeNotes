@@ -15,7 +15,6 @@ export const defaultState: TTheme = fromJS({
     style: '',
     editor: '',
     config: {
-      defaultHighlight: 'VHDL',
       CDCMode: 'hue',
       CDCRange: [260, 380],
       chapterNowBackCSC:  [50, 60, 1],

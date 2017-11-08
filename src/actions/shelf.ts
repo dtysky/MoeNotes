@@ -10,6 +10,7 @@ import config from '../config';
 import definitions from './definitions';
 import {TList, TItem, TRecord} from '../types';
 import {getNameFromPath} from '../utils';
+import {load as loadBook} from './book';
 
 const {shelf} = definitions;
 const {paths} = config;
@@ -60,13 +61,16 @@ export const loadEpic = actions$ =>
         record.current = (record.children[0] || {name: ''}).name;
       }
 
+      const current = record.children.filter(child => (child.name === record.current))[0];      
+
       return Observable.concat(
         Observable.of({
           type: shelf.load,
           name: record.current,
           children: record.children
         }),
-        Observable.of(save())
+        Observable.of(save()),
+        Observable.of(select(current))
       );
     });
 
@@ -104,7 +108,7 @@ export const renameEpic = actions$ =>
         Observable.of({
           type: shelf.renameChild,
           child,
-          name
+          child2: {name, path: child.path}
         }),
         Observable.of(save())
       );
@@ -113,7 +117,14 @@ export const renameEpic = actions$ =>
 export const selectEpic = actions$ =>
   actions$.ofType(shelf.selectEpic)
     .switchMap(({child}) => {
-      
+      return Observable.concat(
+        Observable.of({
+          type: shelf.select,
+          name: child.name
+        }),
+        Observable.of(save()),
+        Observable.of(loadBook(child))
+      );
     });
 
 export const swapEpic = actions$ =>
@@ -133,8 +144,6 @@ export const saveEpic = (actions$, store) =>
   actions$.ofType(shelf.saveEpic)
     .map(() => {
       const {children, current} = store.getState().shelf.toJS();
-      console.warn(children, current);
-
       fs.writeFileSync(paths.tree, JSON.stringify({children, current}));
 
       return {type: definitions.none};
