@@ -115,3 +115,16 @@ export type TRecord = {
   children: TItem[]
 };
 
+export type TNotification = Record<{
+  type: 'info' | 'success' | 'warn' | 'error',
+  message: string,
+  show: boolean
+}>;
+
+export type TModal = Record<{
+  type: 'info' | 'success' | 'warn' | 'error',
+  message: string,
+  show: boolean,
+  onConfirm: () => void,
+  onCancel: () => void
+}>;

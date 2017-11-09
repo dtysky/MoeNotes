@@ -68,7 +68,7 @@ export const stringToColor = (
   }
   color.push(alpha);
   return 'rgba(' + color.join(',') + ')';
-}
+};
 
 const renderer = new marked.Renderer();
 const highlight = (code: string) => {

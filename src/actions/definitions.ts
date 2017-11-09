@@ -67,5 +67,19 @@ export default {
     loadEpic: 'PAGE_LOAD_EPIC',
     editEpic: 'PAGE_EDIT_EPIC',
     saveEpic: 'PAGE_SAVE_EPIC'
+  },
+  notification: {
+    info: 'NOTIFICATION_INFO',
+    success: 'NOTIFICATION_SUCCESS',
+    warn: 'NOTIFICATION_WARN',
+    error: 'NOTIFICATION_ERROR',
+    close: 'NOTIFICATION_CLOSE'
+  },
+  modal: {
+    info: 'MODAL_INFO',
+    success: 'MODAL_SUCCESS',
+    warn: 'MODAL_WARN',
+    error: 'MODAL_ERROR',
+    close: 'MODAL_CLOSE'
   }
 };

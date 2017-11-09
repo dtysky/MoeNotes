@@ -11,6 +11,8 @@ import * as shelf from './shelf';
 import * as book from './book';
 import * as chapter from './chapter';
 import * as page from './page';
+import * as notification from './notification';
+import * as modal from './modal';
 
 const getEpicActions = (obj: any) => {
   const result = [];
@@ -25,7 +27,7 @@ const getEpicActions = (obj: any) => {
 };
 
 let epics = [];
-[theme, shelf, book, chapter, page].forEach(obj => {
+[theme, shelf, book, chapter, page, notification, modal].forEach(obj => {
   epics = epics.concat(getEpicActions(obj));
 });
 
