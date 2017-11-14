@@ -25,7 +25,9 @@ export default {
     renameEpic: 'SHELF_RENAME_EPIC',
     selectEpic: 'SHELF_SELECT_EPIC',
     swapEpic: 'SHELF_SWAP_EPIC',
-    saveEpic: 'SHELF_SAVE_EPIC'
+    saveEpic: 'SHELF_SAVE_EPIC',
+    open: 'SHELF_OPEN',
+    close: 'SHELF_CLOSE'
   },
   book: {
     load: 'BOOK_LOAD',
@@ -41,7 +43,9 @@ export default {
     renameEpic: 'BOOK_RENAME_EPIC',
     selectEpic: 'BOOK_SELECT_EPIC',
     swapEpic: 'BOOK_SWAP_EPIC',
-    saveEpic: 'BOOK_SAVE_EPIC'
+    saveEpic: 'BOOK_SAVE_EPIC',
+    open: 'BOOK_OPEN',
+    close: 'BOOK_CLOSE'
   },
   chapter: {
     load: 'CHAPTER_LOAD',
@@ -57,7 +61,9 @@ export default {
     renameEpic: 'CHAPTER_RENAME_EPIC',
     selectEpic: 'CHAPTER_SELECT_EPIC',
     swapEpic: 'CHAPTER_SWAP_EPIC',
-    saveEpic: 'CHAPTER_SAVE_EPIC'
+    saveEpic: 'CHAPTER_SAVE_EPIC',
+    open: 'CHAPTER_OPEN',
+    close: 'CHAPTER_CLOSE'
   },
   page: {
     load: 'PAGE_LOAD',

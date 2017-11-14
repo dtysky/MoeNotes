@@ -4,10 +4,11 @@
  * Description:
  */
 import * as React from 'react';
-import {TList} from '../types';
+import {TList, TTheme} from '../types';
 import {connect} from 'react-redux';
 
 interface IPropTypes {
+  theme: TTheme;
   shelf: TList;
 }
 
@@ -16,11 +17,10 @@ interface IStateTypes {
 }
 
 class Shelf extends React.Component<IPropTypes, IStateTypes> {
-  public render() {
-    console.warn(this.props.shelf.toJS());
 
+  public render() {
     return null;
   }
 }
 
-export default connect(state => ({shelf: state.shelf}))(Shelf);
+export default connect(state => ({shelf: state.shelf, theme: state.theme}))(Shelf);

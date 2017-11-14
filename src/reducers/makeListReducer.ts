@@ -13,7 +13,8 @@ export const defaultState: TList = fromJS({
   path: '',
   current: '',
   children: [],
-  lut: {}
+  lut: {},
+  open: false
 });
 
 export default (name: 'shelf' | 'book' | 'chapter') => (
@@ -92,6 +93,14 @@ export default (name: 'shelf' | 'book' | 'chapter') => (
         .setIn(['children', index2], item1)
         .setIn(['lut', action.child.name, 'index'], index2)
         .setIn(['lut', action.child2.name, 'index'], index1);
+    }
+
+    case definitions[name].open: {
+      return state.set('open', true);
+    }
+
+    case definitions[name].close: {
+      return state.set('open', false);
     }
 
     default:

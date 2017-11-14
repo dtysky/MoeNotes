@@ -107,7 +107,9 @@ export type TList = Record<{
   path: string,
   current: string,
   children: List<Record<TItem>>,
-  lut: Map<string, Record<{path: string, index: number}>>
+  lut: Map<string, Record<{path: string, index: number}>>,
+  // for shelf only
+  open?: boolean
 }>;
 
 export type TRecord = {

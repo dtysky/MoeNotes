@@ -6,7 +6,7 @@
 import 'rxjs';
 import * as React from 'react';
 import {render} from 'react-dom';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import {createLogger} from 'redux-logger';
 import {createEpicMiddleware} from 'redux-observable';
@@ -35,7 +35,14 @@ if (config.devMode) {
   }));
 }
 
-const store = createStore(rootReducer, applyMiddleware(...middleware));
+declare const window: any;
+
+const store = createStore(
+  rootReducer,
+  (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)(
+    applyMiddleware(...middleware)
+  )
+);
 
 render(
   <Provider store={store}>

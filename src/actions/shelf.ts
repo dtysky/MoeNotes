@@ -22,6 +22,8 @@ export const select = (child: TItem) => ({type: shelf.selectEpic, child});
 export const rename = (child: TItem, name: string) => ({type: shelf.renameEpic, child, name});
 export const swap = (child1: TItem, child2: TItem) => ({type: shelf.swapEpic, child1, child2});
 export const save = () => ({type: shelf.saveEpic});
+export const open = () => ({type: shelf.open});
+export const close = () => ({type: shelf.close});
 
 let record: TRecord = {
   current: '',

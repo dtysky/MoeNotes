@@ -47,6 +47,7 @@
     "report-dir": "./coverage"
   },
   "devDependencies": {
+    "@types/electron-devtools-installer": "^2.0.2",
     "@types/jasmine": "^2.6.0",
     "@types/node": "^7.0.46",
     "autoprefixer": "^6.7.7",
@@ -54,6 +55,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.1",
+    "electron-devtools-installer": "^2.2.1",
     "express": "4.14.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
@@ -86,11 +88,13 @@
     "webpack-hot-middleware": "^2.17.1"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.3",
     "@types/es6-shim": "^0.31.32",
     "@types/highlight.js": "^9.1.10",
     "@types/marked": "^0.3.0",
     "@types/react": "^16.0.18",
     "@types/react-dom": "^16.0.2",
+    "classnames": "^2.2.5",
     "color-space": "^1.15.0",
     "electron": "^1.7.9",
     "es6-shim": "^0.35.3",
